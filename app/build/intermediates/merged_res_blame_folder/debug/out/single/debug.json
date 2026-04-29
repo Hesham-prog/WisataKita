@@ -1,0 +1,174 @@
+[
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_ic_music_off.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\ic_music_off.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\anim_slide_out_right.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\anim\\slide_out_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_activity_album_detail.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\activity_album_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_team_athallah.jpeg.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\team_athallah.jpeg"
+    },
+    {
+        "merged": "com.wisatakita.app-merged_res-33:/layout_item_team_member.xml.flat",
+        "source": "com.wisatakita.app-main-35:/layout/item_team_member.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_gradient_card_overlay.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\gradient_card_overlay.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\anim_slide_out_left.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\anim\\slide_out_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_activity_detail.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_menu_destinasi.jpg.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\menu_destinasi.jpg"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\raw_background_music.mp3.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\raw\\background_music.mp3"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_bg_logout_btn.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\bg_logout_btn.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_activity_profile_setup.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\activity_profile_setup.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\anim_slide_in_right.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\anim\\slide_in_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_item_team_member.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\item_team_member.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_team_nathan.jpeg.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\team_nathan.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\anim_slide_in_left.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\anim\\slide_in_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_item_album.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\item_album.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_activity_gallery.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\activity_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_bg_gallery_photo.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\bg_gallery_photo.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_team_atalla.jpeg.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\team_atalla.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_activity_list.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\activity_list.xml"
+    },
+    {
+        "merged": "com.wisatakita.app-merged_res-33:/layout_item_album.xml.flat",
+        "source": "com.wisatakita.app-main-35:/layout/item_album.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_item_destination.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\item_destination.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "com.wisatakita.app-merged_res-33:/layout_activity_main.xml.flat",
+        "source": "com.wisatakita.app-main-35:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_ic_logo.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\ic_logo.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_ic_logout.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\ic_logout.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_team_hesham.jpeg.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\team_hesham.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_team_placeholder.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\team_placeholder.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\layout_item_photo.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\layout\\item_photo.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_menu_galeri.jpg.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\menu_galeri.jpg"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_ic_music_on.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\ic_music_on.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_bg_destination_thumb.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\bg_destination_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_team_sulthon.jpeg.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\team_sulthon.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\drawable_bg_role_chip.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\drawable\\bg_role_chip.xml"
+    },
+    {
+        "merged": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-merged_res-33:\\xml_file_provider_paths.xml.flat",
+        "source": "C:\\Users\\adien\\.gradle\\daemon\\8.9\\com.wisatakita.app-main-35:\\xml\\file_provider_paths.xml"
+    }
+]

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 4-pointed compass star -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,22 L58,32 L68,36 L58,40 L54,50 L50,40 L40,36 L50,32 Z"/>
+
+    <!-- Compass center dot (gold) -->
+    <path
+        android:fillColor="#D4A84B"
+        android:pathData="M54,31 A5,5,0,0,1,54,41 A5,5,0,0,1,54,31 Z"/>
+
+    <!-- Left mountain -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M15,88 L36,62 L57,88 Z"/>
+
+    <!-- Right mountain -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M51,88 L72,65 L93,88 Z"/>
+
+    <!-- Center mountain (tallest) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,90 L54,54 L80,90 Z"/>
+
+    <!-- Ground base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,90 H96 V96 H12 Z"/>
+
+</vector>

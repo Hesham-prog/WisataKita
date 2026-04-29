@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="28dp"
+            android:paddingBottom="20dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@android:drawable/ic_menu_revert"
+                android:tint="@color/white"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Kembali"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="4dp">
+
+                <TextView
+                    android:id="@+id/tvAlbumTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Album"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/tvPhotoCountHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 foto"
+                    android:textSize="12sp"
+                    android:textColor="#A8D5CC"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnDeleteAlbum"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@android:drawable/ic_menu_delete"
+                android:tint="#FFB3B3"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Hapus album"/>
+
+        </LinearLayout>
+
+        <!-- Empty state -->
+        <LinearLayout
+            android:id="@+id/layoutEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🖼️"
+                android:textSize="56sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Album masih kosong"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextPrimary"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ketuk tombol + untuk menambah foto"
+                android:textSize="13sp"
+                android:textColor="@color/colorTextSecondary"
+                android:gravity="center"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+
+        <!-- Photos grid -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPhotos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingBottom="80dp"
+            android:clipToPadding="false"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <!-- FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:src="@android:drawable/ic_input_add"
+        android:contentDescription="Tambah foto"
+        app:backgroundTint="@color/colorPrimary"
+        app:tint="@color/white"
+        app:fabSize="normal"/>
+
+</FrameLayout>
