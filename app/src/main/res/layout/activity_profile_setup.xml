@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lengkapi Profil"
+            android:text="@string/profile_setup_title"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="@color/colorTextPrimary"
@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Satu langkah lagi untuk mulai menjelajah"
+            android:text="@string/profile_setup_subtitle"
             android:textSize="15sp"
             android:textColor="@color/colorTextSecondary"
             android:gravity="center"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:hint="Usia"
+            android:hint="@string/profile_setup_age_hint"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             app:boxStrokeColor="@color/colorPrimary"
             app:hintTextColor="@color/colorPrimary"
@@ -65,7 +65,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gender"
+            android:text="@string/profile_setup_gender"
             android:textSize="13sp"
             android:textColor="@color/colorTextSecondary"
             android:layout_marginBottom="10dp"
@@ -83,7 +83,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Laki-laki"
+                android:text="@string/profile_setup_male"
                 android:textColor="@color/colorTextPrimary"
                 android:buttonTint="@color/colorPrimary"/>
 
@@ -92,7 +92,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Perempuan"
+                android:text="@string/profile_setup_female"
                 android:textColor="@color/colorTextPrimary"
                 android:buttonTint="@color/colorPrimary"/>
         </RadioGroup>
@@ -102,7 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="Nomor HP (opsional)"
+            android:hint="@string/profile_setup_phone_hint"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             app:boxStrokeColor="@color/colorPrimary"
             app:hintTextColor="@color/colorPrimary"
@@ -124,7 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
-            android:hint="Kota Asal (opsional)"
+            android:hint="@string/profile_setup_hometown_hint"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             app:boxStrokeColor="@color/colorPrimary"
             app:hintTextColor="@color/colorPrimary"
@@ -145,7 +145,7 @@
             android:id="@+id/btnSaveProfile"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:text="Simpan dan Lanjut"
+            android:text="@string/profile_setup_save"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/white"

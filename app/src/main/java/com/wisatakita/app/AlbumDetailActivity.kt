@@ -49,11 +49,11 @@ class AlbumDetailActivity : AppCompatActivity() {
     }
 
     private val requestCameraPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
-        if (granted) launchCamera() else Toast.makeText(this, "Izin kamera diperlukan", Toast.LENGTH_SHORT).show()
+        if (granted) launchCamera() else Toast.makeText(this, R.string.gallery_camera_permission, Toast.LENGTH_SHORT).show()
     }
 
     private val requestGalleryPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
-        if (granted) pickImage.launch("image/*") else Toast.makeText(this, "Izin galeri diperlukan", Toast.LENGTH_SHORT).show()
+        if (granted) pickImage.launch("image/*") else Toast.makeText(this, R.string.gallery_media_permission, Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,7 +90,7 @@ class AlbumDetailActivity : AppCompatActivity() {
     private fun refreshPhotos() {
         val album = galleryData.getAlbum(albumId) ?: run { finish(); return }
         binding.tvAlbumTitle.text = album.name
-        binding.tvPhotoCountHeader.text = "${album.photoCount} foto"
+        binding.tvPhotoCountHeader.text = getString(R.string.gallery_photo_count, album.photoCount)
         adapter.updateData(album.photoUris)
 
         if (album.photoUris.isEmpty()) {
@@ -103,9 +103,9 @@ class AlbumDetailActivity : AppCompatActivity() {
     }
 
     private fun showAddPhotoDialog() {
-        val options = arrayOf("📷  Ambil Foto (Kamera)", "🖼️  Pilih dari Galeri HP")
+        val options = arrayOf(getString(R.string.gallery_take_photo), getString(R.string.gallery_pick_photo))
         AlertDialog.Builder(this)
-            .setTitle("Tambah Foto")
+            .setTitle(getString(R.string.gallery_add_photo))
             .setItems(options) { _, which ->
                 when (which) {
                     0 -> checkCameraAndLaunch()
@@ -144,26 +144,26 @@ class AlbumDetailActivity : AppCompatActivity() {
 
     private fun showDeletePhotoDialog(uri: String) {
         AlertDialog.Builder(this)
-            .setTitle("Hapus Foto")
-            .setMessage("Hapus foto ini dari album?")
-            .setPositiveButton("Hapus") { _, _ ->
+            .setTitle(getString(R.string.gallery_delete_photo))
+            .setMessage(getString(R.string.gallery_delete_photo_message))
+            .setPositiveButton(getString(R.string.gallery_delete_photo)) { _, _ ->
                 galleryData.deletePhoto(albumId, uri)
                 refreshPhotos()
             }
-            .setNegativeButton("Batal", null)
+            .setNegativeButton(getString(R.string.cancel), null)
             .show()
     }
 
     private fun showDeleteAlbumDialog(albumName: String) {
         AlertDialog.Builder(this)
-            .setTitle("Hapus Album")
-            .setMessage("Hapus album \"$albumName\"? Semua foto di dalamnya akan hilang.")
-            .setPositiveButton("Hapus") { _, _ ->
+            .setTitle(getString(R.string.gallery_delete_album))
+            .setMessage(getString(R.string.gallery_delete_album_message, albumName))
+            .setPositiveButton(getString(R.string.gallery_delete_album)) { _, _ ->
                 galleryData.deleteAlbum(albumId)
-                Toast.makeText(this, "Album dihapus", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.gallery_album_deleted, Toast.LENGTH_SHORT).show()
                 finish()
             }
-            .setNegativeButton("Batal", null)
+            .setNegativeButton(getString(R.string.cancel), null)
             .show()
     }
 }

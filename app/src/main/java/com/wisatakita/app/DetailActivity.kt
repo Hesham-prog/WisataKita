@@ -120,7 +120,13 @@ class DetailActivity : AppCompatActivity() {
             val weather = state.info
             binding.tvWeatherIcon.text = weather?.temperature?.toInt()?.toString() ?: "NA"
             binding.tvWeatherInfo.text = weather?.let {
-                "${it.temperature.toInt()} C  ${it.description}\nKelembapan ${it.humidity}% - Angin ${"%.1f".format(it.windSpeed)} m/s"
+                getString(
+                    R.string.detail_weather_format,
+                    it.temperature.toInt(),
+                    it.description,
+                    it.humidity,
+                    it.windSpeed
+                )
             } ?: getString(R.string.weather_unavailable)
 
             when (state.mood) {
@@ -152,21 +158,32 @@ class DetailActivity : AppCompatActivity() {
         binding.tvDetailTitle.text = destination.name
         binding.tvDetailLocation.text = destination.location
         binding.tvDetailAddress.text = destination.address
-        binding.tvDetailMeta.text = "${destination.category} - Rating ${"%.1f".format(destination.rating)} (${destination.reviewCount} review)"
+        binding.tvDetailMeta.text = getString(
+            R.string.detail_meta_format,
+            destination.category,
+            destination.rating,
+            destination.reviewCount
+        )
         binding.tvTicketInfo.text = "${destination.ticketPrice} - ${destination.openingHours}"
-        binding.tvWeatherInfo.text = "Memuat cuaca real-time..."
+        binding.tvWeatherInfo.text = getString(R.string.detail_weather_realtime_loading)
         binding.tvDetailDescription.text = destination.description
         binding.tvPromoInfo.text = if (destination.promoTitle.isNotBlank()) {
             "${destination.promoTitle}\n${destination.promoDescription}"
         } else {
-            "Promo belum tersedia untuk destinasi ini."
+            getString(R.string.detail_no_promo)
         }
-        binding.tvTransportInfo.text = "Transportasi\n${destination.transportInfo.ifBlank { "Informasi transportasi belum tersedia." }}"
-        binding.tvEmergencyInfo.text = "Kontak / Info penting\n${destination.emergencyContact.ifBlank { "Ikuti arahan petugas setempat." }}"
+        binding.tvTransportInfo.text = getString(
+            R.string.detail_transport_format,
+            destination.transportInfo.ifBlank { getString(R.string.detail_transport_unavailable) }
+        )
+        binding.tvEmergencyInfo.text = getString(
+            R.string.detail_emergency_format,
+            destination.emergencyContact.ifBlank { getString(R.string.detail_emergency_unavailable) }
+        )
         binding.tvReviews.text = if (destination.reviews.isNotEmpty()) {
-            "Review pengunjung\n" + destination.reviews.joinToString("\n") { "• $it" }
+            getString(R.string.detail_reviews_title) + "\n" + destination.reviews.joinToString("\n") { "• $it" }
         } else {
-            "Belum ada review pengunjung."
+            getString(R.string.detail_no_reviews)
         }
 
         renderFunFacts(destination.funFacts)
@@ -291,7 +308,10 @@ class DetailActivity : AppCompatActivity() {
     private fun renderNearbyPlaces(places: List<NearbyPlace>) {
         binding.llNearbyPlaces.removeAllViews()
         val displayPlaces = if (places.isNotEmpty()) places else listOf(
-            NearbyPlace("Data tempat sekitar belum tersedia", "Coba lagi saat koneksi internet aktif.")
+            NearbyPlace(
+                getString(R.string.detail_nearby_unavailable_name),
+                getString(R.string.detail_nearby_unavailable_address)
+            )
         )
         displayPlaces.forEach { place ->
             val tv = TextView(this).apply {

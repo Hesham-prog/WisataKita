@@ -1,6 +1,7 @@
 package com.wisatakita.app.data
 
 import android.content.Context
+import com.wisatakita.app.R
 import com.wisatakita.app.data.db.AppDatabase
 import com.wisatakita.app.data.db.UserEntity
 
@@ -18,7 +19,7 @@ class UserPrefs(context: Context) {
             userDao.insert(
                 UserEntity(
                     email = email,
-                    name = name.ifBlank { "Penjelajah" },
+                    name = name.ifBlank { context.getString(R.string.home_default_user) },
                     password = "google_sign_in"
                 )
             )
@@ -48,7 +49,7 @@ class UserPrefs(context: Context) {
 
     fun getCurrentName(): String {
         val email = getCurrentEmail()
-        return if (email.isNotEmpty()) getName(email) else "Penjelajah"
+        return if (email.isNotEmpty()) getName(email) else context.getString(R.string.home_default_user)
     }
 
     fun logout() {

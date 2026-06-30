@@ -37,7 +37,7 @@
                 android:id="@+id/tvAlbumName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Album"
+                android:text="@string/gallery_create_album"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
@@ -48,7 +48,7 @@
                 android:id="@+id/tvPhotoCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0 foto"
+                android:text="@string/gallery_photo_count_placeholder"
                 android:textSize="11sp"
                 android:textColor="#CCffffff"
                 android:layout_marginTop="2dp"/>

@@ -48,8 +48,8 @@ class HomeFragment : Fragment() {
 
     private fun setupGreeting() {
         val userPrefs = UserPrefs(requireContext())
-        val name = userPrefs.getCurrentName().ifBlank { "Penjelajah" }
-        binding.tvGreeting.text = "Halo, $name!"
+        val name = userPrefs.getCurrentName().ifBlank { getString(R.string.home_default_user) }
+        binding.tvGreeting.text = getString(R.string.home_greeting_name, name)
 
         val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
         binding.tvGreetingTime.text = when {

@@ -45,7 +45,7 @@
                 android:id="@+id/tv_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Alam"
+                android:text="@string/filter_nature"
                 android:textSize="10sp"
                 android:fontFamily="@font/plus_jakarta_sans_semibold"
                 android:textColor="@color/turquoise_primary"
@@ -61,7 +61,7 @@
                 android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Candi Borobudur"
+                android:text="@string/detail_title_placeholder"
                 android:textSize="16sp"
                 android:fontFamily="@font/fraunces_semibold"
                 android:textColor="@color/white"
@@ -94,7 +94,7 @@
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:src="@drawable/ic_star"
-                    android:contentDescription="Rating"/>
+                    android:contentDescription="@string/rating_content_desc"/>
 
                 <TextView
                     android:id="@+id/tv_rating"
@@ -115,7 +115,7 @@
             android:layout_height="20dp"
             android:src="@drawable/ic_arrow_right"
             android:tint="@color/colorTextHint"
-            android:contentDescription="Lihat detail"/>
+            android:contentDescription="@string/view_detail"/>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

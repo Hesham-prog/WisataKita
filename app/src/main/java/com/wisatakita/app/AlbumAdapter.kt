@@ -18,7 +18,7 @@ class AlbumAdapter(
     inner class ViewHolder(val binding: ItemAlbumBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(album: Album) {
             binding.tvAlbumName.text = album.name
-            binding.tvPhotoCount.text = "${album.photoCount} foto"
+            binding.tvPhotoCount.text = binding.root.context.getString(R.string.gallery_photo_count, album.photoCount)
 
             if (album.coverUri != null) {
                 Glide.with(binding.root.context)

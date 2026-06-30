@@ -31,7 +31,7 @@ class ListActivity : AppCompatActivity() {
     private val fusedLocationClient by lazy { LocationServices.getFusedLocationProviderClient(this) }
 
     private val allDestinations = mutableListOf<Destination>()
-    private var selectedCategory = ALL_CATEGORIES
+    private var selectedCategory = ""
     private var selectedQuickFilter: QuickFilter = QuickFilter.None
     private var selectedSort: SortMode = SortMode.Recommended
     private var query = ""
@@ -46,7 +46,7 @@ class ListActivity : AppCompatActivity() {
         if (granted) {
             loadCurrentLocation(sortNearest = true)
         } else {
-            Toast.makeText(this, "Izin lokasi diperlukan untuk mode terdekat", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.list_location_permission_required, Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -54,6 +54,7 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        selectedCategory = allCategoriesLabel()
 
         adapter = DestinationAdapter { destination ->
             startActivity(Intent(this, DetailActivity::class.java).apply {
@@ -76,7 +77,7 @@ class ListActivity : AppCompatActivity() {
             val result = DestinationRepository(this@ListActivity).getDestinationsWithSource()
             allDestinations.clear()
             allDestinations.addAll(result.destinations)
-            binding.tvDataSource.text = "${result.sourceLabel} - ${result.destinations.size} destinasi"
+            binding.tvDataSource.text = getString(R.string.list_data_source_format, result.sourceLabel, result.destinations.size)
             binding.progressBar.visibility = View.GONE
             binding.recyclerView.visibility = View.VISIBLE
             setupCategoryChips()
@@ -96,16 +97,16 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun setupStaticControls() {
-        addQuickChip("Semua", QuickFilter.None, checked = true)
-        addQuickChip("Budget", QuickFilter.Budget)
-        addQuickChip("Rating 4.7+", QuickFilter.HighRating)
-        addQuickChip("Keluarga", QuickFilter.Family)
-        addQuickChip("Alam terbuka", QuickFilter.Nature)
+        addQuickChip(getString(R.string.filter_all), QuickFilter.None, checked = true)
+        addQuickChip(getString(R.string.filter_budget), QuickFilter.Budget)
+        addQuickChip(getString(R.string.filter_high_rating), QuickFilter.HighRating)
+        addQuickChip(getString(R.string.filter_family), QuickFilter.Family)
+        addQuickChip(getString(R.string.filter_nature), QuickFilter.Nature)
 
-        addSortChip("Rekomendasi", SortMode.Recommended, checked = true)
-        addSortChip("Rating", SortMode.Rating)
-        addSortChip("Populer", SortMode.Popular)
-        addSortChip("Nama A-Z", SortMode.Name)
+        addSortChip(getString(R.string.sort_recommended), SortMode.Recommended, checked = true)
+        addSortChip(getString(R.string.sort_rating), SortMode.Rating)
+        addSortChip(getString(R.string.sort_popular), SortMode.Popular)
+        addSortChip(getString(R.string.sort_name), SortMode.Name)
 
         binding.btnNearest.bounceClick()
         binding.btnNearest.setOnClickListener { requestNearestMode() }
@@ -123,7 +124,7 @@ class ListActivity : AppCompatActivity() {
 
     private fun setupCategoryChips() {
         binding.chipGroupCategories.removeAllViews()
-        addCategoryChip(ALL_CATEGORIES, checked = true)
+        addCategoryChip(allCategoriesLabel(), checked = true)
         allDestinations.map { it.category }
             .distinct()
             .sorted()
@@ -204,26 +205,26 @@ class ListActivity : AppCompatActivity() {
                     if (location != null) {
                         userLocation = location
                         if (sortNearest) {
-                            binding.btnNearest.text = "Terdekat aktif"
+                            binding.btnNearest.text = getString(R.string.btn_nearest_active)
                         }
                         applyFilters()
                     } else {
-                        Toast.makeText(this, "Lokasi belum tersedia. Nyalakan GPS lalu coba lagi.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, R.string.list_location_unavailable, Toast.LENGTH_SHORT).show()
                         applyFilters()
                     }
                 }
                 .addOnFailureListener {
-                    Toast.makeText(this, "Gagal membaca lokasi", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.list_location_failed, Toast.LENGTH_SHORT).show()
                     applyFilters()
                 }
         } catch (_: SecurityException) {
-            Toast.makeText(this, "Izin lokasi belum aktif", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.list_location_permission_inactive, Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun applyFilters() {
         val filtered = allDestinations
-            .filter { destination -> selectedCategory == ALL_CATEGORIES || destination.category == selectedCategory }
+            .filter { destination -> selectedCategory == allCategoriesLabel() || destination.category == selectedCategory }
             .filter { destination -> selectedQuickFilter.matches(destination) }
             .filter { destination -> destination.matchesQuery(query) }
             .map { destination -> DestinationUiItem(destination, distanceTo(destination)) }
@@ -274,37 +275,44 @@ class ListActivity : AppCompatActivity() {
             item.distanceKm?.let { append(" - ${"%.1f".format(it)} km") }
         }
         binding.tvFeaturedLabel.text = when (selectedSort) {
-            SortMode.Nearest -> "Destinasi terdekat"
-            SortMode.Rating -> "Rating tertinggi"
-            SortMode.Popular -> "Paling populer"
-            SortMode.Name -> "Urutan A-Z"
-            SortMode.Recommended -> "Rekomendasi terbaik"
+            SortMode.Nearest -> getString(R.string.list_feature_nearest)
+            SortMode.Rating -> getString(R.string.list_feature_top_rating)
+            SortMode.Popular -> getString(R.string.list_feature_popular)
+            SortMode.Name -> getString(R.string.list_feature_name)
+            SortMode.Recommended -> getString(R.string.list_feature_recommended)
         }
     }
 
     private fun renderSummary(items: List<DestinationUiItem>) {
-        val queryText = if (query.isBlank()) "" else " untuk \"$query\""
-        val categoryText = if (selectedCategory == ALL_CATEGORIES) "semua kategori" else selectedCategory
-        val nearestText = if (selectedSort == SortMode.Nearest && userLocation == null) " - GPS belum tersedia" else ""
-        binding.tvResultSummary.text = "${items.size} destinasi cocok$queryText - $categoryText - ${selectedSort.label}$nearestText"
+        val queryText = if (query.isBlank()) "" else getString(R.string.list_query_suffix, query)
+        val categoryText = if (selectedCategory == allCategoriesLabel()) getString(R.string.list_all_categories) else selectedCategory
+        val nearestText = if (selectedSort == SortMode.Nearest && userLocation == null) " - ${getString(R.string.list_gps_unavailable)}" else ""
+        binding.tvResultSummary.text = getString(
+            R.string.list_result_summary,
+            items.size,
+            queryText,
+            categoryText,
+            sortLabel(selectedSort),
+            nearestText
+        )
     }
 
     private fun resetFilters() {
         query = ""
-        selectedCategory = ALL_CATEGORIES
+        selectedCategory = allCategoriesLabel()
         selectedQuickFilter = QuickFilter.None
         selectedSort = SortMode.Recommended
         binding.etSearch.setText("")
-        binding.btnNearest.text = "Terdekat"
-        checkChipByText(binding.chipGroupCategories, ALL_CATEGORIES)
-        checkChipByText(binding.chipGroupQuick, "Semua")
-        checkChipByText(binding.chipGroupSort, SortMode.Recommended.label)
+        binding.btnNearest.text = getString(R.string.btn_nearest)
+        checkChipByText(binding.chipGroupCategories, allCategoriesLabel())
+        checkChipByText(binding.chipGroupQuick, getString(R.string.filter_all))
+        checkChipByText(binding.chipGroupSort, sortLabel(SortMode.Recommended))
         applyFilters()
     }
 
     private fun ensureSortChipUnchecked() {
         binding.chipGroupSort.clearCheck()
-        binding.btnNearest.text = "Terdekat aktif"
+        binding.btnNearest.text = getString(R.string.btn_nearest_active)
     }
 
     private fun checkChipByText(group: com.google.android.material.chip.ChipGroup, text: String) {
@@ -334,12 +342,12 @@ class ListActivity : AppCompatActivity() {
         return parts.all { haystack.contains(it) }
     }
 
-    private enum class SortMode(val label: String) {
-        Recommended("Rekomendasi"),
-        Rating("Rating"),
-        Popular("Populer"),
-        Name("Nama A-Z"),
-        Nearest("Terdekat")
+    private enum class SortMode {
+        Recommended,
+        Rating,
+        Popular,
+        Name,
+        Nearest
     }
 
     private sealed class QuickFilter {
@@ -349,7 +357,7 @@ class ListActivity : AppCompatActivity() {
         object Budget : QuickFilter() {
             override fun matches(destination: Destination): Boolean {
                 val text = destination.ticketPrice.lowercase()
-                return text.contains("gratis") || text.contains("rp10") || text.contains("rp15") ||
+                return text.contains("gratis") || text.contains("free") || text.contains("rp10") || text.contains("rp15") ||
                     text.contains("rp16") || text.contains("rp20") || text.contains("rp25")
             }
         }
@@ -359,19 +367,25 @@ class ListActivity : AppCompatActivity() {
         object Family : QuickFilter() {
             override fun matches(destination: Destination): Boolean {
                 val text = "${destination.category} ${destination.description} ${destination.promoDescription}".lowercase()
-                return text.contains("keluarga") || text.contains("edukasi") || text.contains("taman")
+                return text.contains("keluarga") || text.contains("family") || text.contains("edukasi") || text.contains("education") || text.contains("taman") || text.contains("park")
             }
         }
         object Nature : QuickFilter() {
             override fun matches(destination: Destination): Boolean {
                 val text = "${destination.category} ${destination.description}".lowercase()
-                return listOf("pantai", "gunung", "laut", "danau", "alam", "pegunungan", "bukit")
+                return listOf("pantai", "beach", "gunung", "mountain", "laut", "marine", "danau", "lake", "alam", "nature", "pegunungan", "highland", "bukit", "hill")
                     .any { text.contains(it) }
             }
         }
     }
 
-    companion object {
-        private const val ALL_CATEGORIES = "Semua"
+    private fun allCategoriesLabel(): String = getString(R.string.filter_all)
+
+    private fun sortLabel(mode: SortMode): String = when (mode) {
+        SortMode.Recommended -> getString(R.string.sort_recommended)
+        SortMode.Rating -> getString(R.string.sort_rating)
+        SortMode.Popular -> getString(R.string.sort_popular)
+        SortMode.Name -> getString(R.string.sort_name)
+        SortMode.Nearest -> getString(R.string.sort_nearest)
     }
 }

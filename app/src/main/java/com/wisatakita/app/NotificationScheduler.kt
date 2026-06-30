@@ -20,7 +20,7 @@ import java.util.Calendar
 object NotificationScheduler {
 
     const val CHANNEL_ID = "wisatakita_main"
-    const val CHANNEL_NAME = "WisataKita Notifikasi"
+    const val CHANNEL_NAME = "WisataKita"
 
     // Request codes for PendingIntent
     private const val RC_DAILY   = 1001
@@ -31,10 +31,10 @@ object NotificationScheduler {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 CHANNEL_ID,
-                CHANNEL_NAME,
+                context.getString(R.string.notif_channel_name),
                 NotificationManager.IMPORTANCE_DEFAULT
             ).apply {
-                description = "Rekomendasi dan pengingat dari WisataKita"
+                description = context.getString(R.string.notif_channel_desc)
                 enableVibration(true)
                 vibrationPattern = longArrayOf(0, 200, 100, 200)
             }

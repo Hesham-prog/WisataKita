@@ -36,7 +36,7 @@
                 android:id="@+id/tv_grid_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nama Destinasi"
+                android:text="@string/detail_title_placeholder"
                 android:textSize="13sp"
                 android:fontFamily="@font/fraunces_bold"
                 android:textColor="@color/white"
@@ -55,7 +55,7 @@
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:src="@drawable/ic_star"
-                    android:contentDescription="Rating"/>
+                    android:contentDescription="@string/rating_content_desc"/>
 
                 <TextView
                     android:id="@+id/tv_grid_rating"

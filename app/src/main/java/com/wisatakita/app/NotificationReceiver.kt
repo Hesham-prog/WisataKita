@@ -37,15 +37,15 @@ class NotificationReceiver : BroadcastReceiver() {
                     runBlocking { DestinationRepository(context.applicationContext).getAllDestinations() }
                 }.getOrDefault(emptyList())
                 val pick = destinations.randomOrNull()
-                val title = pick?.name ?: "Destinasi Hari Ini"
+                val title = pick?.name ?: context.getString(R.string.notif_daily_fallback_title)
                 val location = pick?.location ?: "Indonesia"
                 val image = pick?.imageUrl?.let { loadNotificationBitmap(context, it) }
 
                 showNotification(
                     context,
                     id = 1001,
-                    title = "Destinasi Hari Ini",
-                    body = "Sudah pernah ke $title, $location? Yuk jelajahi sekarang!",
+                    title = context.getString(R.string.notif_daily_fallback_title),
+                    body = context.getString(R.string.notif_daily_body, title, location),
                     targetClass = MainActivity::class.java,
                     bigPicture = image
                 )
@@ -81,8 +81,8 @@ class NotificationReceiver : BroadcastReceiver() {
         showNotification(
             context,
             id = 1002,
-            title = "Lihat Koleksimu",
-            body = "Ada destinasi favorit yang belum kamu kunjungi. Yuk rencanakan liburanmu!",
+            title = context.getString(R.string.koleksi_passport_title),
+            body = context.getString(R.string.notif_favorite_body),
             targetClass = MainActivity::class.java
         )
     }
@@ -92,12 +92,12 @@ class NotificationReceiver : BroadcastReceiver() {
         showNotification(
             context,
             id = 1003,
-            title = "Bagikan Pengalamanmu",
-            body = "Gimana pengalaman wisatamu? Tulis ulasanmu dan bantu penjelajah lain!",
+            title = context.getString(R.string.notif_review_nudge_title),
+            body = context.getString(R.string.notif_review_nudge_body),
             targetClass = DetailActivity::class.java,
             extras = mapOf(
                 "DESTINATION_ID" to destinationId,
-                DetailActivity.EXTRA_LANTERN_MESSAGE to "Bagikan pengalamanmu setelah menjelajah."
+                DetailActivity.EXTRA_LANTERN_MESSAGE to context.getString(R.string.notif_review_lantern)
             )
         )
     }

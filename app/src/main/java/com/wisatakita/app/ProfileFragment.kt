@@ -155,15 +155,25 @@ class ProfileFragment : Fragment() {
     }
 
     private fun renderRadar(categoryCounts: Map<String, Int>) {
-        val labels = listOf("Pantai", "Gunung", "Candi", "Taman", "Danau")
-        val entries = labels.map { label ->
+        val labels = if (LanguageUtil.currentLanguage(requireContext()) == LanguageUtil.ENGLISH) {
+            listOf("Beach", "Mountain", "Temple", "Park", "Lake")
+        } else {
+            listOf("Pantai", "Gunung", "Candi", "Taman", "Danau")
+        }
+        val matchers = listOf(
+            listOf("Pantai", "Beach"),
+            listOf("Gunung", "Mountain"),
+            listOf("Candi", "Sejarah", "Temple", "History"),
+            listOf("Taman", "Alam", "Park", "Nature"),
+            listOf("Danau", "Lake")
+        )
+        val entries = matchers.map { keywords ->
             val value = categoryCounts.entries.firstOrNull {
-                it.key.contains(label, ignoreCase = true) ||
-                    (label == "Candi" && it.key.contains("Sejarah", ignoreCase = true))
+                keywords.any { keyword -> it.key.contains(keyword, ignoreCase = true) }
             }?.value ?: 0
             RadarEntry(value.coerceAtLeast(1).toFloat())
         }
-        val dataSet = RadarDataSet(entries, "Kategori").apply {
+        val dataSet = RadarDataSet(entries, getString(R.string.section_categories)).apply {
             color = requireContext().getColor(R.color.turquoise_primary)
             fillColor = requireContext().getColor(R.color.turquoise_primary)
             setDrawFilled(true)

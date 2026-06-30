@@ -6,13 +6,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.wisatakita.app.data.Destination
+import com.wisatakita.app.data.DestinationLocalizer
 import com.wisatakita.app.data.DestinationRepository
 import kotlinx.coroutines.launch
 
 data class PenjelajahUiState(
     val destinations: List<Destination> = emptyList(),
-    val categories: List<String> = listOf("Semua"),
-    val selectedCategory: String = "Semua",
+    val categories: List<String> = emptyList(),
+    val selectedCategory: String = "",
     val searchQuery: String = "",
     val viewMode: PenjelajahFragment.ViewMode = PenjelajahFragment.ViewMode.LIST
 )
@@ -31,7 +32,7 @@ class PenjelajahViewModel(application: Application) : AndroidViewModel(applicati
             allDestinations.clear()
             allDestinations.addAll(destinations)
             publishState(
-                category = _uiState.value?.selectedCategory ?: "Semua",
+                category = _uiState.value?.selectedCategory?.ifBlank { allLabel() } ?: allLabel(),
                 query = _uiState.value?.searchQuery.orEmpty(),
                 viewMode = _uiState.value?.viewMode ?: PenjelajahFragment.ViewMode.LIST
             )
@@ -48,7 +49,7 @@ class PenjelajahViewModel(application: Application) : AndroidViewModel(applicati
 
     fun setSearchQuery(query: String) {
         publishState(
-            category = _uiState.value?.selectedCategory ?: "Semua",
+            category = _uiState.value?.selectedCategory?.ifBlank { allLabel() } ?: allLabel(),
             query = query,
             viewMode = _uiState.value?.viewMode ?: PenjelajahFragment.ViewMode.LIST
         )
@@ -56,7 +57,7 @@ class PenjelajahViewModel(application: Application) : AndroidViewModel(applicati
 
     fun setViewMode(viewMode: PenjelajahFragment.ViewMode) {
         publishState(
-            category = _uiState.value?.selectedCategory ?: "Semua",
+            category = _uiState.value?.selectedCategory?.ifBlank { allLabel() } ?: allLabel(),
             query = _uiState.value?.searchQuery.orEmpty(),
             viewMode = viewMode
         )
@@ -64,7 +65,7 @@ class PenjelajahViewModel(application: Application) : AndroidViewModel(applicati
 
     fun resetFilters() {
         publishState(
-            category = "Semua",
+            category = allLabel(),
             query = "",
             viewMode = _uiState.value?.viewMode ?: PenjelajahFragment.ViewMode.LIST
         )
@@ -77,7 +78,7 @@ class PenjelajahViewModel(application: Application) : AndroidViewModel(applicati
     ) {
         val cleanedQuery = query.trim().lowercase()
         val filtered = allDestinations.filter { destination ->
-            val categoryMatch = category == "Semua" || destination.category == category
+            val categoryMatch = category == allLabel() || destination.category == category
             val searchMatch = cleanedQuery.isEmpty() ||
                 destination.name.lowercase().contains(cleanedQuery) ||
                 destination.location.lowercase().contains(cleanedQuery) ||
@@ -87,10 +88,13 @@ class PenjelajahViewModel(application: Application) : AndroidViewModel(applicati
 
         _uiState.value = PenjelajahUiState(
             destinations = filtered,
-            categories = listOf("Semua") + allDestinations.map { it.category }.distinct().sorted(),
+            categories = listOf(allLabel()) + allDestinations.map { it.category }.distinct().sorted(),
             selectedCategory = category,
             searchQuery = query,
             viewMode = viewMode
         )
     }
+
+    private fun allLabel(): String =
+        DestinationLocalizer.allCategoryLabel(getApplication())
 }

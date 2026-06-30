@@ -52,7 +52,7 @@ class GalleryActivity : AppCompatActivity() {
         val albums = galleryData.getAlbums()
         adapter.updateData(albums)
         val count = albums.size
-        binding.tvAlbumCount.text = "$count album"
+        binding.tvAlbumCount.text = getString(R.string.gallery_album_count, count)
         if (albums.isEmpty()) {
             binding.layoutEmpty.visibility = View.VISIBLE
             binding.recyclerAlbums.visibility = View.GONE
@@ -64,35 +64,35 @@ class GalleryActivity : AppCompatActivity() {
 
     private fun showCreateAlbumDialog() {
         val editText = EditText(this).apply {
-            hint = "Contoh: Liburan Bali 2024"
+            hint = getString(R.string.gallery_album_name_hint)
             setPadding(48, 32, 48, 16)
         }
         AlertDialog.Builder(this)
-            .setTitle("Buat Album Baru")
+            .setTitle(getString(R.string.gallery_create_album))
             .setView(editText)
-            .setPositiveButton("Buat") { _, _ ->
+            .setPositiveButton(getString(R.string.gallery_create)) { _, _ ->
                 val name = editText.text.toString().trim()
                 if (name.isNotEmpty()) {
                     galleryData.createAlbum(name)
                     refreshAlbums()
                 } else {
-                    Toast.makeText(this, "Nama album tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.gallery_album_name_empty, Toast.LENGTH_SHORT).show()
                 }
             }
-            .setNegativeButton("Batal", null)
+            .setNegativeButton(getString(R.string.cancel), null)
             .show()
     }
 
     private fun showDeleteAlbumDialog(albumId: String, albumName: String) {
         AlertDialog.Builder(this)
-            .setTitle("Hapus Album")
-            .setMessage("Hapus album \"$albumName\"? Semua foto di dalamnya akan hilang.")
-            .setPositiveButton("Hapus") { _, _ ->
+            .setTitle(getString(R.string.gallery_delete_album))
+            .setMessage(getString(R.string.gallery_delete_album_message, albumName))
+            .setPositiveButton(getString(R.string.gallery_delete_album)) { _, _ ->
                 galleryData.deleteAlbum(albumId)
                 refreshAlbums()
-                Toast.makeText(this, "Album dihapus", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.gallery_album_deleted, Toast.LENGTH_SHORT).show()
             }
-            .setNegativeButton("Batal", null)
+            .setNegativeButton(getString(R.string.cancel), null)
             .show()
     }
 }

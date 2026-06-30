@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Explore Destinasi"
+            android:text="@string/nav_jelajahi"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/white"/>
@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cari, filter, dan temukan wisata terdekat"
+            android:text="@string/search_hint"
             android:textSize="13sp"
             android:textColor="#A8D5CC"
             android:layout_marginTop="4dp"/>
@@ -36,7 +36,7 @@
             android:id="@+id/tvDataSource"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Menyiapkan data..."
+            android:text="@string/loading"
             android:textSize="12sp"
             android:textColor="@color/colorAccentLight"
             android:layout_marginTop="8dp"/>
@@ -88,7 +88,7 @@
                             android:id="@+id/tvFeaturedLabel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rekomendasi terbaik"
+                            android:text="@string/sort_recommended"
                             android:textSize="12sp"
                             android:textColor="@color/colorAccentLight"
                             android:textStyle="bold"/>
@@ -97,7 +97,7 @@
                             android:id="@+id/tvFeaturedName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Destinasi"
+                            android:text="@string/detail_title_placeholder"
                             android:textColor="@color/white"
                             android:textStyle="bold"
                             android:textSize="22sp"
@@ -108,7 +108,7 @@
                             android:id="@+id/tvFeaturedMeta"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Kategori - rating"
+                            android:text="@string/detail_meta_placeholder"
                             android:textColor="#E4F3EF"
                             android:textSize="13sp"
                             android:layout_marginTop="3dp"/>
@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:hint="Cari destinasi, kota, kategori..."
+                android:hint="@string/search_hint"
                 app:boxBackgroundMode="outline"
                 app:boxStrokeColor="@color/colorPrimary"
                 app:hintTextColor="@color/colorPrimary"
@@ -194,7 +194,7 @@
                         android:id="@+id/btnNearest"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:text="Terdekat"
+                        android:text="@string/btn_nearest"
                         android:textSize="12sp"
                         android:textColor="@color/white"
                         android:layout_marginStart="8dp"
@@ -205,7 +205,7 @@
                         android:id="@+id/btnResetFilters"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:text="Reset"
+                        android:text="@string/btn_reset_filters"
                         android:textSize="12sp"
                         android:textColor="@color/colorPrimary"
                         android:layout_marginStart="8dp"
@@ -219,7 +219,7 @@
                 android:id="@+id/tvResultSummary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Memuat destinasi..."
+                android:text="@string/loading"
                 android:textColor="@color/colorTextSecondary"
                 android:textSize="13sp"
                 android:layout_marginStart="18dp"
@@ -254,7 +254,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tidak ada destinasi yang cocok"
+                        android:text="@string/empty_results"
                         android:textColor="@color/colorTextPrimary"
                         android:textStyle="bold"
                         android:textSize="17sp"/>
@@ -262,7 +262,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Coba reset filter atau gunakan kata kunci lain."
+                        android:text="@string/btn_reset_filters"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="13sp"
                         android:gravity="center"

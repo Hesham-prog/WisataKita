@@ -29,7 +29,7 @@
                 android:src="@drawable/ic_back_premium"
                 android:tint="@color/white"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Kembali"/>
+                android:contentDescription="@string/content_desc_back"/>
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -42,7 +42,7 @@
                     android:id="@+id/tvAlbumTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nama Album"
+                    android:text="@string/gallery_create_album"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/white"/>
@@ -51,7 +51,7 @@
                     android:id="@+id/tvPhotoCountHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0 foto"
+                    android:text="@string/gallery_photo_count_placeholder"
                     android:textSize="12sp"
                     android:textColor="#A8D5CC"
                     android:layout_marginTop="2dp"/>
@@ -64,7 +64,7 @@
                 android:src="@drawable/ic_delete_premium"
                 android:tint="#FFB3B3"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Hapus album"/>
+                android:contentDescription="@string/gallery_delete_album"/>
 
         </LinearLayout>
 
@@ -88,7 +88,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Album masih kosong"
+                android:text="@string/gallery_empty_album"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorTextPrimary"
@@ -97,7 +97,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ketuk tombol + untuk menambah foto"
+                android:text="@string/gallery_empty_album_subtitle"
                 android:textSize="13sp"
                 android:textColor="@color/colorTextSecondary"
                 android:gravity="center"
@@ -125,7 +125,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
         android:src="@drawable/ic_add_premium"
-        android:contentDescription="Tambah foto"
+        android:contentDescription="@string/gallery_add_photo"
         app:backgroundTint="@color/colorPrimary"
         app:tint="@color/white"
         app:fabSize="normal"/>

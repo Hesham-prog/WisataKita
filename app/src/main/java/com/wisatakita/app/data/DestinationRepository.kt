@@ -30,7 +30,7 @@ class DestinationRepository(private val context: Context) {
 
         if (!online.isNullOrEmpty() && isCompleteWebServiceData(online, local)) {
             cacheDestinations(online, "Data dari Web Service")
-            return@withContext online.toLoadResult("Data dari Web Service")
+            return@withContext online.localize().toLoadResult(localizedSourceLabel("Data dari Web Service"))
         }
 
         val cached = loadCachedDestinations()
@@ -40,7 +40,7 @@ class DestinationRepository(private val context: Context) {
             } else {
                 "Cache Web Service: data online belum valid"
             }
-            return@withContext cached.toLoadResult(label)
+            return@withContext cached.localize().toLoadResult(localizedSourceLabel(label))
         }
 
         if (local.isNotEmpty()) {
@@ -49,10 +49,10 @@ class DestinationRepository(private val context: Context) {
             } else {
                 "Data lokal terbaru: Web Service belum sinkron"
             }
-            return@withContext local.toLoadResult(label)
+            return@withContext local.localize().toLoadResult(localizedSourceLabel(label))
         }
 
-        DestinationData.list.toLoadResult("Mode offline: data bawaan")
+        DestinationData.list.localize().toLoadResult(localizedSourceLabel("Mode offline: data bawaan"))
     }
 
     suspend fun getDestinationById(id: String): Destination? {
@@ -104,5 +104,20 @@ class DestinationRepository(private val context: Context) {
             sourceLabel = sourceLabel,
             validationIssues = DestinationValidator.validate(this)
         )
+    }
+
+    private fun List<Destination>.localize(): List<Destination> =
+        DestinationLocalizer.localize(context, this)
+
+    private fun localizedSourceLabel(label: String): String {
+        return when (label) {
+            "Data dari Web Service" -> "Web Service data"
+            "Mode offline: cache Web Service" -> "Offline mode: Web Service cache"
+            "Cache Web Service: data online belum valid" -> "Web Service cache: online data is not valid yet"
+            "Mode offline: data lokal" -> "Offline mode: local data"
+            "Data lokal terbaru: Web Service belum sinkron" -> "Latest local data: Web Service is not synchronized yet"
+            "Mode offline: data bawaan" -> "Offline mode: bundled data"
+            else -> label
+        }.takeIf { com.wisatakita.app.LanguageUtil.currentLanguage(context) == com.wisatakita.app.LanguageUtil.ENGLISH } ?: label
     }
 }

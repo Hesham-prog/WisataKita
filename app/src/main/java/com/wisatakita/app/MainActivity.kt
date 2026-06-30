@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
     private var isMenuOpen = false
 
     companion object {
-        private val TAB_LABELS = listOf("Beranda", "Jelajahi", "Koleksi", "Profil")
         private val TAB_ICONS = listOf(
             R.drawable.ic_nav_beranda,
             R.drawable.ic_nav_jelajahi,
@@ -108,7 +107,7 @@ class MainActivity : AppCompatActivity() {
                     marginEnd = (3 * density).toInt()
                 }
                 background = getDrawable(R.drawable.bg_compass_dock_item)
-                contentDescription = TAB_LABELS[index]
+                contentDescription = tabLabel(index)
                 setImageResource(icon)
                 setColorFilter(getColor(if (index == currentTabIndex) R.color.gold_primary else R.color.cream_primary))
                 setPadding((15 * density).toInt(), (15 * density).toInt(), (15 * density).toInt(), (15 * density).toInt())
@@ -188,6 +187,14 @@ class MainActivity : AppCompatActivity() {
             compassView.invalidate()
             hidePetalMenu()
         }
+    }
+
+    private fun tabLabel(index: Int): String = when (index) {
+        0 -> getString(R.string.nav_beranda)
+        1 -> getString(R.string.nav_jelajahi)
+        2 -> getString(R.string.nav_koleksi)
+        3 -> getString(R.string.nav_profil)
+        else -> getString(R.string.app_name)
     }
 
     private fun setupMusicService() {

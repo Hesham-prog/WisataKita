@@ -58,7 +58,7 @@
                             android:id="@+id/tv_greeting_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Selamat Pagi"
+                            android:text="@string/greeting_morning"
                             android:textSize="14sp"
                             android:fontFamily="@font/plus_jakarta_sans"
                             android:textColor="#CCF2D8B3"
@@ -69,7 +69,7 @@
                             android:id="@+id/tv_greeting"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Halo, Penjelajah!"
+                            android:text="@string/home_greeting_name"
                             android:textSize="26sp"
                             android:fontFamily="@font/fraunces_bold"
                             android:textColor="@color/white"
@@ -137,7 +137,7 @@
                             android:src="@drawable/ic_search"
                             android:tint="@color/cream_primary"
                             android:alpha="0.7"
-                            android:contentDescription="Cari"/>
+                            android:contentDescription="@string/search_hint"/>
 
                         <TextView
                             android:layout_width="0dp"
@@ -309,7 +309,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🇮🇩 Tentang Indonesia"
+                    android:text="@string/home_about_indonesia_title"
                     android:textSize="18sp"
                     android:fontFamily="@font/fraunces_semibold"
                     android:textColor="@color/white"

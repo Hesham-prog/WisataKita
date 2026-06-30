@@ -24,7 +24,7 @@ class RegisterActivity : AppCompatActivity() {
             val password = binding.etPassword.text.toString()
 
             if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Semua kolom wajib diisi", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.register_required_fields, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {

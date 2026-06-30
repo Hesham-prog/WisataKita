@@ -35,7 +35,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Jelajahi"
+                    android:text="@string/nav_jelajahi"
                     android:textSize="28sp"
                     android:fontFamily="@font/fraunces_bold"
                     android:textColor="@color/white"
@@ -71,7 +71,7 @@
                         android:src="@drawable/ic_search"
                         android:tint="@color/cream_primary"
                         android:alpha="0.6"
-                        android:contentDescription="Cari"/>
+                        android:contentDescription="@string/search_hint"/>
 
                     <EditText
                         android:id="@+id/et_search"

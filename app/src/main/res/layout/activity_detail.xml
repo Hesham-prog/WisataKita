@@ -65,7 +65,7 @@
         android:includeFontPadding="false"
         android:lineSpacingExtra="2dp"
         android:maxLines="2"
-        android:text="Nama Destinasi"
+        android:text="@string/detail_title_placeholder"
         android:textColor="@color/white"
         android:textSize="30sp" />
 
@@ -182,7 +182,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/plus_jakarta_sans_semibold"
-                        android:text="Lokasi"
+                        android:text="@string/detail_location_placeholder"
                         android:textColor="@color/turquoise_primary"
                         android:textSize="13sp" />
 
@@ -192,7 +192,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:fontFamily="@font/plus_jakarta_sans"
-                        android:text="Alamat lengkap"
+                        android:text="@string/detail_address_placeholder"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="12sp" />
 
@@ -203,7 +203,7 @@
                         android:layout_marginTop="14dp"
                         android:fontFamily="@font/bebas_neue"
                         android:letterSpacing="0.04"
-                        android:text="Kategori - Rating"
+                        android:text="@string/detail_meta_placeholder"
                         android:textColor="@color/gold_primary"
                         android:textSize="20sp" />
 
@@ -213,7 +213,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:fontFamily="@font/plus_jakarta_sans"
-                        android:text="Harga tiket dan jam buka"
+                        android:text="@string/detail_ticket_placeholder"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="12sp" />
 
@@ -275,7 +275,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/fraunces_semibold"
-                        android:text="Foto Lokasi"
+                        android:text="@string/detail_gallery_title"
                         android:textColor="@color/white"
                         android:textSize="17sp" />
 
@@ -297,7 +297,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/fraunces_semibold"
-                        android:text="Tempat Sekitar"
+                        android:text="@string/label_nearby"
                         android:textColor="@color/white"
                         android:textSize="17sp" />
 
@@ -313,7 +313,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/fraunces_semibold"
-                        android:text="Tentang Destinasi"
+                        android:text="@string/detail_about_title"
                         android:textColor="@color/white"
                         android:textSize="17sp" />
 
@@ -324,7 +324,7 @@
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/plus_jakarta_sans"
                         android:lineSpacingExtra="6dp"
-                        android:text="Deskripsi destinasi wisata..."
+                        android:text="@string/detail_description_placeholder"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="15sp" />
 
@@ -340,7 +340,7 @@
                         android:paddingTop="14dp"
                         android:paddingEnd="16dp"
                         android:paddingBottom="14dp"
-                        android:text="Promo wisata"
+                        android:text="@string/detail_promo_placeholder"
                         android:textColor="@color/cream_primary"
                         android:textSize="14sp" />
 
@@ -351,7 +351,7 @@
                         android:layout_marginTop="14dp"
                         android:fontFamily="@font/plus_jakarta_sans"
                         android:lineSpacingExtra="5dp"
-                        android:text="Info transportasi"
+                        android:text="@string/detail_transport_placeholder"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="13sp" />
 
@@ -362,7 +362,7 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/plus_jakarta_sans"
                         android:lineSpacingExtra="5dp"
-                        android:text="Kontak darurat"
+                        android:text="@string/detail_emergency_placeholder"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="13sp" />
 
@@ -377,7 +377,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/fraunces_semibold"
-                        android:text="Fun Facts"
+                        android:text="@string/label_fun_facts"
                         android:textColor="@color/white"
                         android:textSize="17sp" />
 
@@ -395,7 +395,7 @@
                         android:layout_marginTop="22dp"
                         android:fontFamily="@font/plus_jakarta_sans"
                         android:lineSpacingExtra="4dp"
-                        android:text="Review pengunjung"
+                        android:text="@string/detail_reviews_placeholder"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="13sp" />
                 </LinearLayout>
