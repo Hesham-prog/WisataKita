@@ -2,8 +2,10 @@ package com.wisatakita.app.data.db
 
 import android.content.Context
 import androidx.room.Database
+import androidx.room.migration.Migration
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(
     entities = [
@@ -35,10 +37,58 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "wisatakita.db"
                 )
-                    .fallbackToDestructiveMigration()
+                    .addMigrations(MIGRATION_1_2)
                     .allowMainThreadQueries()
                     .build()
                     .also { INSTANCE = it }
+            }
+        }
+
+        private val MIGRATION_1_2 = object : Migration(1, 2) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS destination_cache (
+                        destinationId TEXT NOT NULL PRIMARY KEY,
+                        name TEXT NOT NULL,
+                        payloadJson TEXT NOT NULL,
+                        cachedAt INTEGER NOT NULL,
+                        sourceLabel TEXT NOT NULL
+                    )
+                    """.trimIndent()
+                )
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS favorite_destinations (
+                        destinationId TEXT NOT NULL PRIMARY KEY,
+                        createdAt INTEGER NOT NULL
+                    )
+                    """.trimIndent()
+                )
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS destination_history (
+                        destinationId TEXT NOT NULL PRIMARY KEY,
+                        name TEXT NOT NULL,
+                        location TEXT NOT NULL,
+                        imageUrl TEXT NOT NULL,
+                        viewedAt INTEGER NOT NULL,
+                        viewCount INTEGER NOT NULL
+                    )
+                    """.trimIndent()
+                )
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS destination_reviews (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        destinationId TEXT NOT NULL,
+                        rating INTEGER NOT NULL,
+                        comment TEXT NOT NULL,
+                        createdAt INTEGER NOT NULL,
+                        updatedAt INTEGER NOT NULL
+                    )
+                    """.trimIndent()
+                )
             }
         }
     }
