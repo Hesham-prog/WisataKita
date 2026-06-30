@@ -59,6 +59,7 @@ class TeamFragment : Fragment() {
         )
 
         binding.recyclerTeam.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerTeam.itemAnimator = TeamSpringItemAnimator()
         binding.recyclerTeam.adapter = TeamAdapter(team)
     }
 

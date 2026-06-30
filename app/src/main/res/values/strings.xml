@@ -163,6 +163,8 @@
     <string name="content_desc_back">Kembali</string>
     <string name="content_desc_music">Toggle musik</string>
     <string name="content_desc_favorite">Simpan ke favorit</string>
+    <string name="content_desc_team_photo">Foto anggota tim</string>
+    <string name="content_desc_team_role">Ikon peran anggota tim</string>
 
     <!-- Google Auth -->
     <string name="google_client_id">YOUR_GOOGLE_WEB_CLIENT_ID_HERE</string>
