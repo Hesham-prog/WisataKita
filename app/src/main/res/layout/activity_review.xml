@@ -160,7 +160,7 @@
                 android:layout_height="2dp"
                 android:alpha="0.55"
                 android:background="@color/gold_primary"
-                android:pivotX="0dp"
+                android:pivotX="0"
                 android:scaleX="0.72" />
 
             <LinearLayout

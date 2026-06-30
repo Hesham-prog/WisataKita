@@ -17,10 +17,14 @@
     </item>
 
     <!-- Subtle white sheen (top highlight) -->
-    <item android:bottom="90%">
+    <item>
         <shape android:shape="rectangle">
-            <solid android:color="#1AFFFFFF" /><!-- white 10% top sliver -->
-            <corners android:topLeftRadius="20dp" android:topRightRadius="20dp" />
+            <gradient
+                android:angle="270"
+                android:startColor="#1AFFFFFF"
+                android:centerColor="#05292825"
+                android:endColor="#00292825" />
+            <corners android:radius="20dp" />
         </shape>
     </item>
 
