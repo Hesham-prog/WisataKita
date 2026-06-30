@@ -18,7 +18,8 @@ import com.wisatakita.app.databinding.ItemDestinationListBinding
  */
 class MultiModeDestinationAdapter(
     private var viewMode: PenjelajahFragment.ViewMode,
-    private val onItemClick: (Destination) -> Unit
+    private val onItemClick: (Destination) -> Unit,
+    private val onCardLongPress: (Destination) -> Unit = {}
 ) : ListAdapter<Destination, RecyclerView.ViewHolder>(DIFF) {
 
     companion object {
@@ -101,6 +102,11 @@ class MultiModeDestinationAdapter(
             binding.root.setOnClickListener { v ->
                 HapticUtil.click(v)
                 onItemClick(dest)
+            }
+            binding.root.setOnLongClickListener { v ->
+                HapticUtil.longPress(v)
+                onCardLongPress(dest)
+                true
             }
         }
     }

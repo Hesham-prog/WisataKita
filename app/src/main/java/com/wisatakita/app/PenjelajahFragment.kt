@@ -53,13 +53,25 @@ class PenjelajahFragment : Fragment() {
     }
 
     private fun setupAdapter() {
-        destinationAdapter = MultiModeDestinationAdapter(currentViewMode) { destination ->
-            val intent = Intent(requireContext(), DetailActivity::class.java).apply {
-                putExtra("DESTINATION_ID", destination.id)
+        destinationAdapter = MultiModeDestinationAdapter(
+            currentViewMode,
+            onItemClick = { destination ->
+                val intent = Intent(requireContext(), DetailActivity::class.java).apply {
+                    putExtra("DESTINATION_ID", destination.id)
+                }
+                startActivity(intent)
+                activity?.overridePendingTransition(R.anim.slide_in_up, R.anim.fade_out_scale)
+            },
+            onCardLongPress = { destination ->
+                if (currentViewMode == ViewMode.CARD) {
+                    val intent = Intent(requireContext(), ReviewActivity::class.java).apply {
+                        putExtra("DESTINATION_ID", destination.id)
+                    }
+                    startActivity(intent)
+                    activity?.overridePendingTransition(R.anim.slide_in_up, R.anim.fade_out_scale)
+                }
             }
-            startActivity(intent)
-            activity?.overridePendingTransition(R.anim.slide_in_up, R.anim.fade_out_scale)
-        }
+        )
         applyLayoutManager()
         binding.rvDestinations.adapter = destinationAdapter
     }

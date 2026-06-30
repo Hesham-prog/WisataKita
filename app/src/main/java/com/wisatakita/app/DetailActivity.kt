@@ -155,6 +155,14 @@ class DetailActivity : AppCompatActivity() {
             LinkUtil.openTicketUrl(this, destination.ticketUrl)
         }
 
+        binding.btnWriteReview.setOnClickListener {
+            HapticUtil.click(it)
+            startActivity(Intent(this, ReviewActivity::class.java).apply {
+                putExtra("DESTINATION_ID", destination.id)
+            })
+            overridePendingTransition(R.anim.slide_in_up, R.anim.fade_out_scale)
+        }
+
         binding.btnShareDestination.setOnClickListener {
             HapticUtil.click(it)
             LinkUtil.shareDestination(

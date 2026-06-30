@@ -91,6 +91,11 @@
             android:theme="@style/Theme.WisataKita.Immersive"
             android:exported="false"/>
 
+        <activity
+            android:name=".ReviewActivity"
+            android:theme="@style/Theme.WisataKita.Immersive"
+            android:exported="false"/>
+
         <!-- ─── GALLERY ──────────────────────────────────────────── -->
         <activity
             android:name=".GalleryActivity"
