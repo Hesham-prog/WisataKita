@@ -1,10 +1,12 @@
 package com.wisatakita.app.data
 
 import android.content.Context
+import com.wisatakita.app.data.db.AlbumEntity
 import com.wisatakita.app.data.db.AppDatabase
 import com.wisatakita.app.data.db.DestinationHistoryEntity
 import com.wisatakita.app.data.db.DestinationReviewEntity
 import com.wisatakita.app.data.db.FavoriteDestinationEntity
+import com.wisatakita.app.data.db.JourneyStampEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -27,10 +29,13 @@ data class RecentDestinationView(
 )
 
 class TravelLocalRepository(context: Context) {
+    private val appContext = context.applicationContext
     private val db = AppDatabase.getInstance(context)
+    private val albums = db.albumDao()
     private val favorites = db.favoriteDestinationDao()
     private val history = db.destinationHistoryDao()
     private val reviews = db.destinationReviewDao()
+    private val stamps = db.journeyStampDao()
 
     suspend fun setFavorite(destinationId: String, favorite: Boolean) = withContext(Dispatchers.IO) {
         if (favorite) {
@@ -70,10 +75,51 @@ class TravelLocalRepository(context: Context) {
                 viewCount = (existing?.viewCount ?: 0) + 1
             )
         )
+        stamps.insert(
+            JourneyStampEntity(
+                destinationId = destination.id,
+                categoryType = destination.category,
+                stampColor = stampColorFor(destination.category),
+                unlockedAt = System.currentTimeMillis()
+            )
+        )
     }
 
     suspend fun getRecentViews(limit: Int = 20): List<RecentDestinationView> = withContext(Dispatchers.IO) {
         history.getRecent(limit).map { it.toRecentView() }
+    }
+
+    suspend fun getFavoriteDestinations(): List<Destination> = withContext(Dispatchers.IO) {
+        val ids = favorites.getFavoriteIds()
+        val byId = DestinationRepository(appContext).getAllDestinations().associateBy { it.id }
+        ids.mapNotNull { byId[it] }
+    }
+
+    suspend fun getJourneyStamps(): List<JourneyStampEntity> = withContext(Dispatchers.IO) {
+        stamps.getAll()
+    }
+
+    suspend fun getAlbums(): List<Album> = withContext(Dispatchers.IO) {
+        albums.getAllAlbums().map { album: AlbumEntity ->
+            val photos = albums.getPhotos(album.id).map { it.uri }.toMutableList()
+            Album(album.id, album.name, album.createdAt, photos)
+        }
+    }
+
+    suspend fun getReviewCount(): Int = withContext(Dispatchers.IO) {
+        reviews.getRecent(Int.MAX_VALUE).size
+    }
+
+    suspend fun getVisitedCount(): Int = withContext(Dispatchers.IO) {
+        history.getRecent(Int.MAX_VALUE).size
+    }
+
+    suspend fun getCategoryDistribution(): Map<String, Int> = withContext(Dispatchers.IO) {
+        val destinations = DestinationRepository(appContext).getAllDestinations().associateBy { it.id }
+        history.getRecent(Int.MAX_VALUE)
+            .mapNotNull { destinations[it.destinationId]?.category }
+            .groupingBy { it }
+            .eachCount()
     }
 
     suspend fun clearHistory() = withContext(Dispatchers.IO) {
@@ -121,5 +167,15 @@ class TravelLocalRepository(context: Context) {
 
     private fun DestinationReviewEntity.toUserReview(): UserDestinationReview {
         return UserDestinationReview(id, destinationId, rating, comment, createdAt, updatedAt)
+    }
+
+    private fun stampColorFor(category: String): Int {
+        return when {
+            category.contains("Pantai", ignoreCase = true) -> 0xFF20B8C7.toInt()
+            category.contains("Gunung", ignoreCase = true) -> 0xFF4F8F35.toInt()
+            category.contains("Candi", ignoreCase = true) || category.contains("Sejarah", ignoreCase = true) -> 0xFFE3A33A.toInt()
+            category.contains("Danau", ignoreCase = true) -> 0xFF4DCAD6.toInt()
+            else -> 0xFFF2D8B3.toInt()
+        }
     }
 }

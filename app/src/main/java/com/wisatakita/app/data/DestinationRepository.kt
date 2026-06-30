@@ -20,6 +20,8 @@ class DestinationRepository(private val context: Context) {
 
     suspend fun getDestinations(): List<Destination> = getDestinationsWithSource().destinations
 
+    suspend fun getAllDestinations(): List<Destination> = getDestinations()
+
     suspend fun getDestinationsWithSource(): DestinationLoadResult = withContext(Dispatchers.IO) {
         val local = loadAssetDestinations()
         val online = runCatching {

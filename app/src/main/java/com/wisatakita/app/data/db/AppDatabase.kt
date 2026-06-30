@@ -15,9 +15,10 @@ import androidx.sqlite.db.SupportSQLiteDatabase
         DestinationCacheEntity::class,
         FavoriteDestinationEntity::class,
         DestinationHistoryEntity::class,
-        DestinationReviewEntity::class
+        DestinationReviewEntity::class,
+        JourneyStampEntity::class
     ],
-    version = 2
+    version = 3
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
@@ -26,6 +27,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun favoriteDestinationDao(): FavoriteDestinationDao
     abstract fun destinationHistoryDao(): DestinationHistoryDao
     abstract fun destinationReviewDao(): DestinationReviewDao
+    abstract fun journeyStampDao(): JourneyStampDao
 
     companion object {
         @Volatile private var INSTANCE: AppDatabase? = null
@@ -37,7 +39,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "wisatakita.db"
                 )
-                    .addMigrations(MIGRATION_1_2)
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
                     .allowMainThreadQueries()
                     .build()
                     .also { INSTANCE = it }
@@ -86,6 +88,21 @@ abstract class AppDatabase : RoomDatabase() {
                         comment TEXT NOT NULL,
                         createdAt INTEGER NOT NULL,
                         updatedAt INTEGER NOT NULL
+                    )
+                    """.trimIndent()
+                )
+            }
+        }
+
+        private val MIGRATION_2_3 = object : Migration(2, 3) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS journey_stamps (
+                        destinationId TEXT NOT NULL PRIMARY KEY,
+                        categoryType TEXT NOT NULL,
+                        stampColor INTEGER NOT NULL,
+                        unlockedAt INTEGER NOT NULL
                     )
                     """.trimIndent()
                 )
