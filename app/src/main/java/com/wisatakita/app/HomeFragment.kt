@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
 import androidx.fragment.app.Fragment
+import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wisatakita.app.data.Destination
@@ -112,7 +113,7 @@ class HomeFragment : Fragment() {
                     if (category == "Semua") R.color.charcoal_primary else R.color.cream_primary,
                     null
                 ))
-                fontFamily = "res/font/plus_jakarta_sans_semibold.ttf"
+                typeface = ResourcesCompat.getFont(requireContext(), R.font.plus_jakarta_sans_semibold)
                 background = resources.getDrawable(
                     if (category == "Semua") R.drawable.bg_gold_button else R.drawable.bg_chip_glass_green,
                     null
