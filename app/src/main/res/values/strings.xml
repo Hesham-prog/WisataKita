@@ -78,10 +78,12 @@
     <string name="profile_title">Profilku</string>
     <string name="profile_destinations_visited">%d Destinasi Dikunjungi</string>
     <string name="profile_reviews_written">%d Ulasan Ditulis</string>
+    <string name="profile_stats_combined">%1$d Dikunjungi · %2$d Ulasan</string>
     <string name="profile_notification_settings">Pengaturan Notifikasi</string>
     <string name="profile_language_settings">Bahasa Aplikasi</string>
     <string name="profile_about_team">Tentang Tim</string>
     <string name="profile_logout">Keluar</string>
+    <string name="profile_logout_confirm">Yakin mau keluar dari WisataKita?</string>
     <string name="profile_stats_title">Statistik Perjalanan</string>
     <string name="profile_edit">Edit Profil</string>
 

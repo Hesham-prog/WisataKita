@@ -26,7 +26,7 @@
                 android:id="@+id/btnBack"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@android:drawable/ic_menu_revert"
+                android:src="@drawable/ic_back_premium"
                 android:tint="@color/white"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Kembali"/>
@@ -115,7 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
-        android:src="@android:drawable/ic_input_add"
+        android:src="@drawable/ic_add_premium"
         android:contentDescription="Buat album"
         app:backgroundTint="@color/colorPrimary"
         app:tint="@color/white"

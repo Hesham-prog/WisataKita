@@ -11,6 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.OvershootInterpolator
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
@@ -73,30 +76,44 @@ class MainActivity : AppCompatActivity() {
         val compassX = root.width / 2f
         val compassY = root.height - (32 + 36) * density // bottom margin + half button
 
-        val angles = listOf(-135f, -90f, -45f, 0f) // arc spreading upward
-        val tabColors = listOf(
-            0xFF4F8F35.toInt(), // green - Beranda
-            0xFF20B8C7.toInt(), // turquoise - Jelajahi
-            0xFFE3A33A.toInt(), // gold - Koleksi
-            0xFFF2D8B3.toInt()  // cream - Profil
-        )
-        val radius = 110f * density
+        val angles = listOf(-128f, -96f, -64f, -32f)
+        val radius = 118f * density
 
         for (i in 0..3) {
             val angleRad = Math.toRadians(angles[i].toDouble() - 90)
             val targetX = compassX + (radius * Math.cos(angleRad)).toFloat()
             val targetY = compassY + (radius * Math.sin(angleRad)).toFloat()
 
-            val petalSize = (52 * density).toInt()
-            val petal = View(this).apply {
-                layoutParams = ViewGroup.LayoutParams(petalSize, petalSize)
-                background = createPetalDrawable(tabColors[i])
+            val petalW = (116 * density).toInt()
+            val petalH = (46 * density).toInt()
+            val petal = LinearLayout(this).apply {
+                layoutParams = ViewGroup.LayoutParams(petalW, petalH)
+                background = getDrawable(R.drawable.bg_glassmorphism)
                 elevation = 8 * density
                 alpha = 0f
                 scaleX = 0f
                 scaleY = 0f
-                translationX = compassX - petalSize / 2f
-                translationY = compassY - petalSize / 2f
+                translationX = compassX - petalW / 2f
+                translationY = compassY - petalH / 2f
+                gravity = android.view.Gravity.CENTER
+                orientation = LinearLayout.HORIZONTAL
+                setPadding((12 * density).toInt(), 0, (12 * density).toInt(), 0)
+                addView(ImageView(this@MainActivity).apply {
+                    layoutParams = LinearLayout.LayoutParams((18 * density).toInt(), (18 * density).toInt()).apply {
+                        marginEnd = (8 * density).toInt()
+                    }
+                    setImageResource(TAB_ICONS[i])
+                    setColorFilter(getColor(R.color.gold_primary))
+                    contentDescription = TAB_LABELS[i]
+                })
+                addView(TextView(this@MainActivity).apply {
+                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                    text = TAB_LABELS[i]
+                    textSize = 12f
+                    typeface = androidx.core.content.res.ResourcesCompat.getFont(this@MainActivity, R.font.plus_jakarta_sans_semibold)
+                    setTextColor(getColor(R.color.cream_primary))
+                    includeFontPadding = false
+                })
                 bounceClick()
                 setOnClickListener { v ->
                     HapticUtil.click(v)
@@ -112,8 +129,8 @@ class MainActivity : AppCompatActivity() {
 
             // Animate petal out from compass center
             val delay = i * 60L
-            val animX = ObjectAnimator.ofFloat(petal, View.TRANSLATION_X, compassX - petalSize / 2f, targetX - petalSize / 2f)
-            val animY = ObjectAnimator.ofFloat(petal, View.TRANSLATION_Y, compassY - petalSize / 2f, targetY - petalSize / 2f)
+            val animX = ObjectAnimator.ofFloat(petal, View.TRANSLATION_X, compassX - petalW / 2f, targetX - petalW / 2f)
+            val animY = ObjectAnimator.ofFloat(petal, View.TRANSLATION_Y, compassY - petalH / 2f, targetY - petalH / 2f)
             val animAlpha = ObjectAnimator.ofFloat(petal, View.ALPHA, 0f, 1f)
             val animScaleX = ObjectAnimator.ofFloat(petal, View.SCALE_X, 0f, 1f)
             val animScaleY = ObjectAnimator.ofFloat(petal, View.SCALE_Y, 0f, 1f)

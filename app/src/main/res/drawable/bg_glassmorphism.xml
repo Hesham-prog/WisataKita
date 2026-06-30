@@ -11,7 +11,7 @@
     <!-- Frosted dark base -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#99292825" /><!-- charcoal 60% -->
+            <solid android:color="@color/glass_surface" />
             <corners android:radius="20dp" />
         </shape>
     </item>
@@ -21,10 +21,21 @@
         <shape android:shape="rectangle">
             <gradient
                 android:angle="270"
-                android:startColor="#1AFFFFFF"
-                android:centerColor="#05292825"
+                android:startColor="#33FFFFFF"
+                android:centerColor="#0FE3A33A"
                 android:endColor="#00292825" />
             <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+    <item android:top="1dp" android:left="1dp" android:right="1dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="315"
+                android:startColor="#241FFFFF"
+                android:centerColor="#00000000"
+                android:endColor="#1AE3A33A" />
+            <corners android:radius="19dp" />
         </shape>
     </item>
 
@@ -32,7 +43,7 @@
     <item>
         <shape android:shape="rectangle">
             <solid android:color="@android:color/transparent" />
-            <stroke android:width="1dp" android:color="#33F2D8B3" /><!-- cream 20% -->
+            <stroke android:width="1dp" android:color="@color/glass_border" />
             <corners android:radius="20dp" />
         </shape>
     </item>

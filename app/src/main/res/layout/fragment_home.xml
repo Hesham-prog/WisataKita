@@ -121,7 +121,7 @@
                     android:layout_marginTop="20dp"
                     app:cardCornerRadius="25dp"
                     app:cardElevation="0dp"
-                    app:cardBackgroundColor="#80292825">
+                    app:cardBackgroundColor="@color/glass_surface">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -280,7 +280,7 @@
             android:layout_marginTop="28dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/charcoal_medium">
+            app:cardBackgroundColor="@color/glass_surface_deep">
 
             <LinearLayout
                 android:layout_width="match_parent"

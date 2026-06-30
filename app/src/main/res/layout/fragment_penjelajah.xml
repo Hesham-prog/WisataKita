@@ -55,7 +55,7 @@
                 android:layout_marginBottom="12dp"
                 app:cardCornerRadius="24dp"
                 app:cardElevation="0dp"
-                app:cardBackgroundColor="@color/charcoal_medium">
+                app:cardBackgroundColor="@color/glass_surface">
 
                 <LinearLayout
                     android:layout_width="match_parent"

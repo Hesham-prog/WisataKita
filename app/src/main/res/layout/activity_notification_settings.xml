@@ -14,7 +14,7 @@
         android:background="@drawable/bg_glassmorphism"
         android:contentDescription="@string/content_desc_back"
         android:padding="12dp"
-        android:src="@android:drawable/ic_menu_revert"
+        android:src="@drawable/ic_back_premium"
         android:tint="@color/cream_primary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -175,7 +175,7 @@
                             android:layout_height="38dp"
                             android:background="@color/transparent"
                             android:contentDescription="@string/notif_time_earlier"
-                            android:src="@android:drawable/ic_media_rew"
+                            android:src="@drawable/ic_minus_premium"
                             android:tint="@color/turquoise_primary" />
 
                         <TextView
@@ -195,7 +195,7 @@
                             android:layout_height="38dp"
                             android:background="@color/transparent"
                             android:contentDescription="@string/notif_time_later"
-                            android:src="@android:drawable/ic_media_ff"
+                            android:src="@drawable/ic_plus_premium"
                             android:tint="@color/turquoise_primary" />
                     </LinearLayout>
                 </LinearLayout>

@@ -31,8 +31,6 @@ class NusantaraCompassView @JvmOverloads constructor(
     private val goldLight = Color.parseColor("#F0C47A")
     private val goldDark = Color.parseColor("#C87D20")
     private val charcoal = Color.parseColor("#2E2D2A")
-    private val glowColor = Color.parseColor("#80E3A33A")
-
     private val paintFill = Paint(Paint.ANTI_ALIAS_FLAG)
     private val paintStroke = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
@@ -40,8 +38,6 @@ class NusantaraCompassView @JvmOverloads constructor(
         strokeWidth = 2f
     }
     private val paintGlow = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        maskFilter = BlurMaskFilter(28f, BlurMaskFilter.Blur.OUTER)
-        color = glowColor
         style = Paint.Style.FILL
     }
     private val paintIcon = Paint(Paint.ANTI_ALIAS_FLAG).apply {
@@ -52,6 +48,7 @@ class NusantaraCompassView @JvmOverloads constructor(
     }
 
     private var gradient: RadialGradient? = null
+    private var glowGradient: RadialGradient? = null
     private var cx = 0f
     private var cy = 0f
     private var radius = 0f
@@ -67,13 +64,20 @@ class NusantaraCompassView @JvmOverloads constructor(
             floatArrayOf(0f, 0.6f, 1f),
             Shader.TileMode.CLAMP
         )
+        glowGradient = RadialGradient(
+            cx, cy, radius + 10f,
+            intArrayOf(Color.parseColor("#66E3A33A"), Color.parseColor("#1AE3A33A"), Color.TRANSPARENT),
+            floatArrayOf(0f, 0.68f, 1f),
+            Shader.TileMode.CLAMP
+        )
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
         // Outer glow
-        paintGlow.alpha = if (isMenuOpen) 180 else 100
+        paintGlow.shader = glowGradient
+        paintGlow.alpha = if (isMenuOpen) 255 else 190
         canvas.drawCircle(cx, cy, radius + 8f, paintGlow)
 
         // Main disc

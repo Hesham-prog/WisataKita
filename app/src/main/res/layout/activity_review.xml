@@ -23,7 +23,7 @@
         android:background="@drawable/bg_glassmorphism"
         android:contentDescription="@string/content_desc_back"
         android:padding="12dp"
-        android:src="@android:drawable/ic_menu_revert"
+        android:src="@drawable/ic_back_premium"
         android:tint="@color/cream_primary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -182,7 +182,7 @@
                     android:textColor="@color/cream_primary"
                     app:backgroundTint="@color/glass_surface"
                     app:cornerRadius="23dp"
-                    app:icon="@android:drawable/ic_menu_camera"
+                    app:icon="@drawable/ic_camera_premium"
                     app:iconTint="@color/turquoise_primary"
                     app:strokeColor="@color/glass_border"
                     app:strokeWidth="1dp" />
@@ -200,7 +200,7 @@
                     android:textColor="@color/cream_primary"
                     app:backgroundTint="@color/glass_surface"
                     app:cornerRadius="23dp"
-                    app:icon="@android:drawable/ic_menu_gallery"
+                    app:icon="@drawable/ic_gallery_premium"
                     app:iconTint="@color/gold_primary"
                     app:strokeColor="@color/glass_border"
                     app:strokeWidth="1dp" />
@@ -237,7 +237,7 @@
                         android:background="@drawable/bg_glassmorphism"
                         android:contentDescription="@string/close"
                         android:padding="10dp"
-                        android:src="@android:drawable/ic_menu_close_clear_cancel"
+                        android:src="@drawable/ic_close_premium"
                         android:tint="@color/white" />
                 </FrameLayout>
             </com.google.android.material.card.MaterialCardView>

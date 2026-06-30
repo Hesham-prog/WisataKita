@@ -73,10 +73,12 @@
     <!-- ═══════════════════════════════════════════════════════════════ -->
 
     <!-- Frosted glass surface (semi-transparent charcoal) -->
-    <color name="glass_surface">#99292825</color><!-- 60% alpha charcoal -->
-    <color name="glass_border">#33F2D8B3</color><!-- cream 20% border -->
-    <color name="glass_tint_green">#2A4F8F35</color>
-    <color name="glass_tint_turquoise">#2A20B8C7</color>
+    <color name="glass_surface">#66292825</color><!-- 40% alpha charcoal -->
+    <color name="glass_surface_deep">#CC24221F</color><!-- readable frosted depth -->
+    <color name="glass_border">#66F2D8B3</color><!-- cream 40% border -->
+    <color name="glass_highlight">#2BFFFFFF</color>
+    <color name="glass_tint_green">#524F8F35</color>
+    <color name="glass_tint_turquoise">#5520B8C7</color>
 
     <!-- Overlay / scrim -->
     <color name="scrim_dark">#CC000000</color><!-- 80% black -->

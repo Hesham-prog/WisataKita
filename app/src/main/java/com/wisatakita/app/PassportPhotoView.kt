@@ -2,6 +2,7 @@ package com.wisatakita.app
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.DashPathEffect
 import android.graphics.Paint
 import android.util.AttributeSet
@@ -28,8 +29,8 @@ class PassportPhotoView @JvmOverloads constructor(
 
     init {
         scaleType = ScaleType.CENTER_INSIDE
-        setPadding(18, 18, 18, 18)
-        setBackgroundColor(ContextCompat.getColor(context, R.color.charcoal_dark))
+        setPadding(14, 14, 14, 14)
+        setBackgroundColor(Color.TRANSPARENT)
     }
 
     override fun onDraw(canvas: Canvas) {

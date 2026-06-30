@@ -26,7 +26,7 @@
                 android:id="@+id/btnBack"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@android:drawable/ic_menu_revert"
+                android:src="@drawable/ic_back_premium"
                 android:tint="@color/white"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Kembali"/>
@@ -61,7 +61,7 @@
                 android:id="@+id/btnDeleteAlbum"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@android:drawable/ic_menu_delete"
+                android:src="@drawable/ic_delete_premium"
                 android:tint="#FFB3B3"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Hapus album"/>
@@ -124,7 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
-        android:src="@android:drawable/ic_input_add"
+        android:src="@drawable/ic_add_premium"
         android:contentDescription="Tambah foto"
         app:backgroundTint="@color/colorPrimary"
         app:tint="@color/white"

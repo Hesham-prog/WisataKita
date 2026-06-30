@@ -143,10 +143,11 @@
             <Layout
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginTop="18dp"
                 motion:layout_constraintBottom_toBottomOf="parent"
                 motion:layout_constraintEnd_toEndOf="parent"
                 motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="parent" />
+                motion:layout_constraintTop_toBottomOf="@id/layoutFabActions" />
         </Constraint>
 
         <Constraint android:id="@id/btnPesanTiket">
@@ -268,10 +269,11 @@
             <Layout
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginTop="12dp"
                 motion:layout_constraintBottom_toBottomOf="parent"
                 motion:layout_constraintEnd_toEndOf="parent"
                 motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="parent" />
+                motion:layout_constraintTop_toBottomOf="@id/layoutFabActions" />
         </Constraint>
 
         <Constraint android:id="@id/btnPesanTiket">
@@ -389,10 +391,12 @@
             <Layout
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                motion:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="12dp"
+                motion:layout_constraintBottom_toTopOf="@id/btnPesanTiket"
                 motion:layout_constraintEnd_toEndOf="parent"
                 motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="parent" />
+                motion:layout_constraintTop_toBottomOf="@id/toolbarScrim" />
         </Constraint>
 
         <Constraint android:id="@id/btnPesanTiket">

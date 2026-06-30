@@ -125,7 +125,7 @@
                 app:boxBackgroundMode="outline"
                 app:boxStrokeColor="@color/colorPrimary"
                 app:hintTextColor="@color/colorPrimary"
-                app:startIconDrawable="@android:drawable/ic_menu_search"
+                app:startIconDrawable="@drawable/ic_search"
                 app:startIconTint="@color/colorPrimary">
 
                 <com.google.android.material.textfield.TextInputEditText

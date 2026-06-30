@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
@@ -42,6 +43,7 @@ class DetailActivity : AppCompatActivity() {
         setupMotionScroll()
         setupWeatherObserver()
         setupMusicOrb()
+        keepControlsAboveScroll()
         binding.btnBack.bounceClick()
         binding.btnBack.setOnClickListener {
             HapticUtil.click(it)
@@ -63,6 +65,14 @@ class DetailActivity : AppCompatActivity() {
             loadNearbyPlaces(destination)
             maybeShowLantern()
         }
+    }
+
+    private fun keepControlsAboveScroll() {
+        binding.btnBack.bringToFront()
+        binding.musicOrb.bringToFront()
+        binding.tvDetailTitle.bringToFront()
+        binding.layoutFabActions.bringToFront()
+        binding.btnPesanTiket.bringToFront()
     }
 
     private fun setupMusicOrb() {
@@ -207,6 +217,7 @@ class DetailActivity : AppCompatActivity() {
             val tv = TextView(this).apply {
                 text = "- $fact"
                 textSize = 14f
+                typeface = ResourcesCompat.getFont(this@DetailActivity, R.font.plus_jakarta_sans)
                 setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.colorTextSecondary))
                 val bottomPad = if (index < funFacts.size - 1) (14 * density).toInt() else 0
                 setPadding(0, 0, 0, bottomPad)
@@ -286,6 +297,7 @@ class DetailActivity : AppCompatActivity() {
             val tv = TextView(this).apply {
                 text = "- ${place.name}\n  ${place.address}"
                 textSize = 13f
+                typeface = ResourcesCompat.getFont(this@DetailActivity, R.font.plus_jakarta_sans)
                 setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.colorTextSecondary))
                 setPadding(0, 0, 0, (10 * resources.displayMetrics.density).toInt())
                 setLineSpacing(3 * resources.displayMetrics.density, 1f)

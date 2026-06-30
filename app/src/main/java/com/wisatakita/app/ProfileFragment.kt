@@ -32,20 +32,23 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val userPrefs = UserPrefs(requireContext())
-        val email = userPrefs.getCurrentEmail()
         viewModel = ViewModelProvider(
             this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
         )[ProfileViewModel::class.java]
 
         binding.tvProfileName.text = userPrefs.getCurrentName()
-        binding.tvProfileEmail.text = email
+        binding.tvProfileEmail.text = userPrefs.getCurrentEmail()
 
         setupRadarChart()
         setupLanguageToggle()
         setupRows()
         viewModel.stats.observe(viewLifecycleOwner) { stats ->
-            binding.tvStatsPill.text = "${stats.visitedCount} Destinasi Dikunjungi · ${stats.reviewCount} Ulasan Ditulis"
+            binding.tvStatsPill.text = getString(
+                R.string.profile_stats_combined,
+                stats.visitedCount,
+                stats.reviewCount
+            )
             renderRadar(stats.categoryCounts)
         }
         viewModel.refresh()
@@ -53,16 +56,16 @@ class ProfileFragment : Fragment() {
         binding.btnLogout.bounceClick()
         binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(requireContext())
-                .setTitle("Keluar")
-                .setMessage("Yakin mau keluar dari WisataKita?")
-                .setPositiveButton("Keluar") { _, _ ->
+                .setTitle(getString(R.string.profile_logout))
+                .setMessage(getString(R.string.profile_logout_confirm))
+                .setPositiveButton(getString(R.string.profile_logout)) { _, _ ->
                     userPrefs.logout()
                     val intent = Intent(requireContext(), LoginActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                     requireActivity().finish()
                 }
-                .setNegativeButton("Batal", null)
+                .setNegativeButton(getString(R.string.cancel), null)
                 .show()
         }
     }
@@ -104,13 +107,20 @@ class ProfileFragment : Fragment() {
         binding.rowLanguageSettings.bounceClick()
         binding.rowLanguageSettings.setOnClickListener {
             HapticUtil.click(it)
-            val nextLanguage = if (LanguageUtil.currentLanguage(requireContext()) == LanguageUtil.ENGLISH) {
-                LanguageUtil.INDONESIAN
-            } else {
-                LanguageUtil.ENGLISH
-            }
-            LanguageUtil.setLanguage(requireContext(), nextLanguage)
-            requireActivity().recreate()
+            val languages = arrayOf(getString(R.string.lang_indonesian), getString(R.string.lang_english))
+            val currentIndex = if (LanguageUtil.currentLanguage(requireContext()) == LanguageUtil.ENGLISH) 1 else 0
+            AlertDialog.Builder(requireContext())
+                .setTitle(getString(R.string.lang_title))
+                .setSingleChoiceItems(languages, currentIndex) { dialog, which ->
+                    val selected = if (which == 1) LanguageUtil.ENGLISH else LanguageUtil.INDONESIAN
+                    if (selected != LanguageUtil.currentLanguage(requireContext())) {
+                        LanguageUtil.setLanguage(requireContext(), selected)
+                        requireActivity().recreate()
+                    }
+                    dialog.dismiss()
+                }
+                .setNegativeButton(getString(R.string.cancel), null)
+                .show()
         }
 
         binding.rowTeam.bounceClick()
@@ -134,13 +144,13 @@ class ProfileFragment : Fragment() {
             setBackgroundColor(Color.TRANSPARENT)
             webColor = requireContext().getColor(R.color.glass_border)
             webColorInner = requireContext().getColor(R.color.glass_border)
-            webAlpha = 90
+            webAlpha = 70
             yAxis.axisMinimum = 0f
-            yAxis.textColor = requireContext().getColor(R.color.colorTextHint)
+            yAxis.setDrawLabels(false)
             yAxis.gridColor = requireContext().getColor(R.color.glass_border)
             xAxis.position = XAxis.XAxisPosition.BOTTOM
             xAxis.textColor = requireContext().getColor(R.color.cream_primary)
-            xAxis.textSize = 10f
+            xAxis.textSize = 11f
         }
     }
 
@@ -157,8 +167,8 @@ class ProfileFragment : Fragment() {
             color = requireContext().getColor(R.color.turquoise_primary)
             fillColor = requireContext().getColor(R.color.turquoise_primary)
             setDrawFilled(true)
-            fillAlpha = 70
-            lineWidth = 2f
+            fillAlpha = 86
+            lineWidth = 2.4f
             valueTextColor = requireContext().getColor(R.color.gold_primary)
             valueTextSize = 10f
         }
