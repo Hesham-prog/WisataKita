@@ -3,13 +3,13 @@
     <item
         android:id="@+id/nav_home"
         android:title="Beranda"
-        android:icon="@android:drawable/ic_menu_compass"/>
+        android:icon="@drawable/ic_logo"/>
     <item
         android:id="@+id/nav_team"
         android:title="Tim Kami"
-        android:icon="@android:drawable/ic_menu_myplaces"/>
+        android:icon="@drawable/ic_logo"/>
     <item
         android:id="@+id/nav_profile"
         android:title="Profil"
-        android:icon="@android:drawable/ic_menu_myplaces"/>
+        android:icon="@drawable/ic_logo"/>
 </menu>

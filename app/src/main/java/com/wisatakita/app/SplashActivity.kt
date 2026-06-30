@@ -83,11 +83,19 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun startSplashSequence() {
-        // Try to play the Lottie animation; fall back gracefully if asset missing
+        // Animate the premium brand mark in before the text sequence.
         try {
-            binding.lottieSplashLogo.apply {
-                repeatCount = 0
-                playAnimation()
+            binding.ivSplashLogo.apply {
+                alpha = 0f
+                scaleX = 0.84f
+                scaleY = 0.84f
+                animate()
+                    .alpha(1f)
+                    .scaleX(1f)
+                    .scaleY(1f)
+                    .setDuration(720L)
+                    .setInterpolator(DecelerateInterpolator(1.6f))
+                    .start()
             }
         } catch (e: Exception) {
             // Asset not yet added — still run the rest of the sequence
