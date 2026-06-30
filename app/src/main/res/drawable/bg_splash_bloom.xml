@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Radial glow bloom for splash background -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <gradient
+        android:type="radial"
+        android:gradientRadius="200dp"
+        android:startColor="#4F8F35"
+        android:centerColor="#1A20B8C7"
+        android:endColor="#00000000"/>
+</shape>

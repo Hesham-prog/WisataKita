@@ -1,3 +1,170 @@
 <resources>
     <string name="app_name">WisataKita</string>
+
+    <!-- ═══════════════ APP STRINGS ═══════════════ -->
+    <string name="app_tagline">Jelajahi Nusantara Bersamamu</string>
+    <string name="app_tagline_en">Explore the Archipelago With You</string>
+
+    <!-- Navigation labels -->
+    <string name="nav_beranda">Beranda</string>
+    <string name="nav_jelajahi">Jelajahi</string>
+    <string name="nav_koleksi">Koleksi</string>
+    <string name="nav_profil">Profil</string>
+
+    <!-- Greeting (time-of-day, set in code) -->
+    <string name="greeting_morning">Selamat Pagi</string>
+    <string name="greeting_afternoon">Selamat Siang</string>
+    <string name="greeting_evening">Selamat Sore</string>
+    <string name="greeting_night">Selamat Malam</string>
+    <string name="greeting_subtitle">Mau jelajahi apa hari ini?</string>
+
+    <!-- Search -->
+    <string name="search_hint">Cari destinasi, kategori…</string>
+
+    <!-- Section labels -->
+    <string name="section_featured">Destinasi Unggulan</string>
+    <string name="section_nearby">Terdekat Darimu</string>
+    <string name="section_about_indonesia">Tentang Indonesia</string>
+    <string name="section_categories">Kategori</string>
+    <string name="label_see_all">Lihat Semua</string>
+
+    <!-- About Indonesia (medium-length body text) -->
+    <string name="about_indonesia_body">Indonesia adalah negara kepulauan terbesar di dunia, terdiri dari lebih dari 17.000 pulau yang membentang dari Sabang hingga Merauke — sejauh 5.100 kilometer dari barat ke timur. Dihuni oleh lebih dari 270 juta jiwa dengan lebih dari 1.300 suku bangsa dan 700 bahasa daerah, Indonesia adalah salah satu negara dengan keanekaragaman budaya tertinggi di planet ini.\n\nAlamnya adalah keajaiban yang tak tertandingi: dari keindahan bawah laut Raja Ampat, keanggunan sawah bertingkat Ubud, kemegahan Candi Borobudur, hingga misteri Taman Nasional Komodo. Indonesia adalah rumah bagi 10% spesies tumbuhan dunia, 12% mamalia, dan 17% spesies burung — menjadikannya salah satu negara megabiodiversitas terkaya di bumi.\n\nBersama WisataKita, jelajahi keindahan ini satu destinasi pada satu waktu. 🌿</string>
+    <string name="about_indonesia_read_more">Selengkapnya</string>
+    <string name="about_indonesia_read_less">Tutup</string>
+
+    <!-- Detail Screen -->
+    <string name="label_rating">Rating</string>
+    <string name="label_reviews">ulasan</string>
+    <string name="label_ticket">Tiket</string>
+    <string name="label_opening_hours">Jam Buka</string>
+    <string name="label_description">Deskripsi</string>
+    <string name="label_fun_facts">Fakta Menarik</string>
+    <string name="label_transport">Transportasi</string>
+    <string name="label_promo">Promo</string>
+    <string name="label_nearby">Tempat Sekitar</string>
+    <string name="label_weather">Cuaca Saat Ini</string>
+    <string name="label_emergency">Informasi Penting</string>
+    <string name="btn_open_maps">Buka di Maps</string>
+    <string name="btn_buy_ticket">Pesan Tiket</string>
+    <string name="btn_write_review">Tulis Ulasan</string>
+    <string name="btn_share">Bagikan</string>
+    <string name="btn_save">Simpan</string>
+    <string name="weather_loading">Memuat cuaca…</string>
+    <string name="weather_unavailable">Data cuaca belum tersedia</string>
+
+    <!-- Review Screen -->
+    <string name="review_title">Tulis Ulasanmu</string>
+    <string name="review_rating_label">Nilai destinasi ini</string>
+    <string name="review_body_hint">Ceritakan pengalamanmu di sini…</string>
+    <string name="review_attach_photo">Tambah Foto</string>
+    <string name="review_submit">Kirim Ulasan</string>
+    <string name="review_success">Ulasan berhasil disimpan!</string>
+    <string name="review_empty_rating">Pilih rating dulu, ya!</string>
+    <string name="review_empty_body">Tulis ulasanmu terlebih dahulu.</string>
+
+    <!-- Koleksi Tab -->
+    <string name="koleksi_favorit">Favorit</string>
+    <string name="koleksi_paspor">Paspor</string>
+    <string name="koleksi_album">Album</string>
+    <string name="koleksi_passport_title">Paspor Perjalananmu 🗺️</string>
+    <string name="koleksi_passport_subtitle">Setiap destinasi yang kamu kunjungi menghasilkan stempel baru</string>
+    <string name="koleksi_empty_favorit">Belum ada destinasi favoritmu.\nTambahkan dari halaman detail!</string>
+    <string name="koleksi_empty_history">Kamu belum mengunjungi destinasi apapun.\nMulai jelajahi sekarang!</string>
+    <string name="koleksi_empty_album">Belum ada foto di albummu.\nTambahkan dari galeri!</string>
+    <string name="koleksi_stamps_count">%d Stempel Terkumpul</string>
+
+    <!-- Profile Screen -->
+    <string name="profile_title">Profilku</string>
+    <string name="profile_destinations_visited">%d Destinasi Dikunjungi</string>
+    <string name="profile_reviews_written">%d Ulasan Ditulis</string>
+    <string name="profile_notification_settings">Pengaturan Notifikasi</string>
+    <string name="profile_language_settings">Bahasa Aplikasi</string>
+    <string name="profile_about_team">Tentang Tim</string>
+    <string name="profile_logout">Keluar</string>
+    <string name="profile_stats_title">Statistik Perjalanan</string>
+    <string name="profile_edit">Edit Profil</string>
+
+    <!-- Notification Settings -->
+    <string name="notif_settings_title">Pengaturan Notifikasi</string>
+    <string name="notif_daily_title">Penemuan Harian</string>
+    <string name="notif_daily_desc">Dapatkan rekomendasi destinasi baru setiap hari</string>
+    <string name="notif_favorite_title">Pengingat Favorit</string>
+    <string name="notif_favorite_desc">Kami ingatkan destinasi favoritmu setiap minggu</string>
+    <string name="notif_review_title">Pengingat Ulasan</string>
+    <string name="notif_review_desc">Kami nudge kamu untuk menulis ulasan setelah berkunjung</string>
+    <string name="notif_time_picker_title">Waktu Penemuan Harian</string>
+    <string name="notif_permission_rationale">WisataKita membutuhkan izin notifikasi untuk mengirimkan rekomendasi destinasi harianmu.</string>
+    <string name="notif_exact_alarm_rationale">Izin diperlukan untuk menjadwalkan notifikasi di waktu yang tepat.</string>
+    <string name="notif_permission_grant">Beri Izin</string>
+    <string name="notif_saved">Pengaturan notifikasi disimpan!</string>
+
+    <!-- Language Settings -->
+    <string name="lang_title">Bahasa Aplikasi</string>
+    <string name="lang_indonesian">Bahasa Indonesia</string>
+    <string name="lang_english">English</string>
+    <string name="lang_change_restart">Bahasa berhasil diganti</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_skip">Lewati</string>
+    <string name="onboarding_next">Lanjut</string>
+    <string name="onboarding_start">Mulai Jelajahi!</string>
+    <string name="onboarding_1_title">Ribuan Destinasi Menunggumu</string>
+    <string name="onboarding_1_body">Dari pantai eksotis Raja Ampat hingga megahnya Candi Borobudur — semua ada di satu tempat.</string>
+    <string name="onboarding_2_title">Simpan Perjalananmu</string>
+    <string name="onboarding_2_body">Favoritkan destinasi impianmu, tulis ulasan, dan kumpulkan stempel perjalanan seperti paspor nyata.</string>
+    <string name="onboarding_3_title">Jelajahi dengan Cerdas</string>
+    <string name="onboarding_3_body">Dapatkan rekomendasi harian, cuaca real-time, dan navigasi langsung ke setiap destinasi.</string>
+
+    <!-- Auth -->
+    <string name="login_title">Selamat Datang</string>
+    <string name="login_subtitle">Masuk untuk mulai menjelajahi Nusantara</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Kata Sandi</string>
+    <string name="login_btn">Masuk</string>
+    <string name="login_google">Lanjutkan dengan Google</string>
+    <string name="login_no_account">Belum punya akun? Daftar</string>
+    <string name="register_title">Buat Akun</string>
+    <string name="register_btn">Daftar</string>
+    <string name="register_have_account">Sudah punya akun? Masuk</string>
+
+    <!-- Filters (Jelajahi) -->
+    <string name="filter_all">Semua</string>
+    <string name="filter_budget">Budget</string>
+    <string name="filter_high_rating">Rating 4.7+</string>
+    <string name="filter_family">Keluarga</string>
+    <string name="filter_nature">Alam Terbuka</string>
+    <string name="sort_recommended">Rekomendasi</string>
+    <string name="sort_rating">Rating</string>
+    <string name="sort_popular">Populer</string>
+    <string name="sort_name">Nama A-Z</string>
+    <string name="sort_nearest">Terdekat</string>
+    <string name="btn_nearest">Terdekat</string>
+    <string name="btn_nearest_active">Terdekat aktif</string>
+    <string name="btn_reset_filters">Reset Filter</string>
+    <string name="label_view_list">List</string>
+    <string name="label_view_grid">Grid</string>
+    <string name="label_view_card">Kartu</string>
+    <string name="empty_results">Tidak ada destinasi yang cocok.\nCoba ubah filter atau kata pencarian.</string>
+
+    <!-- General -->
+    <string name="ok">OK</string>
+    <string name="cancel">Batal</string>
+    <string name="save">Simpan</string>
+    <string name="close">Tutup</string>
+    <string name="retry">Coba Lagi</string>
+    <string name="loading">Memuat…</string>
+    <string name="error_no_internet">Tidak ada koneksi internet</string>
+    <string name="error_generic">Terjadi kesalahan. Coba lagi.</string>
+    <string name="music_toggle">Musik</string>
+    <string name="open_in">Buka di…</string>
+    <string name="share_destination">Lihat %s di WisataKita!\n📍 %s\n🗺️ https://maps.google.com/maps?q=%s,%s</string>
+    <string name="content_desc_destination_image">Foto destinasi %s</string>
+    <string name="content_desc_back">Kembali</string>
+    <string name="content_desc_music">Toggle musik</string>
+    <string name="content_desc_favorite">Simpan ke favorit</string>
+
+    <!-- Google Auth -->
+    <string name="google_client_id">YOUR_GOOGLE_WEB_CLIENT_ID_HERE</string>
+
 </resources>

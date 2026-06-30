@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Glassmorphism "frosted glass" surface.
+    Usage: android:background="@drawable/bg_glassmorphism"
+    Works best on dark (charcoal) backgrounds.
+    NOTE: True blur requires RenderScript/RenderEffect in Kotlin; this is the
+    color-layer approximation that looks authentic at the given opacity.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Frosted dark base -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#99292825" /><!-- charcoal 60% -->
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+    <!-- Subtle white sheen (top highlight) -->
+    <item android:bottom="90%">
+        <shape android:shape="rectangle">
+            <solid android:color="#1AFFFFFF" /><!-- white 10% top sliver -->
+            <corners android:topLeftRadius="20dp" android:topRightRadius="20dp" />
+        </shape>
+    </item>
+
+    <!-- Border stroke -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="1dp" android:color="#33F2D8B3" /><!-- cream 20% -->
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+</layer-list>

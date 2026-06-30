@@ -60,6 +60,20 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.google.android.gms:play-services-location:21.3.0")
 
+    // ViewPager2 — for onboarding flow
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
+
+    // Lottie — splash, onboarding, empty states, floating lantern
+    implementation("com.airbnb.android:lottie:6.7.1")
+
+    // MPAndroidChart — radar/spider chart on Profile stats
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+    // Google Credential Manager — Google Sign-In (modern API)
+    implementation("androidx.credentials:credentials:1.3.0")
+    implementation("androidx.credentials:credentials-play-services-auth:1.3.0")
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+
     // Room Database
     val roomVersion = "2.6.1"
     implementation("androidx.room:room-runtime:$roomVersion")
@@ -69,4 +83,5 @@ dependencies {
     // Coroutines & Lifecycle for Async operations
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
 }

@@ -2,13 +2,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wisatakita.app">
 
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  PERMISSIONS                                                     -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- Network -->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- Camera & Storage -->
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- Location -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!-- Push Notifications (Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <!-- Exact Alarms — for Daily Discovery at precise time (Android 12+) -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+
+    <!-- Re-schedule alarms after device reboot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <!-- Haptic feedback -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  APPLICATION                                                     -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
 
     <application
         android:allowBackup="true"
@@ -18,26 +43,91 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WisataKita"
         android:usesCleartextTraffic="false">
+
+        <!-- ─── ENTRY POINT ─────────────────────────────────────── -->
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.WisataKita.NoActionBar">
+            android:theme="@style/Theme.WisataKita.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" android:theme="@style/Theme.WisataKita.NoActionBar"/>
-        <activity android:name=".RegisterActivity" android:theme="@style/Theme.WisataKita.NoActionBar"/>
-        <activity android:name=".ProfileSetupActivity" android:theme="@style/Theme.WisataKita.NoActionBar"/>
-        <activity android:name=".MainActivity" android:theme="@style/Theme.WisataKita.App"/>
-        <activity android:name=".ListActivity" android:theme="@style/Theme.WisataKita.App"/>
-        <activity android:name=".DetailActivity" android:theme="@style/Theme.WisataKita.App"/>
-        <activity android:name=".GalleryActivity" android:theme="@style/Theme.WisataKita.App"/>
-        <activity android:name=".AlbumDetailActivity" android:theme="@style/Theme.WisataKita.App"/>
 
-        <service android:name=".MusicService" android:exported="false"/>
+        <!-- ─── ONBOARDING & AUTH ────────────────────────────────── -->
+        <activity
+            android:name=".OnboardingActivity"
+            android:theme="@style/Theme.WisataKita.NoActionBar"
+            android:exported="false"/>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.WisataKita.NoActionBar"
+            android:exported="false"/>
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/Theme.WisataKita.NoActionBar"
+            android:exported="false"/>
+        <activity
+            android:name=".ProfileSetupActivity"
+            android:theme="@style/Theme.WisataKita.NoActionBar"
+            android:exported="false"/>
 
+        <!-- ─── MAIN APP ─────────────────────────────────────────── -->
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.WisataKita.App"
+            android:exported="false"/>
+
+        <!-- ─── EXPLORE / LIST ───────────────────────────────────── -->
+        <activity
+            android:name=".ListActivity"
+            android:theme="@style/Theme.WisataKita.App"
+            android:exported="false"/>
+
+        <!-- ─── DETAIL — Immersive, shared element transition ────── -->
+        <activity
+            android:name=".DetailActivity"
+            android:theme="@style/Theme.WisataKita.Immersive"
+            android:exported="false"/>
+
+        <!-- ─── GALLERY ──────────────────────────────────────────── -->
+        <activity
+            android:name=".GalleryActivity"
+            android:theme="@style/Theme.WisataKita.App"
+            android:exported="false"/>
+        <activity
+            android:name=".AlbumDetailActivity"
+            android:theme="@style/Theme.WisataKita.Immersive"
+            android:exported="false"/>
+
+        <!-- ─── MUSIC SERVICE ────────────────────────────────────── -->
+        <service
+            android:name=".MusicService"
+            android:exported="false"/>
+
+        <!-- ─── PUSH NOTIFICATION RECEIVER ──────────────────────── -->
+        <receiver
+            android:name=".NotificationReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.wisatakita.app.DAILY_DISCOVERY"/>
+                <action android:name="com.wisatakita.app.FAVORITE_REMINDER"/>
+                <action android:name="com.wisatakita.app.REVIEW_NUDGE"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- ─── BOOT RECEIVER — re-schedule alarms after reboot ─── -->
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- ─── FILE PROVIDER ────────────────────────────────────── -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
@@ -47,5 +137,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_provider_paths"/>
         </provider>
+
     </application>
 </manifest>

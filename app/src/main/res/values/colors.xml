@@ -1,26 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Primary - Deep Forest Teal -->
-    <color name="colorPrimary">#1B4B42</color>
-    <color name="colorPrimaryDark">#0D2E28</color>
-    <color name="colorPrimaryLight">#2D6B5F</color>
 
-    <!-- Accent - Warm Gold -->
-    <color name="colorAccent">#D4A84B</color>
-    <color name="colorAccentLight">#F0C97E</color>
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  WISATAKITA BRAND PALETTE — Nature-Inspired Indonesian Aesthetic -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- Rice Terrace Green — Inspired by Ubud rice fields -->
+    <color name="green_primary">#4F8F35</color>
+    <color name="green_dark">#3A6A26</color>
+    <color name="green_light">#6AAB4A</color>
+    <color name="green_surface">#1A4F8F35</color><!-- 10% alpha -->
+
+    <!-- Komodo Sea Turquoise — Inspired by clear island waters -->
+    <color name="turquoise_primary">#20B8C7</color>
+    <color name="turquoise_dark">#178A97</color>
+    <color name="turquoise_light">#4DCAD6</color>
+    <color name="turquoise_surface">#1A20B8C7</color><!-- 10% alpha -->
+
+    <!-- Volcanic Ash Charcoal — Dark elements / backgrounds -->
+    <color name="charcoal_primary">#2E2D2A</color>
+    <color name="charcoal_dark">#1A1918</color>
+    <color name="charcoal_medium">#3D3C38</color>
+    <color name="charcoal_light">#4E4D49</color>
+    <color name="charcoal_subtle">#5F5E59</color>
+
+    <!-- Temple Sunset Gold — Highlights / ratings / CTAs -->
+    <color name="gold_primary">#E3A33A</color>
+    <color name="gold_dark">#C87D20</color>
+    <color name="gold_light">#F0C47A</color>
+    <color name="gold_surface">#1AE3A33A</color><!-- 10% alpha -->
+
+    <!-- Coral Sand Cream — Light text / onboarding backgrounds -->
+    <color name="cream_primary">#F2D8B3</color>
+    <color name="cream_dark">#D9B98A</color>
+    <color name="cream_light">#FAF0E0</color>
+    <color name="cream_surface">#0FF2D8B3</color><!-- 6% alpha -->
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  SEMANTIC THEME TOKENS                                          -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- Primary brand (green) -->
+    <color name="colorPrimary">#4F8F35</color>
+    <color name="colorPrimaryDark">#3A6A26</color>
+    <color name="colorPrimaryLight">#6AAB4A</color>
+    <color name="colorOnPrimary">#FFFFFFFF</color>
+
+    <!-- Secondary accent (turquoise) -->
+    <color name="colorSecondary">#20B8C7</color>
+    <color name="colorSecondaryDark">#178A97</color>
+    <color name="colorOnSecondary">#FFFFFFFF</color>
+
+    <!-- Accent / highlight (gold) -->
+    <color name="colorAccent">#E3A33A</color>
+    <color name="colorAccentDark">#C87D20</color>
+    <color name="colorAccentLight">#F0C47A</color>
 
     <!-- Backgrounds -->
-    <color name="colorBackground">#F4F6F5</color>
+    <color name="colorBackground">#2E2D2A</color>
+    <color name="colorSurface">#3D3C38</color>
+    <color name="colorSurfaceVariant">#4E4D49</color>
+    <color name="colorBackground_light">#F2D8B3</color>
 
     <!-- Text -->
-    <color name="colorTextPrimary">#1A2E2B</color>
-    <color name="colorTextSecondary">#5C7A75</color>
+    <color name="colorTextPrimary">#FFFFFFFF</color>
+    <color name="colorTextSecondary">#CCF2D8B3</color><!-- cream 80% -->
+    <color name="colorTextHint">#66F2D8B3</color><!-- cream 40% -->
+    <color name="colorTextOnLight">#2E2D2A</color>
 
-    <!-- System -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  GLASSMORPHISM & OVERLAY TOKENS                                 -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- Frosted glass surface (semi-transparent charcoal) -->
+    <color name="glass_surface">#99292825</color><!-- 60% alpha charcoal -->
+    <color name="glass_border">#33F2D8B3</color><!-- cream 20% border -->
+    <color name="glass_tint_green">#2A4F8F35</color>
+    <color name="glass_tint_turquoise">#2A20B8C7</color>
+
+    <!-- Overlay / scrim -->
+    <color name="scrim_dark">#CC000000</color><!-- 80% black -->
+    <color name="scrim_medium">#80000000</color><!-- 50% black -->
+    <color name="scrim_light">#33000000</color><!-- 20% black -->
+
+    <!-- Hero gradient overlays -->
+    <color name="hero_overlay_top">#00000000</color><!-- transparent -->
+    <color name="hero_overlay_bottom">#E6000000</color><!-- 90% black -->
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  SYSTEM / UTILITY                                               -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
 
-    <!-- Legacy aliases (used in themes + existing code) -->
-    <color name="primaryColor">#1B4B42</color>
-    <color name="primaryDarkColor">#0D2E28</color>
+    <!-- Star rating -->
+    <color name="star_filled">#E3A33A</color>
+    <color name="star_empty">#664E4D49</color>
+
+    <!-- Status colors -->
+    <color name="color_success">#4F8F35</color>
+    <color name="color_error">#E05252</color>
+    <color name="color_warning">#E3A33A</color>
+
+    <!-- Legacy aliases — keep for existing code references -->
+    <color name="primaryColor">#4F8F35</color>
+    <color name="primaryDarkColor">#3A6A26</color>
+    <color name="colorTextSecondaryLegacy">#6AAB4A</color>
+
 </resources>
