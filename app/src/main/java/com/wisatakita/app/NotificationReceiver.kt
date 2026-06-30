@@ -73,7 +73,11 @@ class NotificationReceiver : BroadcastReceiver() {
             id = 1003,
             title = "✍️ Bagikan Pengalamanmu",
             body = "Gimana pengalaman wisatamu? Tulis ulasanmu dan bantu penjelajah lain!",
-            targetClass = MainActivity::class.java
+            targetClass = DetailActivity::class.java,
+            extras = mapOf(
+                "DESTINATION_ID" to "borobudur",
+                DetailActivity.EXTRA_LANTERN_MESSAGE to "Bagikan pengalamanmu setelah menjelajah."
+            )
         )
     }
 
@@ -82,10 +86,12 @@ class NotificationReceiver : BroadcastReceiver() {
         id: Int,
         title: String,
         body: String,
-        targetClass: Class<*>
+        targetClass: Class<*>,
+        extras: Map<String, String> = emptyMap()
     ) {
         val openIntent = Intent(context, targetClass).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            extras.forEach { (key, value) -> putExtra(key, value) }
         }
         val pendingIntent = PendingIntent.getActivity(
             context, id, openIntent,

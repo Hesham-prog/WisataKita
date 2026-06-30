@@ -3,33 +3,48 @@ package com.wisatakita.app
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.wisatakita.app.data.Destination
 import com.wisatakita.app.data.DestinationRepository
-import com.wisatakita.app.data.MapDestinationHelper
 import com.wisatakita.app.data.TravelLocalRepository
 import com.wisatakita.app.data.remote.GeoapifyService
 import com.wisatakita.app.data.remote.NearbyPlace
 import com.wisatakita.app.data.remote.PexelsService
-import com.wisatakita.app.data.remote.WeatherService
 import com.wisatakita.app.databinding.ActivityDetailBinding
 import kotlinx.coroutines.launch
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
+    private lateinit var weatherViewModel: WeatherViewModel
+
+    companion object {
+        const val EXTRA_LANTERN_MESSAGE = "LANTERN_MESSAGE"
+        private const val SCROLL_PHASE_TWO = 0.3f
+        private const val SCROLL_END = 0.7f
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        weatherViewModel = ViewModelProvider(this)[WeatherViewModel::class.java]
+
+        setupMotionScroll()
+        setupWeatherObserver()
+        binding.btnBack.setOnClickListener {
+            HapticUtil.click(it)
+            finish()
+        }
 
         val destinationId = intent.getStringExtra("DESTINATION_ID") ?: ""
         lifecycleScope.launch {
@@ -43,6 +58,54 @@ class DetailActivity : AppCompatActivity() {
             loadPexelsPhotos(destination)
             loadWeather(destination)
             loadNearbyPlaces(destination)
+            maybeShowLantern()
+        }
+    }
+
+    private fun setupMotionScroll() {
+        binding.motionDetail.setTransition(R.id.start, R.id.phase2)
+        binding.detailScroll.setOnScrollChangeListener { _, _, scrollY, _, _ ->
+            val range = (resources.displayMetrics.heightPixels * SCROLL_END).coerceAtLeast(1f)
+            val globalProgress = (scrollY / range).coerceIn(0f, 1f)
+            if (globalProgress <= SCROLL_PHASE_TWO) {
+                binding.motionDetail.setTransition(R.id.start, R.id.phase2)
+                binding.motionDetail.progress = globalProgress / SCROLL_PHASE_TWO
+            } else {
+                binding.motionDetail.setTransition(R.id.phase2, R.id.end)
+                binding.motionDetail.progress =
+                    ((globalProgress - SCROLL_PHASE_TWO) / (1f - SCROLL_PHASE_TWO)).coerceIn(0f, 1f)
+            }
+            binding.tvDetailTitle.textSize = 30f - (globalProgress * 12f)
+        }
+    }
+
+    private fun setupWeatherObserver() {
+        weatherViewModel.weatherState.observe(this) { state ->
+            if (state.loading) {
+                binding.tvWeatherIcon.text = "--"
+                binding.tvWeatherInfo.text = getString(R.string.weather_loading)
+                return@observe
+            }
+            val weather = state.info
+            binding.tvWeatherIcon.text = weather?.temperature?.toInt()?.toString() ?: "NA"
+            binding.tvWeatherInfo.text = weather?.let {
+                "${it.temperature.toInt()} C  ${it.description}\nKelembapan ${it.humidity}% - Angin ${"%.1f".format(it.windSpeed)} m/s"
+            } ?: getString(R.string.weather_unavailable)
+
+            when (state.mood) {
+                WeatherViewModel.Mood.SUNNY -> {
+                    binding.heroGoldOverlay.animate().alpha(0.22f).setDuration(280L).start()
+                    binding.rainOverlay.visibility = View.GONE
+                }
+                WeatherViewModel.Mood.RAIN -> {
+                    binding.heroGoldOverlay.animate().alpha(0.02f).setDuration(280L).start()
+                    binding.rainOverlay.visibility = View.VISIBLE
+                }
+                WeatherViewModel.Mood.NEUTRAL -> {
+                    binding.heroGoldOverlay.animate().alpha(0.08f).setDuration(280L).start()
+                    binding.rainOverlay.visibility = View.GONE
+                }
+            }
         }
     }
 
@@ -52,7 +115,7 @@ class DetailActivity : AppCompatActivity() {
             .override(1080, 720)
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .placeholder(R.color.colorPrimaryLight)
+            .placeholder(R.color.charcoal_dark)
             .into(binding.ivDetailImage)
 
         binding.tvDetailTitle.text = destination.name
@@ -83,7 +146,6 @@ class DetailActivity : AppCompatActivity() {
             if (destination.latitude != 0.0 && destination.longitude != 0.0) {
                 LinkUtil.openMapPin(this, destination.latitude, destination.longitude, destination.name)
             } else {
-                // Fallback to geoUri field from data
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(destination.geoUri)))
             }
         }
@@ -91,6 +153,17 @@ class DetailActivity : AppCompatActivity() {
         binding.btnPesanTiket.setOnClickListener {
             HapticUtil.click(it)
             LinkUtil.openTicketUrl(this, destination.ticketUrl)
+        }
+
+        binding.btnShareDestination.setOnClickListener {
+            HapticUtil.click(it)
+            LinkUtil.shareDestination(
+                this,
+                destination.name,
+                destination.location,
+                destination.latitude,
+                destination.longitude
+            )
         }
     }
 
@@ -138,7 +211,7 @@ class DetailActivity : AppCompatActivity() {
                 .override(480, 336)
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.color.colorPrimaryLight)
+                .placeholder(R.color.charcoal_medium)
                 .into(iv)
             binding.llGallery.addView(card)
         }
@@ -153,7 +226,7 @@ class DetailActivity : AppCompatActivity() {
                     .override(1080, 720)
                     .centerCrop()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.colorPrimaryLight)
+                    .placeholder(R.color.charcoal_dark)
                     .into(binding.ivDetailImage)
                 renderGallery(pexelsImages.drop(1) + destination.galleryImages)
             }
@@ -161,12 +234,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun loadWeather(destination: Destination) {
-        lifecycleScope.launch {
-            val weather = WeatherService().getCurrentWeather(destination.latitude, destination.longitude)
-            binding.tvWeatherInfo.text = weather?.let {
-                "Cuaca saat ini\n${it.asDisplayText()}"
-            } ?: "Cuaca saat ini\nData cuaca belum tersedia."
-        }
+        weatherViewModel.load(destination.latitude, destination.longitude)
     }
 
     private fun loadNearbyPlaces(destination: Destination) {
@@ -191,5 +259,10 @@ class DetailActivity : AppCompatActivity() {
             }
             binding.llNearbyPlaces.addView(tv)
         }
+    }
+
+    private fun maybeShowLantern() {
+        val message = intent.getStringExtra(EXTRA_LANTERN_MESSAGE) ?: return
+        SnackbarLantern(this).show(binding.motionDetail, message)
     }
 }

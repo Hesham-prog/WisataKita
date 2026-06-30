@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@id/phase2"
+        motion:constraintSetStart="@id/start"
+        motion:duration="360"
+        motion:motionInterpolator="easeInOut">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/ivDetailImage"
+                motion:percentY="0.25" />
+            <KeyAttribute
+                android:alpha="0.55"
+                motion:framePosition="70"
+                motion:motionTarget="@id/toolbarScrim" />
+        </KeyFrameSet>
+    </Transition>
+
+    <Transition
+        motion:constraintSetEnd="@id/end"
+        motion:constraintSetStart="@id/phase2"
+        motion:duration="360"
+        motion:motionInterpolator="easeInOut">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/ivDetailImage"
+                motion:percentY="0.5" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="55"
+                motion:motionTarget="@id/layoutFabActions" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@id/ivDetailImage">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintDimensionRatio="H,100:55"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                motion:attributeName="scaleType"
+                motion:customStringValue="centerCrop" />
+        </Constraint>
+
+        <Constraint android:id="@id/heroGoldOverlay">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintBottom_toBottomOf="@id/ivDetailImage"
+                motion:layout_constraintEnd_toEndOf="@id/ivDetailImage"
+                motion:layout_constraintStart_toStartOf="@id/ivDetailImage"
+                motion:layout_constraintTop_toTopOf="@id/ivDetailImage" />
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+        <Constraint android:id="@id/rainOverlay">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintBottom_toBottomOf="@id/ivDetailImage"
+                motion:layout_constraintEnd_toEndOf="@id/ivDetailImage"
+                motion:layout_constraintStart_toStartOf="@id/ivDetailImage"
+                motion:layout_constraintTop_toTopOf="@id/ivDetailImage" />
+        </Constraint>
+
+        <Constraint android:id="@id/heroScrim">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintBottom_toBottomOf="@id/ivDetailImage"
+                motion:layout_constraintEnd_toEndOf="@id/ivDetailImage"
+                motion:layout_constraintStart_toStartOf="@id/ivDetailImage"
+                motion:layout_constraintTop_toTopOf="@id/ivDetailImage" />
+        </Constraint>
+
+        <Constraint android:id="@id/toolbarScrim">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+        <Constraint android:id="@id/btnBack">
+            <Layout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@id/tvDetailTitle">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="16dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/ivDetailImage" />
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@id/layoutFabActions">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="24dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/ivDetailImage" />
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@id/detailScroll">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@id/btnPesanTiket">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent" />
+            <PropertySet android:alpha="0" android:visibility="invisible" />
+            <Transform android:translationY="96dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/phase2">
+        <Constraint android:id="@id/ivDetailImage">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintDimensionRatio="H,100:35"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                motion:attributeName="scaleType"
+                motion:customStringValue="centerCrop" />
+        </Constraint>
+
+        <Constraint android:id="@id/heroGoldOverlay">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintBottom_toBottomOf="@id/ivDetailImage"
+                motion:layout_constraintEnd_toEndOf="@id/ivDetailImage"
+                motion:layout_constraintStart_toStartOf="@id/ivDetailImage"
+                motion:layout_constraintTop_toTopOf="@id/ivDetailImage" />
+            <PropertySet android:alpha="0.08" />
+        </Constraint>
+
+        <Constraint android:id="@id/rainOverlay">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintBottom_toBottomOf="@id/ivDetailImage"
+                motion:layout_constraintEnd_toEndOf="@id/ivDetailImage"
+                motion:layout_constraintStart_toStartOf="@id/ivDetailImage"
+                motion:layout_constraintTop_toTopOf="@id/ivDetailImage" />
+        </Constraint>
+
+        <Constraint android:id="@id/heroScrim">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintBottom_toBottomOf="@id/ivDetailImage"
+                motion:layout_constraintEnd_toEndOf="@id/ivDetailImage"
+                motion:layout_constraintStart_toStartOf="@id/ivDetailImage"
+                motion:layout_constraintTop_toTopOf="@id/ivDetailImage" />
+        </Constraint>
+
+        <Constraint android:id="@id/toolbarScrim">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:alpha="0.55" />
+        </Constraint>
+
+        <Constraint android:id="@id/btnBack">
+            <Layout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@id/tvDetailTitle">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="72dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="16dp"
+                motion:layout_constraintEnd_toStartOf="@id/layoutFabActions"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/ivDetailImage" />
+        </Constraint>
+
+        <Constraint android:id="@id/layoutFabActions">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/ivDetailImage" />
+            <PropertySet android:alpha="1" />
+            <Transform android:scaleX="0.88" android:scaleY="0.88" />
+        </Constraint>
+
+        <Constraint android:id="@id/detailScroll">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@id/btnPesanTiket">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent" />
+            <PropertySet android:alpha="0" android:visibility="invisible" />
+            <Transform android:translationY="96dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@id/ivDetailImage">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                motion:attributeName="scaleType"
+                motion:customStringValue="fitStart" />
+        </Constraint>
+
+        <Constraint android:id="@id/heroGoldOverlay">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:alpha="0.14" />
+        </Constraint>
+
+        <Constraint android:id="@id/rainOverlay">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@id/heroScrim">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@id/toolbarScrim">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:alpha="0.92" />
+        </Constraint>
+
+        <Constraint android:id="@id/btnBack">
+            <Layout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@id/tvDetailTitle">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="72dp"
+                android:layout_marginEnd="20dp"
+                motion:layout_constraintBottom_toBottomOf="@id/toolbarScrim"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="@id/toolbarScrim" />
+        </Constraint>
+
+        <Constraint android:id="@id/layoutFabActions">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="4dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:alpha="0" android:visibility="invisible" />
+            <Transform android:scaleX="0.75" android:scaleY="0.75" />
+        </Constraint>
+
+        <Constraint android:id="@id/detailScroll">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@id/btnPesanTiket">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent" />
+            <PropertySet android:alpha="1" android:visibility="visible" />
+            <Transform android:translationY="0dp" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>
