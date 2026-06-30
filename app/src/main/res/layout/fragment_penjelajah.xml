@@ -41,57 +41,10 @@
                     android:textColor="@color/white"
                     android:letterSpacing="-0.01"/>
 
-                <!-- View mode toggle: List / Grid / Card -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:orientation="horizontal"
-                    android:background="@drawable/bg_glassmorphism"
-                    android:gravity="center">
-
-                    <ImageButton
-                        android:id="@+id/btn_view_list"
-                        android:layout_width="36dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_view_list"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:tint="@color/gold_primary"
-                        android:padding="8dp"
-                        android:contentDescription="@string/label_view_list"/>
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="20dp"
-                        android:background="#33F2D8B3"/>
-
-                    <ImageButton
-                        android:id="@+id/btn_view_grid"
-                        android:layout_width="36dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_view_grid"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:tint="@color/cream_primary"
-                        android:alpha="0.5"
-                        android:padding="8dp"
-                        android:contentDescription="@string/label_view_grid"/>
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="20dp"
-                        android:background="#33F2D8B3"/>
-
-                    <ImageButton
-                        android:id="@+id/btn_view_card"
-                        android:layout_width="36dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_view_card"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:tint="@color/cream_primary"
-                        android:alpha="0.5"
-                        android:padding="8dp"
-                        android:contentDescription="@string/label_view_card"/>
-
-                </LinearLayout>
+                <com.wisatakita.app.SegmentedToggleView
+                    android:id="@+id/view_mode_toggle"
+                    android:layout_width="132dp"
+                    android:layout_height="40dp"/>
             </LinearLayout>
 
             <!-- Search bar -->

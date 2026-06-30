@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
-import androidx.fragment.app.Fragment
 import androidx.core.content.res.ResourcesCompat
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wisatakita.app.data.Destination
-import com.wisatakita.app.data.DestinationRepository
 import com.wisatakita.app.data.UserPrefs
 import com.wisatakita.app.databinding.FragmentHomeBinding
-import kotlinx.coroutines.launch
 import java.util.Calendar
 
 class HomeFragment : Fragment() {
@@ -24,6 +22,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var featuredAdapter: FeaturedDestinationAdapter
     private lateinit var nearbyAdapter: HomeNearbyAdapter
+    private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,10 +36,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         setupGreeting()
         setupRecyclerViews()
         setupClickListeners()
-        loadDestinations()
+        observeDestinations()
+        viewModel.loadDestinations()
         setupAboutIndonesia()
         animateEntrance()
     }
@@ -60,7 +61,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerViews() {
-        // Featured — horizontal card list
         featuredAdapter = FeaturedDestinationAdapter { destination ->
             openDetail(destination)
         }
@@ -70,7 +70,6 @@ class HomeFragment : Fragment() {
             setHasFixedSize(true)
         }
 
-        // Nearby — vertical list (reuse existing DestinationAdapter in list mode)
         nearbyAdapter = HomeNearbyAdapter { destination ->
             openDetail(destination)
         }
@@ -82,40 +81,32 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun loadDestinations() {
-        lifecycleScope.launch {
-            val repo = DestinationRepository(requireContext())
-            val all = repo.getAllDestinations()
-
-            // Featured: top-rated
-            val featured = all.sortedByDescending { it.rating }.take(8)
-            featuredAdapter.submitList(featured)
-
-            // Nearby: show a curated subset (first 5 from different islands)
-            val nearby = all.shuffled().take(5)
-            nearbyAdapter.submitList(nearby)
-
-            // Category chips
-            val categories = listOf("Semua") + all.map { it.category }.distinct().sorted()
-            setupCategoryChips(categories, all)
+    private fun observeDestinations() {
+        viewModel.uiState.observe(viewLifecycleOwner) { state ->
+            featuredAdapter.submitList(state.featured)
+            nearbyAdapter.submitList(state.nearby)
+            setupCategoryChips(state.categories, state.selectedCategory)
         }
     }
 
-    private fun setupCategoryChips(categories: List<String>, all: List<Destination>) {
+    private fun setupCategoryChips(categories: List<String>, selectedCategory: String) {
         binding.llCategories.removeAllViews()
         val density = resources.displayMetrics.density
 
         categories.forEach { category ->
+            val selected = category == selectedCategory
             val chip = android.widget.TextView(requireContext()).apply {
                 text = category
                 textSize = 13f
-                setTextColor(resources.getColor(
-                    if (category == "Semua") R.color.charcoal_primary else R.color.cream_primary,
-                    null
-                ))
+                setTextColor(
+                    resources.getColor(
+                        if (selected) R.color.charcoal_primary else R.color.cream_primary,
+                        null
+                    )
+                )
                 typeface = ResourcesCompat.getFont(requireContext(), R.font.plus_jakarta_sans_semibold)
                 background = resources.getDrawable(
-                    if (category == "Semua") R.drawable.bg_gold_button else R.drawable.bg_chip_glass_green,
+                    if (selected) R.drawable.bg_gold_button else R.drawable.bg_chip_glass_green,
                     null
                 )
                 setPadding(
@@ -129,8 +120,7 @@ class HomeFragment : Fragment() {
 
                 setOnClickListener { v ->
                     HapticUtil.click(v)
-                    val filtered = if (category == "Semua") all else all.filter { it.category == category }
-                    nearbyAdapter.submitList(filtered.take(6))
+                    viewModel.selectCategory(category)
                 }
                 bounceClick()
             }
@@ -142,7 +132,7 @@ class HomeFragment : Fragment() {
         binding.cardSearch.bounceClick()
         binding.cardSearch.setOnClickListener {
             HapticUtil.click(it)
-            (activity as? MainActivity)?.showFragment(1) // go to Jelajahi
+            (activity as? MainActivity)?.showFragment(1)
         }
 
         binding.tvSeeAllFeatured.bounceClick()
@@ -194,7 +184,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun animateEntrance() {
-        // Stagger-animate all main sections from invisible
         val views = listOf(
             binding.rvFeatured,
             binding.llCategories,
@@ -224,7 +213,6 @@ class HomeFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        // Sync music button state
         binding.btnMusic.setImageResource(
             if (MusicService.isPlaying) R.drawable.ic_music_on else R.drawable.ic_music_off
         )

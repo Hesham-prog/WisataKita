@@ -1,5 +1,6 @@
 package com.wisatakita.app
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -7,13 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
-import android.content.Intent
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.wisatakita.app.data.Destination
-import com.wisatakita.app.data.DestinationRepository
 import com.wisatakita.app.databinding.FragmentPenjelajahBinding
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -24,13 +23,13 @@ class PenjelajahFragment : Fragment() {
     private var _binding: FragmentPenjelajahBinding? = null
     private val binding get() = _binding!!
 
-    private var allDestinations = listOf<Destination>()
     private var currentViewMode = ViewMode.LIST
-    private var activeCategory = "Semua"
-    private var searchQuery = ""
     private var searchJob: Job? = null
+    private var renderedCategories = emptyList<String>()
+    private var renderedCategory = ""
 
     private lateinit var destinationAdapter: MultiModeDestinationAdapter
+    private lateinit var viewModel: PenjelajahViewModel
 
     enum class ViewMode { LIST, GRID, CARD }
 
@@ -46,10 +45,13 @@ class PenjelajahFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel = ViewModelProvider(this)[PenjelajahViewModel::class.java]
         setupAdapter()
         setupViewModeToggle()
         setupSearch()
-        loadDestinations()
+        setupResetFilters()
+        observeDestinations()
+        viewModel.loadDestinations()
     }
 
     private fun setupAdapter() {
@@ -84,35 +86,13 @@ class PenjelajahFragment : Fragment() {
     }
 
     private fun setupViewModeToggle() {
-        binding.btnViewList.bounceClick()
-        binding.btnViewList.setOnClickListener {
-            HapticUtil.click(it)
-            switchViewMode(ViewMode.LIST)
-            updateToggleHighlight(0)
-        }
-        binding.btnViewGrid.bounceClick()
-        binding.btnViewGrid.setOnClickListener {
-            HapticUtil.click(it)
-            switchViewMode(ViewMode.GRID)
-            updateToggleHighlight(1)
-        }
-        binding.btnViewCard.bounceClick()
-        binding.btnViewCard.setOnClickListener {
-            HapticUtil.click(it)
-            switchViewMode(ViewMode.CARD)
-            updateToggleHighlight(2)
-        }
-    }
-
-    private fun updateToggleHighlight(selectedIndex: Int) {
-        val btns = listOf(binding.btnViewList, binding.btnViewGrid, binding.btnViewCard)
-        btns.forEachIndexed { i, btn ->
-            val isSelected = i == selectedIndex
-            btn.alpha = if (isSelected) 1f else 0.5f
-            btn.setColorFilter(
-                if (isSelected) requireContext().getColor(R.color.gold_primary)
-                else requireContext().getColor(R.color.cream_primary)
-            )
+        binding.viewModeToggle.onModeSelected = { index ->
+            val mode = when (index) {
+                1 -> ViewMode.GRID
+                2 -> ViewMode.CARD
+                else -> ViewMode.LIST
+            }
+            viewModel.setViewMode(mode)
         }
     }
 
@@ -120,7 +100,6 @@ class PenjelajahFragment : Fragment() {
         currentViewMode = mode
         destinationAdapter.setViewMode(mode)
         applyLayoutManager()
-        // Fade-swap animation
         binding.rvDestinations.alpha = 0f
         binding.rvDestinations.animate().alpha(1f).setDuration(200)
             .setInterpolator(DecelerateInterpolator()).start()
@@ -131,29 +110,51 @@ class PenjelajahFragment : Fragment() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             override fun afterTextChanged(s: Editable?) {
-                searchQuery = s?.toString() ?: ""
+                val query = s?.toString() ?: ""
                 searchJob?.cancel()
                 searchJob = lifecycleScope.launch {
-                    delay(300) // debounce
-                    applyFilters()
+                    delay(300)
+                    viewModel.setSearchQuery(query)
                 }
             }
         })
     }
 
-    private fun loadDestinations() {
-        lifecycleScope.launch {
-            allDestinations = DestinationRepository(requireContext()).getAllDestinations()
-
-            // Build category filter chips
-            val categories = listOf("Semua") + allDestinations.map { it.category }.distinct().sorted()
-            buildFilterChips(categories)
-
-            applyFilters()
+    private fun setupResetFilters() {
+        binding.btnResetFilters.bounceClick()
+        binding.btnResetFilters.setOnClickListener {
+            HapticUtil.click(it)
+            binding.etSearch.setText("")
+            viewModel.resetFilters()
         }
     }
 
-    private fun buildFilterChips(categories: List<String>) {
+    private fun observeDestinations() {
+        viewModel.uiState.observe(viewLifecycleOwner) { state ->
+            if (state.viewMode != currentViewMode) {
+                switchViewMode(state.viewMode)
+            }
+            val selectedIndex = when (state.viewMode) {
+                ViewMode.LIST -> 0
+                ViewMode.GRID -> 1
+                ViewMode.CARD -> 2
+            }
+            binding.viewModeToggle.setSelectedIndex(selectedIndex)
+            destinationAdapter.submitList(state.destinations)
+
+            if (state.categories != renderedCategories || state.selectedCategory != renderedCategory) {
+                renderedCategories = state.categories
+                renderedCategory = state.selectedCategory
+                buildFilterChips(state.categories, state.selectedCategory)
+            }
+
+            val isEmpty = state.destinations.isEmpty()
+            binding.rvDestinations.visibility = if (isEmpty) View.GONE else View.VISIBLE
+            binding.layoutEmpty.visibility = if (isEmpty) View.VISIBLE else View.GONE
+        }
+    }
+
+    private fun buildFilterChips(categories: List<String>, activeCategory: String) {
         binding.llFilterChips.removeAllViews()
         val density = resources.displayMetrics.density
 
@@ -180,40 +181,11 @@ class PenjelajahFragment : Fragment() {
 
                 setOnClickListener { v ->
                     HapticUtil.click(v)
-                    activeCategory = category
-                    buildFilterChips(categories)
-                    applyFilters()
+                    viewModel.setCategory(category)
                 }
                 bounceClick()
             }
             binding.llFilterChips.addView(chip)
-        }
-    }
-
-    private fun applyFilters() {
-        val q = searchQuery.trim().lowercase()
-        val filtered = allDestinations.filter { dest ->
-            val matchCategory = activeCategory == "Semua" || dest.category == activeCategory
-            val matchSearch = q.isEmpty() || dest.name.lowercase().contains(q)
-                || dest.location.lowercase().contains(q)
-                || dest.description.lowercase().contains(q)
-            matchCategory && matchSearch
-        }
-
-        destinationAdapter.submitList(filtered)
-
-        val isEmpty = filtered.isEmpty()
-        binding.rvDestinations.visibility = if (isEmpty) View.GONE else View.VISIBLE
-        binding.layoutEmpty.visibility = if (isEmpty) View.VISIBLE else View.GONE
-
-        binding.btnResetFilters.bounceClick()
-        binding.btnResetFilters.setOnClickListener {
-            HapticUtil.click(it)
-            activeCategory = "Semua"
-            searchQuery = ""
-            binding.etSearch.setText("")
-            buildFilterChips(listOf("Semua") + allDestinations.map { it.category }.distinct().sorted())
-            applyFilters()
         }
     }
 

@@ -3,22 +3,26 @@ package com.wisatakita.app
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
+import android.graphics.SurfaceTexture
+import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.Surface
+import android.view.TextureView
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.DecelerateInterpolator
-import android.view.animation.OvershootInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
-import com.airbnb.lottie.LottieDrawable
 import com.wisatakita.app.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
     private val handler = Handler(Looper.getMainLooper())
+    private var splashPlayer: MediaPlayer? = null
 
     companion object {
         private const val PREF_NAME = "wk_app_prefs"
@@ -39,7 +43,43 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupVideoBackground()
         startSplashSequence()
+    }
+
+    private fun setupVideoBackground() {
+        val videoResId = resources.getIdentifier("splash_video", "raw", packageName)
+        if (videoResId == 0) {
+            binding.textureSplashVideo.visibility = View.GONE
+            return
+        }
+
+        binding.textureSplashVideo.surfaceTextureListener = object : TextureView.SurfaceTextureListener {
+            override fun onSurfaceTextureAvailable(surfaceTexture: SurfaceTexture, width: Int, height: Int) {
+                val surface = Surface(surfaceTexture)
+                splashPlayer = MediaPlayer().apply {
+                    setDataSource(
+                        this@SplashActivity,
+                        Uri.parse("android.resource://$packageName/$videoResId")
+                    )
+                    setSurface(surface)
+                    isLooping = true
+                    setVolume(0f, 0f)
+                    setOnPreparedListener { it.start() }
+                    setOnCompletionListener { it.seekTo(0) }
+                    prepareAsync()
+                }
+            }
+
+            override fun onSurfaceTextureSizeChanged(surface: SurfaceTexture, width: Int, height: Int) = Unit
+
+            override fun onSurfaceTextureDestroyed(surface: SurfaceTexture): Boolean {
+                releaseVideoBackground()
+                return true
+            }
+
+            override fun onSurfaceTextureUpdated(surface: SurfaceTexture) = Unit
+        }
     }
 
     private fun startSplashSequence() {
@@ -104,6 +144,17 @@ class SplashActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         handler.removeCallbacksAndMessages(null)
+        releaseVideoBackground()
+    }
+
+    private fun releaseVideoBackground() {
+        splashPlayer?.let { player ->
+            runCatching {
+                if (player.isPlaying) player.stop()
+                player.release()
+            }
+        }
+        splashPlayer = null
     }
 
     @Deprecated("Deprecated in Java")

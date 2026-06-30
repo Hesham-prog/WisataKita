@@ -41,6 +41,7 @@ class DetailActivity : AppCompatActivity() {
 
         setupMotionScroll()
         setupWeatherObserver()
+        setupMusicOrb()
         binding.btnBack.bounceClick()
         binding.btnBack.setOnClickListener {
             HapticUtil.click(it)
@@ -56,10 +57,29 @@ class DetailActivity : AppCompatActivity() {
                 }
             bindDestination(destination)
             TravelLocalRepository(this@DetailActivity).recordDestinationView(destination)
+            NotificationScheduler.scheduleReviewNudge(this@DetailActivity, destination.id)
             loadPexelsPhotos(destination)
             loadWeather(destination)
             loadNearbyPlaces(destination)
             maybeShowLantern()
+        }
+    }
+
+    private fun setupMusicOrb() {
+        binding.musicOrb.setPlaying(MusicService.isPlaying)
+        binding.musicOrb.bounceClick()
+        binding.musicOrb.setOnClickListener {
+            HapticUtil.click(it)
+            val intent = Intent(this, MusicService::class.java)
+            if (MusicService.isPlaying) {
+                intent.action = MusicService.ACTION_PAUSE
+                MusicService.isPlaying = false
+            } else {
+                intent.action = MusicService.ACTION_RESUME
+                MusicService.isPlaying = true
+            }
+            startService(intent)
+            binding.musicOrb.setPlaying(MusicService.isPlaying)
         }
     }
 

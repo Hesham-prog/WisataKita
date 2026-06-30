@@ -15,7 +15,7 @@ import java.util.Calendar
  * Notification types:
  * 1. Daily Discovery — fires daily at a user-chosen time
  * 2. Favorite Reminder — fires every Sunday at 10:00
- * 3. Review Nudge — fires 3 hours after an implicit "visited" flag is set
+ * 3. Review Nudge — fires 24 hours after an implicit "visited" flag is set
  */
 object NotificationScheduler {
 
@@ -125,7 +125,11 @@ object NotificationScheduler {
     /**
      * Schedule a one-shot review nudge [delayMillis] from now.
      */
-    fun scheduleReviewNudge(context: Context, delayMillis: Long = 3 * 60 * 60 * 1000L) {
+    fun scheduleReviewNudge(
+        context: Context,
+        destinationId: String,
+        delayMillis: Long = 24 * 60 * 60 * 1000L
+    ) {
         val prefs = context.getSharedPreferences("wk_notif_prefs", Context.MODE_PRIVATE)
         if (!prefs.getBoolean("review_enabled", true)) return
 
@@ -133,6 +137,7 @@ object NotificationScheduler {
 
         val intent = Intent(context, NotificationReceiver::class.java).apply {
             action = NotificationReceiver.ACTION_REVIEW_NUDGE
+            putExtra("DESTINATION_ID", destinationId)
         }
         val pending = PendingIntent.getBroadcast(
             context, RC_REVIEW, intent,

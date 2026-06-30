@@ -166,7 +166,7 @@
     <string name="error_generic">Terjadi kesalahan. Coba lagi.</string>
     <string name="music_toggle">Musik</string>
     <string name="open_in">Buka di…</string>
-    <string name="share_destination">Lihat %s di WisataKita!\n📍 %s\n🗺️ https://maps.google.com/maps?q=%s,%s</string>
+    <string name="share_destination">Lihat %1$s di WisataKita!\n📍 %2$s\n🗺️ https://maps.google.com/maps?q=%3$s,%4$s</string>
     <string name="content_desc_destination_image">Foto destinasi %s</string>
     <string name="content_desc_back">Kembali</string>
     <string name="content_desc_music">Toggle musik</string>

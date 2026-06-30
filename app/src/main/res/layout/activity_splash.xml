@@ -5,6 +5,18 @@
     android:layout_height="match_parent"
     android:background="@color/charcoal_dark">
 
+    <TextureView
+        android:id="@+id/texture_splash_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.42"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/charcoal_dark"
+        android:alpha="0.44"/>
+
     <!-- Background gradient bloom -->
     <View
         android:layout_width="400dp"

@@ -5,12 +5,12 @@ import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.graphics.BitmapFactory
+import android.graphics.Bitmap
 import androidx.core.app.NotificationCompat
+import com.bumptech.glide.Glide
+import com.wisatakita.app.data.DestinationRepository
+import kotlinx.coroutines.runBlocking
 
-/**
- * NotificationReceiver — handles all WisataKita alarm events and shows notifications.
- */
 class NotificationReceiver : BroadcastReceiver() {
 
     companion object {
@@ -25,28 +25,38 @@ class NotificationReceiver : BroadcastReceiver() {
         when (intent.action) {
             ACTION_DAILY_DISCOVERY   -> showDailyDiscovery(context)
             ACTION_FAVORITE_REMINDER -> showFavoriteReminder(context)
-            ACTION_REVIEW_NUDGE      -> showReviewNudge(context)
+            ACTION_REVIEW_NUDGE      -> showReviewNudge(context, intent)
         }
     }
 
     private fun showDailyDiscovery(context: Context) {
-        val destinations = listOf(
-            "Danau Toba" to "Sumatera Utara",
-            "Taman Nasional Komodo" to "NTT",
-            "Raja Ampat" to "Papua Barat",
-            "Bromo" to "Jawa Timur",
-            "Bali" to "Bali"
-        )
-        val pick = destinations.random()
-        showNotification(
-            context,
-            id = 1001,
-            title = "🌄 Destinasi Hari Ini",
-            body = "Sudah pernah ke ${pick.first}, ${pick.second}? Yuk jelajahi sekarang!",
-            targetClass = MainActivity::class.java
-        )
+        val pendingResult = goAsync()
+        Thread {
+            try {
+                val destinations = runCatching {
+                    runBlocking { DestinationRepository(context.applicationContext).getAllDestinations() }
+                }.getOrDefault(emptyList())
+                val pick = destinations.randomOrNull()
+                val title = pick?.name ?: "Destinasi Hari Ini"
+                val location = pick?.location ?: "Indonesia"
+                val image = pick?.imageUrl?.let { loadNotificationBitmap(context, it) }
 
-        // Reschedule for tomorrow (repeating exact alarm)
+                showNotification(
+                    context,
+                    id = 1001,
+                    title = "Destinasi Hari Ini",
+                    body = "Sudah pernah ke $title, $location? Yuk jelajahi sekarang!",
+                    targetClass = MainActivity::class.java,
+                    bigPicture = image
+                )
+                rescheduleDailyIfEnabled(context)
+            } finally {
+                pendingResult.finish()
+            }
+        }.start()
+    }
+
+    private fun rescheduleDailyIfEnabled(context: Context) {
         val prefs = context.getSharedPreferences("wk_notif_prefs", Context.MODE_PRIVATE)
         if (prefs.getBoolean("daily_enabled", false)) {
             NotificationScheduler.scheduleDailyDiscovery(
@@ -57,25 +67,36 @@ class NotificationReceiver : BroadcastReceiver() {
         }
     }
 
+    private fun loadNotificationBitmap(context: Context, imageUrl: String): Bitmap? {
+        return runCatching {
+            Glide.with(context.applicationContext)
+                .asBitmap()
+                .load(imageUrl)
+                .submit(960, 540)
+                .get()
+        }.getOrNull()
+    }
+
     private fun showFavoriteReminder(context: Context) {
         showNotification(
             context,
             id = 1002,
-            title = "🔖 Lihat Koleksimu",
+            title = "Lihat Koleksimu",
             body = "Ada destinasi favorit yang belum kamu kunjungi. Yuk rencanakan liburanmu!",
             targetClass = MainActivity::class.java
         )
     }
 
-    private fun showReviewNudge(context: Context) {
+    private fun showReviewNudge(context: Context, intent: Intent) {
+        val destinationId = intent.getStringExtra("DESTINATION_ID").orEmpty()
         showNotification(
             context,
             id = 1003,
-            title = "✍️ Bagikan Pengalamanmu",
+            title = "Bagikan Pengalamanmu",
             body = "Gimana pengalaman wisatamu? Tulis ulasanmu dan bantu penjelajah lain!",
             targetClass = DetailActivity::class.java,
             extras = mapOf(
-                "DESTINATION_ID" to "borobudur",
+                "DESTINATION_ID" to destinationId,
                 DetailActivity.EXTRA_LANTERN_MESSAGE to "Bagikan pengalamanmu setelah menjelajah."
             )
         )
@@ -87,7 +108,8 @@ class NotificationReceiver : BroadcastReceiver() {
         title: String,
         body: String,
         targetClass: Class<*>,
-        extras: Map<String, String> = emptyMap()
+        extras: Map<String, String> = emptyMap(),
+        bigPicture: Bitmap? = null
     ) {
         val openIntent = Intent(context, targetClass).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -98,15 +120,23 @@ class NotificationReceiver : BroadcastReceiver() {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
+        val style = if (bigPicture != null) {
+            NotificationCompat.BigPictureStyle()
+                .bigPicture(bigPicture)
+                .setSummaryText(body)
+        } else {
+            NotificationCompat.BigTextStyle().bigText(body)
+        }
+
         val notification = NotificationCompat.Builder(context, NotificationScheduler.CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_logo)
             .setContentTitle(title)
             .setContentText(body)
-            .setStyle(NotificationCompat.BigTextStyle().bigText(body))
+            .setStyle(style)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setAutoCancel(true)
             .setContentIntent(pendingIntent)
-            .setColor(0xFF4F8F35.toInt()) // green brand color
+            .setColor(0xFF4F8F35.toInt())
             .build()
 
         val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
