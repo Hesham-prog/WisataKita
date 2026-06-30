@@ -28,12 +28,15 @@ class FavoritFragment : Fragment() {
             requireParentFragment(),
             ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
         )[KoleksiViewModel::class.java]
-        adapter = MultiModeDestinationAdapter(PenjelajahFragment.ViewMode.CARD) { destination ->
-            startActivity(Intent(requireContext(), DetailActivity::class.java).apply {
-                putExtra("DESTINATION_ID", destination.id)
-            })
-            activity?.overridePendingTransition(R.anim.slide_in_up, R.anim.fade_out_scale)
-        }
+        adapter = MultiModeDestinationAdapter(
+            PenjelajahFragment.ViewMode.CARD,
+            onItemClick = { destination ->
+                startActivity(Intent(requireContext(), DetailActivity::class.java).apply {
+                    putExtra("DESTINATION_ID", destination.id)
+                })
+                activity?.overridePendingTransition(R.anim.slide_in_up, R.anim.fade_out_scale)
+            }
+        )
         binding.recyclerFavorites.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerFavorites.adapter = adapter
         viewModel.favorites.observe(viewLifecycleOwner) { items ->
