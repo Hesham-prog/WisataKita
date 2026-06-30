@@ -20,6 +20,7 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.material.chip.Chip
 import com.wisatakita.app.data.Destination
 import com.wisatakita.app.data.DestinationRepository
+import com.wisatakita.app.data.LocationTools
 import com.wisatakita.app.databinding.ActivityListBinding
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
@@ -244,16 +245,7 @@ class ListActivity : AppCompatActivity() {
 
     private fun distanceTo(destination: Destination): Double? {
         val location = userLocation ?: return null
-        if (destination.latitude == 0.0 && destination.longitude == 0.0) return null
-        val results = FloatArray(1)
-        Location.distanceBetween(
-            location.latitude,
-            location.longitude,
-            destination.latitude,
-            destination.longitude,
-            results
-        )
-        return results[0] / 1000.0
+        return LocationTools.distanceKm(location.latitude, location.longitude, destination)
     }
 
     private fun renderFeatured(item: DestinationUiItem?) {

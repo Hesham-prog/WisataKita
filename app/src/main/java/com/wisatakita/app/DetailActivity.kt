@@ -14,6 +14,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.wisatakita.app.data.Destination
 import com.wisatakita.app.data.DestinationRepository
+import com.wisatakita.app.data.MapDestinationHelper
+import com.wisatakita.app.data.TravelLocalRepository
 import com.wisatakita.app.data.remote.GeoapifyService
 import com.wisatakita.app.data.remote.NearbyPlace
 import com.wisatakita.app.data.remote.PexelsService
@@ -37,6 +39,7 @@ class DetailActivity : AppCompatActivity() {
                     return@launch
                 }
             bindDestination(destination)
+            TravelLocalRepository(this@DetailActivity).recordDestinationView(destination)
             loadPexelsPhotos(destination)
             loadWeather(destination)
             loadNearbyPlaces(destination)
@@ -76,7 +79,12 @@ class DetailActivity : AppCompatActivity() {
         renderGallery(destination.galleryImages.ifEmpty { listOf(destination.imageUrl) })
 
         binding.btnGoogleMaps.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(destination.geoUri)))
+            val mapUri = if (destination.latitude != 0.0 && destination.longitude != 0.0) {
+                MapDestinationHelper.directionsUri(destination)
+            } else {
+                Uri.parse(destination.geoUri)
+            }
+            startActivity(Intent(Intent.ACTION_VIEW, mapUri))
         }
 
         binding.btnPesanTiket.setOnClickListener {
