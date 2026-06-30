@@ -16,7 +16,6 @@
         <!-- Surfaces -->
         <item name="colorSurface">@color/charcoal_medium</item>
         <item name="colorOnSurface">@color/cream_primary</item>
-        <item name="colorBackground">@color/charcoal_primary</item>
         <item name="colorOnBackground">@color/white</item>
         <item name="android:colorBackground">@color/charcoal_primary</item>
         <item name="android:windowBackground">@color/charcoal_primary</item>
@@ -123,7 +122,6 @@
         <item name="chipStrokeWidth">1dp</item>
         <item name="android:textColor">@color/cream_primary</item>
         <item name="checkedIconTint">@color/gold_primary</item>
-        <item name="checkedBackgroundColor">@color/glass_tint_green</item>
         <item name="cornerRadius">20dp</item>
     </style>
 
