@@ -79,18 +79,18 @@ class DetailActivity : AppCompatActivity() {
         renderGallery(destination.galleryImages.ifEmpty { listOf(destination.imageUrl) })
 
         binding.btnGoogleMaps.setOnClickListener {
-            val mapUri = if (destination.latitude != 0.0 && destination.longitude != 0.0) {
-                MapDestinationHelper.directionsUri(destination)
+            HapticUtil.click(it)
+            if (destination.latitude != 0.0 && destination.longitude != 0.0) {
+                LinkUtil.openMapPin(this, destination.latitude, destination.longitude, destination.name)
             } else {
-                Uri.parse(destination.geoUri)
+                // Fallback to geoUri field from data
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(destination.geoUri)))
             }
-            startActivity(Intent(Intent.ACTION_VIEW, mapUri))
         }
 
         binding.btnPesanTiket.setOnClickListener {
-            if (destination.ticketUrl.isNotBlank()) {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(destination.ticketUrl)))
-            }
+            HapticUtil.click(it)
+            LinkUtil.openTicketUrl(this, destination.ticketUrl)
         }
     }
 
