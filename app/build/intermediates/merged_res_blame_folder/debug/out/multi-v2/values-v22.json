@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.wisatakita.app-mergeDebugResources-31:/values-v22/values-v22.xml",
+            "outputFile": "com.wisatakita.app-mergeDebugResources-2:/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\adien\\.gradle\\caches\\8.9\\transforms\\d2721146a50d59dae9cffece26e75216\\transformed\\appcompat-1.6.1\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\Pongo\\.gradle\\caches\\8.9\\transforms\\d2721146a50d59dae9cffece26e75216\\transformed\\appcompat-1.6.1\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

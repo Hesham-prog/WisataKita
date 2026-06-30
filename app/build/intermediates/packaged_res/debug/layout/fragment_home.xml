@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/colorPrimary"
+            android:paddingStart="24dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="36dp"
+            android:paddingBottom="24dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_logo"
+                android:layout_marginEnd="12dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvGreeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Halo, Penjelajah!"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mau liburan kemana hari ini?"
+                    android:textSize="12sp"
+                    android:textColor="#A8D5CC"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnMusic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_music_on"
+                android:background="@drawable/bg_logout_btn"
+                android:padding="9dp"
+                android:contentDescription="Musik"/>
+
+        </LinearLayout>
+
+        <!-- Menu cards -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Card Destinasi Wisata -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMenuDestinasi"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/menu_destinasi"
+                        android:scaleType="centerCrop"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gradient_card_overlay"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Destinasi Wisata"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jelajahi tempat wisata terbaik Indonesia"
+                            android:textSize="12sp"
+                            android:textColor="#CCffffff"
+                            android:layout_marginTop="3dp"/>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Galeri Wisata -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMenuFavorit"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/menu_galeri"
+                        android:scaleType="centerCrop"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gradient_card_overlay"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Galeri Wisata"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lihat keindahan nusantara lewat foto"
+                            android:textSize="12sp"
+                            android:textColor="#CCffffff"
+                            android:layout_marginTop="3dp"/>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

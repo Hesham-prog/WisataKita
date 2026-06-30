@@ -2,10 +2,13 @@ package com.wisatakita.app
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.wisatakita.app.data.DestinationData
+import com.wisatakita.app.data.DestinationRepository
 import com.wisatakita.app.databinding.ActivityListBinding
+import kotlinx.coroutines.launch
 
 class ListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListBinding
@@ -15,13 +18,21 @@ class ListActivity : AppCompatActivity() {
         binding = ActivityListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val adapter = DestinationAdapter(DestinationData.list) { destination ->
-            val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("DESTINATION_ID", destination.id)
-            startActivity(intent)
-        }
+        binding.progressBar.visibility = View.VISIBLE
+        binding.recyclerView.visibility = View.GONE
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = adapter
+        lifecycleScope.launch {
+            val destinations = DestinationRepository(this@ListActivity).getDestinations()
+            binding.progressBar.visibility = View.GONE
+            binding.recyclerView.visibility = View.VISIBLE
+
+            val adapter = DestinationAdapter(destinations) { destination ->
+                val intent = Intent(this@ListActivity, DetailActivity::class.java)
+                intent.putExtra("DESTINATION_ID", destination.id)
+                startActivity(intent)
+            }
+            binding.recyclerView.layoutManager = LinearLayoutManager(this@ListActivity)
+            binding.recyclerView.adapter = adapter
+        }
     }
 }

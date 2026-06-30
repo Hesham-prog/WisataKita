@@ -1,44 +1,37 @@
 package com.wisatakita.app.data
 
 import android.content.Context
+import com.wisatakita.app.data.db.AppDatabase
+import com.wisatakita.app.data.db.UserEntity
 
 class UserPrefs(context: Context) {
-    private val prefs = context.getSharedPreferences("wk_users", Context.MODE_PRIVATE)
+    private val db = AppDatabase.getInstance(context)
+    private val userDao = db.userDao()
     private val session = context.getSharedPreferences("wk_session", Context.MODE_PRIVATE)
 
     fun register(name: String, email: String, password: String) {
-        prefs.edit().apply {
-            putBoolean("exists_$email", true)
-            putString("name_$email", name)
-            putString("pass_$email", password)
-            apply()
-        }
+        userDao.insert(UserEntity(email = email, name = name, password = password))
     }
 
     fun saveProfile(email: String, age: String, gender: String, phone: String, hometown: String) {
-        prefs.edit().apply {
-            putString("age_$email", age)
-            putString("gender_$email", gender)
-            putString("phone_$email", phone)
-            putString("hometown_$email", hometown)
-            apply()
-        }
+        val existing = userDao.findByEmail(email) ?: return
+        userDao.update(existing.copy(age = age, gender = gender, phone = phone, hometown = hometown))
     }
 
-    fun isEmailTaken(email: String) = prefs.getBoolean("exists_$email", false)
+    fun isEmailTaken(email: String): Boolean = userDao.countByEmail(email) > 0
 
     fun validateLogin(email: String, password: String): Boolean {
-        if (!isEmailTaken(email)) return false
-        return prefs.getString("pass_$email", "") == password
+        val user = userDao.findByEmail(email) ?: return false
+        return user.password == password
     }
 
-    fun getName(email: String) = prefs.getString("name_$email", "") ?: ""
+    fun getName(email: String): String = userDao.findByEmail(email)?.name ?: ""
 
     fun setCurrentUser(email: String) {
         session.edit().putString("current_email", email).apply()
     }
 
-    fun getCurrentEmail() = session.getString("current_email", "") ?: ""
+    fun getCurrentEmail(): String = session.getString("current_email", "") ?: ""
 
     fun getCurrentName(): String {
         val email = getCurrentEmail()

@@ -35,6 +35,7 @@ drawable team_hesham
 drawable team_nathan
 drawable team_placeholder
 drawable team_sulthon
+id bottom_nav
 id btnBack
 id btnDeleteAlbum
 id btnGoogleMaps
@@ -54,6 +55,7 @@ id etPassword
 id etPhone
 id fabAddAlbum
 id fabAddPhoto
+id fragment_container
 id ivAlbumCover
 id ivDetailImage
 id ivPhoto
@@ -62,6 +64,10 @@ id ivThumbnail
 id layoutEmpty
 id llFunFacts
 id llGallery
+id nav_home
+id nav_profile
+id nav_team
+id progressBar
 id rbFemale
 id rbMale
 id recyclerAlbums
@@ -81,6 +87,8 @@ id tvDetailTitle
 id tvGreeting
 id tvPhotoCount
 id tvPhotoCountHeader
+id tvProfileEmail
+id tvProfileName
 id tvRegister
 id tvTeamName
 id tvTeamNim
@@ -95,10 +103,14 @@ layout activity_main
 layout activity_profile_setup
 layout activity_register
 layout activity_splash
+layout fragment_home
+layout fragment_profile
+layout fragment_team
 layout item_album
 layout item_destination
 layout item_photo
 layout item_team_member
+menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 raw background_music

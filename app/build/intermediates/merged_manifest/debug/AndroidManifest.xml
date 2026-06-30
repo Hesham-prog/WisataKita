@@ -14,6 +14,7 @@
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <permission
         android:name="com.wisatakita.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -95,6 +96,11 @@
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
 
         <receiver
             android:name="androidx.profileinstaller.ProfileInstallReceiver"

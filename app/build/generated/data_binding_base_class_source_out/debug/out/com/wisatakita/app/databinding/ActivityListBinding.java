@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,10 +21,15 @@ public final class ActivityListBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final RecyclerView recyclerView;
 
-  private ActivityListBinding(@NonNull LinearLayout rootView, @NonNull RecyclerView recyclerView) {
+  private ActivityListBinding(@NonNull LinearLayout rootView, @NonNull ProgressBar progressBar,
+      @NonNull RecyclerView recyclerView) {
     this.rootView = rootView;
+    this.progressBar = progressBar;
     this.recyclerView = recyclerView;
   }
 
@@ -54,13 +60,19 @@ public final class ActivityListBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.recyclerView;
       RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
       if (recyclerView == null) {
         break missingId;
       }
 
-      return new ActivityListBinding((LinearLayout) rootView, recyclerView);
+      return new ActivityListBinding((LinearLayout) rootView, progressBar, recyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

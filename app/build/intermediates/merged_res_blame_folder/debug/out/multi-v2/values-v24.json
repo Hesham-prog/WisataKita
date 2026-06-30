@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.wisatakita.app-mergeDebugResources-31:/values-v24/values-v24.xml",
+            "outputFile": "com.wisatakita.app-mergeDebugResources-2:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\adien\\.gradle\\caches\\8.9\\transforms\\02fa62a550810a5928487b8426f726a7\\transformed\\material-1.11.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Pongo\\.gradle\\caches\\8.9\\transforms\\02fa62a550810a5928487b8426f726a7\\transformed\\material-1.11.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\adien\\.gradle\\caches\\8.9\\transforms\\d2721146a50d59dae9cffece26e75216\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Pongo\\.gradle\\caches\\8.9\\transforms\\d2721146a50d59dae9cffece26e75216\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
