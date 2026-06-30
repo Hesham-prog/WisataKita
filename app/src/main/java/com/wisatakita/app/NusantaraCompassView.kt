@@ -159,7 +159,7 @@ class NusantaraCompassView @JvmOverloads constructor(
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val desired = (72 * resources.displayMetrics.density).toInt()
+        val desired = (64 * resources.displayMetrics.density).toInt()
         setMeasuredDimension(desired, desired)
     }
 }

@@ -72,6 +72,7 @@
     <string name="koleksi_empty_favorit">Belum ada destinasi favoritmu.\nTambahkan dari halaman detail!</string>
     <string name="koleksi_empty_history">Kamu belum mengunjungi destinasi apapun.\nMulai jelajahi sekarang!</string>
     <string name="koleksi_empty_album">Belum ada foto di albummu.\nTambahkan dari galeri!</string>
+    <string name="album_add_button">Tambah Album</string>
     <string name="koleksi_stamps_count">%d Stempel Terkumpul</string>
 
     <!-- Profile Screen -->

@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/charcoal_dark">
+    android:background="@drawable/bg_premium_aura">
 
     <TextureView
         android:id="@+id/texture_splash_video"
@@ -22,7 +22,7 @@
         android:layout_height="400dp"
         android:layout_gravity="center"
         android:background="@drawable/bg_splash_bloom"
-        android:alpha="0.35"/>
+        android:alpha="0.48"/>
 
     <ImageView
         android:id="@+id/iv_splash_logo"

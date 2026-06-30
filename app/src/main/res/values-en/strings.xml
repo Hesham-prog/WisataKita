@@ -24,6 +24,7 @@
     <string name="register_title">Create Account</string>
     <string name="register_btn">Register</string>
     <string name="register_have_account">Already have an account? Sign in</string>
+    <string name="album_add_button">Add Album</string>
 
     <string name="profile_title">My Profile</string>
     <string name="profile_notification_settings">Notification Settings</string>

@@ -13,10 +13,10 @@
     <!-- Compass FAB container — bottom-center, floats above content -->
     <FrameLayout
         android:id="@+id/compass_container"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="18dp"
         android:elevation="12dp"/>
 
 </FrameLayout>

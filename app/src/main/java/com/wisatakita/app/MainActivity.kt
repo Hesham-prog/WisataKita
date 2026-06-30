@@ -1,19 +1,15 @@
 package com.wisatakita.app
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.content.Intent
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Bundle
-import android.view.FrameMetrics
+import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.DecelerateInterpolator
-import android.view.animation.OvershootInterpolator
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
@@ -30,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private var currentTabIndex = 0
     private val fragmentMap = mutableMapOf<Int, Fragment>()
 
-    // Petal overlay views (added programmatically)
+    // Compass overlay views (added programmatically)
     private val petalViews = mutableListOf<View>()
     private var isMenuOpen = false
 
@@ -73,104 +69,83 @@ class MainActivity : AppCompatActivity() {
         petalViews.clear()
 
         val density = resources.displayMetrics.density
-        val compassX = root.width / 2f
-        val compassY = root.height - (32 + 36) * density // bottom margin + half button
+        val scrim = View(this).apply {
+            layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            setBackgroundColor(0x66000000)
+            alpha = 0f
+            setOnClickListener {
+                compassView.isMenuOpen = false
+                isMenuOpen = false
+                compassView.invalidate()
+                hidePetalMenu()
+            }
+        }
 
-        val angles = listOf(-128f, -96f, -64f, -32f)
-        val radius = 118f * density
+        val dock = LinearLayout(this).apply {
+            layoutParams = FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                (64 * density).toInt(),
+                Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
+            ).apply {
+                bottomMargin = (94 * density).toInt()
+            }
+            background = getDrawable(R.drawable.bg_glassmorphism)
+            elevation = 12 * density
+            alpha = 0f
+            translationY = 24 * density
+            gravity = Gravity.CENTER
+            orientation = LinearLayout.HORIZONTAL
+            setPadding((8 * density).toInt(), 0, (8 * density).toInt(), 0)
+        }
 
-        for (i in 0..3) {
-            val angleRad = Math.toRadians(angles[i].toDouble() - 90)
-            val targetX = compassX + (radius * Math.cos(angleRad)).toFloat()
-            val targetY = compassY + (radius * Math.sin(angleRad)).toFloat()
-
-            val petalW = (116 * density).toInt()
-            val petalH = (46 * density).toInt()
-            val petal = LinearLayout(this).apply {
-                layoutParams = ViewGroup.LayoutParams(petalW, petalH)
-                background = getDrawable(R.drawable.bg_glassmorphism)
-                elevation = 8 * density
-                alpha = 0f
-                scaleX = 0f
-                scaleY = 0f
-                translationX = compassX - petalW / 2f
-                translationY = compassY - petalH / 2f
-                gravity = android.view.Gravity.CENTER
-                orientation = LinearLayout.HORIZONTAL
-                setPadding((12 * density).toInt(), 0, (12 * density).toInt(), 0)
-                addView(ImageView(this@MainActivity).apply {
-                    layoutParams = LinearLayout.LayoutParams((18 * density).toInt(), (18 * density).toInt()).apply {
-                        marginEnd = (8 * density).toInt()
-                    }
-                    setImageResource(TAB_ICONS[i])
-                    setColorFilter(getColor(R.color.gold_primary))
-                    contentDescription = TAB_LABELS[i]
-                })
-                addView(TextView(this@MainActivity).apply {
-                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-                    text = TAB_LABELS[i]
-                    textSize = 12f
-                    typeface = androidx.core.content.res.ResourcesCompat.getFont(this@MainActivity, R.font.plus_jakarta_sans_semibold)
-                    setTextColor(getColor(R.color.cream_primary))
-                    includeFontPadding = false
-                })
+        TAB_ICONS.forEachIndexed { index, icon ->
+            dock.addView(ImageView(this).apply {
+                layoutParams = LinearLayout.LayoutParams((52 * density).toInt(), (52 * density).toInt()).apply {
+                    marginStart = (3 * density).toInt()
+                    marginEnd = (3 * density).toInt()
+                }
+                background = getDrawable(R.drawable.bg_compass_dock_item)
+                contentDescription = TAB_LABELS[index]
+                setImageResource(icon)
+                setColorFilter(getColor(if (index == currentTabIndex) R.color.gold_primary else R.color.cream_primary))
+                setPadding((15 * density).toInt(), (15 * density).toInt(), (15 * density).toInt(), (15 * density).toInt())
                 bounceClick()
                 setOnClickListener { v ->
                     HapticUtil.click(v)
                     compassView.isMenuOpen = false
+                    isMenuOpen = false
                     hidePetalMenu()
                     compassView.invalidate()
-                    showFragment(i)
+                    showFragment(index)
                 }
-            }
-
-            root.addView(petal)
-            petalViews.add(petal)
-
-            // Animate petal out from compass center
-            val delay = i * 60L
-            val animX = ObjectAnimator.ofFloat(petal, View.TRANSLATION_X, compassX - petalW / 2f, targetX - petalW / 2f)
-            val animY = ObjectAnimator.ofFloat(petal, View.TRANSLATION_Y, compassY - petalH / 2f, targetY - petalH / 2f)
-            val animAlpha = ObjectAnimator.ofFloat(petal, View.ALPHA, 0f, 1f)
-            val animScaleX = ObjectAnimator.ofFloat(petal, View.SCALE_X, 0f, 1f)
-            val animScaleY = ObjectAnimator.ofFloat(petal, View.SCALE_Y, 0f, 1f)
-
-            AnimatorSet().apply {
-                playTogether(animX, animY, animAlpha, animScaleX, animScaleY)
-                duration = 300
-                startDelay = delay
-                interpolator = OvershootInterpolator(1.8f)
-                start()
-            }
+            })
         }
+
+        root.addView(scrim)
+        root.addView(dock)
+        petalViews.add(scrim)
+        petalViews.add(dock)
+
+        scrim.animate().alpha(1f).setDuration(140).start()
+        dock.animate().alpha(1f).translationY(0f).setDuration(220).start()
     }
 
     private fun hidePetalMenu() {
         val root = binding.root as ViewGroup
-        petalViews.forEachIndexed { i, petal ->
-            val compassX = root.width / 2f
-            val compassY = root.height.toFloat()
+        val density = resources.displayMetrics.density
+        petalViews.toList().forEach { petal ->
+            val endTranslation = if (petal is LinearLayout) 20 * density else petal.translationY
             petal.animate()
-                .translationX(compassX - petal.width / 2f)
-                .translationY(compassY)
                 .alpha(0f)
-                .scaleX(0f)
-                .scaleY(0f)
-                .setDuration(200)
-                .setStartDelay((petalViews.size - 1 - i) * 40L)
-                .setInterpolator(DecelerateInterpolator())
+                .translationY(endTranslation)
+                .setDuration(160)
                 .withEndAction { root.removeView(petal) }
                 .start()
         }
         petalViews.clear()
-    }
-
-    private fun createPetalDrawable(color: Int): android.graphics.drawable.GradientDrawable {
-        return android.graphics.drawable.GradientDrawable().apply {
-            shape = android.graphics.drawable.GradientDrawable.OVAL
-            setColor(color)
-            setStroke(2, 0x33FFFFFF)
-        }
     }
 
     private fun setupFragments() {

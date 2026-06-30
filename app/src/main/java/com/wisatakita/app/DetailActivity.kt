@@ -161,10 +161,10 @@ class DetailActivity : AppCompatActivity() {
         } else {
             "Promo belum tersedia untuk destinasi ini."
         }
-        binding.tvTransportInfo.text = "Transportasi: ${destination.transportInfo.ifBlank { "Informasi transportasi belum tersedia." }}"
-        binding.tvEmergencyInfo.text = "Kontak/Info penting: ${destination.emergencyContact.ifBlank { "Ikuti arahan petugas setempat." }}"
+        binding.tvTransportInfo.text = "Transportasi\n${destination.transportInfo.ifBlank { "Informasi transportasi belum tersedia." }}"
+        binding.tvEmergencyInfo.text = "Kontak / Info penting\n${destination.emergencyContact.ifBlank { "Ikuti arahan petugas setempat." }}"
         binding.tvReviews.text = if (destination.reviews.isNotEmpty()) {
-            "Review pengunjung:\n" + destination.reviews.joinToString("\n") { "- $it" }
+            "Review pengunjung\n" + destination.reviews.joinToString("\n") { "• $it" }
         } else {
             "Belum ada review pengunjung."
         }
@@ -215,7 +215,7 @@ class DetailActivity : AppCompatActivity() {
         binding.llFunFacts.removeAllViews()
         funFacts.forEachIndexed { index, fact ->
             val tv = TextView(this).apply {
-                text = "- $fact"
+                text = "• $fact"
                 textSize = 14f
                 typeface = ResourcesCompat.getFont(this@DetailActivity, R.font.plus_jakarta_sans)
                 setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.colorTextSecondary))
@@ -295,12 +295,12 @@ class DetailActivity : AppCompatActivity() {
         )
         displayPlaces.forEach { place ->
             val tv = TextView(this).apply {
-                text = "- ${place.name}\n  ${place.address}"
-                textSize = 13f
+                text = "• ${place.name}\n  ${place.address}"
+                textSize = 13.5f
                 typeface = ResourcesCompat.getFont(this@DetailActivity, R.font.plus_jakarta_sans)
                 setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.colorTextSecondary))
-                setPadding(0, 0, 0, (10 * resources.displayMetrics.density).toInt())
-                setLineSpacing(3 * resources.displayMetrics.density, 1f)
+                setPadding(0, 0, 0, (14 * resources.displayMetrics.density).toInt())
+                setLineSpacing(4 * resources.displayMetrics.density, 1f)
             }
             binding.llNearbyPlaces.addView(tv)
         }

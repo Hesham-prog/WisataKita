@@ -147,6 +147,7 @@
         android:id="@+id/detailScroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/colorBackground"
         android:clipToPadding="false"
         android:fillViewport="true"
         android:overScrollMode="never"
@@ -322,23 +323,26 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/plus_jakarta_sans"
-                        android:lineSpacingExtra="5dp"
+                        android:lineSpacingExtra="6dp"
                         android:text="Deskripsi destinasi wisata..."
                         android:textColor="@color/colorTextSecondary"
-                        android:textSize="14sp" />
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/tvPromoInfo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="18dp"
-                        android:background="@drawable/bg_chip_glass_green"
+                        android:background="@drawable/bg_detail_info_highlight"
                         android:fontFamily="@font/plus_jakarta_sans_semibold"
-                        android:lineSpacingExtra="4dp"
-                        android:padding="14dp"
+                        android:lineSpacingExtra="6dp"
+                        android:paddingStart="16dp"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="14dp"
                         android:text="Promo wisata"
                         android:textColor="@color/cream_primary"
-                        android:textSize="13sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/tvTransportInfo"
@@ -346,7 +350,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
                         android:fontFamily="@font/plus_jakarta_sans"
-                        android:lineSpacingExtra="4dp"
+                        android:lineSpacingExtra="5dp"
                         android:text="Info transportasi"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="13sp" />
@@ -357,7 +361,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/plus_jakarta_sans"
-                        android:lineSpacingExtra="4dp"
+                        android:lineSpacingExtra="5dp"
                         android:text="Kontak darurat"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="13sp" />

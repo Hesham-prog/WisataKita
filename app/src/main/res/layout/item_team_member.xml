@@ -2,8 +2,8 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardTeamMember"
-    android:layout_width="190dp"
-    android:layout_height="285dp"
+    android:layout_width="214dp"
+    android:layout_height="338dp"
     android:layout_marginEnd="14dp"
     android:foreground="?attr/selectableItemBackground"
     app:cardBackgroundColor="@color/charcoal_dark"
@@ -19,10 +19,11 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/content_desc_team_photo"
-            android:scaleType="centerCrop"
+            android:background="@color/charcoal_dark"
+            android:scaleType="centerInside"
             app:layout_constraintBottom_toTopOf="@id/panelTeamInfo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.70"
+            app:layout_constraintHeight_percent="0.62"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +49,7 @@
             android:paddingBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.30"
+            app:layout_constraintHeight_percent="0.38"
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
@@ -103,6 +104,18 @@
                     android:textStyle="bold" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTeamQuote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/plus_jakarta_sans"
+                android:lineSpacingExtra="2dp"
+                android:maxLines="2"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="10sp" />
 
         </LinearLayout>
 

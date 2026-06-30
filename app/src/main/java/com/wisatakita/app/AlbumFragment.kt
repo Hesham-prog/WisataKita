@@ -34,10 +34,16 @@ class AlbumFragment : Fragment() {
         )[KoleksiViewModel::class.java]
         binding.recyclerAlbums.layoutManager = GridLayoutManager(requireContext(), 3)
         binding.recyclerAlbums.adapter = adapter
+        binding.btnOpenGallery.bounceClick()
+        binding.btnOpenGallery.setOnClickListener {
+            HapticUtil.click(it)
+            startActivity(Intent(requireContext(), GalleryActivity::class.java))
+        }
         viewModel.albums.observe(viewLifecycleOwner) { albums ->
             adapter.updateData(albums)
             binding.tvEmptyAlbums.visibility = if (albums.isEmpty()) View.VISIBLE else View.GONE
             binding.recyclerAlbums.visibility = if (albums.isEmpty()) View.GONE else View.VISIBLE
+            binding.btnOpenGallery.visibility = View.VISIBLE
         }
     }
 

@@ -22,6 +22,7 @@ class TeamAdapter(private val members: List<TeamMember>) :
             binding.tvTeamName.text = member.name
             binding.tvTeamNim.text = member.nim
             binding.tvTeamRole.text = member.role
+            binding.tvTeamQuote.text = member.quote
             binding.tvTeamRole.background = rounded(roleColor, 24f)
             binding.ivTeamRoleIcon.background = rounded(roleColor, 18f)
 

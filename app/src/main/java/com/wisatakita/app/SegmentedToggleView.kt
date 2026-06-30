@@ -10,7 +10,6 @@ import android.view.HapticFeedbackConstants
 import android.view.MotionEvent
 import android.view.View
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 
 class SegmentedToggleView @JvmOverloads constructor(
     context: Context,
@@ -19,7 +18,11 @@ class SegmentedToggleView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     var onModeSelected: ((Int) -> Unit)? = null
-    private val labels = listOf("LIST", "GRID", "CARD")
+    private val icons = listOf(
+        R.drawable.ic_view_list,
+        R.drawable.ic_view_grid,
+        R.drawable.ic_view_card
+    ).mapNotNull { ContextCompat.getDrawable(context, it)?.mutate() }
     private var selectedIndex = 0
 
     private val backgroundPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
@@ -32,11 +35,6 @@ class SegmentedToggleView @JvmOverloads constructor(
     }
     private val selectedPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = ContextCompat.getColor(context, R.color.gold_primary)
-    }
-    private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        textAlign = Paint.Align.CENTER
-        textSize = 9f * resources.displayMetrics.scaledDensity
-        typeface = ResourcesCompat.getFont(context, R.font.plus_jakarta_sans_semibold)
     }
     private val dividerPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = ContextCompat.getColor(context, R.color.glass_border)
@@ -51,7 +49,7 @@ class SegmentedToggleView @JvmOverloads constructor(
     }
 
     fun setSelectedIndex(index: Int) {
-        selectedIndex = index.coerceIn(0, labels.lastIndex)
+        selectedIndex = index.coerceIn(0, 2)
         invalidate()
     }
 
@@ -63,27 +61,32 @@ class SegmentedToggleView @JvmOverloads constructor(
         canvas.drawRoundRect(bounds, radius, radius, backgroundPaint)
         drawSelectedIsland(canvas)
 
-        val segmentWidth = width / labels.size.toFloat()
-        for (i in 1 until labels.size) {
+        val segmentWidth = width / 3f
+        for (i in 1 until 3) {
             val x = segmentWidth * i
             canvas.drawLine(x, height * 0.28f, x, height * 0.72f, dividerPaint)
         }
 
-        val baseline = height / 2f - (textPaint.descent() + textPaint.ascent()) / 2f
-        labels.forEachIndexed { index, label ->
-            textPaint.color = ContextCompat.getColor(
-                context,
-                if (index == selectedIndex) R.color.charcoal_dark else R.color.cream_primary
+        icons.forEachIndexed { index, drawable ->
+            val size = (18f * resources.displayMetrics.density).toInt()
+            val centerX = (segmentWidth * index + segmentWidth / 2f).toInt()
+            val centerY = height / 2
+            drawable.setTint(
+                ContextCompat.getColor(
+                    context,
+                    if (index == selectedIndex) R.color.charcoal_dark else R.color.cream_primary
+                )
             )
-            textPaint.alpha = if (index == selectedIndex) 255 else 170
-            canvas.drawText(label, segmentWidth * index + segmentWidth / 2f, baseline, textPaint)
+            drawable.alpha = if (index == selectedIndex) 255 else 185
+            drawable.setBounds(centerX - size / 2, centerY - size / 2, centerX + size / 2, centerY + size / 2)
+            drawable.draw(canvas)
         }
 
         canvas.drawRoundRect(bounds, radius, radius, strokePaint)
     }
 
     private fun drawSelectedIsland(canvas: Canvas) {
-        val segmentWidth = width / labels.size.toFloat()
+        val segmentWidth = width / 3f
         val left = segmentWidth * selectedIndex + 4f
         val right = left + segmentWidth - 8f
         val top = 4f
@@ -103,7 +106,7 @@ class SegmentedToggleView @JvmOverloads constructor(
     override fun onTouchEvent(event: MotionEvent): Boolean {
         if (!isEnabled) return false
         if (event.action == MotionEvent.ACTION_UP) {
-            val index = ((event.x / width) * labels.size).toInt().coerceIn(0, labels.lastIndex)
+            val index = ((event.x / width) * 3).toInt().coerceIn(0, 2)
             if (index != selectedIndex) {
                 selectedIndex = index
                 performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)

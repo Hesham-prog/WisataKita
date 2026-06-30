@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
@@ -21,9 +22,31 @@
         android:layout_gravity="center"
         android:fontFamily="@font/plus_jakarta_sans"
         android:gravity="center"
-        android:padding="28dp"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:layout_marginBottom="72dp"
         android:text="@string/koleksi_empty_album"
         android:textColor="@color/colorTextSecondary"
         android:textSize="14sp"
         android:visibility="gone" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOpenGallery"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="112dp"
+        android:fontFamily="@font/plus_jakarta_sans_semibold"
+        android:minWidth="0dp"
+        android:paddingStart="18dp"
+        android:paddingEnd="20dp"
+        android:text="@string/album_add_button"
+        android:textAllCaps="false"
+        android:textColor="@color/charcoal_dark"
+        android:textSize="14sp"
+        app:backgroundTint="@color/gold_primary"
+        app:cornerRadius="26dp"
+        app:icon="@drawable/ic_add_premium"
+        app:iconTint="@color/charcoal_dark" />
 </FrameLayout>
