@@ -131,27 +131,32 @@ class HomeFragment : Fragment() {
                     val filtered = if (category == "Semua") all else all.filter { it.category == category }
                     nearbyAdapter.submitList(filtered.take(6))
                 }
+                bounceClick()
             }
             binding.llCategories.addView(chip)
         }
     }
 
     private fun setupClickListeners() {
+        binding.cardSearch.bounceClick()
         binding.cardSearch.setOnClickListener {
             HapticUtil.click(it)
             (activity as? MainActivity)?.showFragment(1) // go to Jelajahi
         }
 
+        binding.tvSeeAllFeatured.bounceClick()
         binding.tvSeeAllFeatured.setOnClickListener {
             HapticUtil.click(it)
             (activity as? MainActivity)?.showFragment(1)
         }
 
+        binding.tvSeeAllNearby.bounceClick()
         binding.tvSeeAllNearby.setOnClickListener {
             HapticUtil.click(it)
             (activity as? MainActivity)?.showFragment(1)
         }
 
+        binding.btnMusic.bounceClick()
         binding.btnMusic.setOnClickListener {
             HapticUtil.click(it)
             val intent = Intent(requireContext(), MusicService::class.java)
@@ -171,6 +176,7 @@ class HomeFragment : Fragment() {
     private fun setupAboutIndonesia() {
         var isExpanded = false
 
+        binding.tvAboutReadMore.bounceClick()
         binding.tvAboutReadMore.setOnClickListener {
             HapticUtil.click(it)
             isExpanded = !isExpanded

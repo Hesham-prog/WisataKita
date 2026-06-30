@@ -97,6 +97,7 @@ class MainActivity : AppCompatActivity() {
                 scaleY = 0f
                 translationX = compassX - petalSize / 2f
                 translationY = compassY - petalSize / 2f
+                bounceClick()
                 setOnClickListener { v ->
                     HapticUtil.click(v)
                     compassView.isMenuOpen = false

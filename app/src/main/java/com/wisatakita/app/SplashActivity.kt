@@ -26,6 +26,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        LanguageUtil.applySavedLanguage(this)
         super.onCreate(savedInstanceState)
 
         // Edge-to-edge immersive

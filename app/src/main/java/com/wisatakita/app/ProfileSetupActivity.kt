@@ -19,6 +19,7 @@ class ProfileSetupActivity : AppCompatActivity() {
         userPrefs = UserPrefs(this)
         val email = intent.getStringExtra("EMAIL") ?: ""
 
+        binding.btnSaveProfile.bounceClick()
         binding.btnSaveProfile.setOnClickListener {
             val age = binding.etAge.text.toString().trim()
             val phone = binding.etPhone.text.toString().trim()

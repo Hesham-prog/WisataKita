@@ -36,16 +36,13 @@ class FeaturedDestinationAdapter(
                 .override(320, 440)
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(android.R.color.darker_gray)
+                .placeholder(GlidePlaceholders.batik(binding.root.context))
                 .into(binding.ivFeaturedImage)
 
+            binding.root.bounceClick()
             binding.root.setOnClickListener { v ->
                 HapticUtil.click(v)
-                // Scale press animation
-                v.animate().scaleX(0.95f).scaleY(0.95f).setDuration(100).withEndAction {
-                    v.animate().scaleX(1f).scaleY(1f).setDuration(200).start()
-                    onItemClick(destination)
-                }.start()
+                onItemClick(destination)
             }
         }
     }

@@ -40,15 +40,13 @@ class HomeNearbyAdapter(
                 .override(240, 240)
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(android.R.color.darker_gray)
+                .placeholder(GlidePlaceholders.batik(binding.root.context))
                 .into(binding.ivThumbnail)
 
+            binding.root.bounceClick()
             binding.root.setOnClickListener { v ->
                 HapticUtil.click(v)
-                v.animate().scaleX(0.97f).scaleY(0.97f).setDuration(80).withEndAction {
-                    v.animate().scaleX(1f).scaleY(1f).setDuration(160).start()
-                    onItemClick(destination)
-                }.start()
+                onItemClick(destination)
             }
         }
     }

@@ -116,6 +116,20 @@
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/rowLanguageSettings"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_glassmorphism"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:text="@string/profile_language_settings"
+            android:textColor="@color/cream_primary"
+            android:textSize="14sp" />
+
+        <TextView
             android:id="@+id/rowTeam"
             android:layout_width="match_parent"
             android:layout_height="52dp"

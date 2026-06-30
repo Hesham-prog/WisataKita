@@ -54,13 +54,13 @@ class MultiModeDestinationAdapter(
             binding.tvCategory.text = dest.category
             binding.tvRating.text = "%.1f".format(dest.rating)
             Glide.with(binding.root).load(dest.imageUrl).override(240, 240)
-                .centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(binding.ivThumbnail)
+                .centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(GlidePlaceholders.batik(binding.root.context))
+                .into(binding.ivThumbnail)
+            binding.root.bounceClick()
             binding.root.setOnClickListener { v ->
                 HapticUtil.click(v)
-                v.animate().scaleX(0.97f).scaleY(0.97f).setDuration(80).withEndAction {
-                    v.animate().scaleX(1f).scaleY(1f).setDuration(150).start()
-                    onItemClick(dest)
-                }.start()
+                onItemClick(dest)
             }
         }
     }
@@ -74,13 +74,13 @@ class MultiModeDestinationAdapter(
             binding.tvGridName.text = dest.name
             binding.tvGridRating.text = "%.1f".format(dest.rating)
             Glide.with(binding.root).load(dest.imageUrl).override(320, 320)
-                .centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(binding.ivGridImage)
+                .centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(GlidePlaceholders.batik(binding.root.context))
+                .into(binding.ivGridImage)
+            binding.root.bounceClick()
             binding.root.setOnClickListener { v ->
                 HapticUtil.click(v)
-                v.animate().scaleX(0.95f).scaleY(0.95f).setDuration(80).withEndAction {
-                    v.animate().scaleX(1f).scaleY(1f).setDuration(180).start()
-                    onItemClick(dest)
-                }.start()
+                onItemClick(dest)
             }
         }
     }
@@ -98,7 +98,10 @@ class MultiModeDestinationAdapter(
             binding.tvCardDescription.text = dest.description
             binding.tvCardTicket.text = dest.ticketPrice
             Glide.with(binding.root).load(dest.imageUrl).override(720, 400)
-                .centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(binding.ivCardImage)
+                .centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(GlidePlaceholders.batik(binding.root.context))
+                .into(binding.ivCardImage)
+            binding.root.bounceClick()
             binding.root.setOnClickListener { v ->
                 HapticUtil.click(v)
                 onItemClick(dest)

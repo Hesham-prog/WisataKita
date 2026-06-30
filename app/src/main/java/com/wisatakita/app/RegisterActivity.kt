@@ -17,6 +17,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
         userPrefs = UserPrefs(this)
 
+        binding.btnRegister.bounceClick()
         binding.btnRegister.setOnClickListener {
             val name = binding.etName.text.toString().trim()
             val email = binding.etEmail.text.toString().trim()

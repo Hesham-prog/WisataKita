@@ -41,8 +41,9 @@ class DestinationAdapter(
                 .override(360, 260)
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.color.colorPrimaryLight)
+                .placeholder(GlidePlaceholders.batik(binding.root.context))
                 .into(binding.ivThumbnail)
+            binding.root.bounceClick()
             binding.root.setOnClickListener { onItemClick(destination) }
         }
     }

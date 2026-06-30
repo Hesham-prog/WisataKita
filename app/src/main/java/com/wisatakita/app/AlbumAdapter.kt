@@ -26,12 +26,13 @@ class AlbumAdapter(
                     .override(400, 300)
                     .centerCrop()
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .placeholder(R.color.colorPrimaryLight)
+                    .placeholder(GlidePlaceholders.batik(binding.root.context))
                     .into(binding.ivAlbumCover)
             } else {
                 binding.ivAlbumCover.setImageResource(R.color.colorPrimaryLight)
             }
 
+            binding.root.bounceClick()
             binding.root.setOnClickListener { onClick(album) }
             binding.root.setOnLongClickListener { onLongClick(album); true }
         }

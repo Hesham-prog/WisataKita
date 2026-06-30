@@ -60,17 +60,21 @@ class NotificationSettingsActivity : AppCompatActivity() {
     }
 
     private fun setupInteractions() {
+        binding.btnBack.bounceClick()
         binding.btnBack.setOnClickListener {
             HapticUtil.click(it)
             finish()
         }
 
+        binding.rowDaily.bounceClick()
         binding.rowDaily.setOnClickListener {
             binding.switchDaily.isChecked = !binding.switchDaily.isChecked
         }
+        binding.rowFavorite.bounceClick()
         binding.rowFavorite.setOnClickListener {
             binding.switchFavorite.isChecked = !binding.switchFavorite.isChecked
         }
+        binding.rowReview.bounceClick()
         binding.rowReview.setOnClickListener {
             binding.switchReview.isChecked = !binding.switchReview.isChecked
         }
@@ -109,30 +113,36 @@ class NotificationSettingsActivity : AppCompatActivity() {
             }
         }
 
+        binding.cardTimeSelector.bounceClick()
         binding.cardTimeSelector.setOnClickListener {
             if (binding.switchDaily.isChecked) {
                 HapticUtil.click(it)
                 openTimePicker()
             }
         }
+        binding.tvDailyTime.bounceClick()
         binding.tvDailyTime.setOnClickListener {
             if (binding.switchDaily.isChecked) {
                 HapticUtil.click(it)
                 openTimePicker()
             }
         }
+        binding.btnMinusTime.bounceClick()
         binding.btnMinusTime.setOnClickListener {
             HapticUtil.click(it)
             adjustDailyTime(-15)
         }
+        binding.btnPlusTime.bounceClick()
         binding.btnPlusTime.setOnClickListener {
             HapticUtil.click(it)
             adjustDailyTime(15)
         }
+        binding.btnGrantExactAlarm.bounceClick()
         binding.btnGrantExactAlarm.setOnClickListener {
             HapticUtil.click(it)
             openExactAlarmSettings()
         }
+        binding.btnSaveSettings.bounceClick()
         binding.btnSaveSettings.setOnClickListener {
             HapticUtil.click(it)
             if (binding.switchDaily.isChecked) scheduleDaily()

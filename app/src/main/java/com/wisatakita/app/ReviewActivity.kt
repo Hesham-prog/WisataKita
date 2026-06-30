@@ -51,6 +51,7 @@ class ReviewActivity : AppCompatActivity() {
     }
 
     private fun setupInteractions(destinationId: String) {
+        binding.btnBack.bounceClick()
         binding.btnBack.setOnClickListener {
             HapticUtil.click(it)
             finish()
@@ -66,20 +67,24 @@ class ReviewActivity : AppCompatActivity() {
                 .setDuration(180L)
                 .start()
         }
+        binding.btnCamera.bounceClick()
         binding.btnCamera.setOnClickListener {
             HapticUtil.click(it)
             pendingCameraUri = createPhotoUri()
             pendingCameraUri?.let { uri -> takePicture.launch(uri) }
         }
+        binding.btnGallery.bounceClick()
         binding.btnGallery.setOnClickListener {
             HapticUtil.click(it)
             pickImage.launch("image/*")
         }
+        binding.btnDeletePhoto.bounceClick()
         binding.btnDeletePhoto.setOnClickListener {
             HapticUtil.click(it)
             attachedPhotoUri = null
             binding.cardPhotoPreview.visibility = View.GONE
         }
+        binding.btnSubmitReview.bounceClick()
         binding.btnSubmitReview.setOnClickListener {
             HapticUtil.click(it)
             submitReview(destinationId)
@@ -95,7 +100,7 @@ class ReviewActivity : AppCompatActivity() {
             .override(360, 360)
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .placeholder(R.color.charcoal_medium)
+            .placeholder(GlidePlaceholders.batik(this))
             .into(binding.ivDestination)
     }
 
@@ -111,6 +116,7 @@ class ReviewActivity : AppCompatActivity() {
         Glide.with(this)
             .load(uri)
             .centerCrop()
+            .placeholder(GlidePlaceholders.batik(this))
             .into(binding.ivAttachedPhoto)
     }
 

@@ -107,8 +107,11 @@ class ListActivity : AppCompatActivity() {
         addSortChip("Populer", SortMode.Popular)
         addSortChip("Nama A-Z", SortMode.Name)
 
+        binding.btnNearest.bounceClick()
         binding.btnNearest.setOnClickListener { requestNearestMode() }
+        binding.btnResetFilters.bounceClick()
         binding.btnResetFilters.setOnClickListener { resetFilters() }
+        binding.cardFeatured.bounceClick()
         binding.cardFeatured.setOnClickListener {
             lastRenderedItems.firstOrNull()?.destination?.let { destination ->
                 startActivity(Intent(this, DetailActivity::class.java).apply {
@@ -130,6 +133,7 @@ class ListActivity : AppCompatActivity() {
     private fun addCategoryChip(label: String, checked: Boolean = false) {
         val chip = createChip(label).apply {
             isChecked = checked
+            bounceClick()
             setOnClickListener {
                 selectedCategory = label
                 applyFilters()
@@ -141,6 +145,7 @@ class ListActivity : AppCompatActivity() {
     private fun addQuickChip(label: String, filter: QuickFilter, checked: Boolean = false) {
         val chip = createChip(label).apply {
             isChecked = checked
+            bounceClick()
             setOnClickListener {
                 selectedQuickFilter = filter
                 applyFilters()
@@ -152,6 +157,7 @@ class ListActivity : AppCompatActivity() {
     private fun addSortChip(label: String, mode: SortMode, checked: Boolean = false) {
         val chip = createChip(label).apply {
             isChecked = checked
+            bounceClick()
             setOnClickListener {
                 selectedSort = mode
                 applyFilters()
@@ -258,7 +264,7 @@ class ListActivity : AppCompatActivity() {
             .override(1000, 520)
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .placeholder(R.color.colorPrimaryLight)
+            .placeholder(GlidePlaceholders.batik(this))
             .into(binding.ivFeatured)
 
         binding.tvFeaturedName.text = destination.name

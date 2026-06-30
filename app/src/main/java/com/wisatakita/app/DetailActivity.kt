@@ -41,6 +41,7 @@ class DetailActivity : AppCompatActivity() {
 
         setupMotionScroll()
         setupWeatherObserver()
+        binding.btnBack.bounceClick()
         binding.btnBack.setOnClickListener {
             HapticUtil.click(it)
             finish()
@@ -115,7 +116,7 @@ class DetailActivity : AppCompatActivity() {
             .override(1080, 720)
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .placeholder(R.color.charcoal_dark)
+            .placeholder(GlidePlaceholders.batik(this))
             .into(binding.ivDetailImage)
 
         binding.tvDetailTitle.text = destination.name
@@ -141,6 +142,7 @@ class DetailActivity : AppCompatActivity() {
         renderFunFacts(destination.funFacts)
         renderGallery(destination.galleryImages.ifEmpty { listOf(destination.imageUrl) })
 
+        binding.btnGoogleMaps.bounceClick()
         binding.btnGoogleMaps.setOnClickListener {
             HapticUtil.click(it)
             if (destination.latitude != 0.0 && destination.longitude != 0.0) {
@@ -150,11 +152,13 @@ class DetailActivity : AppCompatActivity() {
             }
         }
 
+        binding.btnPesanTiket.bounceClick()
         binding.btnPesanTiket.setOnClickListener {
             HapticUtil.click(it)
             LinkUtil.openTicketUrl(this, destination.ticketUrl)
         }
 
+        binding.btnWriteReview.bounceClick()
         binding.btnWriteReview.setOnClickListener {
             HapticUtil.click(it)
             startActivity(Intent(this, ReviewActivity::class.java).apply {
@@ -163,6 +167,7 @@ class DetailActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.slide_in_up, R.anim.fade_out_scale)
         }
 
+        binding.btnShareDestination.bounceClick()
         binding.btnShareDestination.setOnClickListener {
             HapticUtil.click(it)
             LinkUtil.shareDestination(
@@ -219,7 +224,7 @@ class DetailActivity : AppCompatActivity() {
                 .override(480, 336)
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.color.charcoal_medium)
+                .placeholder(GlidePlaceholders.batik(this))
                 .into(iv)
             binding.llGallery.addView(card)
         }
@@ -234,7 +239,7 @@ class DetailActivity : AppCompatActivity() {
                     .override(1080, 720)
                     .centerCrop()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.charcoal_dark)
+                    .placeholder(GlidePlaceholders.batik(this@DetailActivity))
                     .into(binding.ivDetailImage)
                 renderGallery(pexelsImages.drop(1) + destination.galleryImages)
             }

@@ -36,8 +36,10 @@ class GalleryActivity : AppCompatActivity() {
         binding.recyclerAlbums.layoutManager = GridLayoutManager(this, 2)
         binding.recyclerAlbums.adapter = adapter
 
+        binding.btnBack.bounceClick()
         binding.btnBack.setOnClickListener { finish() }
 
+        binding.fabAddAlbum.bounceClick()
         binding.fabAddAlbum.setOnClickListener { showCreateAlbumDialog() }
     }
 

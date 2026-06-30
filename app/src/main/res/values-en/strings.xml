@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WisataKita</string>
+    <string name="app_tagline">Explore the Archipelago With You</string>
+
+    <string name="nav_beranda">Home</string>
+    <string name="nav_jelajahi">Explore</string>
+    <string name="nav_koleksi">Collection</string>
+    <string name="nav_profil">Profile</string>
+
+    <string name="login_title">Welcome Back</string>
+    <string name="login_subtitle">Sign in to start exploring Nusantara</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_btn">Sign In</string>
+    <string name="login_google">Continue with Google</string>
+    <string name="login_no_account">No account yet? Register</string>
+    <string name="login_empty_fields">Email and password cannot be empty</string>
+    <string name="login_account_missing">Account not found. Please register first.</string>
+    <string name="login_wrong_password">Incorrect password</string>
+    <string name="login_google_failed">Google sign-in did not complete. Please try again.</string>
+    <string name="login_google_config_missing">Google Client ID is not configured.</string>
+
+    <string name="register_title">Create Account</string>
+    <string name="register_btn">Register</string>
+    <string name="register_have_account">Already have an account? Sign in</string>
+
+    <string name="profile_title">My Profile</string>
+    <string name="profile_notification_settings">Notification Settings</string>
+    <string name="profile_language_settings">App Language</string>
+    <string name="profile_about_team">About the Team</string>
+    <string name="profile_logout">Sign Out</string>
+    <string name="profile_stats_title">Travel Statistics</string>
+    <string name="profile_edit">Edit Profile</string>
+
+    <string name="notif_settings_title">Notification Settings</string>
+    <string name="notif_daily_title">Daily Discovery</string>
+    <string name="notif_daily_desc">Get a new destination recommendation every day</string>
+    <string name="notif_favorite_title">Favorite Reminder</string>
+    <string name="notif_favorite_desc">We remind you about your favorite destinations each week</string>
+    <string name="notif_review_title">Review Reminder</string>
+    <string name="notif_review_desc">Get a nudge to write a review after visiting</string>
+    <string name="notif_time_picker_title">Daily Discovery Time</string>
+    <string name="notif_permission_rationale">WisataKita needs notification permission to send your daily destination recommendations.</string>
+    <string name="notif_exact_alarm_rationale">Permission is required to schedule notifications at the exact selected time.</string>
+    <string name="notif_permission_grant">Grant Permission</string>
+    <string name="notif_saved">Notification settings saved!</string>
+    <string name="notif_time_earlier">Move time 15 minutes earlier</string>
+    <string name="notif_time_later">Move time 15 minutes later</string>
+    <string name="notif_save_settings">Save Settings</string>
+
+    <string name="lang_title">App Language</string>
+    <string name="lang_indonesian">Indonesian</string>
+    <string name="lang_english">English</string>
+    <string name="lang_change_restart">Language changed</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="close">Close</string>
+    <string name="retry">Try Again</string>
+    <string name="loading">Loading...</string>
+    <string name="error_no_internet">No internet connection</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="content_desc_back">Back</string>
+    <string name="content_desc_music">Toggle music</string>
+    <string name="content_desc_favorite">Save to favorites</string>
+    <string name="content_desc_team_photo">Team member photo</string>
+    <string name="content_desc_team_role">Team member role icon</string>
+
+</resources>

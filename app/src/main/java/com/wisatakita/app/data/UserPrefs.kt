@@ -13,6 +13,19 @@ class UserPrefs(context: Context) {
         userDao.insert(UserEntity(email = email, name = name, password = password))
     }
 
+    fun signInWithGoogle(name: String, email: String) {
+        if (!isEmailTaken(email)) {
+            userDao.insert(
+                UserEntity(
+                    email = email,
+                    name = name.ifBlank { "Penjelajah" },
+                    password = "google_sign_in"
+                )
+            )
+        }
+        setCurrentUser(email)
+    }
+
     fun saveProfile(email: String, age: String, gender: String, phone: String, hometown: String) {
         val existing = userDao.findByEmail(email) ?: return
         userDao.update(existing.copy(age = age, gender = gender, phone = phone, hometown = hometown))

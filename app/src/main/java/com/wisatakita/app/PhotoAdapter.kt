@@ -20,9 +20,10 @@ class PhotoAdapter(
                 .override(400, 400)
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .placeholder(R.color.colorPrimaryLight)
+                .placeholder(GlidePlaceholders.batik(binding.root.context))
                 .into(binding.ivPhoto)
 
+            binding.root.bounceClick()
             binding.root.setOnLongClickListener { onLongClick(uri); true }
         }
     }

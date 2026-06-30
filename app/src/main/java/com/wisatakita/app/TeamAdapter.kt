@@ -2,7 +2,6 @@ package com.wisatakita.app
 
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
-import android.view.MotionEvent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
@@ -29,29 +28,10 @@ class TeamAdapter(private val members: List<TeamMember>) :
             Glide.with(binding.root.context)
                 .load(member.photoRes)
                 .centerCrop()
-                .placeholder(R.color.charcoal_medium)
+                .placeholder(GlidePlaceholders.batik(binding.root.context))
                 .into(binding.ivTeamPhoto)
 
-            binding.cardTeamMember.setOnTouchListener { view, event ->
-                when (event.actionMasked) {
-                    MotionEvent.ACTION_DOWN -> {
-                        ViewCompat.animate(view)
-                            .scaleX(0.96f)
-                            .scaleY(0.96f)
-                            .setDuration(90L)
-                            .start()
-                    }
-                    MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
-                        ViewCompat.animate(view)
-                            .scaleX(1f)
-                            .scaleY(1f)
-                            .setDuration(180L)
-                            .setInterpolator(OvershootInterpolator(2.2f))
-                            .start()
-                    }
-                }
-                false
-            }
+            binding.cardTeamMember.bounceClick()
         }
     }
 

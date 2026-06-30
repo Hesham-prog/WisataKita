@@ -49,6 +49,7 @@ class ProfileFragment : Fragment() {
         }
         viewModel.refresh()
 
+        binding.btnLogout.bounceClick()
         binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(requireContext())
                 .setTitle("Keluar")
@@ -66,6 +67,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun setupRows() {
+        binding.rowNotificationSettings.bounceClick()
         binding.rowNotificationSettings.setOnClickListener {
             HapticUtil.click(it)
             runCatching {
@@ -81,6 +83,19 @@ class ProfileFragment : Fragment() {
             }
         }
 
+        binding.rowLanguageSettings.bounceClick()
+        binding.rowLanguageSettings.setOnClickListener {
+            HapticUtil.click(it)
+            val nextLanguage = if (LanguageUtil.currentLanguage(requireContext()) == LanguageUtil.ENGLISH) {
+                LanguageUtil.INDONESIAN
+            } else {
+                LanguageUtil.ENGLISH
+            }
+            LanguageUtil.setLanguage(requireContext(), nextLanguage)
+            requireActivity().recreate()
+        }
+
+        binding.rowTeam.bounceClick()
         binding.rowTeam.setOnClickListener {
             HapticUtil.click(it)
             teamExpanded = !teamExpanded

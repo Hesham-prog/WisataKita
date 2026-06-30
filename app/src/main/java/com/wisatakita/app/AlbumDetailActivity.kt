@@ -69,13 +69,16 @@ class AlbumDetailActivity : AppCompatActivity() {
         binding.recyclerPhotos.layoutManager = GridLayoutManager(this, 3)
         binding.recyclerPhotos.adapter = adapter
 
+        binding.btnBack.bounceClick()
         binding.btnBack.setOnClickListener { finish() }
 
+        binding.btnDeleteAlbum.bounceClick()
         binding.btnDeleteAlbum.setOnClickListener {
             val album = galleryData.getAlbum(albumId)
             showDeleteAlbumDialog(album?.name ?: "")
         }
 
+        binding.fabAddPhoto.bounceClick()
         binding.fabAddPhoto.setOnClickListener { showAddPhotoDialog() }
     }
 

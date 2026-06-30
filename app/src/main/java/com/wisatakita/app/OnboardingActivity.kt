@@ -73,11 +73,13 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     private fun setupButtons() {
+        binding.btnSkip.bounceClick()
         binding.btnSkip.setOnClickListener {
             HapticUtil.click(it)
             navigateToLogin()
         }
 
+        binding.btnNext.bounceClick()
         binding.btnNext.setOnClickListener {
             HapticUtil.click(it)
             val current = binding.viewPagerOnboarding.currentItem

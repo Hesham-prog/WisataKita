@@ -127,6 +127,11 @@
     <string name="login_btn">Masuk</string>
     <string name="login_google">Lanjutkan dengan Google</string>
     <string name="login_no_account">Belum punya akun? Daftar</string>
+    <string name="login_empty_fields">Email dan password tidak boleh kosong</string>
+    <string name="login_account_missing">Akun tidak ditemukan. Silakan daftar terlebih dahulu.</string>
+    <string name="login_wrong_password">Password salah</string>
+    <string name="login_google_failed">Masuk dengan Google belum berhasil. Coba lagi.</string>
+    <string name="login_google_config_missing">Google Client ID belum dikonfigurasi.</string>
     <string name="register_title">Buat Akun</string>
     <string name="register_btn">Daftar</string>
     <string name="register_have_account">Sudah punya akun? Masuk</string>

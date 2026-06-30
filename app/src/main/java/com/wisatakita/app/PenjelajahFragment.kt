@@ -84,16 +84,19 @@ class PenjelajahFragment : Fragment() {
     }
 
     private fun setupViewModeToggle() {
+        binding.btnViewList.bounceClick()
         binding.btnViewList.setOnClickListener {
             HapticUtil.click(it)
             switchViewMode(ViewMode.LIST)
             updateToggleHighlight(0)
         }
+        binding.btnViewGrid.bounceClick()
         binding.btnViewGrid.setOnClickListener {
             HapticUtil.click(it)
             switchViewMode(ViewMode.GRID)
             updateToggleHighlight(1)
         }
+        binding.btnViewCard.bounceClick()
         binding.btnViewCard.setOnClickListener {
             HapticUtil.click(it)
             switchViewMode(ViewMode.CARD)
@@ -181,6 +184,7 @@ class PenjelajahFragment : Fragment() {
                     buildFilterChips(categories)
                     applyFilters()
                 }
+                bounceClick()
             }
             binding.llFilterChips.addView(chip)
         }
@@ -202,6 +206,7 @@ class PenjelajahFragment : Fragment() {
         binding.rvDestinations.visibility = if (isEmpty) View.GONE else View.VISIBLE
         binding.layoutEmpty.visibility = if (isEmpty) View.VISIBLE else View.GONE
 
+        binding.btnResetFilters.bounceClick()
         binding.btnResetFilters.setOnClickListener {
             HapticUtil.click(it)
             activeCategory = "Semua"
