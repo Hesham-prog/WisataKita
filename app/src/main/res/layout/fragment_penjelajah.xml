@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <!-- AppBar with search + filter -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackground"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="52dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="12dp">
+
+            <!-- Title row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="14dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Jelajahi"
+                    android:textSize="28sp"
+                    android:fontFamily="@font/fraunces_bold"
+                    android:textColor="@color/white"
+                    android:letterSpacing="-0.01"/>
+
+                <!-- View mode toggle: List / Grid / Card -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_glassmorphism"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btn_view_list"
+                        android:layout_width="36dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_view_list"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="@color/gold_primary"
+                        android:padding="8dp"
+                        android:contentDescription="@string/label_view_list"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="20dp"
+                        android:background="#33F2D8B3"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_view_grid"
+                        android:layout_width="36dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_view_grid"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="@color/cream_primary"
+                        android:alpha="0.5"
+                        android:padding="8dp"
+                        android:contentDescription="@string/label_view_grid"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="20dp"
+                        android:background="#33F2D8B3"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_view_card"
+                        android:layout_width="36dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_view_card"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="@color/cream_primary"
+                        android:alpha="0.5"
+                        android:padding="8dp"
+                        android:contentDescription="@string/label_view_card"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Search bar -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_search"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/charcoal_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_search"
+                        android:tint="@color/cream_primary"
+                        android:alpha="0.6"
+                        android:contentDescription="Cari"/>
+
+                    <EditText
+                        android:id="@+id/et_search"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:hint="@string/search_hint"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/plus_jakarta_sans"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/colorTextHint"
+                        android:background="@android:color/transparent"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:singleLine="true"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Filter chips horizontal scroll -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/ll_filter_chips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"/>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Destination RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_destinations"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="120dp"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <!-- Empty state -->
+    <LinearLayout
+        android:id="@+id/layout_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔍"
+            android:textSize="48sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/empty_results"
+            android:textSize="14sp"
+            android:fontFamily="@font/plus_jakarta_sans"
+            android:textColor="@color/colorTextSecondary"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:lineSpacingMultiplier="1.5"/>
+
+        <TextView
+            android:id="@+id/btn_reset_filters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/btn_reset_filters"
+            android:textSize="14sp"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:textColor="@color/turquoise_primary"
+            android:padding="12dp"/>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
