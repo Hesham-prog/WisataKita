@@ -5,68 +5,133 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:clipToPadding="false"
-    android:paddingBottom="96dp">
+    android:paddingBottom="132dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="128dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <com.wisatakita.app.PassportPhotoView
                 android:id="@+id/ivPassportPhoto"
                 android:layout_width="104dp"
                 android:layout_height="104dp"
-                android:src="@drawable/ic_logo" />
+                android:src="@drawable/ic_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/groupLanguage"
+                android:layout_width="122dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_language_toggle"
+                android:padding="3dp"
+                app:checkedButton="@id/btnLangId"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLangId"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="58dp"
+                    android:layout_height="38dp"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:text="ID"
+                    android:textAllCaps="false"
+                    android:textColor="@color/language_segment_text"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/language_segment_tint"
+                    app:cornerRadius="19dp"
+                    app:strokeWidth="0dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLangEn"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="58dp"
+                    android:layout_height="38dp"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:text="EN"
+                    android:textAllCaps="false"
+                    android:textColor="@color/language_segment_text"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/language_segment_tint"
+                    app:cornerRadius="19dp"
+                    app:strokeWidth="0dp" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <TextView
+                android:id="@+id/tvProfileName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_marginEnd="12dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/fraunces_bold"
+                android:maxLines="1"
+                android:text="Penjelajah"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@id/groupLanguage"
+                app:layout_constraintStart_toEndOf="@id/ivPassportPhoto"
+                app:layout_constraintTop_toTopOf="@id/ivPassportPhoto" />
 
-                <TextView
-                    android:id="@+id/tvProfileName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/fraunces_bold"
-                    android:text="Penjelajah"
-                    android:textColor="@color/white"
-                    android:textSize="25sp" />
+            <TextView
+                android:id="@+id/tvProfileEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="6dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/plus_jakarta_sans"
+                android:maxLines="1"
+                android:text="-"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivPassportPhoto"
+                app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
 
-                <TextView
-                    android:id="@+id/tvProfileEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/plus_jakarta_sans"
-                    android:text="-"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/tvStatsPill"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_chip_glass_turquoise"
-                    android:fontFamily="@font/plus_jakarta_sans_semibold"
-                    android:paddingStart="12dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="12dp"
-                    android:paddingBottom="7dp"
-                    android:text="0 Destinasi Dikunjungi · 0 Ulasan Ditulis"
-                    android:textColor="@color/cream_primary"
-                    android:textSize="11sp" />
-            </LinearLayout>
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tvStatsPill"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_chip_glass_turquoise"
+                android:ellipsize="end"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:maxLines="2"
+                android:paddingStart="12dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="7dp"
+                android:text="0 Destinasi Dikunjungi · 0 Ulasan Ditulis"
+                android:textColor="@color/cream_primary"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivPassportPhoto"
+                app:layout_constraintTop_toBottomOf="@id/tvProfileEmail" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -106,7 +171,7 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="24dp"
-            android:background="@drawable/bg_glassmorphism"
+            android:background="@drawable/bg_profile_row_flat"
             android:fontFamily="@font/plus_jakarta_sans_semibold"
             android:gravity="center_vertical"
             android:paddingStart="18dp"
@@ -120,7 +185,7 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/bg_glassmorphism"
+            android:background="@drawable/bg_profile_row_flat"
             android:fontFamily="@font/plus_jakarta_sans_semibold"
             android:gravity="center_vertical"
             android:paddingStart="18dp"
@@ -134,7 +199,7 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/bg_glassmorphism"
+            android:background="@drawable/bg_profile_row_flat"
             android:fontFamily="@font/plus_jakarta_sans_semibold"
             android:gravity="center_vertical"
             android:paddingStart="18dp"

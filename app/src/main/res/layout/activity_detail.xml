@@ -31,7 +31,7 @@
         android:id="@+id/heroScrim"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/gradient_card_overlay" />
+        android:background="@drawable/bg_detail_hero_scrim" />
 
     <View
         android:id="@+id/toolbarScrim"
@@ -148,7 +148,7 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:paddingBottom="112dp"
-        android:paddingTop="470dp">
+        android:paddingTop="535dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -223,34 +223,40 @@
                         app:strokeColor="@color/glass_border"
                         app:strokeWidth="1dp">
 
-                        <LinearLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
+                            android:minHeight="72dp"
                             android:padding="14dp">
 
                             <TextView
                                 android:id="@+id/tvWeatherIcon"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
                                 android:fontFamily="@font/bebas_neue"
                                 android:gravity="center"
                                 android:text="--"
                                 android:textColor="@color/gold_primary"
-                                android:textSize="24sp" />
+                                android:textSize="34sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/tvWeatherInfo"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="0dp"
                                 android:layout_marginStart="12dp"
-                                android:layout_weight="1"
                                 android:fontFamily="@font/plus_jakarta_sans"
+                                android:gravity="center_vertical"
                                 android:text="@string/weather_loading"
                                 android:textColor="@color/white"
-                                android:textSize="13sp" />
-                        </LinearLayout>
+                                android:textSize="13sp"
+                                app:layout_constraintBottom_toBottomOf="@id/tvWeatherIcon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tvWeatherIcon"
+                                app:layout_constraintTop_toTopOf="@id/tvWeatherIcon" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <View

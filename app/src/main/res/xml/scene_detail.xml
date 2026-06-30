@@ -110,10 +110,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="28dp"
+                motion:layout_constraintBottom_toBottomOf="@id/ivDetailImage"
                 motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toBottomOf="@id/ivDetailImage" />
+                motion:layout_constraintStart_toStartOf="parent" />
             <PropertySet android:alpha="1" />
         </Constraint>
 
@@ -121,9 +121,9 @@
             <Layout
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="24dp"
-                motion:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                motion:layout_constraintStart_toStartOf="parent"
                 motion:layout_constraintTop_toBottomOf="@id/ivDetailImage" />
             <PropertySet android:alpha="1" />
         </Constraint>
@@ -222,10 +222,10 @@
             <Layout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="72dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="16dp"
-                motion:layout_constraintEnd_toStartOf="@id/layoutFabActions"
+                motion:layout_constraintEnd_toEndOf="parent"
                 motion:layout_constraintStart_toStartOf="parent"
                 motion:layout_constraintTop_toBottomOf="@id/ivDetailImage" />
         </Constraint>
@@ -234,10 +234,10 @@
             <Layout
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintTop_toBottomOf="@id/ivDetailImage" />
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/tvDetailTitle" />
             <PropertySet android:alpha="1" />
             <Transform android:scaleX="0.88" android:scaleY="0.88" />
         </Constraint>

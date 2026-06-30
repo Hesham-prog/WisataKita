@@ -12,14 +12,16 @@
         android:layout_height="wrap_content"
         android:minHeight="720dp"
         android:paddingStart="24dp"
-        android:paddingTop="32dp"
+        android:paddingTop="48dp"
         android:paddingEnd="24dp"
         android:paddingBottom="34dp">
 
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/groupLanguage"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="122dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_language_toggle"
+            android:padding="3dp"
             app:checkedButton="@id/btnLangId"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -28,31 +30,41 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLangId"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="58dp"
-                android:layout_height="40dp"
+                android:layout_height="38dp"
                 android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="0dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
                 android:text="ID"
                 android:textAllCaps="false"
-                android:textColor="@color/cream_primary"
-                app:backgroundTint="@color/glass_surface"
-                app:cornerRadius="20dp"
-                app:strokeColor="@color/glass_border"
-                app:strokeWidth="1dp" />
+                android:textColor="@color/language_segment_text"
+                android:textSize="12sp"
+                app:backgroundTint="@color/language_segment_tint"
+                app:cornerRadius="19dp"
+                app:strokeWidth="0dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLangEn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="58dp"
-                android:layout_height="40dp"
+                android:layout_height="38dp"
                 android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="0dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
                 android:text="EN"
                 android:textAllCaps="false"
-                android:textColor="@color/cream_primary"
-                app:backgroundTint="@color/glass_surface"
-                app:cornerRadius="20dp"
-                app:strokeColor="@color/glass_border"
-                app:strokeWidth="1dp" />
+                android:textColor="@color/language_segment_text"
+                android:textSize="12sp"
+                app:backgroundTint="@color/language_segment_tint"
+                app:cornerRadius="19dp"
+                app:strokeWidth="0dp" />
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
         <ImageView
