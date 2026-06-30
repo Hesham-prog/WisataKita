@@ -3,81 +3,224 @@ package com.wisatakita.app
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.DecelerateInterpolator
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.wisatakita.app.data.Destination
+import com.wisatakita.app.data.DestinationRepository
 import com.wisatakita.app.data.UserPrefs
 import com.wisatakita.app.databinding.FragmentHomeBinding
+import kotlinx.coroutines.launch
+import java.util.Calendar
 
 class HomeFragment : Fragment() {
+
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    private lateinit var featuredAdapter: FeaturedDestinationAdapter
+    private lateinit var nearbyAdapter: HomeNearbyAdapter
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val userPrefs = UserPrefs(requireContext())
-        binding.tvGreeting.text = "Halo, ${userPrefs.getCurrentName()}!"
 
-        setupCardPress(binding.cardMenuDestinasi) {
-            startActivity(Intent(requireContext(), ListActivity::class.java))
-        }
-        setupCardPress(binding.cardMenuFavorit) {
-            startActivity(Intent(requireContext(), GalleryActivity::class.java))
-        }
-
-        setupMusicToggle()
-        syncMusicButton()
+        setupGreeting()
+        setupRecyclerViews()
+        setupClickListeners()
+        loadDestinations()
+        setupAboutIndonesia()
+        animateEntrance()
     }
 
-    private fun setupMusicToggle() {
+    private fun setupGreeting() {
+        val userPrefs = UserPrefs(requireContext())
+        val name = userPrefs.getCurrentName().ifBlank { "Penjelajah" }
+        binding.tvGreeting.text = "Halo, $name!"
+
+        val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
+        binding.tvGreetingTime.text = when {
+            hour < 11 -> getString(R.string.greeting_morning)
+            hour < 15 -> getString(R.string.greeting_afternoon)
+            hour < 18 -> getString(R.string.greeting_evening)
+            else       -> getString(R.string.greeting_night)
+        }
+    }
+
+    private fun setupRecyclerViews() {
+        // Featured — horizontal card list
+        featuredAdapter = FeaturedDestinationAdapter { destination ->
+            openDetail(destination)
+        }
+        binding.rvFeatured.apply {
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = featuredAdapter
+            setHasFixedSize(true)
+        }
+
+        // Nearby — vertical list (reuse existing DestinationAdapter in list mode)
+        nearbyAdapter = HomeNearbyAdapter { destination ->
+            openDetail(destination)
+        }
+        binding.rvNearby.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = nearbyAdapter
+            isNestedScrollingEnabled = false
+            setHasFixedSize(false)
+        }
+    }
+
+    private fun loadDestinations() {
+        lifecycleScope.launch {
+            val repo = DestinationRepository(requireContext())
+            val all = repo.getAllDestinations()
+
+            // Featured: top-rated
+            val featured = all.sortedByDescending { it.rating }.take(8)
+            featuredAdapter.submitList(featured)
+
+            // Nearby: show a curated subset (first 5 from different islands)
+            val nearby = all.shuffled().take(5)
+            nearbyAdapter.submitList(nearby)
+
+            // Category chips
+            val categories = listOf("Semua") + all.map { it.category }.distinct().sorted()
+            setupCategoryChips(categories, all)
+        }
+    }
+
+    private fun setupCategoryChips(categories: List<String>, all: List<Destination>) {
+        binding.llCategories.removeAllViews()
+        val density = resources.displayMetrics.density
+
+        categories.forEach { category ->
+            val chip = android.widget.TextView(requireContext()).apply {
+                text = category
+                textSize = 13f
+                setTextColor(resources.getColor(
+                    if (category == "Semua") R.color.charcoal_primary else R.color.cream_primary,
+                    null
+                ))
+                fontFamily = "res/font/plus_jakarta_sans_semibold.ttf"
+                background = resources.getDrawable(
+                    if (category == "Semua") R.drawable.bg_gold_button else R.drawable.bg_chip_glass_green,
+                    null
+                )
+                setPadding(
+                    (16 * density).toInt(), (8 * density).toInt(),
+                    (16 * density).toInt(), (8 * density).toInt()
+                )
+                layoutParams = ViewGroup.MarginLayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                ).apply { marginEnd = (10 * density).toInt() }
+
+                setOnClickListener { v ->
+                    HapticUtil.click(v)
+                    val filtered = if (category == "Semua") all else all.filter { it.category == category }
+                    nearbyAdapter.submitList(filtered.take(6))
+                }
+            }
+            binding.llCategories.addView(chip)
+        }
+    }
+
+    private fun setupClickListeners() {
+        binding.cardSearch.setOnClickListener {
+            HapticUtil.click(it)
+            (activity as? MainActivity)?.showFragment(1) // go to Jelajahi
+        }
+
+        binding.tvSeeAllFeatured.setOnClickListener {
+            HapticUtil.click(it)
+            (activity as? MainActivity)?.showFragment(1)
+        }
+
+        binding.tvSeeAllNearby.setOnClickListener {
+            HapticUtil.click(it)
+            (activity as? MainActivity)?.showFragment(1)
+        }
+
         binding.btnMusic.setOnClickListener {
+            HapticUtil.click(it)
             val intent = Intent(requireContext(), MusicService::class.java)
             if (MusicService.isPlaying) {
                 intent.action = MusicService.ACTION_PAUSE
                 MusicService.isPlaying = false
+                binding.btnMusic.setImageResource(R.drawable.ic_music_off)
             } else {
                 intent.action = MusicService.ACTION_RESUME
                 MusicService.isPlaying = true
+                binding.btnMusic.setImageResource(R.drawable.ic_music_on)
             }
             requireContext().startService(intent)
-            syncMusicButton()
         }
     }
 
-    private fun syncMusicButton() {
-        binding.btnMusic.setImageResource(
-            if (MusicService.isPlaying) R.drawable.ic_music_on else R.drawable.ic_music_off
-        )
-    }
+    private fun setupAboutIndonesia() {
+        var isExpanded = false
 
-    private fun setupCardPress(card: View, onClick: () -> Unit) {
-        card.setOnTouchListener { v, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    v.animate().scaleX(0.96f).scaleY(0.96f).setDuration(120).start()
-                }
-                MotionEvent.ACTION_UP -> {
-                    v.animate().scaleX(1f).scaleY(1f).setDuration(150).withEndAction {
-                        onClick()
-                    }.start()
-                }
-                MotionEvent.ACTION_CANCEL -> {
-                    v.animate().scaleX(1f).scaleY(1f).setDuration(150).start()
-                }
+        binding.tvAboutReadMore.setOnClickListener {
+            HapticUtil.click(it)
+            isExpanded = !isExpanded
+            if (isExpanded) {
+                binding.tvAboutIndonesia.maxLines = Int.MAX_VALUE
+                binding.tvAboutIndonesia.ellipsize = null
+                binding.tvAboutReadMore.text = getString(R.string.about_indonesia_read_less)
+            } else {
+                binding.tvAboutIndonesia.maxLines = 4
+                binding.tvAboutIndonesia.ellipsize = android.text.TextUtils.TruncateAt.END
+                binding.tvAboutReadMore.text = getString(R.string.about_indonesia_read_more)
             }
-            true
         }
+    }
+
+    private fun animateEntrance() {
+        // Stagger-animate all main sections from invisible
+        val views = listOf(
+            binding.rvFeatured,
+            binding.llCategories,
+            binding.rvNearby,
+            binding.cardAboutIndonesia
+        )
+        views.forEachIndexed { i, v ->
+            v.alpha = 0f
+            v.translationY = 40f
+            v.animate()
+                .alpha(1f)
+                .translationY(0f)
+                .setDuration(400)
+                .setStartDelay(200L + i * 100L)
+                .setInterpolator(DecelerateInterpolator())
+                .start()
+        }
+    }
+
+    private fun openDetail(destination: Destination) {
+        val intent = Intent(requireContext(), DetailActivity::class.java).apply {
+            putExtra("DESTINATION_ID", destination.id)
+        }
+        startActivity(intent)
+        activity?.overridePendingTransition(R.anim.slide_in_up, R.anim.fade_out_scale)
     }
 
     override fun onResume() {
         super.onResume()
-        syncMusicButton()
+        // Sync music button state
+        binding.btnMusic.setImageResource(
+            if (MusicService.isPlaying) R.drawable.ic_music_on else R.drawable.ic_music_off
+        )
     }
 
     override fun onDestroyView() {

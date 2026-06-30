@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Featured destination card — tall portrait format for horizontal list -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="160dp"
+    android:layout_height="220dp"
+    android:layout_marginEnd="12dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Destination image -->
+        <ImageView
+            android:id="@+id/iv_featured_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/app_name"/>
+
+        <!-- Bottom gradient overlay -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_card_overlay"/>
+
+        <!-- Content overlay -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <!-- Category chip -->
+            <TextView
+                android:id="@+id/tv_featured_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alam"
+                android:textSize="10sp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:textColor="@color/charcoal_primary"
+                android:background="@drawable/bg_gold_button"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_marginBottom="6dp"/>
+
+            <!-- Destination name -->
+            <TextView
+                android:id="@+id/tv_featured_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Candi Borobudur"
+                android:textSize="15sp"
+                android:fontFamily="@font/fraunces_bold"
+                android:textColor="@color/white"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:lineSpacingMultiplier="1.15"/>
+
+            <!-- Rating row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/ic_star"
+                    android:contentDescription="Rating"/>
+
+                <TextView
+                    android:id="@+id/tv_featured_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.8"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/bebas_neue"
+                    android:textColor="@color/gold_primary"
+                    android:layout_marginStart="4dp"/>
+
+                <TextView
+                    android:id="@+id/tv_featured_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Jawa Tengah"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/plus_jakarta_sans"
+                    android:textColor="#99F2D8B3"
+                    android:layout_marginStart="6dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+</androidx.cardview.widget.CardView>
