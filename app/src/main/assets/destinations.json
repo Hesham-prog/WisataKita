@@ -1,1170 +1,1337 @@
-{
-  "status": "success",
-  "data": [
-    {
-      "id": "borobudur",
-      "name": "Candi Borobudur",
-      "location": "Magelang, Jawa Tengah",
-      "address": "Jl. Badrawati, Borobudur, Magelang, Jawa Tengah",
-      "category": "Sejarah",
-      "latitude": -7.6079,
-      "longitude": 110.2038,
-      "imageQuery": "Borobudur temple Indonesia",
-      "ticketPrice": "Mulai Rp50.000",
-      "openingHours": "06.30 - 16.30",
-      "rating": 4.8,
-      "reviewCount": 24890,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Borobudur-Nothwest-view.jpg",
-      "geoUri": "geo:-7.6079,110.2038?q=Candi+Borobudur",
-      "ticketUrl": "https://borobudurpark.com",
-      "description": "Candi Borobudur adalah candi Buddha terbesar di dunia dan salah satu ikon wisata sejarah Indonesia. Kompleks ini terkenal dengan stupa, relief, dan pemandangan perbukitan Magelang.",
-      "funFacts": [
-        "Borobudur memiliki ribuan panel relief yang menceritakan kisah ajaran Buddha.",
-        "Candi ini dibangun dengan sistem batu yang saling mengunci.",
-        "UNESCO menetapkan Borobudur sebagai Situs Warisan Dunia."
-      ],
-      "galleryImages": [
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Borobudur-Nothwest-view.jpg/640px-Borobudur-Nothwest-view.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Stupa_Borobudur.jpg/640px-Stupa_Borobudur.jpg"
-      ],
-      "reviews": [
-        "Sunrise dan reliefnya sangat indah.",
-        "Cocok untuk wisata edukasi sejarah."
-      ],
-      "promoTitle": "Paket Sunrise Heritage",
-      "promoDescription": "Rekomendasi kunjungan pagi untuk pengalaman foto terbaik.",
-      "transportInfo": "Dapat dicapai dari Yogyakarta sekitar 1,5 jam menggunakan mobil.",
-      "emergencyContact": "Informasi kawasan: borobudurpark.com"
-    },
-    {
-      "id": "prambanan",
-      "name": "Candi Prambanan",
-      "location": "Sleman, DI Yogyakarta",
-      "address": "Jl. Raya Solo - Yogyakarta No.16, Prambanan",
-      "category": "Sejarah",
-      "latitude": -7.7520,
-      "longitude": 110.4915,
-      "imageQuery": "Prambanan temple Indonesia",
-      "ticketPrice": "Mulai Rp50.000",
-      "openingHours": "06.30 - 17.00",
-      "rating": 4.7,
-      "reviewCount": 21340,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Prambanan_Temple_Yogyakarta_Indonesia.jpg",
-      "geoUri": "geo:-7.7520,110.4915?q=Candi+Prambanan",
-      "ticketUrl": "https://prambananpark.com",
-      "description": "Candi Prambanan adalah kompleks candi Hindu terbesar di Indonesia. Menara candi yang menjulang tinggi membuatnya menjadi salah satu spot arsitektur paling ikonik di Yogyakarta.",
-      "funFacts": [
-        "Candi utama Prambanan dipersembahkan untuk Trimurti.",
-        "Kompleks ini sering menjadi lokasi pertunjukan Ramayana Ballet.",
-        "Reliefnya memuat kisah Ramayana."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Area luas dan nyaman untuk berjalan sore.",
-        "Pertunjukan Ramayana sangat direkomendasikan."
-      ],
-      "promoTitle": "Ramayana Night",
-      "promoDescription": "Cek jadwal pertunjukan malam untuk pengalaman budaya.",
-      "transportInfo": "Dekat dari Bandara Adisutjipto dan jalur utama Yogyakarta-Solo.",
-      "emergencyContact": "Informasi kawasan: prambananpark.com"
-    },
-    {
-      "id": "malioboro",
-      "name": "Jalan Malioboro",
-      "location": "Yogyakarta",
-      "address": "Jl. Malioboro, Kota Yogyakarta",
-      "category": "Kota dan Kuliner",
-      "latitude": -7.7928,
-      "longitude": 110.3658,
-      "imageQuery": "Malioboro Yogyakarta street",
-      "ticketPrice": "Gratis",
-      "openingHours": "24 jam",
-      "rating": 4.6,
-      "reviewCount": 39020,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Malioboro_Street%2C_Yogyakarta.jpg",
-      "geoUri": "geo:-7.7928,110.3658?q=Jalan+Malioboro",
-      "ticketUrl": "https://visitingjogja.jogjaprov.go.id",
-      "description": "Malioboro adalah kawasan belanja, kuliner, dan budaya paling populer di Yogyakarta. Area ini ramai oleh pedagang, seniman jalanan, dan wisatawan.",
-      "funFacts": [
-        "Malioboro dekat dengan Keraton dan Titik Nol Kilometer.",
-        "Kawasan ini populer untuk berburu batik dan kuliner malam.",
-        "Banyak pertunjukan seni jalanan muncul di malam hari."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Ramai, hidup, dan banyak kuliner.",
-        "Wajib dikunjungi saat ke Jogja."
-      ],
-      "promoTitle": "Kuliner Malam",
-      "promoDescription": "Coba gudeg, sate kere, dan kopi joss di sekitar kawasan.",
-      "transportInfo": "Mudah dicapai dari Stasiun Tugu dengan berjalan kaki.",
-      "emergencyContact": "Pos informasi wisata sekitar Malioboro"
-    },
-    {
-      "id": "kuta",
-      "name": "Pantai Kuta Bali",
-      "location": "Badung, Bali",
-      "address": "Pantai Kuta, Kuta, Kabupaten Badung, Bali",
-      "category": "Pantai",
-      "latitude": -8.7187,
-      "longitude": 115.1689,
-      "imageQuery": "Kuta beach Bali sunset",
-      "ticketPrice": "Gratis",
-      "openingHours": "24 jam",
-      "rating": 4.5,
-      "reviewCount": 31870,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Pantai_Kuta%2C_Bali%2C_Indonesia.jpg",
-      "geoUri": "geo:-8.7187,115.1689?q=Pantai+Kuta+Bali",
-      "ticketUrl": "https://www.disparda.baliprov.go.id",
-      "description": "Pantai Kuta dikenal dengan pasir panjang, ombak untuk surfing pemula, dan sunset yang ramai dikunjungi wisatawan.",
-      "funFacts": [
-        "Kuta populer di kalangan peselancar pemula.",
-        "Area sekitarnya penuh restoran, toko, dan pusat hiburan.",
-        "Sunset Kuta menjadi salah satu momen paling dicari."
-      ],
-      "galleryImages": [
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Bali_-_Kuta_Beach.jpg/640px-Bali_-_Kuta_Beach.jpg"
-      ],
-      "reviews": [
-        "Sunset bagus dan akses mudah.",
-        "Cocok untuk belajar surfing."
-      ],
-      "promoTitle": "Surfing Lesson",
-      "promoDescription": "Banyak kelas surfing harian di sekitar pantai.",
-      "transportInfo": "Dekat dari Bandara Ngurah Rai sekitar 20 menit.",
-      "emergencyContact": "Balawista/Petugas pantai setempat"
-    },
-    {
-      "id": "uluwatu",
-      "name": "Pura Uluwatu",
-      "location": "Badung, Bali",
-      "address": "Pecatu, Kuta Selatan, Badung, Bali",
-      "category": "Budaya",
-      "latitude": -8.8291,
-      "longitude": 115.0849,
-      "imageQuery": "Uluwatu temple Bali cliff sunset",
-      "ticketPrice": "Mulai Rp30.000",
-      "openingHours": "07.00 - 19.00",
-      "rating": 4.7,
-      "reviewCount": 27840,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Uluwatu_Temple%2C_Bali%2C_Indonesia.jpg",
-      "geoUri": "geo:-8.8291,115.0849?q=Pura+Uluwatu",
-      "ticketUrl": "https://www.disparda.baliprov.go.id",
-      "description": "Pura Uluwatu berdiri di tebing tinggi dengan panorama laut lepas. Tempat ini terkenal untuk sunset dan pertunjukan Tari Kecak.",
-      "funFacts": [
-        "Pura ini berada di tebing sekitar 70 meter di atas laut.",
-        "Pertunjukan Kecak saat sunset sangat populer.",
-        "Pengunjung disarankan menjaga barang dari monyet liar."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Sunset dan Kecak luar biasa.",
-        "Pemandangan lautnya dramatis."
-      ],
-      "promoTitle": "Kecak Sunset",
-      "promoDescription": "Datang lebih awal untuk mendapatkan posisi duduk terbaik.",
-      "transportInfo": "Disarankan menggunakan kendaraan pribadi atau sewa kendaraan.",
-      "emergencyContact": "Petugas kawasan Pura Uluwatu"
-    },
-    {
-      "id": "ubud_monkey_forest",
-      "name": "Ubud Monkey Forest",
-      "location": "Gianyar, Bali",
-      "address": "Jl. Monkey Forest, Ubud, Gianyar, Bali",
-      "category": "Alam",
-      "latitude": -8.5193,
-      "longitude": 115.2606,
-      "imageQuery": "Ubud Monkey Forest Bali",
-      "ticketPrice": "Mulai Rp80.000",
-      "openingHours": "09.00 - 18.00",
-      "rating": 4.6,
-      "reviewCount": 22010,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Monkey_Forest_Ubud_Bali.jpg",
-      "geoUri": "geo:-8.5193,115.2606?q=Ubud+Monkey+Forest",
-      "ticketUrl": "https://monkeyforestubud.com",
-      "description": "Ubud Monkey Forest adalah hutan lindung dengan pura kuno dan populasi monyet ekor panjang. Suasananya teduh dan cocok untuk wisata alam-budaya.",
-      "funFacts": [
-        "Kawasan ini memiliki ratusan monyet ekor panjang.",
-        "Terdapat pura dan jalur hutan yang fotogenik.",
-        "Pengunjung tidak disarankan membawa makanan terbuka."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Hutan sejuk di tengah Ubud.",
-        "Monyetnya aktif, tetap hati-hati dengan barang."
-      ],
-      "promoTitle": "Forest Walk",
-      "promoDescription": "Rute pagi lebih nyaman karena belum terlalu ramai.",
-      "transportInfo": "Mudah dijangkau dari pusat Ubud dengan berjalan kaki atau ojek.",
-      "emergencyContact": "Petugas kawasan Monkey Forest"
-    },
-    {
-      "id": "toba",
-      "name": "Danau Toba",
-      "location": "Sumatera Utara",
-      "address": "Danau Toba, Sumatera Utara",
-      "category": "Danau",
-      "latitude": 2.6832,
-      "longitude": 98.8523,
-      "imageQuery": "Lake Toba Indonesia",
-      "ticketPrice": "Mulai Rp10.000",
-      "openingHours": "24 jam",
-      "rating": 4.7,
-      "reviewCount": 18920,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Lake_Toba_%28Unsplash%29.jpg",
-      "geoUri": "geo:2.6832,98.8523?q=Danau+Toba",
-      "ticketUrl": "https://laketoba.id",
-      "description": "Danau Toba adalah danau vulkanik besar dengan Pulau Samosir di tengahnya. Destinasi ini menawarkan panorama dan budaya Batak.",
-      "funFacts": [
-        "Danau Toba terbentuk dari letusan supervolkano purba.",
-        "Pulau Samosir berada di tengah danau.",
-        "Kawasan ini kaya budaya Batak."
-      ],
-      "galleryImages": [
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Lake_Toba_View_from_Sipinsur.jpg/640px-Lake_Toba_View_from_Sipinsur.jpg"
-      ],
-      "reviews": [
-        "Pemandangan luas dan udara sejuk.",
-        "Samosir menarik untuk wisata budaya."
-      ],
-      "promoTitle": "Samosir Culture Trip",
-      "promoDescription": "Gabungkan kunjungan danau dengan desa budaya Batak.",
-      "transportInfo": "Akses populer melalui Parapat lalu menyeberang ke Samosir.",
-      "emergencyContact": "Pusat informasi wisata Danau Toba"
-    },
-    {
-      "id": "bukittinggi",
-      "name": "Jam Gadang Bukittinggi",
-      "location": "Bukittinggi, Sumatera Barat",
-      "address": "Benteng Pasar Atas, Bukittinggi",
-      "category": "Kota dan Sejarah",
-      "latitude": -0.3052,
-      "longitude": 100.3692,
-      "imageQuery": "Jam Gadang Bukittinggi",
-      "ticketPrice": "Gratis",
-      "openingHours": "24 jam",
-      "rating": 4.6,
-      "reviewCount": 15300,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/Jam_Gadang_Bukittinggi.jpg",
-      "geoUri": "geo:-0.3052,100.3692?q=Jam+Gadang+Bukittinggi",
-      "ticketUrl": "https://sumbar.travel",
-      "description": "Jam Gadang adalah ikon Bukittinggi dan Sumatera Barat. Area sekitarnya ramai dengan kuliner, taman kota, dan akses ke pasar wisata.",
-      "funFacts": [
-        "Jam Gadang dibangun pada masa kolonial.",
-        "Angka empat pada jamnya punya bentuk unik.",
-        "Dekat dengan Ngarai Sianok dan Benteng Fort de Kock."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Ikon kota yang wajib foto.",
-        "Dekat dengan kuliner Minang."
-      ],
-      "promoTitle": "City Walk Bukittinggi",
-      "promoDescription": "Cocok digabung dengan wisata kuliner dan Ngarai Sianok.",
-      "transportInfo": "Mudah dicapai dari pusat kota Bukittinggi.",
-      "emergencyContact": "Pos keamanan kawasan Jam Gadang"
-    },
-    {
-      "id": "bromo",
-      "name": "Gunung Bromo",
-      "location": "Probolinggo, Jawa Timur",
-      "address": "Taman Nasional Bromo Tengger Semeru, Jawa Timur",
-      "category": "Gunung",
-      "latitude": -7.9425,
-      "longitude": 112.9530,
-      "imageQuery": "Mount Bromo sunrise Indonesia",
-      "ticketPrice": "Mulai Rp29.000",
-      "openingHours": "24 jam",
-      "rating": 4.8,
-      "reviewCount": 29840,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Mount_Bromo_closeup_on_sunrise.jpg",
-      "geoUri": "geo:-7.9425,112.9530?q=Gunung+Bromo",
-      "ticketUrl": "https://bookingbromo.bromotenggersemeru.org",
-      "description": "Gunung Bromo menawarkan panorama sunrise, kawah aktif, lautan pasir, dan budaya masyarakat Tengger.",
-      "funFacts": [
-        "Lautan pasir Bromo disebut Segara Wedi.",
-        "Upacara Kasada dilakukan masyarakat Tengger setiap tahun.",
-        "Spot sunrise populer berada di kawasan Penanjakan."
-      ],
-      "galleryImages": [
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Bromo_01.jpg/640px-Bromo_01.jpg"
-      ],
-      "reviews": [
-        "Sunrise-nya salah satu yang terbaik.",
-        "Datang pagi buta tapi sangat worth it."
-      ],
-      "promoTitle": "Sunrise Jeep Tour",
-      "promoDescription": "Pilih paket jeep resmi untuk rute sunrise dan kawah.",
-      "transportInfo": "Akses umum melalui Probolinggo, Malang, atau Pasuruan.",
-      "emergencyContact": "Balai Besar TNBTS"
-    },
-    {
-      "id": "ijen",
-      "name": "Kawah Ijen",
-      "location": "Banyuwangi, Jawa Timur",
-      "address": "Kawasan Ijen, Banyuwangi, Jawa Timur",
-      "category": "Gunung",
-      "latitude": -8.0580,
-      "longitude": 114.2420,
-      "imageQuery": "Ijen crater blue fire Indonesia",
-      "ticketPrice": "Mulai Rp20.000",
-      "openingHours": "02.00 - 12.00",
-      "rating": 4.7,
-      "reviewCount": 12600,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Kawah_Ijen_volcano.jpg",
-      "geoUri": "geo:-8.0580,114.2420?q=Kawah+Ijen",
-      "ticketUrl": "https://banyuwangitourism.com",
-      "description": "Kawah Ijen terkenal dengan fenomena blue fire dan danau kawah berwarna biru kehijauan. Trekking dini hari menjadi pengalaman utama wisatawan.",
-      "funFacts": [
-        "Blue fire Ijen adalah fenomena langka yang terlihat pada malam hari.",
-        "Kawahnya memiliki danau asam berwarna toska.",
-        "Penambang belerang masih beraktivitas di kawasan ini."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Trekking menantang tapi pemandangan luar biasa.",
-        "Perlu masker karena bau belerang kuat."
-      ],
-      "promoTitle": "Blue Fire Trek",
-      "promoDescription": "Gunakan pemandu lokal dan perlengkapan aman.",
-      "transportInfo": "Akses dari Banyuwangi atau Bondowoso.",
-      "emergencyContact": "Pos Paltuding Kawah Ijen"
-    },
-    {
-      "id": "baluran",
-      "name": "Taman Nasional Baluran",
-      "location": "Situbondo, Jawa Timur",
-      "address": "Sumberwaru, Banyuputih, Situbondo",
-      "category": "Alam",
-      "latitude": -7.8444,
-      "longitude": 114.3871,
-      "imageQuery": "Baluran National Park savanna Indonesia",
-      "ticketPrice": "Mulai Rp16.500",
-      "openingHours": "07.30 - 16.00",
-      "rating": 4.6,
-      "reviewCount": 8200,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Baluran_National_Park_savanna.jpg",
-      "geoUri": "geo:-7.8444,114.3871?q=Taman+Nasional+Baluran",
-      "ticketUrl": "https://balurannationalpark.id",
-      "description": "Baluran dikenal sebagai Africa van Java karena lanskap savana Bekol yang luas, satwa liar, dan Pantai Bama.",
-      "funFacts": [
-        "Savana Bekol menjadi ikon utama Baluran.",
-        "Pengunjung bisa melihat rusa, banteng, dan burung liar.",
-        "Pantai Bama berada di dalam kawasan taman nasional."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Savana luas dan fotogenik.",
-        "Rute cocok untuk road trip Banyuwangi-Situbondo."
-      ],
-      "promoTitle": "Savanna Drive",
-      "promoDescription": "Datang pagi atau sore untuk cahaya foto terbaik.",
-      "transportInfo": "Lebih nyaman menggunakan kendaraan pribadi.",
-      "emergencyContact": "Kantor Balai TN Baluran"
-    },
-    {
-      "id": "komodo",
-      "name": "Pulau Komodo",
-      "location": "Manggarai Barat, NTT",
-      "address": "Taman Nasional Komodo, NTT",
-      "category": "Alam",
-      "latitude": -8.5544,
-      "longitude": 119.4934,
-      "imageQuery": "Komodo Island Indonesia",
-      "ticketPrice": "Menyesuaikan paket kawasan",
-      "openingHours": "08.00 - 17.00",
-      "rating": 4.8,
-      "reviewCount": 16210,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/Komodo_Island_from_a_boat.jpg",
-      "geoUri": "geo:-8.5544,119.4934?q=Pulau+Komodo",
-      "ticketUrl": "https://booking.komodo.id",
-      "description": "Pulau Komodo adalah habitat alami komodo dan bagian dari taman nasional yang juga terkenal dengan pantai, bukit, dan spot diving.",
-      "funFacts": [
-        "Komodo adalah kadal terbesar yang masih hidup.",
-        "Kawasan ini memiliki banyak spot snorkeling dan diving.",
-        "Wisatawan wajib ditemani ranger."
-      ],
-      "galleryImages": [
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Pink_Beach%2C_Padar_Island%2C_Komodo_National_Park.jpg/640px-Pink_Beach%2C_Padar_Island%2C_Komodo_National_Park.jpg"
-      ],
-      "reviews": [
-        "Pengalaman melihat komodo sangat unik.",
-        "Pemandangan pulau-pulaunya luar biasa."
-      ],
-      "promoTitle": "Island Hopping",
-      "promoDescription": "Gabungkan Komodo, Padar, dan Pink Beach dalam satu trip.",
-      "transportInfo": "Berangkat dari Labuan Bajo menggunakan kapal wisata.",
-      "emergencyContact": "Ranger Taman Nasional Komodo"
-    },
-    {
-      "id": "padar",
-      "name": "Pulau Padar",
-      "location": "Manggarai Barat, NTT",
-      "address": "Taman Nasional Komodo, NTT",
-      "category": "Bukit dan Pantai",
-      "latitude": -8.6639,
-      "longitude": 119.5747,
-      "imageQuery": "Padar Island viewpoint Indonesia",
-      "ticketPrice": "Termasuk paket Taman Nasional Komodo",
-      "openingHours": "06.00 - 17.00",
-      "rating": 4.9,
-      "reviewCount": 11870,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Padar_island_2018.jpg",
-      "geoUri": "geo:-8.6639,119.5747?q=Pulau+Padar",
-      "ticketUrl": "https://booking.komodo.id",
-      "description": "Pulau Padar terkenal dengan viewpoint ikonik yang memperlihatkan teluk-teluk cantik dan garis pantai berwarna berbeda.",
-      "funFacts": [
-        "Viewpoint Padar menjadi salah satu foto wisata paling ikonik di Indonesia.",
-        "Pendakian singkatnya cukup terjal.",
-        "Waktu terbaik adalah sunrise atau sore hari."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Naiknya capek tapi pemandangannya juara.",
-        "Salah satu spot foto terbaik di Labuan Bajo."
-      ],
-      "promoTitle": "Sunrise Viewpoint",
-      "promoDescription": "Mulai trekking pagi untuk cuaca lebih sejuk.",
-      "transportInfo": "Diakses dengan kapal dari Labuan Bajo.",
-      "emergencyContact": "Ranger Taman Nasional Komodo"
-    },
-    {
-      "id": "rajaampat",
-      "name": "Raja Ampat",
-      "location": "Papua Barat Daya",
-      "address": "Kabupaten Raja Ampat, Papua Barat Daya",
-      "category": "Laut",
-      "latitude": -0.7347,
-      "longitude": 130.8769,
-      "imageQuery": "Raja Ampat islands Indonesia",
-      "ticketPrice": "Menyesuaikan paket wisata",
-      "openingHours": "24 jam",
-      "rating": 4.9,
-      "reviewCount": 14320,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Raja_Ampat%2C_Papua.jpg",
-      "geoUri": "geo:-0.7347,130.8769?q=Raja+Ampat",
-      "ticketUrl": "https://rajaampat.go.id",
-      "description": "Raja Ampat adalah kepulauan dengan laut jernih, karang, dan biodiversitas laut yang sangat tinggi. Destinasi ini populer untuk diving dan island hopping.",
-      "funFacts": [
-        "Raja Ampat memiliki keanekaragaman hayati laut sangat tinggi.",
-        "Wayag dan Piaynemo menjadi viewpoint paling populer.",
-        "Banyak penginapan berbasis homestay lokal."
-      ],
-      "galleryImages": [
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/%22Telaga_Bintang%22_Raja_Ampat.jpg/640px-%22Telaga_Bintang%22_Raja_Ampat.jpg"
-      ],
-      "reviews": [
-        "Air lautnya sangat jernih.",
-        "Cocok untuk snorkeling dan diving."
-      ],
-      "promoTitle": "Marine Escape",
-      "promoDescription": "Pilih homestay lokal untuk pengalaman lebih dekat dengan masyarakat.",
-      "transportInfo": "Akses melalui Sorong lalu kapal ke Waisai.",
-      "emergencyContact": "Dinas Pariwisata Raja Ampat"
-    },
-    {
-      "id": "derawan",
-      "name": "Kepulauan Derawan",
-      "location": "Berau, Kalimantan Timur",
-      "address": "Kepulauan Derawan, Berau, Kalimantan Timur",
-      "category": "Laut",
-      "latitude": 2.2855,
-      "longitude": 118.2474,
-      "imageQuery": "Derawan island Indonesia",
-      "ticketPrice": "Menyesuaikan paket wisata",
-      "openingHours": "24 jam",
-      "rating": 4.7,
-      "reviewCount": 7800,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Derawan_Islands.jpg",
-      "geoUri": "geo:2.2855,118.2474?q=Kepulauan+Derawan",
-      "ticketUrl": "https://disbudpar.beraukab.go.id",
-      "description": "Derawan menawarkan pulau tropis, snorkeling, penyu, dan laguna ubur-ubur di Kakaban. Destinasi ini cocok untuk wisata bahari.",
-      "funFacts": [
-        "Kakaban terkenal dengan danau ubur-ubur tidak menyengat.",
-        "Derawan menjadi habitat penyu hijau.",
-        "Pulau Maratua populer untuk resort dan diving."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Snorkelingnya jernih dan banyak penyu.",
-        "Perjalanan jauh tapi sepadan."
-      ],
-      "promoTitle": "Turtle Island Trip",
-      "promoDescription": "Gabungkan Derawan, Kakaban, dan Maratua.",
-      "transportInfo": "Akses melalui Berau lalu perjalanan darat dan kapal.",
-      "emergencyContact": "Pusat informasi wisata Berau"
-    },
-    {
-      "id": "bunaken",
-      "name": "Taman Laut Bunaken",
-      "location": "Manado, Sulawesi Utara",
-      "address": "Bunaken, Manado, Sulawesi Utara",
-      "category": "Laut",
-      "latitude": 1.6232,
-      "longitude": 124.7608,
-      "imageQuery": "Bunaken marine park Indonesia",
-      "ticketPrice": "Mulai Rp5.000",
-      "openingHours": "08.00 - 17.00",
-      "rating": 4.7,
-      "reviewCount": 9100,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bunaken_Island.jpg",
-      "geoUri": "geo:1.6232,124.7608?q=Taman+Laut+Bunaken",
-      "ticketUrl": "https://sulutprov.go.id",
-      "description": "Bunaken adalah taman laut yang terkenal dengan dinding karang, biota laut, dan aktivitas diving di sekitar Manado.",
-      "funFacts": [
-        "Bunaken terkenal dengan coral wall yang curam.",
-        "Kawasan ini memiliki banyak spot diving.",
-        "Aksesnya dekat dari Kota Manado."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Diving dan snorkeling sangat menarik.",
-        "Dekat dari Manado dan mudah dicapai."
-      ],
-      "promoTitle": "Diving Day Trip",
-      "promoDescription": "Cocok untuk perjalanan satu hari dari Manado.",
-      "transportInfo": "Naik perahu dari Pelabuhan Manado.",
-      "emergencyContact": "Operator wisata dan pos taman laut"
-    },
-    {
-      "id": "wakatobi",
-      "name": "Wakatobi",
-      "location": "Sulawesi Tenggara",
-      "address": "Kabupaten Wakatobi, Sulawesi Tenggara",
-      "category": "Laut",
-      "latitude": -5.3264,
-      "longitude": 123.5952,
-      "imageQuery": "Wakatobi Indonesia coral reef",
-      "ticketPrice": "Menyesuaikan paket wisata",
-      "openingHours": "24 jam",
-      "rating": 4.8,
-      "reviewCount": 6700,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Wakatobi_Beach.jpg",
-      "geoUri": "geo:-5.3264,123.5952?q=Wakatobi",
-      "ticketUrl": "https://wakatobikab.go.id",
-      "description": "Wakatobi dikenal sebagai destinasi bahari kelas dunia dengan terumbu karang, diving, dan budaya masyarakat pesisir.",
-      "funFacts": [
-        "Nama Wakatobi berasal dari Wangi-Wangi, Kaledupa, Tomia, dan Binongko.",
-        "Kawasan ini masuk segitiga karang dunia.",
-        "Diving dan snorkeling menjadi aktivitas utama."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Lautnya tenang dan jernih.",
-        "Spot diving sangat beragam."
-      ],
-      "promoTitle": "Coral Triangle Experience",
-      "promoDescription": "Direkomendasikan untuk pecinta snorkeling dan diving.",
-      "transportInfo": "Akses melalui Wangi-Wangi atau penerbangan lokal.",
-      "emergencyContact": "Dinas Pariwisata Wakatobi"
-    },
-    {
-      "id": "dieng",
-      "name": "Dieng Plateau",
-      "location": "Wonosobo, Jawa Tengah",
-      "address": "Dieng, Wonosobo, Jawa Tengah",
-      "category": "Pegunungan",
-      "latitude": -7.2046,
-      "longitude": 109.9072,
-      "imageQuery": "Dieng Plateau Indonesia",
-      "ticketPrice": "Mulai Rp15.000",
-      "openingHours": "07.00 - 17.00",
-      "rating": 4.7,
-      "reviewCount": 17400,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Dieng_Plateau.jpg",
-      "geoUri": "geo:-7.2046,109.9072?q=Dieng+Plateau",
-      "ticketUrl": "https://diengplateau.com",
-      "description": "Dieng Plateau menyajikan kawah, telaga warna, candi kuno, dan udara pegunungan yang dingin.",
-      "funFacts": [
-        "Dieng disebut negeri di atas awan.",
-        "Telaga Warna terkenal dengan perubahan warna air.",
-        "Festival budaya Dieng populer setiap tahun."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Udara dingin dan pemandangan khas pegunungan.",
-        "Banyak spot dalam satu kawasan."
-      ],
-      "promoTitle": "Highland Escape",
-      "promoDescription": "Siapkan jaket karena suhu bisa sangat dingin.",
-      "transportInfo": "Akses umum dari Wonosobo menggunakan kendaraan darat.",
-      "emergencyContact": "Pos wisata Dieng"
-    },
-    {
-      "id": "karimunjawa",
-      "name": "Karimunjawa",
-      "location": "Jepara, Jawa Tengah",
-      "address": "Kepulauan Karimunjawa, Jepara",
-      "category": "Laut",
-      "latitude": -5.8750,
-      "longitude": 110.4333,
-      "imageQuery": "Karimunjawa island Indonesia",
-      "ticketPrice": "Menyesuaikan kapal dan paket",
-      "openingHours": "24 jam",
-      "rating": 4.7,
-      "reviewCount": 9600,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Karimunjawa_beach.jpg",
-      "geoUri": "geo:-5.8750,110.4333?q=Karimunjawa",
-      "ticketUrl": "https://visitjawatengah.jatengprov.go.id",
-      "description": "Karimunjawa adalah kepulauan dengan pantai putih, laut jernih, dan aktivitas snorkeling yang populer dari Jepara.",
-      "funFacts": [
-        "Karimunjawa memiliki banyak pulau kecil.",
-        "Snorkeling menjadi aktivitas favorit.",
-        "Akses kapal tergantung cuaca laut."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Pantainya tenang dan cocok untuk healing.",
-        "Snorkelingnya bagus untuk pemula."
-      ],
-      "promoTitle": "Island Hopping Jepara",
-      "promoDescription": "Cek jadwal kapal sebelum berangkat.",
-      "transportInfo": "Kapal berangkat dari Jepara atau Semarang.",
-      "emergencyContact": "Pos pelabuhan Karimunjawa"
-    },
-    {
-      "id": "ancol",
-      "name": "Ancol Taman Impian",
-      "location": "Jakarta Utara",
-      "address": "Jl. Lodan Timur No.7, Ancol, Jakarta Utara",
-      "category": "Keluarga",
-      "latitude": -6.1256,
-      "longitude": 106.8364,
-      "imageQuery": "Ancol Jakarta beach amusement park",
-      "ticketPrice": "Mulai Rp30.000",
-      "openingHours": "06.00 - 23.00",
-      "rating": 4.5,
-      "reviewCount": 35800,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Ancol_Beach_Jakarta.jpg",
-      "geoUri": "geo:-6.1256,106.8364?q=Ancol+Taman+Impian",
-      "ticketUrl": "https://www.ancol.com",
-      "description": "Ancol adalah kawasan rekreasi keluarga di Jakarta dengan pantai, Dunia Fantasi, Sea World, dan berbagai wahana hiburan.",
-      "funFacts": [
-        "Ancol merupakan salah satu kawasan rekreasi terbesar di Jakarta.",
-        "Dunia Fantasi berada di dalam kawasan ini.",
-        "Pengunjung bisa menikmati pantai dan taman hiburan dalam satu area."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Pilihan wahana banyak untuk keluarga.",
-        "Cocok untuk liburan singkat di Jakarta."
-      ],
-      "promoTitle": "Family Weekend",
-      "promoDescription": "Cek promo bundling wahana di website resmi.",
-      "transportInfo": "Bisa dicapai dengan TransJakarta, KRL, atau kendaraan pribadi.",
-      "emergencyContact": "Customer care Ancol"
-    },
-    {
-      "id": "kota_tua",
-      "name": "Kota Tua Jakarta",
-      "location": "Jakarta Barat",
-      "address": "Taman Fatahillah, Pinangsia, Jakarta Barat",
-      "category": "Sejarah",
-      "latitude": -6.1352,
-      "longitude": 106.8133,
-      "imageQuery": "Kota Tua Jakarta Fatahillah",
-      "ticketPrice": "Gratis area publik",
-      "openingHours": "24 jam area luar",
-      "rating": 4.6,
-      "reviewCount": 28760,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Jakarta_History_Museum.jpg",
-      "geoUri": "geo:-6.1352,106.8133?q=Kota+Tua+Jakarta",
-      "ticketUrl": "https://jakarta-tourism.go.id",
-      "description": "Kota Tua Jakarta menyimpan bangunan bersejarah, museum, dan suasana kolonial di sekitar Taman Fatahillah.",
-      "funFacts": [
-        "Museum Fatahillah berada di bekas balai kota Batavia.",
-        "Area ini populer untuk foto dan sepeda ontel.",
-        "Dekat dengan Stasiun Jakarta Kota."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Banyak museum dan spot foto.",
-        "Akses transportasi umum mudah."
-      ],
-      "promoTitle": "Museum Walk",
-      "promoDescription": "Kunjungi Museum Fatahillah, Wayang, dan Bank Indonesia.",
-      "transportInfo": "Turun di Stasiun Jakarta Kota lalu berjalan kaki.",
-      "emergencyContact": "Pos keamanan kawasan Kota Tua"
-    },
-    {
-      "id": "tmii",
-      "name": "Taman Mini Indonesia Indah",
-      "location": "Jakarta Timur",
-      "address": "Ceger, Cipayung, Jakarta Timur",
-      "category": "Budaya",
-      "latitude": -6.3024,
-      "longitude": 106.8952,
-      "imageQuery": "Taman Mini Indonesia Indah Jakarta",
-      "ticketPrice": "Mulai Rp25.000",
-      "openingHours": "06.00 - 20.00",
-      "rating": 4.6,
-      "reviewCount": 42100,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/TMII_Keong_Mas.jpg",
-      "geoUri": "geo:-6.3024,106.8952?q=Taman+Mini+Indonesia+Indah",
-      "ticketUrl": "https://tamanmini.com",
-      "description": "TMII menampilkan miniatur budaya Indonesia melalui anjungan daerah, museum, taman, dan wahana edukasi.",
-      "funFacts": [
-        "TMII memiliki anjungan budaya dari berbagai provinsi.",
-        "Teater Keong Mas menjadi ikon kawasan.",
-        "Cocok untuk wisata edukasi keluarga."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Bagus untuk mengenal budaya Indonesia.",
-        "Area luas dan cocok untuk keluarga."
-      ],
-      "promoTitle": "Culture Day",
-      "promoDescription": "Kunjungi beberapa anjungan daerah dalam satu hari.",
-      "transportInfo": "Bisa diakses melalui LRT/TMII dan kendaraan online.",
-      "emergencyContact": "Pusat informasi TMII"
-    },
-    {
-      "id": "tangkuban_perahu",
-      "name": "Tangkuban Perahu",
-      "location": "Bandung Barat, Jawa Barat",
-      "address": "Cikahuripan, Lembang, Bandung Barat",
-      "category": "Gunung",
-      "latitude": -6.7596,
-      "longitude": 107.6098,
-      "imageQuery": "Tangkuban Perahu crater Bandung",
-      "ticketPrice": "Mulai Rp20.000",
-      "openingHours": "07.00 - 17.00",
-      "rating": 4.5,
-      "reviewCount": 23800,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Tangkuban_Perahu_crater.jpg",
-      "geoUri": "geo:-6.7596,107.6098?q=Tangkuban+Perahu",
-      "ticketUrl": "https://disparbud.jabarprov.go.id",
-      "description": "Tangkuban Perahu adalah gunung berapi dengan kawah besar yang mudah diakses dari Bandung dan Lembang.",
-      "funFacts": [
-        "Legenda Sangkuriang melekat pada nama Tangkuban Perahu.",
-        "Pengunjung bisa melihat Kawah Ratu dari dekat.",
-        "Suhu kawasan relatif sejuk."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Kawahnya mudah diakses.",
-        "Cocok digabung dengan wisata Lembang."
-      ],
-      "promoTitle": "Lembang Volcano Trip",
-      "promoDescription": "Datang pagi untuk menghindari kabut.",
-      "transportInfo": "Lebih nyaman menggunakan mobil dari Bandung.",
-      "emergencyContact": "Pos wisata Tangkuban Perahu"
-    },
-    {
-      "id": "kawah_putih",
-      "name": "Kawah Putih",
-      "location": "Ciwidey, Jawa Barat",
-      "address": "Sugihmukti, Pasirjambu, Bandung",
-      "category": "Danau Kawah",
-      "latitude": -7.1662,
-      "longitude": 107.4021,
-      "imageQuery": "Kawah Putih Bandung Indonesia",
-      "ticketPrice": "Mulai Rp28.000",
-      "openingHours": "07.00 - 17.00",
-      "rating": 4.6,
-      "reviewCount": 20300,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Kawah_Putih_Bandung.jpg",
-      "geoUri": "geo:-7.1662,107.4021?q=Kawah+Putih",
-      "ticketUrl": "https://disparbud.jabarprov.go.id",
-      "description": "Kawah Putih adalah danau kawah vulkanik dengan warna air putih kehijauan dan suasana pegunungan Ciwidey.",
-      "funFacts": [
-        "Warna air kawah dapat berubah tergantung cuaca dan kandungan belerang.",
-        "Bau belerang cukup terasa di area kawah.",
-        "Tempat ini populer untuk foto prewedding."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Warna danaunya unik dan fotogenik.",
-        "Udara dingin, siapkan jaket."
-      ],
-      "promoTitle": "Ciwidey Scenic Route",
-      "promoDescription": "Gabungkan dengan Ranca Upas dan kebun teh.",
-      "transportInfo": "Akses dari Bandung sekitar 2 jam melalui Ciwidey.",
-      "emergencyContact": "Petugas kawasan Kawah Putih"
-    },
-    {
-      "id": "pangandaran",
-      "name": "Pantai Pangandaran",
-      "location": "Pangandaran, Jawa Barat",
-      "address": "Pananjung, Pangandaran, Jawa Barat",
-      "category": "Pantai",
-      "latitude": -7.6890,
-      "longitude": 108.6556,
-      "imageQuery": "Pangandaran beach Indonesia",
-      "ticketPrice": "Mulai Rp10.000",
-      "openingHours": "24 jam",
-      "rating": 4.5,
-      "reviewCount": 18800,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Pangandaran_Beach.jpg",
-      "geoUri": "geo:-7.6890,108.6556?q=Pantai+Pangandaran",
-      "ticketUrl": "https://disparbud.pangandarankab.go.id",
-      "description": "Pantai Pangandaran menawarkan pantai timur dan barat, aktivitas berenang, sunrise, sunset, serta cagar alam.",
-      "funFacts": [
-        "Pengunjung bisa melihat sunrise dan sunset di kawasan yang sama.",
-        "Cagar Alam Pangandaran berada dekat pantai.",
-        "Kuliner seafood menjadi daya tarik utama."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Pantai lengkap untuk keluarga.",
-        "Seafood dan suasana malamnya menarik."
-      ],
-      "promoTitle": "Beach Family Trip",
-      "promoDescription": "Cocok untuk liburan keluarga dan kuliner laut.",
-      "transportInfo": "Akses darat dari Bandung atau Jakarta.",
-      "emergencyContact": "Balawista Pantai Pangandaran"
-    },
-    {
-      "id": "tana_toraja",
-      "name": "Tana Toraja",
-      "location": "Sulawesi Selatan",
-      "address": "Kabupaten Tana Toraja, Sulawesi Selatan",
-      "category": "Budaya",
-      "latitude": -3.0753,
-      "longitude": 119.7426,
-      "imageQuery": "Tana Toraja traditional houses Indonesia",
-      "ticketPrice": "Menyesuaikan objek wisata",
-      "openingHours": "08.00 - 17.00",
-      "rating": 4.8,
-      "reviewCount": 10200,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Toraja_Houses.jpg",
-      "geoUri": "geo:-3.0753,119.7426?q=Tana+Toraja",
-      "ticketUrl": "https://visitsulsel.id",
-      "description": "Tana Toraja terkenal dengan rumah adat Tongkonan, tradisi pemakaman, ukiran, dan lanskap pegunungan.",
-      "funFacts": [
-        "Tongkonan memiliki atap melengkung khas.",
-        "Upacara adat Toraja menjadi daya tarik budaya dunia.",
-        "Kete Kesu dan Londa adalah lokasi populer."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Budayanya sangat unik dan kuat.",
-        "Pemandangan pegunungannya indah."
-      ],
-      "promoTitle": "Cultural Heritage Route",
-      "promoDescription": "Gunakan pemandu lokal untuk memahami adat dan etika kunjungan.",
-      "transportInfo": "Akses dari Makassar melalui perjalanan darat atau penerbangan lokal.",
-      "emergencyContact": "Dinas Pariwisata Tana Toraja"
-    },
-    {
-      "id": "lombok_mandalika",
-      "name": "Mandalika Lombok",
-      "location": "Lombok Tengah, NTB",
-      "address": "Kuta, Pujut, Lombok Tengah",
-      "category": "Pantai",
-      "latitude": -8.8920,
-      "longitude": 116.2960,
-      "imageQuery": "Mandalika Lombok beach Indonesia",
-      "ticketPrice": "Gratis area publik",
-      "openingHours": "24 jam",
-      "rating": 4.6,
-      "reviewCount": 11500,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Mandalika_Lombok.jpg",
-      "geoUri": "geo:-8.8920,116.2960?q=Mandalika+Lombok",
-      "ticketUrl": "https://themandalika.com",
-      "description": "Mandalika adalah kawasan wisata pantai di Lombok dengan pasir putih, bukit, sirkuit internasional, dan budaya Sasak.",
-      "funFacts": [
-        "Mandalika memiliki sirkuit MotoGP.",
-        "Pantai Kuta Lombok terkenal dengan pasir unik seperti merica.",
-        "Legenda Putri Mandalika menjadi bagian budaya lokal."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Pantai cantik dan jalan kawasan rapi.",
-        "Banyak spot sunset dan bukit."
-      ],
-      "promoTitle": "Beach and Circuit Tour",
-      "promoDescription": "Gabungkan pantai, bukit, dan kunjungan ke kawasan sirkuit.",
-      "transportInfo": "Dekat dari Bandara Lombok sekitar 30 menit.",
-      "emergencyContact": "Pusat informasi Mandalika"
-    },
-    {
-      "id": "rinjani",
-      "name": "Gunung Rinjani",
-      "location": "Lombok, NTB",
-      "address": "Taman Nasional Gunung Rinjani, Lombok",
-      "category": "Gunung",
-      "latitude": -8.4113,
-      "longitude": 116.4573,
-      "imageQuery": "Mount Rinjani Indonesia crater lake",
-      "ticketPrice": "Menyesuaikan paket pendakian",
-      "openingHours": "Tergantung jadwal pendakian",
-      "rating": 4.8,
-      "reviewCount": 13400,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Mount_Rinjani_from_Sembalun.jpg",
-      "geoUri": "geo:-8.4113,116.4573?q=Gunung+Rinjani",
-      "ticketUrl": "https://rinjaninationalpark.id",
-      "description": "Gunung Rinjani adalah gunung berapi tinggi di Lombok dengan Danau Segara Anak, jalur pendakian, dan panorama puncak.",
-      "funFacts": [
-        "Segara Anak berada di kaldera Rinjani.",
-        "Pendakian Rinjani membutuhkan persiapan fisik yang baik.",
-        "Jalur populer melalui Sembalun dan Senaru."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Trekking berat tapi sangat memuaskan.",
-        "View Segara Anak luar biasa."
-      ],
-      "promoTitle": "Rinjani Trekking",
-      "promoDescription": "Wajib memakai pemandu dan mengecek status pendakian.",
-      "transportInfo": "Akses dari Sembalun atau Senaru.",
-      "emergencyContact": "Balai Taman Nasional Gunung Rinjani"
-    },
-    {
-      "id": "belitung",
-      "name": "Pantai Tanjung Tinggi",
-      "location": "Belitung",
-      "address": "Sijuk, Kabupaten Belitung",
-      "category": "Pantai",
-      "latitude": -2.5519,
-      "longitude": 107.6696,
-      "imageQuery": "Tanjung Tinggi beach Belitung",
-      "ticketPrice": "Gratis",
-      "openingHours": "24 jam",
-      "rating": 4.7,
-      "reviewCount": 9400,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/70/Tanjung_Tinggi_Beach.jpg",
-      "geoUri": "geo:-2.5519,107.6696?q=Pantai+Tanjung+Tinggi",
-      "ticketUrl": "https://dispar.belitung.go.id",
-      "description": "Pantai Tanjung Tinggi terkenal dengan batu granit besar, air laut jernih, dan pasir putih khas Belitung.",
-      "funFacts": [
-        "Batu granit raksasa menjadi ciri khas pantai ini.",
-        "Lokasi ini dikenal dari film Laskar Pelangi.",
-        "Airnya relatif tenang untuk berenang."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Batu granitnya unik dan fotogenik.",
-        "Pantai bersih dan airnya jernih."
-      ],
-      "promoTitle": "Granite Beach Photo Spot",
-      "promoDescription": "Datang sore untuk cahaya foto yang lembut.",
-      "transportInfo": "Akses dari Tanjung Pandan sekitar 40 menit.",
-      "emergencyContact": "Pos wisata Pantai Tanjung Tinggi"
-    },
-    {
-      "id": "labuan_cermin",
-      "name": "Danau Labuan Cermin",
-      "location": "Berau, Kalimantan Timur",
-      "address": "Biduk-Biduk, Berau, Kalimantan Timur",
-      "category": "Danau",
-      "latitude": 1.2609,
-      "longitude": 118.7796,
-      "imageQuery": "Labuan Cermin lake Indonesia",
-      "ticketPrice": "Mulai Rp10.000",
-      "openingHours": "08.00 - 17.00",
-      "rating": 4.7,
-      "reviewCount": 5200,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Labuan_Cermin_Lake.jpg",
-      "geoUri": "geo:1.2609,118.7796?q=Danau+Labuan+Cermin",
-      "ticketUrl": "https://disbudpar.beraukab.go.id",
-      "description": "Labuan Cermin terkenal dengan air super jernih yang memantulkan dasar danau seperti cermin. Danau ini memiliki lapisan air tawar dan asin.",
-      "funFacts": [
-        "Air danau sangat jernih hingga perahu tampak melayang.",
-        "Danau ini memiliki fenomena dua rasa: tawar dan asin.",
-        "Snorkeling menjadi aktivitas favorit."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Airnya luar biasa jernih.",
-        "Perjalanan jauh tapi tempatnya unik."
-      ],
-      "promoTitle": "Crystal Lake Trip",
-      "promoDescription": "Bawa dry bag dan datang saat cuaca cerah.",
-      "transportInfo": "Akses dari Berau menuju Biduk-Biduk.",
-      "emergencyContact": "Pengelola wisata Labuan Cermin"
-    },
-    {
-      "id": "banda_neira",
-      "name": "Banda Neira",
-      "location": "Maluku Tengah",
-      "address": "Kepulauan Banda, Maluku",
-      "category": "Sejarah dan Laut",
-      "latitude": -4.5240,
-      "longitude": 129.8965,
-      "imageQuery": "Banda Neira Indonesia island",
-      "ticketPrice": "Menyesuaikan transportasi dan objek wisata",
-      "openingHours": "24 jam",
-      "rating": 4.8,
-      "reviewCount": 4300,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Banda_Neira.jpg",
-      "geoUri": "geo:-4.5240,129.8965?q=Banda+Neira",
-      "ticketUrl": "https://dispar.malukuprov.go.id",
-      "description": "Banda Neira memadukan sejarah rempah, benteng kolonial, gunung api, dan laut jernih untuk snorkeling.",
-      "funFacts": [
-        "Banda dulu dikenal sebagai pusat perdagangan pala dunia.",
-        "Benteng Belgica menjadi ikon sejarah kawasan.",
-        "Gunung Api Banda terlihat jelas dari pulau utama."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Sejarah dan alamnya kuat sekali.",
-        "Snorkeling dekat pulau sangat cantik."
-      ],
-      "promoTitle": "Spice Island Heritage",
-      "promoDescription": "Kunjungi benteng, museum, dan spot snorkeling dalam satu rute.",
-      "transportInfo": "Akses melalui Ambon lalu kapal atau penerbangan terbatas.",
-      "emergencyContact": "Pusat informasi wisata Banda"
-    },
-    {
-      "id": "morotai",
-      "name": "Pulau Morotai",
-      "location": "Maluku Utara",
-      "address": "Kabupaten Pulau Morotai, Maluku Utara",
-      "category": "Pantai dan Sejarah",
-      "latitude": 2.3657,
-      "longitude": 128.4056,
-      "imageQuery": "Morotai island Indonesia beach",
-      "ticketPrice": "Menyesuaikan paket wisata",
-      "openingHours": "24 jam",
-      "rating": 4.6,
-      "reviewCount": 3600,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/92/Morotai_Island.jpg",
-      "geoUri": "geo:2.3657,128.4056?q=Pulau+Morotai",
-      "ticketUrl": "https://morotaikab.go.id",
-      "description": "Morotai menawarkan pantai tropis, pulau kecil, diving, dan jejak sejarah Perang Dunia II.",
-      "funFacts": [
-        "Morotai memiliki banyak peninggalan Perang Dunia II.",
-        "Pulau Dodola terkenal dengan pasir putih yang menghubungkan dua pulau.",
-        "Diving wreck menjadi daya tarik khusus."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Pantai masih tenang dan alami.",
-        "Menarik untuk pecinta sejarah dan laut."
-      ],
-      "promoTitle": "Dodola Island Escape",
-      "promoDescription": "Cocok untuk island hopping dan snorkeling.",
-      "transportInfo": "Akses melalui Ternate lalu penerbangan/kapal ke Morotai.",
-      "emergencyContact": "Dinas Pariwisata Morotai"
-    },
-    {
-      "id": "sentani",
-      "name": "Danau Sentani",
-      "location": "Jayapura, Papua",
-      "address": "Sentani, Jayapura, Papua",
-      "category": "Danau",
-      "latitude": -2.6114,
-      "longitude": 140.5084,
-      "imageQuery": "Lake Sentani Papua Indonesia",
-      "ticketPrice": "Menyesuaikan spot wisata",
-      "openingHours": "24 jam",
-      "rating": 4.6,
-      "reviewCount": 5100,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Lake_Sentani.jpg",
-      "geoUri": "geo:-2.6114,140.5084?q=Danau+Sentani",
-      "ticketUrl": "https://papua.go.id",
-      "description": "Danau Sentani adalah danau luas dekat Jayapura dengan pulau-pulau kecil, budaya lokal, dan panorama perbukitan.",
-      "funFacts": [
-        "Festival Danau Sentani menampilkan budaya lokal Papua.",
-        "Danau ini memiliki banyak pulau kecil.",
-        "Lokasinya dekat dari Bandara Sentani."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Pemandangan luas dan tenang.",
-        "Dekat bandara, mudah dikunjungi."
-      ],
-      "promoTitle": "Papua Lake Culture",
-      "promoDescription": "Datang saat festival untuk melihat budaya lokal.",
-      "transportInfo": "Dekat dari Bandara Sentani dan Kota Jayapura.",
-      "emergencyContact": "Pusat informasi wisata Jayapura"
-    },
-    {
-      "id": "lorentz",
-      "name": "Taman Nasional Lorentz",
-      "location": "Papua",
-      "address": "Papua Pegunungan dan Papua Tengah",
-      "category": "Alam",
-      "latitude": -4.7500,
-      "longitude": 137.8333,
-      "imageQuery": "Lorentz National Park Papua",
-      "ticketPrice": "Perlu izin dan paket khusus",
-      "openingHours": "Mengikuti izin kawasan",
-      "rating": 4.7,
-      "reviewCount": 1200,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Puncak_Jaya_Lorentz.jpg",
-      "geoUri": "geo:-4.7500,137.8333?q=Taman+Nasional+Lorentz",
-      "ticketUrl": "https://ksdae.menlhk.go.id",
-      "description": "Lorentz adalah taman nasional luas di Papua dengan ekosistem dari laut hingga pegunungan bersalju. Kunjungan membutuhkan persiapan dan izin khusus.",
-      "funFacts": [
-        "Lorentz merupakan Situs Warisan Dunia UNESCO.",
-        "Ekosistemnya membentang dari pesisir hingga pegunungan tinggi.",
-        "Kawasan ini sangat penting untuk konservasi."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Destinasi konservasi yang sangat unik.",
-        "Cocok untuk riset dan petualangan serius."
-      ],
-      "promoTitle": "Conservation Expedition",
-      "promoDescription": "Perlu riset izin, logistik, dan pemandu resmi.",
-      "transportInfo": "Akses terbatas dan membutuhkan perencanaan khusus.",
-      "emergencyContact": "Balai Taman Nasional Lorentz"
-    },
-    {
-      "id": "gili_trawangan",
-      "name": "Gili Trawangan",
-      "location": "Lombok Utara, NTB",
-      "address": "Gili Indah, Pemenang, Lombok Utara",
-      "category": "Pantai",
-      "latitude": -8.3506,
-      "longitude": 116.0389,
-      "imageQuery": "Gili Trawangan beach Indonesia",
-      "ticketPrice": "Menyesuaikan transportasi kapal",
-      "openingHours": "24 jam",
-      "rating": 4.6,
-      "reviewCount": 17100,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/Gili_Trawangan_beach.jpg",
-      "geoUri": "geo:-8.3506,116.0389?q=Gili+Trawangan",
-      "ticketUrl": "https://lombokutarakab.go.id",
-      "description": "Gili Trawangan adalah pulau wisata tanpa kendaraan bermotor dengan pantai, snorkeling, diving, dan suasana malam.",
-      "funFacts": [
-        "Transportasi utama di pulau ini adalah sepeda dan cidomo.",
-        "Snorkeling penyu menjadi aktivitas populer.",
-        "Sunset point ramai dikunjungi setiap sore."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Pantai dan nightlife seimbang.",
-        "Snorkeling penyu sangat berkesan."
-      ],
-      "promoTitle": "No Motor Island",
-      "promoDescription": "Sewa sepeda untuk keliling pulau.",
-      "transportInfo": "Akses kapal dari Bangsal atau Bali.",
-      "emergencyContact": "Pos informasi Gili Trawangan"
-    },
-    {
-      "id": "lawang_sewu",
-      "name": "Lawang Sewu",
-      "location": "Semarang, Jawa Tengah",
-      "address": "Jl. Pemuda, Sekayu, Semarang",
-      "category": "Sejarah",
-      "latitude": -6.9841,
-      "longitude": 110.4107,
-      "imageQuery": "Lawang Sewu Semarang Indonesia",
-      "ticketPrice": "Mulai Rp20.000",
-      "openingHours": "08.00 - 20.00",
-      "rating": 4.6,
-      "reviewCount": 20100,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Lawang_Sewu_Semarang.jpg",
-      "geoUri": "geo:-6.9841,110.4107?q=Lawang+Sewu",
-      "ticketUrl": "https://heritage.kai.id",
-      "description": "Lawang Sewu adalah gedung bersejarah di Semarang yang terkenal dengan arsitektur kolonial, lorong panjang, dan museum perkeretaapian.",
-      "funFacts": [
-        "Nama Lawang Sewu berarti seribu pintu.",
-        "Bangunan ini terkait sejarah kereta api Indonesia.",
-        "Tur malam menjadi daya tarik tersendiri."
-      ],
-      "galleryImages": [],
-      "reviews": [
-        "Bangunan bersejarah yang terawat.",
-        "Bagus untuk foto dan belajar sejarah."
-      ],
-      "promoTitle": "Heritage Night Tour",
-      "promoDescription": "Cek jadwal tur malam untuk suasana berbeda.",
-      "transportInfo": "Berada di pusat Kota Semarang dan mudah diakses.",
-      "emergencyContact": "Petugas Lawang Sewu"
-    }
-  ]
+﻿{
+    "status":  "success",
+    "data":  [
+                 {
+                     "id":  "borobudur",
+                     "name":  "Candi Borobudur",
+                     "location":  "Magelang, Jawa Tengah",
+                     "address":  "Jl. Badrawati, Borobudur, Magelang, Jawa Tengah",
+                     "category":  "Sejarah",
+                     "latitude":  -7.6079,
+                     "longitude":  110.2038,
+                     "imageQuery":  "Borobudur temple Indonesia",
+                     "ticketPrice":  "Mulai Rp50.000",
+                     "openingHours":  "06.30 - 16.30",
+                     "rating":  4.8,
+                     "reviewCount":  24890,
+                     "imageUrl":  "https://images.pexels.com/photos/5505491/pexels-photo-5505491.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-7.6079,110.2038?q=Candi+Borobudur",
+                     "ticketUrl":  "https://borobudurpark.com",
+                     "description":  "Candi Borobudur adalah candi Buddha terbesar di dunia dan salah satu ikon wisata sejarah Indonesia. Kompleks ini terkenal dengan stupa, relief, dan pemandangan perbukitan Magelang.",
+                     "funFacts":  [
+                                      "Borobudur memiliki ribuan panel relief yang menceritakan kisah ajaran Buddha.",
+                                      "Candi ini dibangun dengan sistem batu yang saling mengunci.",
+                                      "UNESCO menetapkan Borobudur sebagai Situs Warisan Dunia."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/5505491/pexels-photo-5505491.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/5505487/pexels-photo-5505487.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/5505439/pexels-photo-5505439.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/6109263/pexels-photo-6109263.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Sunrise dan reliefnya sangat indah.",
+                                     "Cocok untuk wisata edukasi sejarah."
+                                 ],
+                     "promoTitle":  "Paket Sunrise Heritage",
+                     "promoDescription":  "Rekomendasi kunjungan pagi untuk pengalaman foto terbaik.",
+                     "transportInfo":  "Dapat dicapai dari Yogyakarta sekitar 1,5 jam menggunakan mobil.",
+                     "emergencyContact":  "Informasi kawasan: borobudurpark.com"
+                 },
+                 {
+                     "id":  "prambanan",
+                     "name":  "Candi Prambanan",
+                     "location":  "Sleman, DI Yogyakarta",
+                     "address":  "Jl. Raya Solo - Yogyakarta No.16, Prambanan",
+                     "category":  "Sejarah",
+                     "latitude":  -7.7520,
+                     "longitude":  110.4915,
+                     "imageQuery":  "Prambanan temple Indonesia",
+                     "ticketPrice":  "Mulai Rp50.000",
+                     "openingHours":  "06.30 - 17.00",
+                     "rating":  4.7,
+                     "reviewCount":  21340,
+                     "imageUrl":  "https://images.pexels.com/photos/6779738/pexels-photo-6779738.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-7.7520,110.4915?q=Candi+Prambanan",
+                     "ticketUrl":  "https://prambananpark.com",
+                     "description":  "Candi Prambanan adalah kompleks candi Hindu terbesar di Indonesia. Menara candi yang menjulang tinggi membuatnya menjadi salah satu spot arsitektur paling ikonik di Yogyakarta.",
+                     "funFacts":  [
+                                      "Candi utama Prambanan dipersembahkan untuk Trimurti.",
+                                      "Kompleks ini sering menjadi lokasi pertunjukan Ramayana Ballet.",
+                                      "Reliefnya memuat kisah Ramayana."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/6779738/pexels-photo-6779738.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/38087301/pexels-photo-38087301.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/6488410/pexels-photo-6488410.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/38205291/pexels-photo-38205291.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Area luas dan nyaman untuk berjalan sore.",
+                                     "Pertunjukan Ramayana sangat direkomendasikan."
+                                 ],
+                     "promoTitle":  "Ramayana Night",
+                     "promoDescription":  "Cek jadwal pertunjukan malam untuk pengalaman budaya.",
+                     "transportInfo":  "Dekat dari Bandara Adisutjipto dan jalur utama Yogyakarta-Solo.",
+                     "emergencyContact":  "Informasi kawasan: prambananpark.com"
+                 },
+                 {
+                     "id":  "malioboro",
+                     "name":  "Jalan Malioboro",
+                     "location":  "Yogyakarta",
+                     "address":  "Jl. Malioboro, Kota Yogyakarta",
+                     "category":  "Kota dan Kuliner",
+                     "latitude":  -7.7928,
+                     "longitude":  110.3658,
+                     "imageQuery":  "Malioboro Yogyakarta street",
+                     "ticketPrice":  "Gratis",
+                     "openingHours":  "24 jam",
+                     "rating":  4.6,
+                     "reviewCount":  39020,
+                     "imageUrl":  "https://images.pexels.com/photos/9539677/pexels-photo-9539677.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-7.7928,110.3658?q=Jalan+Malioboro",
+                     "ticketUrl":  "https://visitingjogja.jogjaprov.go.id",
+                     "description":  "Malioboro adalah kawasan belanja, kuliner, dan budaya paling populer di Yogyakarta. Area ini ramai oleh pedagang, seniman jalanan, dan wisatawan.",
+                     "funFacts":  [
+                                      "Malioboro dekat dengan Keraton dan Titik Nol Kilometer.",
+                                      "Kawasan ini populer untuk berburu batik dan kuliner malam.",
+                                      "Banyak pertunjukan seni jalanan muncul di malam hari."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/9539677/pexels-photo-9539677.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/17285678/pexels-photo-17285678.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/19504814/pexels-photo-19504814.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/34691614/pexels-photo-34691614.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Ramai, hidup, dan banyak kuliner.",
+                                     "Wajib dikunjungi saat ke Jogja."
+                                 ],
+                     "promoTitle":  "Kuliner Malam",
+                     "promoDescription":  "Coba gudeg, sate kere, dan kopi joss di sekitar kawasan.",
+                     "transportInfo":  "Mudah dicapai dari Stasiun Tugu dengan berjalan kaki.",
+                     "emergencyContact":  "Pos informasi wisata sekitar Malioboro"
+                 },
+                 {
+                     "id":  "kuta",
+                     "name":  "Pantai Kuta Bali",
+                     "location":  "Badung, Bali",
+                     "address":  "Pantai Kuta, Kuta, Kabupaten Badung, Bali",
+                     "category":  "Pantai",
+                     "latitude":  -8.7187,
+                     "longitude":  115.1689,
+                     "imageQuery":  "Kuta beach Bali sunset",
+                     "ticketPrice":  "Gratis",
+                     "openingHours":  "24 jam",
+                     "rating":  4.5,
+                     "reviewCount":  31870,
+                     "imageUrl":  "https://images.pexels.com/photos/4086322/pexels-photo-4086322.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-8.7187,115.1689?q=Pantai+Kuta+Bali",
+                     "ticketUrl":  "https://www.disparda.baliprov.go.id",
+                     "description":  "Pantai Kuta dikenal dengan pasir panjang, ombak untuk surfing pemula, dan sunset yang ramai dikunjungi wisatawan.",
+                     "funFacts":  [
+                                      "Kuta populer di kalangan peselancar pemula.",
+                                      "Area sekitarnya penuh restoran, toko, dan pusat hiburan.",
+                                      "Sunset Kuta menjadi salah satu momen paling dicari."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/4086322/pexels-photo-4086322.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/36313551/pexels-photo-36313551.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/12818174/pexels-photo-12818174.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/12423613/pexels-photo-12423613.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Sunset bagus dan akses mudah.",
+                                     "Cocok untuk belajar surfing."
+                                 ],
+                     "promoTitle":  "Surfing Lesson",
+                     "promoDescription":  "Banyak kelas surfing harian di sekitar pantai.",
+                     "transportInfo":  "Dekat dari Bandara Ngurah Rai sekitar 20 menit.",
+                     "emergencyContact":  "Balawista/Petugas pantai setempat"
+                 },
+                 {
+                     "id":  "uluwatu",
+                     "name":  "Pura Uluwatu",
+                     "location":  "Badung, Bali",
+                     "address":  "Pecatu, Kuta Selatan, Badung, Bali",
+                     "category":  "Budaya",
+                     "latitude":  -8.8291,
+                     "longitude":  115.0849,
+                     "imageQuery":  "Uluwatu temple Bali cliff sunset",
+                     "ticketPrice":  "Mulai Rp30.000",
+                     "openingHours":  "07.00 - 19.00",
+                     "rating":  4.7,
+                     "reviewCount":  27840,
+                     "imageUrl":  "https://images.pexels.com/photos/36593818/pexels-photo-36593818.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-8.8291,115.0849?q=Pura+Uluwatu",
+                     "ticketUrl":  "https://www.disparda.baliprov.go.id",
+                     "description":  "Pura Uluwatu berdiri di tebing tinggi dengan panorama laut lepas. Tempat ini terkenal untuk sunset dan pertunjukan Tari Kecak.",
+                     "funFacts":  [
+                                      "Pura ini berada di tebing sekitar 70 meter di atas laut.",
+                                      "Pertunjukan Kecak saat sunset sangat populer.",
+                                      "Pengunjung disarankan menjaga barang dari monyet liar."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/36593818/pexels-photo-36593818.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/30286799/pexels-photo-30286799.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/36452343/pexels-photo-36452343.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/3417754/pexels-photo-3417754.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Sunset dan Kecak luar biasa.",
+                                     "Pemandangan lautnya dramatis."
+                                 ],
+                     "promoTitle":  "Kecak Sunset",
+                     "promoDescription":  "Datang lebih awal untuk mendapatkan posisi duduk terbaik.",
+                     "transportInfo":  "Disarankan menggunakan kendaraan pribadi atau sewa kendaraan.",
+                     "emergencyContact":  "Petugas kawasan Pura Uluwatu"
+                 },
+                 {
+                     "id":  "ubud_monkey_forest",
+                     "name":  "Ubud Monkey Forest",
+                     "location":  "Gianyar, Bali",
+                     "address":  "Jl. Monkey Forest, Ubud, Gianyar, Bali",
+                     "category":  "Alam",
+                     "latitude":  -8.5193,
+                     "longitude":  115.2606,
+                     "imageQuery":  "Ubud Monkey Forest Bali",
+                     "ticketPrice":  "Mulai Rp80.000",
+                     "openingHours":  "09.00 - 18.00",
+                     "rating":  4.6,
+                     "reviewCount":  22010,
+                     "imageUrl":  "https://images.pexels.com/photos/11931003/pexels-photo-11931003.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-8.5193,115.2606?q=Ubud+Monkey+Forest",
+                     "ticketUrl":  "https://monkeyforestubud.com",
+                     "description":  "Ubud Monkey Forest adalah hutan lindung dengan pura kuno dan populasi monyet ekor panjang. Suasananya teduh dan cocok untuk wisata alam-budaya.",
+                     "funFacts":  [
+                                      "Kawasan ini memiliki ratusan monyet ekor panjang.",
+                                      "Terdapat pura dan jalur hutan yang fotogenik.",
+                                      "Pengunjung tidak disarankan membawa makanan terbuka."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/11931003/pexels-photo-11931003.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/7723741/pexels-photo-7723741.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/19993473/pexels-photo-19993473.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/7709784/pexels-photo-7709784.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Hutan sejuk di tengah Ubud.",
+                                     "Monyetnya aktif, tetap hati-hati dengan barang."
+                                 ],
+                     "promoTitle":  "Forest Walk",
+                     "promoDescription":  "Rute pagi lebih nyaman karena belum terlalu ramai.",
+                     "transportInfo":  "Mudah dijangkau dari pusat Ubud dengan berjalan kaki atau ojek.",
+                     "emergencyContact":  "Petugas kawasan Monkey Forest"
+                 },
+                 {
+                     "id":  "toba",
+                     "name":  "Danau Toba",
+                     "location":  "Sumatera Utara",
+                     "address":  "Danau Toba, Sumatera Utara",
+                     "category":  "Danau",
+                     "latitude":  2.6832,
+                     "longitude":  98.8523,
+                     "imageQuery":  "Lake Toba Indonesia",
+                     "ticketPrice":  "Mulai Rp10.000",
+                     "openingHours":  "24 jam",
+                     "rating":  4.7,
+                     "reviewCount":  18920,
+                     "imageUrl":  "https://images.pexels.com/photos/33562774/pexels-photo-33562774.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:2.6832,98.8523?q=Danau+Toba",
+                     "ticketUrl":  "https://laketoba.id",
+                     "description":  "Danau Toba adalah danau vulkanik besar dengan Pulau Samosir di tengahnya. Destinasi ini menawarkan panorama dan budaya Batak.",
+                     "funFacts":  [
+                                      "Danau Toba terbentuk dari letusan supervolkano purba.",
+                                      "Pulau Samosir berada di tengah danau.",
+                                      "Kawasan ini kaya budaya Batak."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/33562774/pexels-photo-33562774.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/5234072/pexels-photo-5234072.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/35985703/pexels-photo-35985703.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/5234078/pexels-photo-5234078.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Pemandangan luas dan udara sejuk.",
+                                     "Samosir menarik untuk wisata budaya."
+                                 ],
+                     "promoTitle":  "Samosir Culture Trip",
+                     "promoDescription":  "Gabungkan kunjungan danau dengan desa budaya Batak.",
+                     "transportInfo":  "Akses populer melalui Parapat lalu menyeberang ke Samosir.",
+                     "emergencyContact":  "Pusat informasi wisata Danau Toba"
+                 },
+                 {
+                     "id":  "bukittinggi",
+                     "name":  "Jam Gadang Bukittinggi",
+                     "location":  "Bukittinggi, Sumatera Barat",
+                     "address":  "Benteng Pasar Atas, Bukittinggi",
+                     "category":  "Kota dan Sejarah",
+                     "latitude":  -0.3052,
+                     "longitude":  100.3692,
+                     "imageQuery":  "Jam Gadang Bukittinggi",
+                     "ticketPrice":  "Gratis",
+                     "openingHours":  "24 jam",
+                     "rating":  4.6,
+                     "reviewCount":  15300,
+                     "imageUrl":  "https://images.pexels.com/photos/26647317/pexels-photo-26647317.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-0.3052,100.3692?q=Jam+Gadang+Bukittinggi",
+                     "ticketUrl":  "https://sumbar.travel",
+                     "description":  "Jam Gadang adalah ikon Bukittinggi dan Sumatera Barat. Area sekitarnya ramai dengan kuliner, taman kota, dan akses ke pasar wisata.",
+                     "funFacts":  [
+                                      "Jam Gadang dibangun pada masa kolonial.",
+                                      "Angka empat pada jamnya punya bentuk unik.",
+                                      "Dekat dengan Ngarai Sianok dan Benteng Fort de Kock."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/26647317/pexels-photo-26647317.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/34241003/pexels-photo-34241003.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37822267/pexels-photo-37822267.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/34241004/pexels-photo-34241004.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Ikon kota yang wajib foto.",
+                                     "Dekat dengan kuliner Minang."
+                                 ],
+                     "promoTitle":  "City Walk Bukittinggi",
+                     "promoDescription":  "Cocok digabung dengan wisata kuliner dan Ngarai Sianok.",
+                     "transportInfo":  "Mudah dicapai dari pusat kota Bukittinggi.",
+                     "emergencyContact":  "Pos keamanan kawasan Jam Gadang"
+                 },
+                 {
+                     "id":  "bromo",
+                     "name":  "Gunung Bromo",
+                     "location":  "Probolinggo, Jawa Timur",
+                     "address":  "Taman Nasional Bromo Tengger Semeru, Jawa Timur",
+                     "category":  "Gunung",
+                     "latitude":  -7.9425,
+                     "longitude":  112.9530,
+                     "imageQuery":  "Mount Bromo sunrise Indonesia",
+                     "ticketPrice":  "Mulai Rp29.000",
+                     "openingHours":  "24 jam",
+                     "rating":  4.8,
+                     "reviewCount":  29840,
+                     "imageUrl":  "https://images.pexels.com/photos/38262907/pexels-photo-38262907.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-7.9425,112.9530?q=Gunung+Bromo",
+                     "ticketUrl":  "https://bookingbromo.bromotenggersemeru.org",
+                     "description":  "Gunung Bromo menawarkan panorama sunrise, kawah aktif, lautan pasir, dan budaya masyarakat Tengger.",
+                     "funFacts":  [
+                                      "Lautan pasir Bromo disebut Segara Wedi.",
+                                      "Upacara Kasada dilakukan masyarakat Tengger setiap tahun.",
+                                      "Spot sunrise populer berada di kawasan Penanjakan."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/38262907/pexels-photo-38262907.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/34390984/pexels-photo-34390984.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/28386069/pexels-photo-28386069.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/28910380/pexels-photo-28910380.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Sunrise-nya salah satu yang terbaik.",
+                                     "Datang pagi buta tapi sangat worth it."
+                                 ],
+                     "promoTitle":  "Sunrise Jeep Tour",
+                     "promoDescription":  "Pilih paket jeep resmi untuk rute sunrise dan kawah.",
+                     "transportInfo":  "Akses umum melalui Probolinggo, Malang, atau Pasuruan.",
+                     "emergencyContact":  "Balai Besar TNBTS"
+                 },
+                 {
+                     "id":  "ijen",
+                     "name":  "Kawah Ijen",
+                     "location":  "Banyuwangi, Jawa Timur",
+                     "address":  "Kawasan Ijen, Banyuwangi, Jawa Timur",
+                     "category":  "Gunung",
+                     "latitude":  -8.0580,
+                     "longitude":  114.2420,
+                     "imageQuery":  "Ijen crater blue fire Indonesia",
+                     "ticketPrice":  "Mulai Rp20.000",
+                     "openingHours":  "02.00 - 12.00",
+                     "rating":  4.7,
+                     "reviewCount":  12600,
+                     "imageUrl":  "https://images.pexels.com/photos/20261014/pexels-photo-20261014.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-8.0580,114.2420?q=Kawah+Ijen",
+                     "ticketUrl":  "https://banyuwangitourism.com",
+                     "description":  "Kawah Ijen terkenal dengan fenomena blue fire dan danau kawah berwarna biru kehijauan. Trekking dini hari menjadi pengalaman utama wisatawan.",
+                     "funFacts":  [
+                                      "Blue fire Ijen adalah fenomena langka yang terlihat pada malam hari.",
+                                      "Kawahnya memiliki danau asam berwarna toska.",
+                                      "Penambang belerang masih beraktivitas di kawasan ini."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/20261014/pexels-photo-20261014.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/38132000/pexels-photo-38132000.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/4090321/pexels-photo-4090321.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/4313045/pexels-photo-4313045.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Trekking menantang tapi pemandangan luar biasa.",
+                                     "Perlu masker karena bau belerang kuat."
+                                 ],
+                     "promoTitle":  "Blue Fire Trek",
+                     "promoDescription":  "Gunakan pemandu lokal dan perlengkapan aman.",
+                     "transportInfo":  "Akses dari Banyuwangi atau Bondowoso.",
+                     "emergencyContact":  "Pos Paltuding Kawah Ijen"
+                 },
+                 {
+                     "id":  "baluran",
+                     "name":  "Taman Nasional Baluran",
+                     "location":  "Situbondo, Jawa Timur",
+                     "address":  "Sumberwaru, Banyuputih, Situbondo",
+                     "category":  "Alam",
+                     "latitude":  -7.8444,
+                     "longitude":  114.3871,
+                     "imageQuery":  "Baluran National Park savanna Indonesia",
+                     "ticketPrice":  "Mulai Rp16.500",
+                     "openingHours":  "07.30 - 16.00",
+                     "rating":  4.6,
+                     "reviewCount":  8200,
+                     "imageUrl":  "https://images.pexels.com/photos/4587721/pexels-photo-4587721.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-7.8444,114.3871?q=Taman+Nasional+Baluran",
+                     "ticketUrl":  "https://balurannationalpark.id",
+                     "description":  "Baluran dikenal sebagai Africa van Java karena lanskap savana Bekol yang luas, satwa liar, dan Pantai Bama.",
+                     "funFacts":  [
+                                      "Savana Bekol menjadi ikon utama Baluran.",
+                                      "Pengunjung bisa melihat rusa, banteng, dan burung liar.",
+                                      "Pantai Bama berada di dalam kawasan taman nasional."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/4587721/pexels-photo-4587721.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/4040119/pexels-photo-4040119.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37945785/pexels-photo-37945785.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/5748446/pexels-photo-5748446.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Savana luas dan fotogenik.",
+                                     "Rute cocok untuk road trip Banyuwangi-Situbondo."
+                                 ],
+                     "promoTitle":  "Savanna Drive",
+                     "promoDescription":  "Datang pagi atau sore untuk cahaya foto terbaik.",
+                     "transportInfo":  "Lebih nyaman menggunakan kendaraan pribadi.",
+                     "emergencyContact":  "Kantor Balai TN Baluran"
+                 },
+                 {
+                     "id":  "komodo",
+                     "name":  "Pulau Komodo",
+                     "location":  "Manggarai Barat, NTT",
+                     "address":  "Taman Nasional Komodo, NTT",
+                     "category":  "Alam",
+                     "latitude":  -8.5544,
+                     "longitude":  119.4934,
+                     "imageQuery":  "Komodo Island Indonesia",
+                     "ticketPrice":  "Menyesuaikan paket kawasan",
+                     "openingHours":  "08.00 - 17.00",
+                     "rating":  4.8,
+                     "reviewCount":  16210,
+                     "imageUrl":  "https://images.pexels.com/photos/18340431/pexels-photo-18340431.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-8.5544,119.4934?q=Pulau+Komodo",
+                     "ticketUrl":  "https://booking.komodo.id",
+                     "description":  "Pulau Komodo adalah habitat alami komodo dan bagian dari taman nasional yang juga terkenal dengan pantai, bukit, dan spot diving.",
+                     "funFacts":  [
+                                      "Komodo adalah kadal terbesar yang masih hidup.",
+                                      "Kawasan ini memiliki banyak spot snorkeling dan diving.",
+                                      "Wisatawan wajib ditemani ranger."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/18340431/pexels-photo-18340431.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/12843344/pexels-photo-12843344.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37875517/pexels-photo-37875517.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/533931/pexels-photo-533931.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Pengalaman melihat komodo sangat unik.",
+                                     "Pemandangan pulau-pulaunya luar biasa."
+                                 ],
+                     "promoTitle":  "Island Hopping",
+                     "promoDescription":  "Gabungkan Komodo, Padar, dan Pink Beach dalam satu trip.",
+                     "transportInfo":  "Berangkat dari Labuan Bajo menggunakan kapal wisata.",
+                     "emergencyContact":  "Ranger Taman Nasional Komodo"
+                 },
+                 {
+                     "id":  "padar",
+                     "name":  "Pulau Padar",
+                     "location":  "Manggarai Barat, NTT",
+                     "address":  "Taman Nasional Komodo, NTT",
+                     "category":  "Bukit dan Pantai",
+                     "latitude":  -8.6639,
+                     "longitude":  119.5747,
+                     "imageQuery":  "Padar Island viewpoint Indonesia",
+                     "ticketPrice":  "Termasuk paket Taman Nasional Komodo",
+                     "openingHours":  "06.00 - 17.00",
+                     "rating":  4.9,
+                     "reviewCount":  11870,
+                     "imageUrl":  "https://images.pexels.com/photos/37680404/pexels-photo-37680404.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-8.6639,119.5747?q=Pulau+Padar",
+                     "ticketUrl":  "https://booking.komodo.id",
+                     "description":  "Pulau Padar terkenal dengan viewpoint ikonik yang memperlihatkan teluk-teluk cantik dan garis pantai berwarna berbeda.",
+                     "funFacts":  [
+                                      "Viewpoint Padar menjadi salah satu foto wisata paling ikonik di Indonesia.",
+                                      "Pendakian singkatnya cukup terjal.",
+                                      "Waktu terbaik adalah sunrise atau sore hari."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/37680404/pexels-photo-37680404.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/10392196/pexels-photo-10392196.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/2407472/pexels-photo-2407472.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/5155804/pexels-photo-5155804.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Naiknya capek tapi pemandangannya juara.",
+                                     "Salah satu spot foto terbaik di Labuan Bajo."
+                                 ],
+                     "promoTitle":  "Sunrise Viewpoint",
+                     "promoDescription":  "Mulai trekking pagi untuk cuaca lebih sejuk.",
+                     "transportInfo":  "Diakses dengan kapal dari Labuan Bajo.",
+                     "emergencyContact":  "Ranger Taman Nasional Komodo"
+                 },
+                 {
+                     "id":  "rajaampat",
+                     "name":  "Raja Ampat",
+                     "location":  "Papua Barat Daya",
+                     "address":  "Kabupaten Raja Ampat, Papua Barat Daya",
+                     "category":  "Laut",
+                     "latitude":  -0.7347,
+                     "longitude":  130.8769,
+                     "imageQuery":  "Raja Ampat islands Indonesia",
+                     "ticketPrice":  "Menyesuaikan paket wisata",
+                     "openingHours":  "24 jam",
+                     "rating":  4.9,
+                     "reviewCount":  14320,
+                     "imageUrl":  "https://images.pexels.com/photos/37424253/pexels-photo-37424253.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-0.7347,130.8769?q=Raja+Ampat",
+                     "ticketUrl":  "https://rajaampat.go.id",
+                     "description":  "Raja Ampat adalah kepulauan dengan laut jernih, karang, dan biodiversitas laut yang sangat tinggi. Destinasi ini populer untuk diving dan island hopping.",
+                     "funFacts":  [
+                                      "Raja Ampat memiliki keanekaragaman hayati laut sangat tinggi.",
+                                      "Wayag dan Piaynemo menjadi viewpoint paling populer.",
+                                      "Banyak penginapan berbasis homestay lokal."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/37424253/pexels-photo-37424253.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/10482395/pexels-photo-10482395.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/32157316/pexels-photo-32157316.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/36823812/pexels-photo-36823812.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Air lautnya sangat jernih.",
+                                     "Cocok untuk snorkeling dan diving."
+                                 ],
+                     "promoTitle":  "Marine Escape",
+                     "promoDescription":  "Pilih homestay lokal untuk pengalaman lebih dekat dengan masyarakat.",
+                     "transportInfo":  "Akses melalui Sorong lalu kapal ke Waisai.",
+                     "emergencyContact":  "Dinas Pariwisata Raja Ampat"
+                 },
+                 {
+                     "id":  "derawan",
+                     "name":  "Kepulauan Derawan",
+                     "location":  "Berau, Kalimantan Timur",
+                     "address":  "Kepulauan Derawan, Berau, Kalimantan Timur",
+                     "category":  "Laut",
+                     "latitude":  2.2855,
+                     "longitude":  118.2474,
+                     "imageQuery":  "Derawan island Indonesia",
+                     "ticketPrice":  "Menyesuaikan paket wisata",
+                     "openingHours":  "24 jam",
+                     "rating":  4.7,
+                     "reviewCount":  7800,
+                     "imageUrl":  "https://images.pexels.com/photos/11510673/pexels-photo-11510673.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:2.2855,118.2474?q=Kepulauan+Derawan",
+                     "ticketUrl":  "https://disbudpar.beraukab.go.id",
+                     "description":  "Derawan menawarkan pulau tropis, snorkeling, penyu, dan laguna ubur-ubur di Kakaban. Destinasi ini cocok untuk wisata bahari.",
+                     "funFacts":  [
+                                      "Kakaban terkenal dengan danau ubur-ubur tidak menyengat.",
+                                      "Derawan menjadi habitat penyu hijau.",
+                                      "Pulau Maratua populer untuk resort dan diving."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/11510673/pexels-photo-11510673.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/7928070/pexels-photo-7928070.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/35111920/pexels-photo-35111920.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/27050415/pexels-photo-27050415.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Snorkelingnya jernih dan banyak penyu.",
+                                     "Perjalanan jauh tapi sepadan."
+                                 ],
+                     "promoTitle":  "Turtle Island Trip",
+                     "promoDescription":  "Gabungkan Derawan, Kakaban, dan Maratua.",
+                     "transportInfo":  "Akses melalui Berau lalu perjalanan darat dan kapal.",
+                     "emergencyContact":  "Pusat informasi wisata Berau"
+                 },
+                 {
+                     "id":  "bunaken",
+                     "name":  "Taman Laut Bunaken",
+                     "location":  "Manado, Sulawesi Utara",
+                     "address":  "Bunaken, Manado, Sulawesi Utara",
+                     "category":  "Laut",
+                     "latitude":  1.6232,
+                     "longitude":  124.7608,
+                     "imageQuery":  "Bunaken marine park Indonesia",
+                     "ticketPrice":  "Mulai Rp5.000",
+                     "openingHours":  "08.00 - 17.00",
+                     "rating":  4.7,
+                     "reviewCount":  9100,
+                     "imageUrl":  "https://images.pexels.com/photos/16572719/pexels-photo-16572719.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:1.6232,124.7608?q=Taman+Laut+Bunaken",
+                     "ticketUrl":  "https://sulutprov.go.id",
+                     "description":  "Bunaken adalah taman laut yang terkenal dengan dinding karang, biota laut, dan aktivitas diving di sekitar Manado.",
+                     "funFacts":  [
+                                      "Bunaken terkenal dengan coral wall yang curam.",
+                                      "Kawasan ini memiliki banyak spot diving.",
+                                      "Aksesnya dekat dari Kota Manado."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/16572719/pexels-photo-16572719.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/16572718/pexels-photo-16572718.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/32471731/pexels-photo-32471731.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/4618226/pexels-photo-4618226.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Diving dan snorkeling sangat menarik.",
+                                     "Dekat dari Manado dan mudah dicapai."
+                                 ],
+                     "promoTitle":  "Diving Day Trip",
+                     "promoDescription":  "Cocok untuk perjalanan satu hari dari Manado.",
+                     "transportInfo":  "Naik perahu dari Pelabuhan Manado.",
+                     "emergencyContact":  "Operator wisata dan pos taman laut"
+                 },
+                 {
+                     "id":  "wakatobi",
+                     "name":  "Wakatobi",
+                     "location":  "Sulawesi Tenggara",
+                     "address":  "Kabupaten Wakatobi, Sulawesi Tenggara",
+                     "category":  "Laut",
+                     "latitude":  -5.3264,
+                     "longitude":  123.5952,
+                     "imageQuery":  "Wakatobi Indonesia coral reef",
+                     "ticketPrice":  "Menyesuaikan paket wisata",
+                     "openingHours":  "24 jam",
+                     "rating":  4.8,
+                     "reviewCount":  6700,
+                     "imageUrl":  "https://images.pexels.com/photos/4610204/pexels-photo-4610204.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-5.3264,123.5952?q=Wakatobi",
+                     "ticketUrl":  "https://wakatobikab.go.id",
+                     "description":  "Wakatobi dikenal sebagai destinasi bahari kelas dunia dengan terumbu karang, diving, dan budaya masyarakat pesisir.",
+                     "funFacts":  [
+                                      "Nama Wakatobi berasal dari Wangi-Wangi, Kaledupa, Tomia, dan Binongko.",
+                                      "Kawasan ini masuk segitiga karang dunia.",
+                                      "Diving dan snorkeling menjadi aktivitas utama."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/4610204/pexels-photo-4610204.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/4610207/pexels-photo-4610207.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/4610202/pexels-photo-4610202.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/4610206/pexels-photo-4610206.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Lautnya tenang dan jernih.",
+                                     "Spot diving sangat beragam."
+                                 ],
+                     "promoTitle":  "Coral Triangle Experience",
+                     "promoDescription":  "Direkomendasikan untuk pecinta snorkeling dan diving.",
+                     "transportInfo":  "Akses melalui Wangi-Wangi atau penerbangan lokal.",
+                     "emergencyContact":  "Dinas Pariwisata Wakatobi"
+                 },
+                 {
+                     "id":  "dieng",
+                     "name":  "Dieng Plateau",
+                     "location":  "Wonosobo, Jawa Tengah",
+                     "address":  "Dieng, Wonosobo, Jawa Tengah",
+                     "category":  "Pegunungan",
+                     "latitude":  -7.2046,
+                     "longitude":  109.9072,
+                     "imageQuery":  "Dieng Plateau Indonesia",
+                     "ticketPrice":  "Mulai Rp15.000",
+                     "openingHours":  "07.00 - 17.00",
+                     "rating":  4.7,
+                     "reviewCount":  17400,
+                     "imageUrl":  "https://images.pexels.com/photos/31918493/pexels-photo-31918493.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-7.2046,109.9072?q=Dieng+Plateau",
+                     "ticketUrl":  "https://diengplateau.com",
+                     "description":  "Dieng Plateau menyajikan kawah, telaga warna, candi kuno, dan udara pegunungan yang dingin.",
+                     "funFacts":  [
+                                      "Dieng disebut negeri di atas awan.",
+                                      "Telaga Warna terkenal dengan perubahan warna air.",
+                                      "Festival budaya Dieng populer setiap tahun."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/31918493/pexels-photo-31918493.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37701936/pexels-photo-37701936.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/38169854/pexels-photo-38169854.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/34033990/pexels-photo-34033990.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Udara dingin dan pemandangan khas pegunungan.",
+                                     "Banyak spot dalam satu kawasan."
+                                 ],
+                     "promoTitle":  "Highland Escape",
+                     "promoDescription":  "Siapkan jaket karena suhu bisa sangat dingin.",
+                     "transportInfo":  "Akses umum dari Wonosobo menggunakan kendaraan darat.",
+                     "emergencyContact":  "Pos wisata Dieng"
+                 },
+                 {
+                     "id":  "karimunjawa",
+                     "name":  "Karimunjawa",
+                     "location":  "Jepara, Jawa Tengah",
+                     "address":  "Kepulauan Karimunjawa, Jepara",
+                     "category":  "Laut",
+                     "latitude":  -5.8750,
+                     "longitude":  110.4333,
+                     "imageQuery":  "Karimunjawa island Indonesia",
+                     "ticketPrice":  "Menyesuaikan kapal dan paket",
+                     "openingHours":  "24 jam",
+                     "rating":  4.7,
+                     "reviewCount":  9600,
+                     "imageUrl":  "https://images.pexels.com/photos/35111920/pexels-photo-35111920.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-5.8750,110.4333?q=Karimunjawa",
+                     "ticketUrl":  "https://visitjawatengah.jatengprov.go.id",
+                     "description":  "Karimunjawa adalah kepulauan dengan pantai putih, laut jernih, dan aktivitas snorkeling yang populer dari Jepara.",
+                     "funFacts":  [
+                                      "Karimunjawa memiliki banyak pulau kecil.",
+                                      "Snorkeling menjadi aktivitas favorit.",
+                                      "Akses kapal tergantung cuaca laut."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/35111920/pexels-photo-35111920.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/7928070/pexels-photo-7928070.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/35170042/pexels-photo-35170042.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/27050415/pexels-photo-27050415.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Pantainya tenang dan cocok untuk healing.",
+                                     "Snorkelingnya bagus untuk pemula."
+                                 ],
+                     "promoTitle":  "Island Hopping Jepara",
+                     "promoDescription":  "Cek jadwal kapal sebelum berangkat.",
+                     "transportInfo":  "Kapal berangkat dari Jepara atau Semarang.",
+                     "emergencyContact":  "Pos pelabuhan Karimunjawa"
+                 },
+                 {
+                     "id":  "ancol",
+                     "name":  "Ancol Taman Impian",
+                     "location":  "Jakarta Utara",
+                     "address":  "Jl. Lodan Timur No.7, Ancol, Jakarta Utara",
+                     "category":  "Keluarga",
+                     "latitude":  -6.1256,
+                     "longitude":  106.8364,
+                     "imageQuery":  "Ancol Jakarta beach amusement park",
+                     "ticketPrice":  "Mulai Rp30.000",
+                     "openingHours":  "06.00 - 23.00",
+                     "rating":  4.5,
+                     "reviewCount":  35800,
+                     "imageUrl":  "https://images.pexels.com/photos/31557555/pexels-photo-31557555.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-6.1256,106.8364?q=Ancol+Taman+Impian",
+                     "ticketUrl":  "https://www.ancol.com",
+                     "description":  "Ancol adalah kawasan rekreasi keluarga di Jakarta dengan pantai, Dunia Fantasi, Sea World, dan berbagai wahana hiburan.",
+                     "funFacts":  [
+                                      "Ancol merupakan salah satu kawasan rekreasi terbesar di Jakarta.",
+                                      "Dunia Fantasi berada di dalam kawasan ini.",
+                                      "Pengunjung bisa menikmati pantai dan taman hiburan dalam satu area."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/31557555/pexels-photo-31557555.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/36547712/pexels-photo-36547712.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37815694/pexels-photo-37815694.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37864177/pexels-photo-37864177.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Pilihan wahana banyak untuk keluarga.",
+                                     "Cocok untuk liburan singkat di Jakarta."
+                                 ],
+                     "promoTitle":  "Family Weekend",
+                     "promoDescription":  "Cek promo bundling wahana di website resmi.",
+                     "transportInfo":  "Bisa dicapai dengan TransJakarta, KRL, atau kendaraan pribadi.",
+                     "emergencyContact":  "Customer care Ancol"
+                 },
+                 {
+                     "id":  "kota_tua",
+                     "name":  "Kota Tua Jakarta",
+                     "location":  "Jakarta Barat",
+                     "address":  "Taman Fatahillah, Pinangsia, Jakarta Barat",
+                     "category":  "Sejarah",
+                     "latitude":  -6.1352,
+                     "longitude":  106.8133,
+                     "imageQuery":  "Kota Tua Jakarta Fatahillah",
+                     "ticketPrice":  "Gratis area publik",
+                     "openingHours":  "24 jam area luar",
+                     "rating":  4.6,
+                     "reviewCount":  28760,
+                     "imageUrl":  "https://images.pexels.com/photos/38186560/pexels-photo-38186560.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-6.1352,106.8133?q=Kota+Tua+Jakarta",
+                     "ticketUrl":  "https://jakarta-tourism.go.id",
+                     "description":  "Kota Tua Jakarta menyimpan bangunan bersejarah, museum, dan suasana kolonial di sekitar Taman Fatahillah.",
+                     "funFacts":  [
+                                      "Museum Fatahillah berada di bekas balai kota Batavia.",
+                                      "Area ini populer untuk foto dan sepeda ontel.",
+                                      "Dekat dengan Stasiun Jakarta Kota."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/38186560/pexels-photo-38186560.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/38205236/pexels-photo-38205236.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/32329299/pexels-photo-32329299.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/33458168/pexels-photo-33458168.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Banyak museum dan spot foto.",
+                                     "Akses transportasi umum mudah."
+                                 ],
+                     "promoTitle":  "Museum Walk",
+                     "promoDescription":  "Kunjungi Museum Fatahillah, Wayang, dan Bank Indonesia.",
+                     "transportInfo":  "Turun di Stasiun Jakarta Kota lalu berjalan kaki.",
+                     "emergencyContact":  "Pos keamanan kawasan Kota Tua"
+                 },
+                 {
+                     "id":  "tmii",
+                     "name":  "Taman Mini Indonesia Indah",
+                     "location":  "Jakarta Timur",
+                     "address":  "Ceger, Cipayung, Jakarta Timur",
+                     "category":  "Budaya",
+                     "latitude":  -6.3024,
+                     "longitude":  106.8952,
+                     "imageQuery":  "Taman Mini Indonesia Indah Jakarta",
+                     "ticketPrice":  "Mulai Rp25.000",
+                     "openingHours":  "06.00 - 20.00",
+                     "rating":  4.6,
+                     "reviewCount":  42100,
+                     "imageUrl":  "https://images.pexels.com/photos/2048893/pexels-photo-2048893.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-6.3024,106.8952?q=Taman+Mini+Indonesia+Indah",
+                     "ticketUrl":  "https://tamanmini.com",
+                     "description":  "TMII menampilkan miniatur budaya Indonesia melalui anjungan daerah, museum, taman, dan wahana edukasi.",
+                     "funFacts":  [
+                                      "TMII memiliki anjungan budaya dari berbagai provinsi.",
+                                      "Teater Keong Mas menjadi ikon kawasan.",
+                                      "Cocok untuk wisata edukasi keluarga."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/2048893/pexels-photo-2048893.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/2059845/pexels-photo-2059845.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/38163318/pexels-photo-38163318.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/34464770/pexels-photo-34464770.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Bagus untuk mengenal budaya Indonesia.",
+                                     "Area luas dan cocok untuk keluarga."
+                                 ],
+                     "promoTitle":  "Culture Day",
+                     "promoDescription":  "Kunjungi beberapa anjungan daerah dalam satu hari.",
+                     "transportInfo":  "Bisa diakses melalui LRT/TMII dan kendaraan online.",
+                     "emergencyContact":  "Pusat informasi TMII"
+                 },
+                 {
+                     "id":  "tangkuban_perahu",
+                     "name":  "Tangkuban Perahu",
+                     "location":  "Bandung Barat, Jawa Barat",
+                     "address":  "Cikahuripan, Lembang, Bandung Barat",
+                     "category":  "Gunung",
+                     "latitude":  -6.7596,
+                     "longitude":  107.6098,
+                     "imageQuery":  "Tangkuban Perahu crater Bandung",
+                     "ticketPrice":  "Mulai Rp20.000",
+                     "openingHours":  "07.00 - 17.00",
+                     "rating":  4.5,
+                     "reviewCount":  23800,
+                     "imageUrl":  "https://images.pexels.com/photos/33023801/pexels-photo-33023801.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-6.7596,107.6098?q=Tangkuban+Perahu",
+                     "ticketUrl":  "https://disparbud.jabarprov.go.id",
+                     "description":  "Tangkuban Perahu adalah gunung berapi dengan kawah besar yang mudah diakses dari Bandung dan Lembang.",
+                     "funFacts":  [
+                                      "Legenda Sangkuriang melekat pada nama Tangkuban Perahu.",
+                                      "Pengunjung bisa melihat Kawah Ratu dari dekat.",
+                                      "Suhu kawasan relatif sejuk."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/33023801/pexels-photo-33023801.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/33458192/pexels-photo-33458192.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/36963556/pexels-photo-36963556.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/15927546/pexels-photo-15927546.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Kawahnya mudah diakses.",
+                                     "Cocok digabung dengan wisata Lembang."
+                                 ],
+                     "promoTitle":  "Lembang Volcano Trip",
+                     "promoDescription":  "Datang pagi untuk menghindari kabut.",
+                     "transportInfo":  "Lebih nyaman menggunakan mobil dari Bandung.",
+                     "emergencyContact":  "Pos wisata Tangkuban Perahu"
+                 },
+                 {
+                     "id":  "kawah_putih",
+                     "name":  "Kawah Putih",
+                     "location":  "Ciwidey, Jawa Barat",
+                     "address":  "Sugihmukti, Pasirjambu, Bandung",
+                     "category":  "Danau Kawah",
+                     "latitude":  -7.1662,
+                     "longitude":  107.4021,
+                     "imageQuery":  "Kawah Putih Bandung Indonesia",
+                     "ticketPrice":  "Mulai Rp28.000",
+                     "openingHours":  "07.00 - 17.00",
+                     "rating":  4.6,
+                     "reviewCount":  20300,
+                     "imageUrl":  "https://images.pexels.com/photos/35897369/pexels-photo-35897369.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-7.1662,107.4021?q=Kawah+Putih",
+                     "ticketUrl":  "https://disparbud.jabarprov.go.id",
+                     "description":  "Kawah Putih adalah danau kawah vulkanik dengan warna air putih kehijauan dan suasana pegunungan Ciwidey.",
+                     "funFacts":  [
+                                      "Warna air kawah dapat berubah tergantung cuaca dan kandungan belerang.",
+                                      "Bau belerang cukup terasa di area kawah.",
+                                      "Tempat ini populer untuk foto prewedding."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/35897369/pexels-photo-35897369.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/32313751/pexels-photo-32313751.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/32327538/pexels-photo-32327538.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/35833639/pexels-photo-35833639.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Warna danaunya unik dan fotogenik.",
+                                     "Udara dingin, siapkan jaket."
+                                 ],
+                     "promoTitle":  "Ciwidey Scenic Route",
+                     "promoDescription":  "Gabungkan dengan Ranca Upas dan kebun teh.",
+                     "transportInfo":  "Akses dari Bandung sekitar 2 jam melalui Ciwidey.",
+                     "emergencyContact":  "Petugas kawasan Kawah Putih"
+                 },
+                 {
+                     "id":  "pangandaran",
+                     "name":  "Pantai Pangandaran",
+                     "location":  "Pangandaran, Jawa Barat",
+                     "address":  "Pananjung, Pangandaran, Jawa Barat",
+                     "category":  "Pantai",
+                     "latitude":  -7.6890,
+                     "longitude":  108.6556,
+                     "imageQuery":  "Pangandaran beach Indonesia",
+                     "ticketPrice":  "Mulai Rp10.000",
+                     "openingHours":  "24 jam",
+                     "rating":  4.5,
+                     "reviewCount":  18800,
+                     "imageUrl":  "https://images.pexels.com/photos/12895327/pexels-photo-12895327.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-7.6890,108.6556?q=Pantai+Pangandaran",
+                     "ticketUrl":  "https://disparbud.pangandarankab.go.id",
+                     "description":  "Pantai Pangandaran menawarkan pantai timur dan barat, aktivitas berenang, sunrise, sunset, serta cagar alam.",
+                     "funFacts":  [
+                                      "Pengunjung bisa melihat sunrise dan sunset di kawasan yang sama.",
+                                      "Cagar Alam Pangandaran berada dekat pantai.",
+                                      "Kuliner seafood menjadi daya tarik utama."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/12895327/pexels-photo-12895327.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/12895224/pexels-photo-12895224.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/12895510/pexels-photo-12895510.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/36528990/pexels-photo-36528990.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Pantai lengkap untuk keluarga.",
+                                     "Seafood dan suasana malamnya menarik."
+                                 ],
+                     "promoTitle":  "Beach Family Trip",
+                     "promoDescription":  "Cocok untuk liburan keluarga dan kuliner laut.",
+                     "transportInfo":  "Akses darat dari Bandung atau Jakarta.",
+                     "emergencyContact":  "Balawista Pantai Pangandaran"
+                 },
+                 {
+                     "id":  "tana_toraja",
+                     "name":  "Tana Toraja",
+                     "location":  "Sulawesi Selatan",
+                     "address":  "Kabupaten Tana Toraja, Sulawesi Selatan",
+                     "category":  "Budaya",
+                     "latitude":  -3.0753,
+                     "longitude":  119.7426,
+                     "imageQuery":  "Tana Toraja traditional houses Indonesia",
+                     "ticketPrice":  "Menyesuaikan objek wisata",
+                     "openingHours":  "08.00 - 17.00",
+                     "rating":  4.8,
+                     "reviewCount":  10200,
+                     "imageUrl":  "https://images.pexels.com/photos/33687868/pexels-photo-33687868.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-3.0753,119.7426?q=Tana+Toraja",
+                     "ticketUrl":  "https://visitsulsel.id",
+                     "description":  "Tana Toraja terkenal dengan rumah adat Tongkonan, tradisi pemakaman, ukiran, dan lanskap pegunungan.",
+                     "funFacts":  [
+                                      "Tongkonan memiliki atap melengkung khas.",
+                                      "Upacara adat Toraja menjadi daya tarik budaya dunia.",
+                                      "Kete Kesu dan Londa adalah lokasi populer."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/33687868/pexels-photo-33687868.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37788673/pexels-photo-37788673.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/32162992/pexels-photo-32162992.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37836475/pexels-photo-37836475.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Budayanya sangat unik dan kuat.",
+                                     "Pemandangan pegunungannya indah."
+                                 ],
+                     "promoTitle":  "Cultural Heritage Route",
+                     "promoDescription":  "Gunakan pemandu lokal untuk memahami adat dan etika kunjungan.",
+                     "transportInfo":  "Akses dari Makassar melalui perjalanan darat atau penerbangan lokal.",
+                     "emergencyContact":  "Dinas Pariwisata Tana Toraja"
+                 },
+                 {
+                     "id":  "lombok_mandalika",
+                     "name":  "Mandalika Lombok",
+                     "location":  "Lombok Tengah, NTB",
+                     "address":  "Kuta, Pujut, Lombok Tengah",
+                     "category":  "Pantai",
+                     "latitude":  -8.8920,
+                     "longitude":  116.2960,
+                     "imageQuery":  "Mandalika Lombok beach Indonesia",
+                     "ticketPrice":  "Gratis area publik",
+                     "openingHours":  "24 jam",
+                     "rating":  4.6,
+                     "reviewCount":  11500,
+                     "imageUrl":  "https://images.pexels.com/photos/30013786/pexels-photo-30013786.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-8.8920,116.2960?q=Mandalika+Lombok",
+                     "ticketUrl":  "https://themandalika.com",
+                     "description":  "Mandalika adalah kawasan wisata pantai di Lombok dengan pasir putih, bukit, sirkuit internasional, dan budaya Sasak.",
+                     "funFacts":  [
+                                      "Mandalika memiliki sirkuit MotoGP.",
+                                      "Pantai Kuta Lombok terkenal dengan pasir unik seperti merica.",
+                                      "Legenda Putri Mandalika menjadi bagian budaya lokal."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/30013786/pexels-photo-30013786.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/3290667/pexels-photo-3290667.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/13629327/pexels-photo-13629327.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/34136185/pexels-photo-34136185.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Pantai cantik dan jalan kawasan rapi.",
+                                     "Banyak spot sunset dan bukit."
+                                 ],
+                     "promoTitle":  "Beach and Circuit Tour",
+                     "promoDescription":  "Gabungkan pantai, bukit, dan kunjungan ke kawasan sirkuit.",
+                     "transportInfo":  "Dekat dari Bandara Lombok sekitar 30 menit.",
+                     "emergencyContact":  "Pusat informasi Mandalika"
+                 },
+                 {
+                     "id":  "rinjani",
+                     "name":  "Gunung Rinjani",
+                     "location":  "Lombok, NTB",
+                     "address":  "Taman Nasional Gunung Rinjani, Lombok",
+                     "category":  "Gunung",
+                     "latitude":  -8.4113,
+                     "longitude":  116.4573,
+                     "imageQuery":  "Mount Rinjani Indonesia crater lake",
+                     "ticketPrice":  "Menyesuaikan paket pendakian",
+                     "openingHours":  "Tergantung jadwal pendakian",
+                     "rating":  4.8,
+                     "reviewCount":  13400,
+                     "imageUrl":  "https://images.pexels.com/photos/4552428/pexels-photo-4552428.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-8.4113,116.4573?q=Gunung+Rinjani",
+                     "ticketUrl":  "https://rinjaninationalpark.id",
+                     "description":  "Gunung Rinjani adalah gunung berapi tinggi di Lombok dengan Danau Segara Anak, jalur pendakian, dan panorama puncak.",
+                     "funFacts":  [
+                                      "Segara Anak berada di kaldera Rinjani.",
+                                      "Pendakian Rinjani membutuhkan persiapan fisik yang baik.",
+                                      "Jalur populer melalui Sembalun dan Senaru."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/4552428/pexels-photo-4552428.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/4552425/pexels-photo-4552425.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/4552438/pexels-photo-4552438.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/4552689/pexels-photo-4552689.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Trekking berat tapi sangat memuaskan.",
+                                     "View Segara Anak luar biasa."
+                                 ],
+                     "promoTitle":  "Rinjani Trekking",
+                     "promoDescription":  "Wajib memakai pemandu dan mengecek status pendakian.",
+                     "transportInfo":  "Akses dari Sembalun atau Senaru.",
+                     "emergencyContact":  "Balai Taman Nasional Gunung Rinjani"
+                 },
+                 {
+                     "id":  "belitung",
+                     "name":  "Pantai Tanjung Tinggi",
+                     "location":  "Belitung",
+                     "address":  "Sijuk, Kabupaten Belitung",
+                     "category":  "Pantai",
+                     "latitude":  -2.5519,
+                     "longitude":  107.6696,
+                     "imageQuery":  "Tanjung Tinggi beach Belitung",
+                     "ticketPrice":  "Gratis",
+                     "openingHours":  "24 jam",
+                     "rating":  4.7,
+                     "reviewCount":  9400,
+                     "imageUrl":  "https://images.pexels.com/photos/28727775/pexels-photo-28727775.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-2.5519,107.6696?q=Pantai+Tanjung+Tinggi",
+                     "ticketUrl":  "https://dispar.belitung.go.id",
+                     "description":  "Pantai Tanjung Tinggi terkenal dengan batu granit besar, air laut jernih, dan pasir putih khas Belitung.",
+                     "funFacts":  [
+                                      "Batu granit raksasa menjadi ciri khas pantai ini.",
+                                      "Lokasi ini dikenal dari film Laskar Pelangi.",
+                                      "Airnya relatif tenang untuk berenang."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/28727775/pexels-photo-28727775.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/35437009/pexels-photo-35437009.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/16897191/pexels-photo-16897191.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/35169999/pexels-photo-35169999.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Batu granitnya unik dan fotogenik.",
+                                     "Pantai bersih dan airnya jernih."
+                                 ],
+                     "promoTitle":  "Granite Beach Photo Spot",
+                     "promoDescription":  "Datang sore untuk cahaya foto yang lembut.",
+                     "transportInfo":  "Akses dari Tanjung Pandan sekitar 40 menit.",
+                     "emergencyContact":  "Pos wisata Pantai Tanjung Tinggi"
+                 },
+                 {
+                     "id":  "labuan_cermin",
+                     "name":  "Danau Labuan Cermin",
+                     "location":  "Berau, Kalimantan Timur",
+                     "address":  "Biduk-Biduk, Berau, Kalimantan Timur",
+                     "category":  "Danau",
+                     "latitude":  1.2609,
+                     "longitude":  118.7796,
+                     "imageQuery":  "Labuan Cermin lake Indonesia",
+                     "ticketPrice":  "Mulai Rp10.000",
+                     "openingHours":  "08.00 - 17.00",
+                     "rating":  4.7,
+                     "reviewCount":  5200,
+                     "imageUrl":  "https://images.pexels.com/photos/4511087/pexels-photo-4511087.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:1.2609,118.7796?q=Danau+Labuan+Cermin",
+                     "ticketUrl":  "https://disbudpar.beraukab.go.id",
+                     "description":  "Labuan Cermin terkenal dengan air super jernih yang memantulkan dasar danau seperti cermin. Danau ini memiliki lapisan air tawar dan asin.",
+                     "funFacts":  [
+                                      "Air danau sangat jernih hingga perahu tampak melayang.",
+                                      "Danau ini memiliki fenomena dua rasa: tawar dan asin.",
+                                      "Snorkeling menjadi aktivitas favorit."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/4511087/pexels-photo-4511087.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/13442452/pexels-photo-13442452.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/16609699/pexels-photo-16609699.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/1492184/pexels-photo-1492184.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Airnya luar biasa jernih.",
+                                     "Perjalanan jauh tapi tempatnya unik."
+                                 ],
+                     "promoTitle":  "Crystal Lake Trip",
+                     "promoDescription":  "Bawa dry bag dan datang saat cuaca cerah.",
+                     "transportInfo":  "Akses dari Berau menuju Biduk-Biduk.",
+                     "emergencyContact":  "Pengelola wisata Labuan Cermin"
+                 },
+                 {
+                     "id":  "banda_neira",
+                     "name":  "Banda Neira",
+                     "location":  "Maluku Tengah",
+                     "address":  "Kepulauan Banda, Maluku",
+                     "category":  "Sejarah dan Laut",
+                     "latitude":  -4.5240,
+                     "longitude":  129.8965,
+                     "imageQuery":  "Banda Neira Indonesia island",
+                     "ticketPrice":  "Menyesuaikan transportasi dan objek wisata",
+                     "openingHours":  "24 jam",
+                     "rating":  4.8,
+                     "reviewCount":  4300,
+                     "imageUrl":  "https://images.pexels.com/photos/31949631/pexels-photo-31949631.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-4.5240,129.8965?q=Banda+Neira",
+                     "ticketUrl":  "https://dispar.malukuprov.go.id",
+                     "description":  "Banda Neira memadukan sejarah rempah, benteng kolonial, gunung api, dan laut jernih untuk snorkeling.",
+                     "funFacts":  [
+                                      "Banda dulu dikenal sebagai pusat perdagangan pala dunia.",
+                                      "Benteng Belgica menjadi ikon sejarah kawasan.",
+                                      "Gunung Api Banda terlihat jelas dari pulau utama."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/31949631/pexels-photo-31949631.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/32200365/pexels-photo-32200365.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/31949629/pexels-photo-31949629.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/35868489/pexels-photo-35868489.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Sejarah dan alamnya kuat sekali.",
+                                     "Snorkeling dekat pulau sangat cantik."
+                                 ],
+                     "promoTitle":  "Spice Island Heritage",
+                     "promoDescription":  "Kunjungi benteng, museum, dan spot snorkeling dalam satu rute.",
+                     "transportInfo":  "Akses melalui Ambon lalu kapal atau penerbangan terbatas.",
+                     "emergencyContact":  "Pusat informasi wisata Banda"
+                 },
+                 {
+                     "id":  "morotai",
+                     "name":  "Pulau Morotai",
+                     "location":  "Maluku Utara",
+                     "address":  "Kabupaten Pulau Morotai, Maluku Utara",
+                     "category":  "Pantai dan Sejarah",
+                     "latitude":  2.3657,
+                     "longitude":  128.4056,
+                     "imageQuery":  "Morotai island Indonesia beach",
+                     "ticketPrice":  "Menyesuaikan paket wisata",
+                     "openingHours":  "24 jam",
+                     "rating":  4.6,
+                     "reviewCount":  3600,
+                     "imageUrl":  "https://images.pexels.com/photos/35111920/pexels-photo-35111920.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:2.3657,128.4056?q=Pulau+Morotai",
+                     "ticketUrl":  "https://morotaikab.go.id",
+                     "description":  "Morotai menawarkan pantai tropis, pulau kecil, diving, dan jejak sejarah Perang Dunia II.",
+                     "funFacts":  [
+                                      "Morotai memiliki banyak peninggalan Perang Dunia II.",
+                                      "Pulau Dodola terkenal dengan pasir putih yang menghubungkan dua pulau.",
+                                      "Diving wreck menjadi daya tarik khusus."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/35111920/pexels-photo-35111920.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/5505655/pexels-photo-5505655.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/35437012/pexels-photo-35437012.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/7928070/pexels-photo-7928070.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Pantai masih tenang dan alami.",
+                                     "Menarik untuk pecinta sejarah dan laut."
+                                 ],
+                     "promoTitle":  "Dodola Island Escape",
+                     "promoDescription":  "Cocok untuk island hopping dan snorkeling.",
+                     "transportInfo":  "Akses melalui Ternate lalu penerbangan/kapal ke Morotai.",
+                     "emergencyContact":  "Dinas Pariwisata Morotai"
+                 },
+                 {
+                     "id":  "sentani",
+                     "name":  "Danau Sentani",
+                     "location":  "Jayapura, Papua",
+                     "address":  "Sentani, Jayapura, Papua",
+                     "category":  "Danau",
+                     "latitude":  -2.6114,
+                     "longitude":  140.5084,
+                     "imageQuery":  "Lake Sentani Papua Indonesia",
+                     "ticketPrice":  "Menyesuaikan spot wisata",
+                     "openingHours":  "24 jam",
+                     "rating":  4.6,
+                     "reviewCount":  5100,
+                     "imageUrl":  "https://images.pexels.com/photos/37810095/pexels-photo-37810095.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-2.6114,140.5084?q=Danau+Sentani",
+                     "ticketUrl":  "https://papua.go.id",
+                     "description":  "Danau Sentani adalah danau luas dekat Jayapura dengan pulau-pulau kecil, budaya lokal, dan panorama perbukitan.",
+                     "funFacts":  [
+                                      "Festival Danau Sentani menampilkan budaya lokal Papua.",
+                                      "Danau ini memiliki banyak pulau kecil.",
+                                      "Lokasinya dekat dari Bandara Sentani."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/37810095/pexels-photo-37810095.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37810064/pexels-photo-37810064.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37815334/pexels-photo-37815334.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/1398557/pexels-photo-1398557.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Pemandangan luas dan tenang.",
+                                     "Dekat bandara, mudah dikunjungi."
+                                 ],
+                     "promoTitle":  "Papua Lake Culture",
+                     "promoDescription":  "Datang saat festival untuk melihat budaya lokal.",
+                     "transportInfo":  "Dekat dari Bandara Sentani dan Kota Jayapura.",
+                     "emergencyContact":  "Pusat informasi wisata Jayapura"
+                 },
+                 {
+                     "id":  "lorentz",
+                     "name":  "Taman Nasional Lorentz",
+                     "location":  "Papua",
+                     "address":  "Papua Pegunungan dan Papua Tengah",
+                     "category":  "Alam",
+                     "latitude":  -4.7500,
+                     "longitude":  137.8333,
+                     "imageQuery":  "Lorentz National Park Papua",
+                     "ticketPrice":  "Perlu izin dan paket khusus",
+                     "openingHours":  "Mengikuti izin kawasan",
+                     "rating":  4.7,
+                     "reviewCount":  1200,
+                     "imageUrl":  "https://images.pexels.com/photos/35901593/pexels-photo-35901593.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-4.7500,137.8333?q=Taman+Nasional+Lorentz",
+                     "ticketUrl":  "https://ksdae.menlhk.go.id",
+                     "description":  "Lorentz adalah taman nasional luas di Papua dengan ekosistem dari laut hingga pegunungan bersalju. Kunjungan membutuhkan persiapan dan izin khusus.",
+                     "funFacts":  [
+                                      "Lorentz merupakan Situs Warisan Dunia UNESCO.",
+                                      "Ekosistemnya membentang dari pesisir hingga pegunungan tinggi.",
+                                      "Kawasan ini sangat penting untuk konservasi."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/35901593/pexels-photo-35901593.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37424253/pexels-photo-37424253.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37130899/pexels-photo-37130899.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/18619491/pexels-photo-18619491.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Destinasi konservasi yang sangat unik.",
+                                     "Cocok untuk riset dan petualangan serius."
+                                 ],
+                     "promoTitle":  "Conservation Expedition",
+                     "promoDescription":  "Perlu riset izin, logistik, dan pemandu resmi.",
+                     "transportInfo":  "Akses terbatas dan membutuhkan perencanaan khusus.",
+                     "emergencyContact":  "Balai Taman Nasional Lorentz"
+                 },
+                 {
+                     "id":  "gili_trawangan",
+                     "name":  "Gili Trawangan",
+                     "location":  "Lombok Utara, NTB",
+                     "address":  "Gili Indah, Pemenang, Lombok Utara",
+                     "category":  "Pantai",
+                     "latitude":  -8.3506,
+                     "longitude":  116.0389,
+                     "imageQuery":  "Gili Trawangan beach Indonesia",
+                     "ticketPrice":  "Menyesuaikan transportasi kapal",
+                     "openingHours":  "24 jam",
+                     "rating":  4.6,
+                     "reviewCount":  17100,
+                     "imageUrl":  "https://images.pexels.com/photos/5657449/pexels-photo-5657449.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-8.3506,116.0389?q=Gili+Trawangan",
+                     "ticketUrl":  "https://lombokutarakab.go.id",
+                     "description":  "Gili Trawangan adalah pulau wisata tanpa kendaraan bermotor dengan pantai, snorkeling, diving, dan suasana malam.",
+                     "funFacts":  [
+                                      "Transportasi utama di pulau ini adalah sepeda dan cidomo.",
+                                      "Snorkeling penyu menjadi aktivitas populer.",
+                                      "Sunset point ramai dikunjungi setiap sore."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/5657449/pexels-photo-5657449.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/28831830/pexels-photo-28831830.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/37951596/pexels-photo-37951596.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/31233662/pexels-photo-31233662.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Pantai dan nightlife seimbang.",
+                                     "Snorkeling penyu sangat berkesan."
+                                 ],
+                     "promoTitle":  "No Motor Island",
+                     "promoDescription":  "Sewa sepeda untuk keliling pulau.",
+                     "transportInfo":  "Akses kapal dari Bangsal atau Bali.",
+                     "emergencyContact":  "Pos informasi Gili Trawangan"
+                 },
+                 {
+                     "id":  "lawang_sewu",
+                     "name":  "Lawang Sewu",
+                     "location":  "Semarang, Jawa Tengah",
+                     "address":  "Jl. Pemuda, Sekayu, Semarang",
+                     "category":  "Sejarah",
+                     "latitude":  -6.9841,
+                     "longitude":  110.4107,
+                     "imageQuery":  "Lawang Sewu Semarang Indonesia",
+                     "ticketPrice":  "Mulai Rp20.000",
+                     "openingHours":  "08.00 - 20.00",
+                     "rating":  4.6,
+                     "reviewCount":  20100,
+                     "imageUrl":  "https://images.pexels.com/photos/6296816/pexels-photo-6296816.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                     "geoUri":  "geo:-6.9841,110.4107?q=Lawang+Sewu",
+                     "ticketUrl":  "https://heritage.kai.id",
+                     "description":  "Lawang Sewu adalah gedung bersejarah di Semarang yang terkenal dengan arsitektur kolonial, lorong panjang, dan museum perkeretaapian.",
+                     "funFacts":  [
+                                      "Nama Lawang Sewu berarti seribu pintu.",
+                                      "Bangunan ini terkait sejarah kereta api Indonesia.",
+                                      "Tur malam menjadi daya tarik tersendiri."
+                                  ],
+                     "galleryImages":  [
+                                           "https://images.pexels.com/photos/6296816/pexels-photo-6296816.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/6296817/pexels-photo-6296817.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/18120202/pexels-photo-18120202.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+                                           "https://images.pexels.com/photos/9348014/pexels-photo-9348014.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200"
+                                       ],
+                     "reviews":  [
+                                     "Bangunan bersejarah yang terawat.",
+                                     "Bagus untuk foto dan belajar sejarah."
+                                 ],
+                     "promoTitle":  "Heritage Night Tour",
+                     "promoDescription":  "Cek jadwal tur malam untuk suasana berbeda.",
+                     "transportInfo":  "Berada di pusat Kota Semarang dan mudah diakses.",
+                     "emergencyContact":  "Petugas Lawang Sewu"
+                 }
+             ]
 }
