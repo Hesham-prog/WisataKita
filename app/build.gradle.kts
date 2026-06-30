@@ -1,8 +1,19 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
 }
+
+val localProperties = Properties().apply {
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        localPropertiesFile.inputStream().use { load(it) }
+    }
+}
+
+fun localProperty(name: String): String = localProperties.getProperty(name, "")
 
 android {
     namespace = "com.wisatakita.app"
@@ -14,6 +25,10 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        buildConfigField("String", "PEXELS_API_KEY", "\"${localProperty("PEXELS_API_KEY")}\"")
+        buildConfigField("String", "GEOAPIFY_API_KEY", "\"${localProperty("GEOAPIFY_API_KEY")}\"")
+        buildConfigField("String", "OPENWEATHER_API_KEY", "\"${localProperty("OPENWEATHER_API_KEY")}\"")
+        buildConfigField("String", "DESTINATION_API_URL", "\"https://raw.githubusercontent.com/Hesham-prog/WisataKita/master/app/src/main/assets/destinations.json\"")
     }
 
     buildTypes {
@@ -31,6 +46,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 

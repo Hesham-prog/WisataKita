@@ -80,6 +80,36 @@
                     android:text="Alamat lengkap"
                     android:textColor="@color/colorTextSecondary"
                     android:textSize="12sp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvDetailMeta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kategori - Rating"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="6dp"/>
+
+                <TextView
+                    android:id="@+id/tvTicketInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Harga tiket dan jam buka"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="14dp"/>
+
+                <TextView
+                    android:id="@+id/tvWeatherInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Memuat cuaca..."
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="13sp"
+                    android:background="#F3F8F6"
+                    android:padding="12dp"
                     android:layout_marginBottom="16dp"/>
 
                 <!-- Tombol Google Maps -->
@@ -129,7 +159,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="via Google Maps"
+                        android:text="via Web Service/Pexels"
                         android:textSize="11sp"
                         android:textColor="@color/colorTextSecondary"/>
                 </LinearLayout>
@@ -154,6 +184,42 @@
                 </HorizontalScrollView>
 
                 <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E8EDED"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Nearby header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="20dp"
+                        android:background="@color/colorAccent"
+                        android:layout_marginEnd="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tempat Sekitar"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorTextPrimary"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llNearbyPlaces"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp"/>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -194,6 +260,37 @@
                     android:textSize="14sp"
                     android:layout_marginBottom="24dp"/>
 
+                <TextView
+                    android:id="@+id/tvPromoInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Promo wisata"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="13sp"
+                    android:background="#FFF9E8"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:id="@+id/tvTransportInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Info transportasi"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvEmergencyInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kontak darurat"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginBottom="20dp"/>
+
                 <!-- Divider -->
                 <View
                     android:layout_width="match_parent"
@@ -230,6 +327,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvReviews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Review pengunjung"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="4dp"
                     android:layout_marginBottom="28dp"/>
 
                 <!-- Tombol Pesan Tiket -->

@@ -57,6 +57,15 @@
                 android:text="Lokasi"
                 android:textSize="12sp"
                 android:textColor="@color/colorTextSecondary"/>
+
+            <TextView
+                android:id="@+id/tvDestinationMeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kategori - Rating"
+                android:textSize="11sp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
 
         <!-- Panah -->

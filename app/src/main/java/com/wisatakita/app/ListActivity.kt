@@ -22,9 +22,11 @@ class ListActivity : AppCompatActivity() {
         binding.recyclerView.visibility = View.GONE
 
         lifecycleScope.launch {
-            val destinations = DestinationRepository(this@ListActivity).getDestinations()
+            val result = DestinationRepository(this@ListActivity).getDestinationsWithSource()
+            val destinations = result.destinations
             binding.progressBar.visibility = View.GONE
             binding.recyclerView.visibility = View.VISIBLE
+            binding.tvDataSource.text = "${result.sourceLabel} - ${destinations.size} destinasi"
 
             val adapter = DestinationAdapter(destinations) { destination ->
                 val intent = Intent(this@ListActivity, DetailActivity::class.java)

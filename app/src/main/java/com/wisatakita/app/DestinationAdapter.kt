@@ -17,6 +17,7 @@ class DestinationAdapter(
         fun bind(item: Destination) {
             binding.tvDestinationName.text = item.name
             binding.tvDestinationLocation.text = item.location
+            binding.tvDestinationMeta.text = "${item.category} - ${"%.1f".format(item.rating)} (${item.reviewCount})"
             Glide.with(binding.root.context)
                 .load(item.imageUrl)
                 .override(300, 300)
