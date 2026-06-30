@@ -98,6 +98,9 @@
     <string name="notif_exact_alarm_rationale">Izin diperlukan untuk menjadwalkan notifikasi di waktu yang tepat.</string>
     <string name="notif_permission_grant">Beri Izin</string>
     <string name="notif_saved">Pengaturan notifikasi disimpan!</string>
+    <string name="notif_time_earlier">Mundurkan waktu 15 menit</string>
+    <string name="notif_time_later">Majukan waktu 15 menit</string>
+    <string name="notif_save_settings">Simpan Pengaturan</string>
 
     <!-- Language Settings -->
     <string name="lang_title">Bahasa Aplikasi</string>

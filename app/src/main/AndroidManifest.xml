@@ -96,6 +96,11 @@
             android:theme="@style/Theme.WisataKita.Immersive"
             android:exported="false"/>
 
+        <activity
+            android:name=".NotificationSettingsActivity"
+            android:theme="@style/Theme.WisataKita.Immersive"
+            android:exported="false"/>
+
         <!-- ─── GALLERY ──────────────────────────────────────────── -->
         <activity
             android:name=".GalleryActivity"

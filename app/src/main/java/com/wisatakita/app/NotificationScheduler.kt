@@ -126,6 +126,9 @@ object NotificationScheduler {
      * Schedule a one-shot review nudge [delayMillis] from now.
      */
     fun scheduleReviewNudge(context: Context, delayMillis: Long = 3 * 60 * 60 * 1000L) {
+        val prefs = context.getSharedPreferences("wk_notif_prefs", Context.MODE_PRIVATE)
+        if (!prefs.getBoolean("review_enabled", true)) return
+
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
         val intent = Intent(context, NotificationReceiver::class.java).apply {
