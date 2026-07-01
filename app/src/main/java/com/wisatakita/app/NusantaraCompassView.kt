@@ -9,6 +9,8 @@ import android.view.animation.OvershootInterpolator
 import kotlin.math.cos
 import kotlin.math.min
 import kotlin.math.sin
+import androidx.core.content.ContextCompat
+import android.graphics.drawable.Drawable
 
 /**
  * NusantaraCompassView — Custom FAB-style navigation button.
@@ -46,6 +48,8 @@ class NusantaraCompassView @JvmOverloads constructor(
         strokeWidth = 2.5f
         strokeCap = Paint.Cap.ROUND
     }
+    
+    private var compassDrawable: Drawable? = null
 
     private var gradient: RadialGradient? = null
     private var glowGradient: RadialGradient? = null
@@ -70,6 +74,10 @@ class NusantaraCompassView @JvmOverloads constructor(
             floatArrayOf(0f, 0.68f, 1f),
             Shader.TileMode.CLAMP
         )
+        
+        compassDrawable = ContextCompat.getDrawable(context, R.drawable.ic_logo)?.apply {
+            setTint(charcoal)
+        }
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -96,30 +104,11 @@ class NusantaraCompassView @JvmOverloads constructor(
     }
 
     private fun drawCompassRose(canvas: Canvas) {
-        paintIcon.color = charcoal
-        paintIcon.strokeWidth = 2.5f
-        paintIcon.style = Paint.Style.STROKE
-
-        val inner = radius * 0.25f
-        val outer = radius * 0.72f
-        val cardinals = 8
-
-        for (i in 0 until cardinals) {
-            val angle = Math.toRadians((i * 360.0 / cardinals) - 90)
-            val startR = if (i % 2 == 0) inner else inner * 1.6f
-            val endR = if (i % 2 == 0) outer else outer * 0.72f
-            canvas.drawLine(
-                cx + (startR * cos(angle)).toFloat(),
-                cy + (startR * sin(angle)).toFloat(),
-                cx + (endR * cos(angle)).toFloat(),
-                cy + (endR * sin(angle)).toFloat(),
-                paintIcon
-            )
+        val size = (radius * 1.2f).toInt()
+        compassDrawable?.apply {
+            setBounds((cx - size / 2).toInt(), (cy - size / 2).toInt(), (cx + size / 2).toInt(), (cy + size / 2).toInt())
+            draw(canvas)
         }
-
-        // Center dot
-        paintIcon.style = Paint.Style.FILL
-        canvas.drawCircle(cx, cy, inner * 0.6f, paintIcon)
     }
 
     private fun drawCloseX(canvas: Canvas) {

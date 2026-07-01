@@ -106,7 +106,13 @@
     <color name="color_error">#E05252</color>
     <color name="color_warning">#E3A33A</color>
 
+    <!-- Weather card tints — used by DetailActivity weather observer -->
+    <color name="weather_sunny_tint">#7FD9A20A</color>  <!-- warm amber 50% -->
+    <color name="weather_rain_tint">#7F1A6FA8</color>   <!-- steel blue 50% -->
+    <color name="weather_neutral_tint">#7F4E4D49</color> <!-- charcoal 50% -->
+
     <!-- Legacy aliases — keep for existing code references -->
+
     <color name="primaryColor">#4F8F35</color>
     <color name="primaryDarkColor">#3A6A26</color>
     <color name="colorTextSecondaryLegacy">#6AAB4A</color>

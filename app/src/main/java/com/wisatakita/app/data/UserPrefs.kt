@@ -5,7 +5,7 @@ import com.wisatakita.app.R
 import com.wisatakita.app.data.db.AppDatabase
 import com.wisatakita.app.data.db.UserEntity
 
-class UserPrefs(context: Context) {
+class UserPrefs(private val context: Context) {
     private val db = AppDatabase.getInstance(context)
     private val userDao = db.userDao()
     private val session = context.getSharedPreferences("wk_session", Context.MODE_PRIVATE)

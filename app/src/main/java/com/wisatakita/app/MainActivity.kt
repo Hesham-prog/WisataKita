@@ -10,9 +10,11 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
+import java.util.Stack
 import com.google.android.material.snackbar.Snackbar
 import com.wisatakita.app.databinding.ActivityMainBinding
 
@@ -25,10 +27,12 @@ class MainActivity : AppCompatActivity() {
     private var offlineSnackbar: Snackbar? = null
     private var currentTabIndex = 0
     private val fragmentMap = mutableMapOf<Int, Fragment>()
+    private val fragmentHistory = Stack<Int>()
 
     // Compass overlay views (added programmatically)
     private val petalViews = mutableListOf<View>()
     private var isMenuOpen = false
+    private var arcMenuView: PetalArcMenuView? = null
 
     companion object {
         private val TAB_ICONS = listOf(
@@ -50,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         setupFragments()
         setupMusicService()
         setupNetworkReceiver()
+        setupBackButton()
     }
 
     private fun setupCompass() {
@@ -64,95 +69,73 @@ class MainActivity : AppCompatActivity() {
 
     private fun showPetalMenu() {
         val root = binding.root as ViewGroup
-        petalViews.forEach { root.removeView(it) }
-        petalViews.clear()
-
-        val density = resources.displayMetrics.density
-        val scrim = View(this).apply {
-            layoutParams = ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-            )
-            setBackgroundColor(0x66000000)
-            alpha = 0f
-            setOnClickListener {
-                compassView.isMenuOpen = false
-                isMenuOpen = false
-                compassView.invalidate()
-                hidePetalMenu()
-            }
-        }
-
-        val dock = LinearLayout(this).apply {
-            layoutParams = FrameLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                (64 * density).toInt(),
-                Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
-            ).apply {
-                bottomMargin = (94 * density).toInt()
-            }
-            background = getDrawable(R.drawable.bg_glassmorphism)
-            elevation = 12 * density
-            alpha = 0f
-            translationY = 24 * density
-            gravity = Gravity.CENTER
-            orientation = LinearLayout.HORIZONTAL
-            setPadding((8 * density).toInt(), 0, (8 * density).toInt(), 0)
-        }
-
-        TAB_ICONS.forEachIndexed { index, icon ->
-            dock.addView(ImageView(this).apply {
-                layoutParams = LinearLayout.LayoutParams((52 * density).toInt(), (52 * density).toInt()).apply {
-                    marginStart = (3 * density).toInt()
-                    marginEnd = (3 * density).toInt()
-                }
-                background = getDrawable(R.drawable.bg_compass_dock_item)
-                contentDescription = tabLabel(index)
-                setImageResource(icon)
-                setColorFilter(getColor(if (index == currentTabIndex) R.color.gold_primary else R.color.cream_primary))
-                setPadding((15 * density).toInt(), (15 * density).toInt(), (15 * density).toInt(), (15 * density).toInt())
-                bounceClick()
-                setOnClickListener { v ->
-                    HapticUtil.click(v)
+        if (arcMenuView == null) {
+            arcMenuView = PetalArcMenuView(this).apply {
+                layoutParams = ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT
+                )
+                onTabSelected = { index ->
                     compassView.isMenuOpen = false
                     isMenuOpen = false
                     hidePetalMenu()
                     compassView.invalidate()
                     showFragment(index)
                 }
-            })
+                onClose = {
+                    compassView.isMenuOpen = false
+                    isMenuOpen = false
+                    compassView.invalidate()
+                    hidePetalMenu()
+                }
+            }
         }
-
-        root.addView(scrim)
-        root.addView(dock)
-        petalViews.add(scrim)
-        petalViews.add(dock)
-
-        scrim.animate().alpha(1f).setDuration(140).start()
-        dock.animate().alpha(1f).translationY(0f).setDuration(220).start()
+        
+        if (arcMenuView?.parent == null) {
+            root.addView(arcMenuView)
+        }
+        arcMenuView?.animateOpen()
     }
 
     private fun hidePetalMenu() {
         val root = binding.root as ViewGroup
-        val density = resources.displayMetrics.density
-        petalViews.toList().forEach { petal ->
-            val endTranslation = if (petal is LinearLayout) 20 * density else petal.translationY
-            petal.animate()
-                .alpha(0f)
-                .translationY(endTranslation)
-                .setDuration(160)
-                .withEndAction { root.removeView(petal) }
-                .start()
+        arcMenuView?.animateClose {
+            root.removeView(arcMenuView)
         }
-        petalViews.clear()
     }
 
     private fun setupFragments() {
-        // Show HomeFragment by default
-        showFragment(0)
+        // Show HomeFragment by default without pushing to empty history initially
+        showFragment(0, addToHistory = false)
     }
 
-    fun showFragment(index: Int) {
+    private fun setupBackButton() {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (isMenuOpen) {
+                    showFragment(currentTabIndex, addToHistory = false) // Closes menu
+                } else if (fragmentHistory.isNotEmpty()) {
+                    val prevIndex = fragmentHistory.pop()
+                    showFragment(prevIndex, addToHistory = false)
+                } else if (currentTabIndex != 0) {
+                    showFragment(0, addToHistory = false)
+                } else {
+                    finish()
+                }
+            }
+        })
+    }
+
+    fun navigateToJelajahi(query: String) {
+        showFragment(1)
+        val fragment = fragmentMap[1] as? PenjelajahFragment
+        fragment?.setSearchQueryFromVoice(query)
+    }
+
+    fun showFragment(index: Int, addToHistory: Boolean = true) {
+        if (addToHistory && currentTabIndex != index && (fragmentHistory.isEmpty() || fragmentHistory.peek() != currentTabIndex)) {
+            fragmentHistory.push(currentTabIndex)
+        }
         currentTabIndex = index
         val fm = supportFragmentManager
 

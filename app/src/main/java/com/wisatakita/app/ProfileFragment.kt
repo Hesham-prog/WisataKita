@@ -41,7 +41,6 @@ class ProfileFragment : Fragment() {
         binding.tvProfileEmail.text = userPrefs.getCurrentEmail()
 
         setupRadarChart()
-        setupLanguageToggle()
         setupRows()
         viewModel.stats.observe(viewLifecycleOwner) { stats ->
             binding.tvStatsPill.text = getString(
@@ -70,22 +69,6 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    private fun setupLanguageToggle() {
-        val current = LanguageUtil.currentLanguage(requireContext())
-        binding.groupLanguage.check(
-            if (current == LanguageUtil.ENGLISH) R.id.btnLangEn else R.id.btnLangId
-        )
-        binding.btnLangId.bounceClick()
-        binding.btnLangEn.bounceClick()
-        binding.groupLanguage.addOnButtonCheckedListener { _, checkedId, isChecked ->
-            if (!isChecked) return@addOnButtonCheckedListener
-            val selected = if (checkedId == R.id.btnLangEn) LanguageUtil.ENGLISH else LanguageUtil.INDONESIAN
-            if (selected != LanguageUtil.currentLanguage(requireContext())) {
-                LanguageUtil.setLanguage(requireContext(), selected)
-                requireActivity().recreate()
-            }
-        }
-    }
 
     private fun setupRows() {
         binding.rowNotificationSettings.bounceClick()

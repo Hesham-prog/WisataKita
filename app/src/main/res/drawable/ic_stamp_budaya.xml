@@ -1,0 +1,42 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48"
+    android:tint="?attr/colorControlNormal">
+    
+    <!-- Wayang Head/Headdress Profile -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M18,36 C10,32 10,20 12,16 C16,10 22,6 26,6 C30,6 34,14 30,22 C28,26 26,26 24,30 C22,34 32,32 32,40 C32,44 26,46 22,46" />
+        
+    <!-- Face / Nose Profile -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M12,16 L8,24 L12,28 C14,28 14,34 18,36" />
+        
+    <!-- Eye -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M16,20 L18,22" />
+
+    <!-- Ornaments Details -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M24,12 A2,2 0 1,1 24,11.9 M30,16 A2,2 0 1,1 30,15.9" />
+
+    <!-- Stick handle -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M22,46 L22,48 M16,35 L16,48" />
+</vector>

@@ -49,9 +49,61 @@ class PenjelajahFragment : Fragment() {
         setupAdapter()
         setupViewModeToggle()
         setupSearch()
+        setupSortButton()
         setupResetFilters()
         observeDestinations()
         viewModel.loadDestinations()
+    }
+
+    private fun setupSortButton() {
+        binding.btnSort.setOnClickListener {
+            HapticUtil.click(it)
+            val options = arrayOf(
+                getString(R.string.sort_option_az),
+                getString(R.string.sort_option_za),
+                getString(R.string.sort_option_nearest),
+                getString(R.string.sort_option_farthest),
+                getString(R.string.sort_option_highest_rating),
+                getString(R.string.sort_option_lowest_rating),
+                getString(R.string.sort_option_most_reviews),
+                getString(R.string.sort_option_least_reviews)
+            )
+            
+            val currentSort = viewModel.uiState.value?.sortOption ?: SortOption.AZ
+            val checkedItem = currentSort.ordinal
+            
+            com.google.android.material.dialog.MaterialAlertDialogBuilder(requireContext())
+                .setTitle(getString(R.string.sort_dialog_title))
+                .setSingleChoiceItems(options, checkedItem) { dialog, which ->
+                    val sortOption = SortOption.values()[which]
+                    
+                    if (sortOption == SortOption.NEAREST || sortOption == SortOption.FARTHEST) {
+                        fetchLocationAndSort(sortOption)
+                    } else {
+                        viewModel.setSortOption(sortOption)
+                    }
+                    dialog.dismiss()
+                }
+                .show()
+        }
+    }
+
+    private fun fetchLocationAndSort(sortOption: SortOption) {
+        if (androidx.core.content.ContextCompat.checkSelfPermission(
+                requireContext(), android.Manifest.permission.ACCESS_FINE_LOCATION
+            ) == android.content.pm.PackageManager.PERMISSION_GRANTED
+        ) {
+            val fusedLocation = com.google.android.gms.location.LocationServices.getFusedLocationProviderClient(requireActivity())
+            fusedLocation.lastLocation.addOnSuccessListener { location ->
+                if (location != null) {
+                    viewModel.setUserLocation(location.latitude, location.longitude)
+                }
+                viewModel.setSortOption(sortOption)
+            }
+        } else {
+            android.widget.Toast.makeText(requireContext(), getString(R.string.location_permission_required), android.widget.Toast.LENGTH_SHORT).show()
+            viewModel.setSortOption(sortOption) // will fallback to AZ if location is null
+        }
     }
 
     private fun setupAdapter() {
@@ -127,6 +179,11 @@ class PenjelajahFragment : Fragment() {
             binding.etSearch.setText("")
             viewModel.resetFilters()
         }
+    }
+    
+    fun setSearchQueryFromVoice(query: String) {
+        binding.etSearch.setText(query)
+        viewModel.setSearchQuery(query)
     }
 
     private fun observeDestinations() {

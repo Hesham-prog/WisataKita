@@ -18,10 +18,9 @@ class MusicOrbView @JvmOverloads constructor(
 
     private var pulse = 0f
     private var playing = MusicService.isPlaying
-    private val glowPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = ContextCompat.getColor(context, R.color.turquoise_primary)
-        maskFilter = BlurMaskFilter(16f, BlurMaskFilter.Blur.NORMAL)
-    }
+    private var glowRadius = 0f
+    private val glowPaint = Paint(Paint.ANTI_ALIAS_FLAG)
+    
     private val orbPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = ContextCompat.getColor(context, R.color.glass_surface)
     }
@@ -71,21 +70,36 @@ class MusicOrbView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        val radius = minOf(width, height) / 2f
+        val viewSize = minOf(width, height).toFloat()
+        val radius = viewSize / 2f
         val centerX = width / 2f
         val centerY = height / 2f
 
-        glowPaint.alpha = if (playing) (70 + pulse * 80).toInt() else 30
-        canvas.drawCircle(centerX, centerY, radius * (0.78f + pulse * 0.10f), glowPaint)
+        val currentGlowRadius = radius * (0.8f + pulse * 0.2f)
+        if (currentGlowRadius != glowRadius) {
+            glowRadius = currentGlowRadius
+            val glowColor = ContextCompat.getColor(context, R.color.turquoise_primary)
+            glowPaint.shader = android.graphics.RadialGradient(
+                centerX, centerY, glowRadius,
+                intArrayOf(glowColor, glowColor, android.graphics.Color.TRANSPARENT),
+                floatArrayOf(0f, 0.4f, 1f),
+                android.graphics.Shader.TileMode.CLAMP
+            )
+        }
+        
+        glowPaint.alpha = if (playing) (100 + pulse * 155).toInt() else 0
+        canvas.drawCircle(centerX, centerY, glowRadius, glowPaint)
 
-        bounds.set(5f, 5f, width - 5f, height - 5f)
+        // The actual orb is smaller to give room for the glow
+        val orbRadius = radius * 0.65f
+        bounds.set(centerX - orbRadius, centerY - orbRadius, centerX + orbRadius, centerY + orbRadius)
         canvas.drawOval(bounds, orbPaint)
         canvas.drawOval(bounds, strokePaint)
 
-        val lineTop = height * 0.32f
-        val lineBottom = height * 0.68f
-        val spacing = width * 0.12f
-        val base = width / 2f - spacing
+        val lineTop = centerY - orbRadius * 0.4f
+        val lineBottom = centerY + orbRadius * 0.4f
+        val spacing = orbRadius * 0.3f
+        val base = centerX - spacing
         for (i in 0..2) {
             val x = base + i * spacing
             val dynamic = if (playing) pulse * (8f - i * 2f) else 0f

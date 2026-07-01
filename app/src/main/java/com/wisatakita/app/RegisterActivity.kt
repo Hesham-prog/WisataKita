@@ -27,12 +27,16 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this, R.string.register_required_fields, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            if (ProfanityFilterUtil.containsProfanity(name)) {
+                Toast.makeText(this, getString(R.string.register_invalid_name), Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+            if (email.contains(" ") || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 Toast.makeText(this, "Format email tidak valid", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (password.length < 6) {
-                Toast.makeText(this, "Password minimal 6 karakter", Toast.LENGTH_SHORT).show()
+            if (password.length < 6 || password.contains(" ")) {
+                Toast.makeText(this, "Password minimal 6 karakter tanpa spasi", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if (userPrefs.isEmailTaken(email)) {

@@ -36,9 +36,9 @@
     <View
         android:id="@+id/toolbarScrim"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="130dp"
         android:alpha="0"
-        android:background="@color/charcoal_dark" />
+        android:background="@drawable/bg_top_scrim" />
 
     <ImageButton
         android:id="@+id/btnBack"
@@ -54,8 +54,8 @@
 
     <com.wisatakita.app.MusicOrbView
         android:id="@+id/musicOrb"
-        android:layout_width="44dp"
-        android:layout_height="44dp" />
+        android:layout_width="64dp"
+        android:layout_height="64dp" />
 
     <TextView
         android:id="@+id/tvDetailTitle"
@@ -141,6 +141,28 @@
             app:iconTint="@color/cream_primary"
             app:strokeColor="@color/glass_border"
             app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFavorite"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="Favorit"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:padding="0dp"
+            android:text=""
+            app:backgroundTint="@color/glass_surface"
+            app:cornerRadius="22dp"
+            app:icon="@drawable/ic_heart_outline"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconTint="@color/cream_primary"
+            app:strokeColor="@color/glass_border"
+            app:strokeWidth="1dp" />
     </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -153,7 +175,7 @@
         android:overScrollMode="never"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:paddingBottom="152dp">
+        android:paddingBottom="96dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -238,14 +260,13 @@
                                 android:id="@+id/tvWeatherIcon"
                                 android:layout_width="56dp"
                                 android:layout_height="56dp"
-                                android:fontFamily="@font/bebas_neue"
                                 android:gravity="center"
                                 android:text="--"
-                                android:textColor="@color/gold_primary"
-                                android:textSize="34sp"
+                                android:textSize="32sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
+
 
                             <TextView
                                 android:id="@+id/tvWeatherInfo"

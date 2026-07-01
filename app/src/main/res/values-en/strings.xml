@@ -143,6 +143,22 @@
     <string name="label_view_grid">Grid</string>
     <string name="label_view_card">Card</string>
     <string name="empty_results">No matching destinations.\nTry changing the filter or search term.</string>
+    <string name="sort_dialog_title">Sort By</string>
+    <string name="sort_option_az">A - Z</string>
+    <string name="sort_option_za">Z - A</string>
+    <string name="sort_option_nearest">Nearest</string>
+    <string name="sort_option_farthest">Farthest</string>
+    <string name="sort_option_highest_rating">Highest Rating</string>
+    <string name="sort_option_lowest_rating">Lowest Rating</string>
+    <string name="sort_option_most_reviews">Most Reviews</string>
+    <string name="sort_option_least_reviews">Least Reviews</string>
+    <string name="favorite_added">%1$s added to Favorites</string>
+    <string name="favorite_removed">%1$s removed from Favorites</string>
+    <string name="voice_search_mic_permission">Microphone permission required</string>
+    <string name="voice_search_prompt">What destination are you looking for?</string>
+    <string name="voice_search_unavailable">Voice search is not available on this device</string>
+    <string name="register_invalid_name">Inappropriate name, please use another name</string>
+    <string name="location_permission_required">Location permission is required for this feature</string>
 
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
@@ -228,6 +244,31 @@
     <string name="profile_setup_phone_hint">Phone Number (optional)</string>
     <string name="profile_setup_hometown_hint">Hometown (optional)</string>
     <string name="profile_setup_save">Save and Continue</string>
+    <string name="team_name_1">Nathan Abigail Rahman</string>
+    <string name="team_nim_1">2410511036</string>
+    <string name="team_role_1">UI/UX &amp; Logo</string>
+    <string name="team_quote_1">There is time to kill today</string>
+
+    <string name="team_name_2">Atalla Ahsan Indrayana</string>
+    <string name="team_nim_2">2410511039</string>
+    <string name="team_role_2">Frontend Developer</string>
+    <string name="team_quote_2">Let\'s grab coffee</string>
+
+    <string name="team_name_3">Athallah Abrar Duano</string>
+    <string name="team_nim_3">2410511046</string>
+    <string name="team_role_3">Feature Developer</string>
+    <string name="team_quote_3">KICAUMANIAAAGHHH!!!!</string>
+
+    <string name="team_name_4">Sulthon D. Arrafi</string>
+    <string name="team_nim_4">2410511061</string>
+    <string name="team_role_4">Content &amp; Data</string>
+    <string name="team_quote_4">I\'m the only rich guy here, everyone else is broke. Btw follow my IG @sulthdaffa!!!</string>
+
+    <string name="team_name_5">Hesham Alsami</string>
+    <string name="team_nim_5">2410511066</string>
+    <string name="team_role_5">App Architect</string>
+    <string name="team_quote_5">HI, I WILL FIGHT!</string>
+
     <string name="team_title">Development Team</string>
     <string name="team_subtitle">The people behind WisataKita</string>
     <string name="popular_badge">Popular</string>

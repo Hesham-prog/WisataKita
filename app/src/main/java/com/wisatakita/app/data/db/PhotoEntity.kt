@@ -11,7 +11,8 @@ import androidx.room.*
             childColumns = ["albumId"],
             onDelete = ForeignKey.CASCADE
         )
-    ]
+    ],
+    indices = [Index(value = ["albumId"])]
 )
 data class PhotoEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,

@@ -1,0 +1,41 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48"
+    android:tint="?attr/colorControlNormal">
+    
+    <!-- Balloon Canopy -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M24,4 C14,4 8,12 8,20 C8,30 18,36 20,40 L28,40 C30,36 40,30 40,20 C40,12 34,4 24,4 Z" />
+        
+    <!-- Stripes -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:pathData="M24,4 L24,40 M16,6 Q12,20 16,38 M32,6 Q36,20 32,38" />
+        
+    <!-- Basket -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M20,44 L28,44 L26,48 L22,48 Z" />
+        
+    <!-- Ropes -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2"
+        android:pathData="M20,40 L22,44 M28,40 L26,44" />
+
+    <!-- Clouds Background -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M6,24 Q10,20 14,24 Q16,22 20,26 M42,24 Q38,20 34,24 Q32,22 28,26" />
+</vector>

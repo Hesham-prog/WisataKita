@@ -163,10 +163,64 @@ object DestinationLocalizer {
         "Plan your visit around local weather, access, and official visitor guidance."
     )
 
-    private fun defaultReviews(destination: Destination): List<String> = listOf(
-        "A memorable place with a strong local character.",
-        "Worth visiting with enough time to explore the area properly."
-    )
+    private fun defaultReviews(destination: Destination): List<String> = when (destination.id) {
+        "borobudur" -> listOf(
+            "Tempat bersejarah yang luar biasa. Sangat disarankan datang pagi hari untuk melihat sunrise. Manajemen tiket sudah jauh lebih rapi sekarang.",
+            "Wajib pakai sandal khusus upanat untuk naik ke struktur candi. Pemandangan dari atas sangat menakjubkan, worth every penny!"
+        )
+        "kuta" -> listOf(
+            "Pantai legendaris di Bali! Selalu ramai terutama saat sunset. Cocok banget buat pemula yang mau belajar surfing.",
+            "Akses masuk mudah dan gratis, tapi parkirnya agak sulit kalau bawa mobil. Banyak pedagang makanan dan penyewaan papan selancar."
+        )
+        "rajaampat" -> listOf(
+            "Surga dunia! Terumbu karangnya sangat sehat dan ikan-ikannya luar biasa banyak. Piaynemo adalah spot yang wajib dikunjungi.",
+            "Biaya ke sini memang cukup mahal, tapi pengalaman diving dan pemandangannya benar-benar tidak terlupakan seumur hidup."
+        )
+        "komodo" -> listOf(
+            "Melihat Komodo di habitat aslinya adalah pengalaman yang mendebarkan. Ranger-nya sangat profesional dan informatif.",
+            "Selain Komodo, Pink Beach dan Pulau Padar di kawasan taman nasional ini pemandangannya gila banget indahnya!"
+        )
+        "bromo" -> listOf(
+            "View sunrise dari Penanjakan tidak ada duanya! Pakai jaket tebal karena anginnya lumayan menusuk di pagi hari.",
+            "Sewa hardtop adalah pengalaman tersendiri. Lautan pasir dan kawah Bromonya sangat megah. Sangat direkomendasikan!"
+        )
+        "danau_toba" -> listOf(
+            "Danau vulkanik terbesar yang pemandangannya bikin tenang banget. Pulau Samosir di tengahnya juga punya budaya Batak yang kental.",
+            "Udara di sini sejuk, makanannya enak, terutama ikan poranya. Akses jalan sudah mulus dan banyak spot foto bagus."
+        )
+        "prambanan" -> listOf(
+            "Candi Hindu tercantik di Indonesia. Sendratari Ramayana di malam hari dengan latar belakang candi adalah pertunjukan kelas dunia.",
+            "Kawasannya sangat bersih dan luas. Sebaiknya bawa payung atau topi kalau datang siang karena lumayan terik."
+        )
+        "lorentz" -> listOf(
+            "Taman Nasional Lorentz adalah definisi dari alam liar yang masih perawan. Keanekaragaman hayatinya dari pantai hingga salju abadi sangat mengagumkan.",
+            "Akses sangat terbatas dan butuh persiapan logistik ekstra serta izin khusus, tapi sangat sepadan bagi pecinta alam sejati."
+        )
+        "gili_trawangan" -> listOf(
+            "Gili Trawangan tidak pernah mengecewakan! Tidak ada kendaraan bermotor bikin suasana sangat santai. Sunset di sisi barat luar biasa.",
+            "Spot snorkelingnya juara, banyak penyu! Malam hari suasananya sangat hidup dengan berbagai kafe dan live music."
+        )
+        "banda_neira" -> listOf(
+            "Potongan surga di timur Indonesia. Sejarah kolonialnya sangat kental berdampingan dengan keindahan laut yang spektakuler.",
+            "Snorkeling di Lava Flow benar-benar magis. Jangan lupa mampir ke Benteng Belgica saat sore hari."
+        )
+        "sentani" -> listOf(
+            "Danau Sentani punya pesona yang unik. Bukit Teletubbies di sekitarnya sangat hijau dan indah untuk difoto.",
+            "Sangat disarankan ikut festival Danau Sentani jika waktunya pas. Budaya lokal Papua di desa-desa sekitar danau sangat kaya."
+        )
+        "morotai" -> listOf(
+            "Sisa-sisa sejarah Perang Dunia II di Morotai sangat menarik untuk dieksplorasi. Pantainya masih sangat bersih dan sepi.",
+            "Pulau Dodola dengan pasir timbulnya adalah highlight utama. Air lautnya sebening kristal!"
+        )
+        "lawang_sewu" -> listOf(
+            "Arsitektur khas Belanda yang megah! Ikut tur malam harinya memberikan sensasi yang sedikit merinding tapi sangat seru.",
+            "Bangunannya sangat terawat dan fotogenik. Pemandu wisatanya sangat berpengetahuan tentang sejarah kereta api di Indonesia."
+        )
+        else -> listOf(
+            "Destinasi yang luar biasa dan sangat direkomendasikan! Pengalaman yang didapat benar-benar sepadan dengan perjalanannya.",
+            "Tempatnya bersih, pemandangannya indah, dan warga lokalnya sangat ramah. Cocok untuk liburan akhir pekan."
+        )
+    }
 
     private fun defaultPromo(destination: Destination): String =
         "Plan ahead for a smoother visit and better photo opportunities."

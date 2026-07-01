@@ -1,0 +1,54 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48"
+    android:tint="?attr/colorControlNormal">
+    
+    <!-- Sun -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:pathData="M24,24 A10,10 0 1,0 24,4 A10,10 0 1,0 24,24 Z" />
+        
+    <!-- Waves -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M2,28 Q10,22 18,28 T34,28 T46,28" />
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M2,34 Q12,28 22,34 T42,34 T46,34" />
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M2,40 Q14,34 26,40 T46,38" />
+
+    <!-- Palm Tree trunk -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:pathData="M40,46 Q44,30 38,16" />
+        
+    <!-- Palm Leaves -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M38,16 Q28,14 24,22" />
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M38,16 Q36,6 28,6" />
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M38,16 Q44,8 48,14" />
+</vector>

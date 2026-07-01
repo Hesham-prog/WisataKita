@@ -14,8 +14,10 @@ import android.view.TextureView
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.DecelerateInterpolator
+import android.view.animation.OvershootInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
+import com.wisatakita.app.data.UserPrefs
 import com.wisatakita.app.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
@@ -32,6 +34,12 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         LanguageUtil.applySavedLanguage(this)
         super.onCreate(savedInstanceState)
+
+        // Prevent duplicate splash when Android relaunches from recent apps
+        if (!isTaskRoot) {
+            finish()
+            return
+        }
 
         // Edge-to-edge immersive
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -83,23 +91,29 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun startSplashSequence() {
-        // Animate the premium brand mark in before the text sequence.
+        // Cinematic logo entrance: scale + slow zoom
         try {
             binding.ivSplashLogo.apply {
                 alpha = 0f
-                scaleX = 0.84f
-                scaleY = 0.84f
+                scaleX = 0.7f
+                scaleY = 0.7f
                 animate()
                     .alpha(1f)
-                    .scaleX(1f)
-                    .scaleY(1f)
-                    .setDuration(720L)
-                    .setInterpolator(DecelerateInterpolator(1.6f))
+                    .scaleX(1.08f)
+                    .scaleY(1.08f)
+                    .setDuration(900L)
+                    .setInterpolator(DecelerateInterpolator(1.8f))
+                    .withEndAction {
+                        animate()
+                            .scaleX(1f)
+                            .scaleY(1f)
+                            .setDuration(400L)
+                            .setInterpolator(OvershootInterpolator(1.5f))
+                            .start()
+                    }
                     .start()
             }
-        } catch (e: Exception) {
-            // Asset not yet added — still run the rest of the sequence
-        }
+        } catch (e: Exception) { }
 
         // Step 1 — after 500ms: fade in app name with overshoot scale
         handler.postDelayed({
@@ -137,14 +151,18 @@ class SplashActivity : AppCompatActivity() {
     private fun navigateNext() {
         val prefs = getSharedPreferences(PREF_NAME, MODE_PRIVATE)
         val isFirstLaunch = prefs.getBoolean(KEY_FIRST_LAUNCH, true)
+        val hasSession = UserPrefs(this).getCurrentEmail().isNotEmpty()
 
-        if (isFirstLaunch) {
-            prefs.edit().putBoolean(KEY_FIRST_LAUNCH, false).apply()
-            startActivity(Intent(this, OnboardingActivity::class.java))
-        } else {
-            startActivity(Intent(this, LoginActivity::class.java))
+        val destination = when {
+            isFirstLaunch -> {
+                prefs.edit().putBoolean(KEY_FIRST_LAUNCH, false).apply()
+                OnboardingActivity::class.java
+            }
+            hasSession -> MainActivity::class.java
+            else -> LoginActivity::class.java
         }
 
+        startActivity(Intent(this, destination))
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         finish()
     }

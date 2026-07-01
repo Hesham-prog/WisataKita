@@ -158,6 +158,22 @@
     <string name="label_view_grid">Grid</string>
     <string name="label_view_card">Kartu</string>
     <string name="empty_results">Tidak ada destinasi yang cocok.\nCoba ubah filter atau kata pencarian.</string>
+    <string name="sort_dialog_title">Urutkan Berdasarkan</string>
+    <string name="sort_option_az">A - Z</string>
+    <string name="sort_option_za">Z - A</string>
+    <string name="sort_option_nearest">Terdekat (Nearest)</string>
+    <string name="sort_option_farthest">Terjauh (Farthest)</string>
+    <string name="sort_option_highest_rating">Rating Tertinggi</string>
+    <string name="sort_option_lowest_rating">Rating Terendah</string>
+    <string name="sort_option_most_reviews">Ulasan Terbanyak</string>
+    <string name="sort_option_least_reviews">Ulasan Paling Sedikit</string>
+    <string name="favorite_added">%1$s ditambahkan ke Favorit</string>
+    <string name="favorite_removed">%1$s dihapus dari Favorit</string>
+    <string name="voice_search_mic_permission">Izin mikrofon diperlukan</string>
+    <string name="voice_search_prompt">Mau cari destinasi apa?</string>
+    <string name="voice_search_unavailable">Voice search tidak tersedia di perangkat ini</string>
+    <string name="register_invalid_name">Nama tidak pantas, silakan gunakan nama lain</string>
+    <string name="location_permission_required">Izin lokasi diperlukan untuk fitur ini</string>
 
     <!-- General -->
     <string name="ok">OK</string>
@@ -179,7 +195,7 @@
     <string name="content_desc_team_role">Ikon peran anggota tim</string>
 
     <!-- Google Auth -->
-    <string name="google_client_id">YOUR_GOOGLE_WEB_CLIENT_ID_HERE</string>
+    <string name="google_client_id">551445903552-ne5cemqhota458vg6kk2cu5ulaf2uf4e.apps.googleusercontent.com</string>
 
     <!-- Extra localized UI labels -->
     <string name="home_default_user">Penjelajah</string>
@@ -246,6 +262,31 @@
     <string name="profile_setup_phone_hint">Nomor HP (opsional)</string>
     <string name="profile_setup_hometown_hint">Kota Asal (opsional)</string>
     <string name="profile_setup_save">Simpan dan Lanjut</string>
+    <string name="team_name_1">Nathan Abigail Rahman</string>
+    <string name="team_nim_1">2410511036</string>
+    <string name="team_role_1">UI/UX &amp; Logo</string>
+    <string name="team_quote_1">There is time to kill today</string>
+
+    <string name="team_name_2">Atalla Ahsan Indrayana</string>
+    <string name="team_nim_2">2410511039</string>
+    <string name="team_role_2">Frontend Developer</string>
+    <string name="team_quote_2">Ngopi skuy</string>
+
+    <string name="team_name_3">Athallah Abrar Duano</string>
+    <string name="team_nim_3">2410511046</string>
+    <string name="team_role_3">Feature Developer</string>
+    <string name="team_quote_3">KICAUMANIAAAGHHH!!!!</string>
+
+    <string name="team_name_4">Sulthon D. Arrafi</string>
+    <string name="team_nim_4">2410511061</string>
+    <string name="team_role_4">Content &amp; Data</string>
+    <string name="team_quote_4">Saya doang yang kaya di grup ini semuanya miskin, btw follow ig aku ya guys @sulthdaffa!!!</string>
+
+    <string name="team_name_5">Hesham Alsami</string>
+    <string name="team_nim_5">2410511066</string>
+    <string name="team_role_5">App Architect</string>
+    <string name="team_quote_5">HAI, SAYA AKAN LAWAN!</string>
+
     <string name="team_title">Tim Pengembang</string>
     <string name="team_subtitle">Orang-orang di balik WisataKita</string>
     <string name="popular_badge">Populer</string>

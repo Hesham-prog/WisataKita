@@ -1,0 +1,45 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48"
+    android:tint="?attr/colorControlNormal">
+    
+    <!-- Base -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M4,42 L44,42 M8,36 L40,36 M14,30 L34,30" />
+        
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M4,42 L8,36 M44,42 L40,36 M8,36 L14,30 M40,36 L34,30" />
+
+    <!-- Main Stupa Dome -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:pathData="M16,16 A8,8 0 0,1 32,16" />
+        
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M16,16 L14,30 M32,16 L34,30" />
+
+    <!-- Top Spire -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M24,16 L24,2 M22,6 L26,6 M22,10 L26,10" />
+
+    <!-- Side Stupas -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:pathData="M8,26 A4,4 0 0,1 14,26 M34,26 A4,4 0 0,1 40,26" />
+</vector>

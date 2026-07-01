@@ -2,6 +2,8 @@ package com.wisatakita.app
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +12,11 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.activity.result.contract.ActivityResultContracts
+import android.Manifest
+import android.content.pm.PackageManager
+import androidx.core.content.ContextCompat
+import com.google.android.gms.location.LocationServices
 import com.wisatakita.app.data.Destination
 import com.wisatakita.app.data.UserPrefs
 import com.wisatakita.app.databinding.FragmentHomeBinding
@@ -23,6 +30,57 @@ class HomeFragment : Fragment() {
     private lateinit var featuredAdapter: FeaturedDestinationAdapter
     private lateinit var nearbyAdapter: HomeNearbyAdapter
     private lateinit var viewModel: HomeViewModel
+
+    private val heroHandler = Handler(Looper.getMainLooper())
+    private var heroIndex = 0
+    private var heroImages = listOf<String>()
+    
+    private val locationPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+        if (isGranted) fetchLocation()
+    }
+    
+    private val voicePermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+        if (isGranted) launchVoiceSearch()
+        else android.widget.Toast.makeText(requireContext(), getString(R.string.voice_search_mic_permission), android.widget.Toast.LENGTH_SHORT).show()
+    }
+
+    private val voiceSearchLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == android.app.Activity.RESULT_OK) {
+            val spokenText = result.data?.getStringArrayListExtra(android.speech.RecognizerIntent.EXTRA_RESULTS)?.get(0)
+            if (!spokenText.isNullOrEmpty()) {
+                (requireActivity() as? MainActivity)?.navigateToJelajahi(spokenText)
+            }
+        }
+    }
+    
+    private val heroRunnable = object : Runnable {
+        override fun run() {
+            _binding?.let { b ->
+                if (heroImages.isNotEmpty()) {
+                    heroIndex = (heroIndex + 1) % heroImages.size
+                    com.bumptech.glide.Glide.with(this@HomeFragment)
+                        .load(heroImages[heroIndex])
+                        .centerCrop()
+                        .transition(com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade(1000))
+                        .into(b.ivHeroBg)
+                }
+            }
+            heroHandler.postDelayed(this, 5000)
+        }
+    }
+
+    private fun launchVoiceSearch() {
+        val intent = Intent(android.speech.RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+            putExtra(android.speech.RecognizerIntent.EXTRA_LANGUAGE_MODEL, android.speech.RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+            putExtra(android.speech.RecognizerIntent.EXTRA_LANGUAGE, "id-ID")
+            putExtra(android.speech.RecognizerIntent.EXTRA_PROMPT, getString(R.string.voice_search_prompt))
+        }
+        try {
+            voiceSearchLauncher.launch(intent)
+        } catch (e: Exception) {
+            android.widget.Toast.makeText(requireContext(), getString(R.string.voice_search_unavailable), android.widget.Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,7 +102,33 @@ class HomeFragment : Fragment() {
         viewModel.loadDestinations()
         setupAboutIndonesia()
         animateEntrance()
+        heroHandler.postDelayed(heroRunnable, 5000)
+        
+        requestLocation()
     }
+
+    private fun requestLocation() {
+        val permission = Manifest.permission.ACCESS_FINE_LOCATION
+        if (ContextCompat.checkSelfPermission(requireContext(), permission) == PackageManager.PERMISSION_GRANTED) {
+            fetchLocation()
+        } else {
+            locationPermissionLauncher.launch(permission)
+        }
+    }
+
+    private fun fetchLocation() {
+        try {
+            val fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
+            fusedLocationClient.lastLocation.addOnSuccessListener { location ->
+                if (location != null) {
+                    viewModel.setUserLocation(location.latitude, location.longitude)
+                }
+            }
+        } catch (e: SecurityException) {
+            // Permission wasn't actually granted
+        }
+    }
+
 
     private fun setupGreeting() {
         val userPrefs = UserPrefs(requireContext())
@@ -86,6 +170,16 @@ class HomeFragment : Fragment() {
             featuredAdapter.submitList(state.featured)
             nearbyAdapter.submitList(state.nearby)
             setupCategoryChips(state.categories, state.selectedCategory)
+            
+            // Populate hero images from featured destinations
+            if (state.featured.isNotEmpty() && heroImages.isEmpty()) {
+                heroImages = state.featured.take(5).map { it.imageUrl }
+                // Load first image immediately
+                com.bumptech.glide.Glide.with(this@HomeFragment)
+                    .load(heroImages[0])
+                    .centerCrop()
+                    .into(binding.ivHeroBg)
+            }
         }
     }
 
@@ -129,6 +223,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupClickListeners() {
+        binding.btnVoiceSearch.setOnClickListener {
+            HapticUtil.click(it)
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
+                launchVoiceSearch()
+            } else {
+                voicePermissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
+            }
+        }
+        
         binding.cardSearch.bounceClick()
         binding.cardSearch.setOnClickListener {
             HapticUtil.click(it)
@@ -154,12 +257,11 @@ class HomeFragment : Fragment() {
             if (MusicService.isPlaying) {
                 intent.action = MusicService.ACTION_PAUSE
                 MusicService.isPlaying = false
-                binding.btnMusic.setImageResource(R.drawable.ic_music_off)
             } else {
                 intent.action = MusicService.ACTION_RESUME
                 MusicService.isPlaying = true
-                binding.btnMusic.setImageResource(R.drawable.ic_music_on)
             }
+            binding.btnMusic.setPlaying(MusicService.isPlaying)
             requireContext().startService(intent)
         }
     }
@@ -213,13 +315,12 @@ class HomeFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        binding.btnMusic.setImageResource(
-            if (MusicService.isPlaying) R.drawable.ic_music_on else R.drawable.ic_music_off
-        )
+        binding.btnMusic.setPlaying(MusicService.isPlaying)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        heroHandler.removeCallbacksAndMessages(null)
         _binding = null
     }
 }

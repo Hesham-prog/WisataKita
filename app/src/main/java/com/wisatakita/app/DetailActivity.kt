@@ -30,8 +30,6 @@ class DetailActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_LANTERN_MESSAGE = "LANTERN_MESSAGE"
-        private const val SCROLL_PHASE_TWO = 0.3f
-        private const val SCROLL_END = 0.7f
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,6 +62,63 @@ class DetailActivity : AppCompatActivity() {
             loadWeather(destination)
             loadNearbyPlaces(destination)
             maybeShowLantern()
+            setupFavoriteButton(destination)
+        }
+    }
+
+    private fun setupFavoriteButton(destination: Destination) {
+        val repo = TravelLocalRepository(this)
+        lifecycleScope.launch {
+            val isFav = repo.isFavorite(destination.id)
+            setFavoriteIconInitial(isFav)
+        }
+        binding.btnFavorite.bounceClick()
+        binding.btnFavorite.setOnClickListener {
+            HapticUtil.click(it)
+            lifecycleScope.launch {
+                val isNowFav = repo.toggleFavorite(destination.id)
+                playFavoriteAnimation(isNowFav)
+                val msg = if (isNowFav) getString(R.string.favorite_added, destination.name) else getString(R.string.favorite_removed, destination.name)
+                android.widget.Toast.makeText(this@DetailActivity, msg, android.widget.Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun setFavoriteIconInitial(isFavorite: Boolean) {
+        binding.btnFavorite.setIconResource(if (isFavorite) R.drawable.ic_heart_filled else R.drawable.ic_heart_outline)
+        binding.btnFavorite.setIconTintResource(if (isFavorite) R.color.gold_primary else R.color.cream_primary)
+    }
+
+    private fun playFavoriteAnimation(isFavorite: Boolean) {
+        if (isFavorite) {
+            // Heart pop animation
+            binding.btnFavorite.setIconResource(R.drawable.ic_heart_filled)
+            binding.btnFavorite.setIconTintResource(R.color.gold_primary)
+            binding.btnFavorite.animate()
+                .scaleX(1.3f).scaleY(1.3f)
+                .setDuration(150)
+                .withEndAction {
+                    binding.btnFavorite.animate().scaleX(1f).scaleY(1f).setDuration(150).start()
+                }.start()
+        } else {
+            // Heartbreak animation
+            binding.btnFavorite.setIconResource(R.drawable.ic_heart_broken)
+            binding.btnFavorite.setIconTintResource(android.R.color.holo_red_light)
+            
+            // Shake effect
+            binding.btnFavorite.animate()
+                .rotation(15f).setDuration(50)
+                .withEndAction {
+                    binding.btnFavorite.animate().rotation(-15f).setDuration(50).withEndAction {
+                        binding.btnFavorite.animate().rotation(0f).setDuration(50).withEndAction {
+                            // Fade back to normal outline
+                            binding.btnFavorite.postDelayed({
+                                binding.btnFavorite.setIconResource(R.drawable.ic_heart_outline)
+                                binding.btnFavorite.setIconTintResource(R.color.cream_primary)
+                            }, 300)
+                        }.start()
+                    }.start()
+                }.start()
         }
     }
 
@@ -74,6 +129,7 @@ class DetailActivity : AppCompatActivity() {
         binding.layoutFabActions.bringToFront()
         binding.btnPesanTiket.bringToFront()
     }
+
 
     private fun setupMusicOrb() {
         binding.musicOrb.setPlaying(MusicService.isPlaying)
@@ -94,31 +150,20 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun setupMotionScroll() {
-        binding.motionDetail.setTransition(R.id.start, R.id.phase2)
-        binding.detailScroll.setOnScrollChangeListener { _, _, scrollY, _, _ ->
-            val range = (resources.displayMetrics.heightPixels * SCROLL_END).coerceAtLeast(1f)
-            val globalProgress = (scrollY / range).coerceIn(0f, 1f)
-            if (globalProgress <= SCROLL_PHASE_TWO) {
-                binding.motionDetail.setTransition(R.id.start, R.id.phase2)
-                binding.motionDetail.progress = globalProgress / SCROLL_PHASE_TWO
-            } else {
-                binding.motionDetail.setTransition(R.id.phase2, R.id.end)
-                binding.motionDetail.progress =
-                    ((globalProgress - SCROLL_PHASE_TWO) / (1f - SCROLL_PHASE_TWO)).coerceIn(0f, 1f)
-            }
-            binding.tvDetailTitle.textSize = 30f - (globalProgress * 12f)
-        }
+        // OnSwipe in scene_detail.xml now drives the transition automatically.
+        // We just need to prime the MotionLayout to the correct transition.
+        binding.motionDetail.setTransition(R.id.start, R.id.end)
+        binding.motionDetail.progress = 0f
     }
 
     private fun setupWeatherObserver() {
         weatherViewModel.weatherState.observe(this) { state ->
             if (state.loading) {
-                binding.tvWeatherIcon.text = "--"
+                binding.tvWeatherIcon.text = "⏳"
                 binding.tvWeatherInfo.text = getString(R.string.weather_loading)
                 return@observe
             }
             val weather = state.info
-            binding.tvWeatherIcon.text = weather?.temperature?.toInt()?.toString() ?: "NA"
             binding.tvWeatherInfo.text = weather?.let {
                 getString(
                     R.string.detail_weather_format,
@@ -131,14 +176,32 @@ class DetailActivity : AppCompatActivity() {
 
             when (state.mood) {
                 WeatherViewModel.Mood.SUNNY -> {
+                    // Clear sunny sky — golden sun icon, warm card tint
+                    binding.tvWeatherIcon.text = "☀️"
+                    binding.tvWeatherIcon.textSize = 28f
+                    binding.cardWeather.setCardBackgroundColor(
+                        ContextCompat.getColor(this, R.color.weather_sunny_tint)
+                    )
                     binding.heroGoldOverlay.animate().alpha(0.22f).setDuration(280L).start()
                     binding.rainOverlay.visibility = View.GONE
                 }
                 WeatherViewModel.Mood.RAIN -> {
+                    // Rainy — blue cloud-rain icon, cool blue card tint
+                    binding.tvWeatherIcon.text = "🌧️"
+                    binding.tvWeatherIcon.textSize = 28f
+                    binding.cardWeather.setCardBackgroundColor(
+                        ContextCompat.getColor(this, R.color.weather_rain_tint)
+                    )
                     binding.heroGoldOverlay.animate().alpha(0.02f).setDuration(280L).start()
                     binding.rainOverlay.visibility = View.VISIBLE
                 }
                 WeatherViewModel.Mood.NEUTRAL -> {
+                    // Cloudy / neutral — soft grey cloud icon
+                    binding.tvWeatherIcon.text = "⛅"
+                    binding.tvWeatherIcon.textSize = 28f
+                    binding.cardWeather.setCardBackgroundColor(
+                        ContextCompat.getColor(this, R.color.weather_neutral_tint)
+                    )
                     binding.heroGoldOverlay.animate().alpha(0.08f).setDuration(280L).start()
                     binding.rainOverlay.visibility = View.GONE
                 }

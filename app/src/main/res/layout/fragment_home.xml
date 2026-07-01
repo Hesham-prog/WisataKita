@@ -13,164 +13,194 @@
         android:orientation="vertical"
         android:paddingBottom="120dp">
 
-        <!-- ═══════════════════ HERO HEADER ═══════════════════ -->
-        <FrameLayout
+        <!-- ═══════════════════ FLOATING HERO CARD ═══════════════════ -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="300dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="12dp"
+            app:cardBackgroundColor="@color/charcoal_dark">
 
-            <!-- Background gradient -->
-            <View
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_gradient_hero"/>
+                android:layout_height="match_parent">
 
-            <!-- Subtle overlay for text readability -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/scrim_light"/>
+                <!-- Rotating hero destination image -->
+                <ImageView
+                    android:id="@+id/iv_hero_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/bg_gradient_hero" />
 
-            <!-- Header content -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:orientation="vertical"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:paddingBottom="30dp"
-                android:paddingTop="56dp">
+                <!-- Subtle dark scrim for text readability -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/scrim_light" />
 
+                <!-- Header content -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingStart="22dp"
+                    android:paddingEnd="22dp"
+                    android:paddingBottom="22dp"
+                    android:paddingTop="56dp">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <!-- Time-of-day greeting -->
-                        <TextView
-                            android:id="@+id/tv_greeting_time"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/greeting_morning"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/plus_jakarta_sans"
-                            android:textColor="#CCF2D8B3"
-                            android:letterSpacing="0.06"/>
-
-                        <!-- Name greeting -->
-                        <TextView
-                            android:id="@+id/tv_greeting"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/home_greeting_name"
-                            android:textSize="26sp"
-                            android:fontFamily="@font/fraunces_bold"
-                            android:textColor="@color/white"
-                            android:letterSpacing="-0.01"
-                            android:layout_marginTop="2dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/greeting_subtitle"
-                            android:textSize="13sp"
-                            android:fontFamily="@font/plus_jakarta_sans"
-                            android:textColor="#99F2D8B3"
-                            android:layout_marginTop="4dp"/>
-
-                    </LinearLayout>
-
-                    <!-- Logo + Music button -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
 
-                        <ImageButton
-                            android:id="@+id/btn_music"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_music_on"
-                            android:background="@drawable/bg_glassmorphism"
-                            android:padding="10dp"
-                            android:contentDescription="@string/content_desc_music"
-                            android:layout_marginEnd="10dp"/>
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_logo"
-                            android:contentDescription="@string/app_name"/>
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- Search bar (glassmorphism) -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_search"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    app:cardCornerRadius="25dp"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/glass_surface">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp">
-
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@drawable/ic_search"
-                            android:tint="@color/cream_primary"
-                            android:alpha="0.7"
-                            android:contentDescription="@string/search_hint"/>
-
-                        <TextView
+                        <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:layout_marginStart="12dp"
-                            android:text="@string/search_hint"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/plus_jakarta_sans"
-                            android:textColor="#66F2D8B3"/>
+                            android:orientation="vertical">
 
+                            <!-- Time-of-day greeting -->
+                            <TextView
+                                android:id="@+id/tv_greeting_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/greeting_morning"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/plus_jakarta_sans"
+                                android:textColor="#CCF2D8B3"
+                                android:letterSpacing="0.08" />
+
+                            <!-- Name greeting -->
+                            <TextView
+                                android:id="@+id/tv_greeting"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/home_greeting_name"
+                                android:textSize="26sp"
+                                android:fontFamily="@font/fraunces_bold"
+                                android:textColor="@color/white"
+                                android:letterSpacing="-0.01"
+                                android:layout_marginTop="2dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/greeting_subtitle"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/plus_jakarta_sans"
+                                android:textColor="#99F2D8B3"
+                                android:layout_marginTop="4dp" />
+
+                        </LinearLayout>
+
+                        <!-- Logo + Music button -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <com.wisatakita.app.MusicOrbView
+                                android:id="@+id/btn_music"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginEnd="6dp" />
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_logo"
+                                android:contentDescription="@string/app_name" />
+
+                        </LinearLayout>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
-        </FrameLayout>
+                    <!-- Glassmorphism search bar with mic + search icons -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="18dp"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/glass_surface"
+                        app:strokeColor="@color/glass_border"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="14dp">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_search"
+                                android:tint="@color/cream_primary"
+                                android:alpha="0.75"
+                                android:contentDescription="@string/search_hint" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/search_hint"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/plus_jakarta_sans"
+                                android:textColor="#66F2D8B3" />
+
+                            <!-- Mic icon as right accessory -->
+                            <ImageView
+                                android:id="@+id/btn_voice_search"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@android:drawable/ic_btn_speak_now"
+                                android:tint="@color/turquoise_primary"
+                                android:alpha="0.85"
+                                android:contentDescription="Voice Search" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- ═══════════════════ FEATURED DESTINATIONS ═══════════════════ -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="28dp">
 
-            <!-- Section header -->
+            <!-- Section header with gold accent bar -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:layout_marginBottom="12dp">
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_marginBottom="14dp">
+
+                <!-- Temple gold accent bar -->
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="22dp"
+                    android:background="@color/gold_primary"
+                    android:layout_marginEnd="10dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -179,7 +209,7 @@
                     android:text="@string/section_featured"
                     android:textSize="20sp"
                     android:fontFamily="@font/fraunces_semibold"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tv_see_all_featured"
@@ -188,7 +218,7 @@
                     android:text="@string/label_see_all"
                     android:textSize="13sp"
                     android:fontFamily="@font/plus_jakarta_sans_semibold"
-                    android:textColor="@color/turquoise_primary"/>
+                    android:textColor="@color/turquoise_primary" />
 
             </LinearLayout>
 
@@ -197,11 +227,11 @@
                 android:id="@+id/rv_featured"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:paddingStart="24dp"
+                android:paddingStart="20dp"
                 android:paddingEnd="8dp"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         </LinearLayout>
 
@@ -209,7 +239,7 @@
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="24dp"
             android:scrollbars="none">
 
             <LinearLayout
@@ -217,8 +247,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"/>
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp" />
 
         </HorizontalScrollView>
 
@@ -227,16 +257,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="34dp">
+            android:layout_marginTop="30dp">
 
+            <!-- Section header with gold accent bar -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:layout_marginBottom="12dp">
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_marginBottom="14dp">
+
+                <!-- Temple gold accent bar -->
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="22dp"
+                    android:background="@color/gold_primary"
+                    android:layout_marginEnd="10dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -245,7 +283,7 @@
                     android:text="@string/section_nearby"
                     android:textSize="20sp"
                     android:fontFamily="@font/fraunces_semibold"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tv_see_all_nearby"
@@ -254,7 +292,7 @@
                     android:text="@string/label_see_all"
                     android:textSize="13sp"
                     android:fontFamily="@font/plus_jakarta_sans_semibold"
-                    android:textColor="@color/turquoise_primary"/>
+                    android:textColor="@color/turquoise_primary" />
 
             </LinearLayout>
 
@@ -266,21 +304,23 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:clipToPadding="false"
-                android:nestedScrollingEnabled="false"/>
+                android:nestedScrollingEnabled="false" />
 
         </LinearLayout>
 
         <!-- ═══════════════════ ABOUT INDONESIA CARD ═══════════════════ -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_about_indonesia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="34dp"
-            app:cardCornerRadius="20dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="22dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/glass_surface_deep">
+            app:cardBackgroundColor="@color/glass_surface_deep"
+            app:strokeColor="@color/glass_border"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -298,12 +338,12 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="#CC2E2E"/>
+                        android:background="#CC2E2E" />
                     <View
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="#FFFFFF"/>
+                        android:background="#FFFFFF" />
                 </LinearLayout>
 
                 <TextView
@@ -313,7 +353,7 @@
                     android:textSize="18sp"
                     android:fontFamily="@font/fraunces_semibold"
                     android:textColor="@color/white"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
                     android:id="@+id/tv_about_indonesia"
@@ -325,7 +365,7 @@
                     android:textColor="@color/colorTextSecondary"
                     android:lineSpacingMultiplier="1.6"
                     android:maxLines="4"
-                    android:ellipsize="end"/>
+                    android:ellipsize="end" />
 
                 <TextView
                     android:id="@+id/tv_about_read_more"
@@ -335,10 +375,10 @@
                     android:text="@string/about_indonesia_read_more"
                     android:textSize="13sp"
                     android:fontFamily="@font/plus_jakarta_sans_semibold"
-                    android:textColor="@color/turquoise_primary"/>
+                    android:textColor="@color/turquoise_primary" />
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

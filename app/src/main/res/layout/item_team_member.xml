@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardTeamMember"
     android:layout_width="214dp"
-    android:layout_height="338dp"
+    android:layout_height="wrap_content"
     android:layout_marginEnd="14dp"
+    android:layout_marginBottom="14dp"
     android:foreground="?attr/selectableItemBackground"
     app:cardBackgroundColor="@color/charcoal_dark"
     app:cardCornerRadius="24dp"
@@ -12,18 +13,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/ivTeamPhoto"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="220dp"
             android:contentDescription="@string/content_desc_team_photo"
             android:background="@color/charcoal_dark"
-            android:scaleType="centerInside"
-            app:layout_constraintBottom_toTopOf="@id/panelTeamInfo"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.62"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,25 +31,25 @@
             android:layout_width="0dp"
             android:layout_height="72dp"
             android:background="@drawable/gradient_card_overlay"
-            app:layout_constraintBottom_toTopOf="@id/panelTeamInfo"
+            app:layout_constraintBottom_toBottomOf="@id/ivTeamPhoto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
             android:id="@+id/panelTeamInfo"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/bg_glassmorphism"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:paddingStart="14dp"
             android:paddingTop="10dp"
             android:paddingEnd="14dp"
-            android:paddingBottom="10dp"
+            android:paddingBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.38"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivTeamPhoto">
 
             <TextView
                 android:id="@+id/tvTeamName"

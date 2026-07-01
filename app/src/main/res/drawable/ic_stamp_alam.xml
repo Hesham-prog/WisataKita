@@ -1,0 +1,48 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48"
+    android:tint="?attr/colorControlNormal">
+    
+    <!-- Sun -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:pathData="M24,20 A6,6 0 1,0 24,8 A6,6 0 1,0 24,20 Z" />
+
+    <!-- Left Mountain -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M2,38 L16,14 L24,26" />
+        
+    <!-- Right Mountain (overlapping in front) -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M18,38 L32,10 L46,38 Z" />
+
+    <!-- Snow Peak Left -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M10,24 L14,21 L18,25" />
+        
+    <!-- Snow Peak Right -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M25,24 L29,19 L33,25" />
+
+    <!-- Ground line -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M2,38 L46,38" />
+</vector>

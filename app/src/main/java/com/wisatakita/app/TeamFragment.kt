@@ -14,6 +14,7 @@ class TeamFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+
         _binding = FragmentTeamBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -22,38 +23,38 @@ class TeamFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val team = listOf(
             TeamMember(
-                name = "Nathan Abigail Rahman",
-                nim = "2410511036",
-                role = "UI/UX & Logo",
-                quote = "There is time to kill today",
+                name = getString(R.string.team_name_1),
+                nim = getString(R.string.team_nim_1),
+                role = getString(R.string.team_role_1),
+                quote = getString(R.string.team_quote_1),
                 photoRes = R.drawable.team_nathan
             ),
             TeamMember(
-                name = "Atalla Ahsan Indrayana",
-                nim = "2410511039",
-                role = "Frontend Developer",
-                quote = "Ngopi skuy",
+                name = getString(R.string.team_name_2),
+                nim = getString(R.string.team_nim_2),
+                role = getString(R.string.team_role_2),
+                quote = getString(R.string.team_quote_2),
                 photoRes = R.drawable.team_atalla
             ),
             TeamMember(
-                name = "Athallah Abrar Duano",
-                nim = "2410511046",
-                role = "Feature Developer",
-                quote = "KICAUMANIAAAGHHH!!!!",
+                name = getString(R.string.team_name_3),
+                nim = getString(R.string.team_nim_3),
+                role = getString(R.string.team_role_3),
+                quote = getString(R.string.team_quote_3),
                 photoRes = R.drawable.team_athallah
             ),
             TeamMember(
-                name = "Sulthon D. Arrafi",
-                nim = "2410511061",
-                role = "Content & Data",
-                quote = "Saya doang yang kaya di grup ini semuanya miskin, btw follow ig aku ya guys @sulthdaffa!!!",
+                name = getString(R.string.team_name_4),
+                nim = getString(R.string.team_nim_4),
+                role = getString(R.string.team_role_4),
+                quote = getString(R.string.team_quote_4),
                 photoRes = R.drawable.team_sulthon
             ),
             TeamMember(
-                name = "Hesham Alsami",
-                nim = "2410511066",
-                role = "App Architect",
-                quote = "HAI, SAYA AKAN LAWAN!",
+                name = getString(R.string.team_name_5),
+                nim = getString(R.string.team_nim_5),
+                role = getString(R.string.team_role_5),
+                quote = getString(R.string.team_quote_5),
                 photoRes = R.drawable.team_hesham
             )
         )

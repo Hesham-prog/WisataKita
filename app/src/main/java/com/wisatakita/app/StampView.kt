@@ -54,36 +54,44 @@ class StampView @JvmOverloads constructor(
         val radius = (width.coerceAtMost(height) / 2f) - 8f * resources.displayMetrics.density
         borderPaint.color = item.stampColor
         innerPaint.color = item.stampColor
-        iconPaint.color = item.stampColor
 
         canvas.save()
         canvas.rotate(-8f, cx, cy)
         canvas.drawCircle(cx, cy, radius, borderPaint)
         canvas.drawCircle(cx, cy, radius - 8f * resources.displayMetrics.density, innerPaint)
-        drawCategoryIcon(canvas, item.categoryType, cx, cy - 8f * resources.displayMetrics.density, radius * 0.36f)
-        textPaint.textSize = 10f * resources.displayMetrics.scaledDensity
-        canvas.drawText(item.categoryType.uppercase(Locale.getDefault()).take(10), cx, cy + radius * 0.34f, textPaint)
+        
+        // Draw icon using fuzzy matching
+        val lowerCat = item.categoryType.lowercase(Locale.getDefault())
+        val iconRes = when {
+            lowerCat.contains("pantai") || lowerCat.contains("laut") -> R.drawable.ic_stamp_pantai
+            lowerCat.contains("danau") -> R.drawable.ic_stamp_danau
+            lowerCat.contains("sejarah") || lowerCat.contains("candi") -> R.drawable.ic_stamp_sejarah
+            lowerCat.contains("budaya") -> R.drawable.ic_stamp_budaya
+            lowerCat.contains("kota") || lowerCat.contains("wisata") -> R.drawable.ic_stamp_wisata
+            else -> R.drawable.ic_stamp_alam // Default for Gunung, Alam, Bukit, dll
+        }
+        val drawable = ContextCompat.getDrawable(context, iconRes)
+        if (drawable != null) {
+            drawable.setTint(item.stampColor)
+            val iconSize = (radius * 0.72f).toInt()
+            val left = (cx - iconSize / 2).toInt()
+            val top = (cy - radius * 0.5f - iconSize / 2).toInt()
+            drawable.setBounds(left, top, left + iconSize, top + iconSize)
+            drawable.draw(canvas)
+        }
+
+        // Handle category text to prevent cutting off
+        var displayCat = item.categoryType.uppercase(Locale.getDefault())
+        if (displayCat.length > 12) {
+            displayCat = displayCat.take(10) + "..."
+        }
+        val baseTextSize = 10f * resources.displayMetrics.scaledDensity
+        textPaint.textSize = if (displayCat.length > 8) baseTextSize * 0.85f else baseTextSize
+        
+        canvas.drawText(displayCat, cx, cy + radius * 0.34f, textPaint)
         textPaint.textSize = 8f * resources.displayMetrics.scaledDensity
         val date = SimpleDateFormat("dd MMM", Locale("id", "ID")).format(Date(item.unlockedAt))
         canvas.drawText(date, cx, cy + radius * 0.55f, textPaint)
         canvas.restore()
-    }
-
-    private fun drawCategoryIcon(canvas: Canvas, category: String, cx: Float, cy: Float, size: Float) {
-        path.reset()
-        if (category.contains("Pantai", ignoreCase = true) || category.contains("Danau", ignoreCase = true)) {
-            val rect = RectF(cx - size, cy - size * 0.25f, cx + size, cy + size * 0.85f)
-            path.addArc(rect, 200f, 140f)
-            path.addArc(RectF(rect.left, rect.top + size * 0.36f, rect.right, rect.bottom + size * 0.36f), 200f, 140f)
-            canvas.drawPath(path, borderPaint)
-        } else {
-            path.moveTo(cx - size, cy + size * 0.65f)
-            path.lineTo(cx - size * 0.35f, cy - size * 0.35f)
-            path.lineTo(cx, cy + size * 0.1f)
-            path.lineTo(cx + size * 0.32f, cy - size * 0.48f)
-            path.lineTo(cx + size, cy + size * 0.65f)
-            path.close()
-            canvas.drawPath(path, iconPaint)
-        }
     }
 }

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:clipToPadding="false"
-    android:paddingBottom="220dp">
+    android:paddingBottom="32dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,133 +14,88 @@
         android:paddingStart="20dp"
         android:paddingTop="56dp"
         android:paddingEnd="20dp"
-        android:paddingBottom="220dp">
+        android:paddingBottom="32dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-            <com.wisatakita.app.PassportPhotoView
-                android:id="@+id/ivPassportPhoto"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:src="@drawable/ic_logo"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <!-- Centered avatar with glow wrapper (using frame or simple margin) -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                
+                <!-- Simple glow effect behind avatar -->
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_splash_bloom"
+                    android:alpha="0.4" />
 
-            <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/groupLanguage"
-                android:layout_width="122dp"
-                android:layout_height="44dp"
-                android:background="@drawable/bg_language_toggle"
-                android:padding="3dp"
-                app:checkedButton="@id/btnLangId"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:selectionRequired="true"
-                app:singleSelection="true">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnLangId"
-                    style="@style/Widget.MaterialComponents.Button"
-                    android:layout_width="58dp"
-                    android:layout_height="38dp"
-                    android:fontFamily="@font/plus_jakarta_sans_semibold"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:minWidth="0dp"
-                    android:paddingStart="0dp"
-                    android:paddingEnd="0dp"
-                    android:text="ID"
-                    android:textAllCaps="false"
-                    android:textColor="@color/language_segment_text"
-                    android:textSize="12sp"
-                    app:backgroundTint="@color/language_segment_tint"
-                    app:cornerRadius="19dp"
-                    app:strokeWidth="0dp" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnLangEn"
-                    style="@style/Widget.MaterialComponents.Button"
-                    android:layout_width="58dp"
-                    android:layout_height="38dp"
-                    android:fontFamily="@font/plus_jakarta_sans_semibold"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:minWidth="0dp"
-                    android:paddingStart="0dp"
-                    android:paddingEnd="0dp"
-                    android:text="EN"
-                    android:textAllCaps="false"
-                    android:textColor="@color/language_segment_text"
-                    android:textSize="12sp"
-                    app:backgroundTint="@color/language_segment_tint"
-                    app:cornerRadius="19dp"
-                    app:strokeWidth="0dp" />
-            </com.google.android.material.button.MaterialButtonToggleGroup>
+                <com.wisatakita.app.PassportPhotoView
+                    android:id="@+id/ivPassportPhoto"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_logo" />
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/tvProfileName"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
                 android:layout_marginEnd="12dp"
+                android:layout_marginStart="12dp"
                 android:ellipsize="end"
                 android:fontFamily="@font/fraunces_bold"
-                android:maxLines="1"
+                android:gravity="center"
+                android:maxLines="2"
                 android:text="@string/home_default_user"
                 android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/ivPassportPhoto"
-                app:layout_constraintTop_toBottomOf="@id/groupLanguage" />
+                android:textSize="26sp" />
 
             <TextView
                 android:id="@+id/tvProfileEmail"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="4dp"
                 android:ellipsize="end"
                 android:fontFamily="@font/plus_jakarta_sans"
                 android:maxLines="1"
                 android:text="-"
                 android:textColor="@color/colorTextSecondary"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/ivPassportPhoto"
-                app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/tvStatsPill"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/bg_chip_glass_turquoise"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_gold_button"
                 android:ellipsize="end"
                 android:fontFamily="@font/plus_jakarta_sans_semibold"
                 android:maxLines="1"
-                android:paddingStart="12dp"
-                android:paddingTop="7dp"
-                android:paddingEnd="12dp"
-                android:paddingBottom="7dp"
+                android:paddingBottom="8dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
                 android:text="@string/profile_stats_placeholder"
-                android:textColor="@color/cream_primary"
-                android:textSize="10sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/ivPassportPhoto"
-                app:layout_constraintTop_toBottomOf="@id/tvProfileEmail" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:textColor="@color/charcoal_dark"
+                android:textSize="12sp" />
+        </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="320dp"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="@color/glass_surface"
-            app:cardCornerRadius="22dp"
-            app:cardElevation="0dp"
-            app:strokeColor="@color/glass_border"
+            android:layout_marginTop="28dp"
+            app:cardBackgroundColor="@color/charcoal_dark"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="12dp"
+            app:strokeColor="@color/gold_primary"
             app:strokeWidth="1dp">
 
             <LinearLayout
@@ -221,6 +176,8 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="18dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
             android:fontFamily="@font/plus_jakarta_sans_semibold"
             android:text="@string/profile_logout"
             android:textAllCaps="false"
